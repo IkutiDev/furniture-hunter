@@ -1,9 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl38226g7po7d"]
+[gd_scene load_steps=8 format=3 uid="uid://dl38226g7po7d"]
 
 [ext_resource type="PackedScene" uid="uid://pgy250q22igm" path="res://player/player.tscn" id="1_4ctbo"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4ctbo"]
-size = Vector3(60, 0.5, 60)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ctbo"]
 albedo_color = Color(0.43027627, 0.3251795, 0.12543634, 1)
@@ -12,28 +9,47 @@ albedo_color = Color(0.43027627, 0.3251795, 0.12543634, 1)
 material = SubResource("StandardMaterial3D_4ctbo")
 size = Vector2(60, 60)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ctbo"]
+size = Vector3(60, 0.5, 60)
+
 [sub_resource type="Environment" id="Environment_svsu0"]
 background_mode = 1
 background_color = Color(0.707892, 0.608592, 0.478294, 1)
 ambient_light_color = Color(1, 1, 1, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_4ctbo"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k3uiy"]
+size = Vector3(5, 5, 5)
+
 [node name="TestRoomPlayer" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_4ctbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15424418, 0)
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.7487707, 0.6628291, 0, -0.6628291, 0.7487707, 1.1920929e-07, 4.568152, 5.24932)
+transform = Transform3D(1, 0, 0, 0, 0.7487707, 0.6628291, 0, -0.6628291, 0.7487707, 1.1920929e-07, 4.5681524, 5.24932)
 current = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Player" parent="." instance=ExtResource("1_4ctbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45129418, 0)
+speed = 5.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_4ctbo")
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("PlaneMesh_4ctbo")
 skeleton = NodePath("../..")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_4ctbo")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_svsu0")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.349699, -3.9047155)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+mesh = SubResource("BoxMesh_4ctbo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("BoxShape3D_k3uiy")
