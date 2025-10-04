@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://pgy250q22igm"]
+
+[ext_resource type="Script" uid="uid://bw3ntkqc00quw" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://2e1qky7w1am" path="res://test_mimic/oczy.png" id="2_rkbax"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_oul6g"]
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oul6g"]
+top_radius = 0.2
+height = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_oul6g"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_oul6g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_oul6g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CylinderMesh_oul6g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.71, 0, 0, 0, 0.71, 0, 0, 0, 0.71, 0, 1.151468, 0)
+mesh = SubResource("SphereMesh_oul6g")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D2"]
+transform = Transform3D(-1, 0, 8.742278e-08, 2.1148002e-08, 0.97029996, 0.24190496, -8.482632e-08, 0.24190496, -0.97029996, 0, 0.12879455, -0.48682112)
+pixel_size = 0.0007
+texture = ExtResource("2_rkbax")
