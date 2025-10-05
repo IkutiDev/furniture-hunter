@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://cy8ywvi7dbk5e"]
+
+[ext_resource type="Texture2D" uid="uid://hlqt4w1rfkh6" path="res://test_mimic/oczy.png" id="1_pw6tx"]
+[ext_resource type="Script" uid="uid://blp7f1pas8lc3" path="res://test_room/hit_box.gd" id="2_w4n35"]
+
+[sub_resource type="Animation" id="Animation_pw6tx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitBox/CollisionShape3D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.75]
+}
+
+[sub_resource type="Animation" id="Animation_yhaa5"]
+resource_name = "new_animation"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector3(0, 50, 0), Vector3(0, 0.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitBox/CollisionShape3D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.75, 0.75]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w4n35"]
+_data = {
+&"RESET": SubResource("Animation_pw6tx"),
+&"new_animation": SubResource("Animation_yhaa5")
+}
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yhaa5"]
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yhaa5"]
+height = 1.0
+radius = 0.75
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pw6tx"]
+height = 1.0
+
+[node name="TestBarrel" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 14
+
+[node name="SpawnAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w4n35")
+}
+autoplay = "new_animation"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CylinderMesh_yhaa5")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3048246, 0.5123805)
+pixel_size = 0.0013
+texture = ExtResource("1_pw6tx")
+
+[node name="HitBox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("2_w4n35")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_yhaa5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_pw6tx")
+
+[connection signal="area_entered" from="HitBox" to="HitBox" method="_on_area_entered"]
