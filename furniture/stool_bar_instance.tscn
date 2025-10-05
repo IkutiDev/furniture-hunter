@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bc6ea3ibonrko"]
+[gd_scene load_steps=8 format=4 uid="uid://bc6ea3ibonrko"]
 
 [ext_resource type="PackedScene" uid="uid://c6pgdlgd6ir5o" path="res://furniture/stoolBar.glb" id="1_6jvhj"]
 [ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="2_ud750"]
@@ -67,9 +67,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gwtx7")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ud750"]
+
 [node name="stoolBar" instance=ExtResource("1_6jvhj")]
 script = ExtResource("2_ud750")
 visual_mesh = SubResource("ArrayMesh_ud750")
 
 [node name="stoolBar(Clone)" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_ud750")
