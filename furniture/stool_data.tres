@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://ck46x8tutplks"]
+
+[ext_resource type="PackedScene" uid="uid://bc6ea3ibonrko" path="res://furniture/stool_bar_instance.tscn" id="1_51rqf"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_npaj5"]
+
+[resource]
+script = ExtResource("1_npaj5")
+furniture_name = "Stool Bar"
+furniture_value = 50
+furniture_scene = ExtResource("1_51rqf")
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"

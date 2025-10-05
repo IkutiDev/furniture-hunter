@@ -1,31 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=7 format=4 uid="uid://blnoh5tgmt04j"]
 
-[ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
-[ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
-[ext_resource type="MeshLibrary" uid="uid://d2uj2lhtrmjgf" path="res://mesh_libraries/walls_mesh_library.tres" id="2_plsfm"]
-[ext_resource type="MeshLibrary" uid="uid://n8md08bf2oeb" path="res://mesh_libraries/occupation_mesh_library.tres" id="4_3q6a7"]
-[ext_resource type="Script" uid="uid://bx5l051p6ecdf" path="res://object_placer.gd" id="5_3q6a7"]
-[ext_resource type="Resource" uid="uid://c7pum5eui71o7" path="res://furniture/sofa_data.tres" id="6_wo40j"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_3q6a7"]
-sky_material = SubResource("ProceduralSkyMaterial_1ojmq")
-
-[sub_resource type="Environment" id="Environment_wo40j"]
-background_mode = 2
-sky = SubResource("Sky_3q6a7")
-tonemap_mode = 2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dulj"]
-transparency = 1
-albedo_color = Color(0.23339033, 0.4372358, 0.23134169, 0.85882354)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wo40j"]
-transparency = 1
-albedo_color = Color(0.72300655, 0.022634376, 2.5894344e-05, 0.85882354)
+[ext_resource type="PackedScene" uid="uid://vd1j8nnemnno" path="res://furniture/loungeSofa.glb" id="1_2d8id"]
+[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="2_rla2s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygx20"]
 resource_name = "carpet"
@@ -61,7 +37,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_wo40j"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_f0qct"]
 resource_name = "loungeSofa_Mesh loungeSofa"
 _surfaces = [{
 "aabb": AABB(0, 0.05, -0.41000003, 0.97999996, 0.41, 0.41000003),
@@ -91,55 +67,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_numow")
 
-[node name="PlayerRoom" type="Node3D" node_paths=PackedStringArray("floor_grid_map", "occupation_grid_map")]
-script = ExtResource("1_1ojmq")
-floor_grid_map = NodePath("FloorMap")
-occupation_grid_map = NodePath("OccupationMap")
+[node name="loungeSofa" instance=ExtResource("1_2d8id")]
+script = ExtResource("2_rla2s")
+extra_size = PackedVector3Array(1, 0, 0)
+visual_mesh = SubResource("ArrayMesh_f0qct")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_wo40j")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-
-[node name="FloorMap" type="GridMap" parent="."]
-mesh_library = ExtResource("1_8tnse")
-cell_size = Vector3(1, 1, 1)
-cell_center_y = false
-data = {
-"cells": PackedInt32Array(0, 1, 0, 0, 2, 0, 1, 1, 0, 2, 1, 0, 2, 2, 0, 1, 2, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 65535, 0, 1, 65535, 0, 2, 65535, 0, 65535, 1, 0, 65535, 0, 0, 65535, 65535, 0, 65535, 2, 0, 0, 3, 0, 1, 3, 0, 65535, 3, 0, 2, 3, 0, 3, 2, 0, 3, 1, 0, 3, 0, 0, 3, 65535, 0, 3, 3, 0, 3, 4, 0, 2, 4, 0, 1, 4, 0, 0, 4, 0, 65535, 4, 0, 65534, 4, 0, 65534, 3, 0, 65534, 2, 0, 65534, 1, 0, 65534, 0, 0, 65534, 65535, 0, 65535, 65534, 0, 65534, 65534, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0)
-}
-
-[node name="WallsMap" type="GridMap" parent="."]
-mesh_library = ExtResource("2_plsfm")
-cell_size = Vector3(1, 1, 1)
-data = {
-"cells": PackedInt32Array(0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 65535, 65533, 0, 65534, 65533, 0, 65533, 65534, 1048576, 65533, 65535, 1048576, 65533, 0, 1048576, 65533, 1, 1048576, 65533, 2, 1048576, 65533, 3, 1048576, 65533, 4, 1048576)
-}
-
-[node name="OccupationMap" type="GridMap" parent="."]
-visible = false
-mesh_library = ExtResource("4_3q6a7")
-cell_size = Vector3(1, 1, 1)
-collision_mask = 0
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.78371894, -0.55442053, 0.28000447, 0, 0.4508089, 0.8926205, -0.6211156, -0.6995636, 0.3533075, 3.211844, 8.9703865, 5.437821)
-
-[node name="ObjectPlacer" type="Node" parent="." node_paths=PackedStringArray("occupation_grid_map", "visual_mesh_parent", "visual_mesh")]
-script = ExtResource("5_3q6a7")
-occupation_grid_map = NodePath("../OccupationMap")
-visual_mesh_parent = NodePath("Node3D")
-visual_mesh = NodePath("Node3D/SelectedFurnitureMesh")
-can_place_material = SubResource("StandardMaterial3D_2dulj")
-cant_place_material = SubResource("StandardMaterial3D_wo40j")
-selected_furniture = ExtResource("6_wo40j")
-
-[node name="Node3D" type="Node3D" parent="ObjectPlacer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
-
-[node name="SelectedFurnitureMesh" type="MeshInstance3D" parent="ObjectPlacer/Node3D"]
+[node name="loungeSofa(Clone)" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
-mesh = SubResource("ArrayMesh_wo40j")
-skeleton = NodePath("../..")

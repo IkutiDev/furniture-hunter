@@ -1,0 +1,33 @@
+[gd_resource type="MeshLibrary" load_steps=7 format=3 uid="uid://n8md08bf2oeb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sprm0"]
+albedo_color = Color(0.46597904, 0.80251753, 0.33176768, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wv7ok"]
+material = SubResource("StandardMaterial3D_sprm0")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sprm0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcbdm"]
+albedo_color = Color(0.43547666, 0, 0.0982553, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g1fqt"]
+material = SubResource("StandardMaterial3D_pcbdm")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wv7ok"]
+
+[resource]
+item/0/name = "Empty"
+item/0/mesh = SubResource("BoxMesh_wv7ok")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/mesh_cast_shadow = 1
+item/0/shapes = [SubResource("BoxShape3D_sprm0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = "Occupied"
+item/1/mesh = SubResource("BoxMesh_g1fqt")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/mesh_cast_shadow = 1
+item/1/shapes = [SubResource("BoxShape3D_wv7ok"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
