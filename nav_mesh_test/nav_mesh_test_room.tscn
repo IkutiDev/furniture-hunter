@@ -1,0 +1,164 @@
+[gd_scene load_steps=10 format=3 uid="uid://dpihdisx0exqn"]
+
+[ext_resource type="Script" uid="uid://bdyl5i0na3cbk" path="res://nav_mesh_test/nav_mesh_test_room.gd" id="1_fyjr5"]
+[ext_resource type="PackedScene" uid="uid://i0mo4jgqq7d3" path="res://nav_mesh_test/nav_test_bot.tscn" id="2_ydqut"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_khj3g"]
+vertices = PackedVector3Array(3.5, 0.1, 1.5, 3.5, 0.1, 0.5, -2, 0.1, 0.5, -3.5, 0.1, 1.5, -3.5, 0.1, -9.5, -2.5, 0.1, 0, -2.5, 0.1, -8.25, 3.5, 0.1, -8.5, 3.5, 0.1, -9.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(4, 5, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 4)]
+cell_height = 0.05
+agent_radius = 0.4
+region_min_size = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_khj3g"]
+size = Vector2(8, 2)
+
+[sub_resource type="Environment" id="Environment_svsu0"]
+background_mode = 1
+background_color = Color(0.707892, 0.608592, 0.478294, 1)
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fyjr5"]
+transparency = 1
+albedo_color = Color(0, 0.13725491, 0.13725491, 0.5176471)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ydqut"]
+material = SubResource("StandardMaterial3D_fyjr5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydqut"]
+albedo_color = Color(0.14509805, 0.14509805, 0.52156866, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h7hjn"]
+material = SubResource("StandardMaterial3D_ydqut")
+size = Vector3(16, 2, 16)
+
+[node name="NavMeshTestRoom" type="Node3D"]
+script = ExtResource("1_fyjr5")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_khj3g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("PlaneMesh_khj3g")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+mesh = SubResource("PlaneMesh_khj3g")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 0, -4)
+mesh = SubResource("PlaneMesh_khj3g")
+skeleton = NodePath("../..")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8961377, -0.17768168, 1.2521553)
+radius = 0.5
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81719136, -0.17768168, 0.4191259)
+radius = 0.5
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle3D3" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3459294, -0.17768168, -9.296755)
+radius = 0.5
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle3D4" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6465592, -0.17768168, -3.2794952)
+radius = 0.5
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle3D5" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3276265, -0.17768168, -6.2288866)
+radius = 0.5
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle3D6" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7533624, -0.17768168, 1.2272909)
+radius = 0.5
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle3D7" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4145842, -0.17768168, -0.6576357)
+radius = 0.5
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="TestBots" type="Node3D" parent="."]
+
+[node name="NavTestBot" parent="TestBots" instance=ExtResource("2_ydqut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
+
+[node name="NavTestBot2" parent="TestBots" instance=ExtResource("2_ydqut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1.3668847)
+
+[node name="NavTestBot3" parent="TestBots" instance=ExtResource("2_ydqut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9363613, 0, -9.015966)
+
+[node name="NavTestBot4" parent="TestBots" instance=ExtResource("2_ydqut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5.271069)
+
+[node name="NavTestBot5" parent="TestBots" instance=ExtResource("2_ydqut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -0.63795376)
+
+[node name="NavTestBot6" parent="TestBots" instance=ExtResource("2_ydqut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9363613, 0, -8.287035)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 5, 7)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_svsu0")
+
+[node name="PointsOfInterest" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8961377, -0.17768168, 1.2521553)
+mesh = SubResource("SphereMesh_ydqut")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81719136, -0.17768168, 0.4191259)
+mesh = SubResource("SphereMesh_ydqut")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3459294, -0.17768168, -9.296755)
+mesh = SubResource("SphereMesh_ydqut")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7261627, -0.17768168, -8.920403)
+mesh = SubResource("SphereMesh_ydqut")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="PointsOfInterest/MeshInstance3D4"]
+radius = 0.5
+affect_navigation_mesh = true
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6465592, -0.17768168, -3.2794952)
+mesh = SubResource("SphereMesh_ydqut")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3276265, -0.17768168, -6.2288866)
+mesh = SubResource("SphereMesh_ydqut")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7533624, -0.17768168, 1.2272909)
+mesh = SubResource("SphereMesh_ydqut")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4145842, -0.17768168, -0.6576357)
+mesh = SubResource("SphereMesh_ydqut")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3629303, -3.7042842)
+mesh = SubResource("BoxMesh_h7hjn")

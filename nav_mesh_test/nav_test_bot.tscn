@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://i0mo4jgqq7d3"]
+
+[ext_resource type="Script" uid="uid://be2ehwha8dsqq" path="res://nav_mesh_test/nav_test_bot.gd" id="1_y1jio"]
+[ext_resource type="Texture2D" uid="uid://2e1qky7w1am" path="res://test_mimic/oczy.png" id="2_0h70b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1jio"]
+resource_local_to_scene = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0h70b"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_y1jio")
+radius = 0.22
+height = 1.22
+
+[node name="NavTestBot" type="Node3D"]
+script = ExtResource("1_y1jio")
+character_speed = 7.0
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+avoidance_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61955106, 0)
+mesh = SubResource("CapsuleMesh_0h70b")
+
+[node name="GoPlaceTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8800573, -0.21287966)
+pixel_size = 0.0013
+texture = ExtResource("2_0h70b")
+
+[connection signal="timeout" from="GoPlaceTimer" to="." method="_on_go_place_timer_timeout"]
