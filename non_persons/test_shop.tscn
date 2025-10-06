@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=3 uid="uid://cqxnft0uws6of"]
+
+[ext_resource type="Script" uid="uid://cb2bot3n4nv2" path="res://non_persons/test_shop.gd" id="1_uxq0g"]
+[ext_resource type="PackedScene" uid="uid://dh7xwd15ho7lk" path="res://non_persons/spawner.tscn" id="1_w3er8"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_gxq1r"]
+vertices = PackedVector3Array(0, 0.07200563, 4.5, 0, 0.07200563, 3.75, -1, 0.07200563, 3.25, -4.5, 0.07200563, 4.5, -4, 0.07200563, -2.5, -4.5, 0.07200563, -4.5, -4.75, 0.07200563, -0.5, -3.75, 0.07200563, -0.75, -4.5, 0.07200563, 0.75, -1, 0.07200563, 1.75, -2.5, 0.07200563, -0.5, 1.5, 0.07200563, -2.5, 3.25, 0.07200563, -2.75, 3.25, 0.07200563, -4.5, -2, 0.07200563, -2.75, -1.75, 0.07200563, -1, 0.75, 0.07200563, 1.5, 1.75, 0.07200563, -0.75, -8.5, 0.07200563, -0.5, -8.5, 0.07200563, 0.5, 1, 0.07200563, 3.25, 4.5, 0.07200563, 4.5, 3.75, 0.07200563, -2.5, 4.5, 0.07200563, -4.5, 3.75, 0.07200563, -1, 3, 0.07200563, -0.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(9, 2, 10), PackedInt32Array(10, 2, 8), PackedInt32Array(8, 2, 3), PackedInt32Array(6, 7, 8), PackedInt32Array(8, 7, 10), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(13, 14, 5), PackedInt32Array(4, 5, 14), PackedInt32Array(9, 10, 15), PackedInt32Array(16, 9, 17), PackedInt32Array(17, 9, 15), PackedInt32Array(17, 15, 11), PackedInt32Array(11, 15, 14), PackedInt32Array(18, 6, 19), PackedInt32Array(19, 6, 8), PackedInt32Array(1, 20, 0), PackedInt32Array(0, 20, 21), PackedInt32Array(12, 13, 22), PackedInt32Array(22, 13, 23), PackedInt32Array(25, 24, 16), PackedInt32Array(16, 24, 20), PackedInt32Array(20, 24, 21), PackedInt32Array(25, 16, 17), PackedInt32Array(22, 23, 24), PackedInt32Array(24, 23, 21)]
+cell_height = 0.05
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gxq1r"]
+size = Vector2(10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3er8"]
+albedo_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gxq1r"]
+material = SubResource("StandardMaterial3D_w3er8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uxq0g"]
+size = Vector2(4, 2)
+
+[sub_resource type="Environment" id="Environment_w3er8"]
+background_mode = 1
+background_color = Color(0.8520225, 0.8447646, 0.93967134, 1)
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxq0g"]
+transparency = 1
+albedo_color = Color(0.7137255, 0.6392157, 0.13725491, 0.5176471)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3s1kx"]
+material = SubResource("StandardMaterial3D_uxq0g")
+
+[node name="TestShop" type="Node3D"]
+script = ExtResource("1_uxq0g")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_gxq1r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+mesh = SubResource("PlaneMesh_gxq1r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.32799435, 2.5470743)
+mesh = SubResource("CylinderMesh_gxq1r")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.617569, -0.32799435, -1.738306)
+mesh = SubResource("CylinderMesh_gxq1r")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.878848, -0.32799435, -1.738306)
+mesh = SubResource("CylinderMesh_gxq1r")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+mesh = SubResource("PlaneMesh_uxq0g")
+
+[node name="Spawner" parent="." instance=ExtResource("1_w3er8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5411167, 0, 0.08339167)
+desired_customer_count = 8
+
+[node name="SpawnPoint" parent="Spawner" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60138893, 0, 0)
+
+[node name="TheAreaThatEatsPeople" parent="Spawner" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94292736, 0, 0)
+
+[node name="ShopEntrance" parent="Spawner" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2617102, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.52242416, 0.85268575, 0, -0.85268575, 0.52242416, -0.31543434, 4.602257, 5.50006)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D"]
+environment = SubResource("Environment_w3er8")
+
+[node name="PointsOfInterest" type="Node3D" parent="."]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03159976, 0.1349504, -4.1167903)
+mesh = SubResource("SphereMesh_3s1kx")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8140104, 0.1349504, -0.05252981)
+mesh = SubResource("SphereMesh_3s1kx")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8140104, 0.1349504, 3.5556502)
+mesh = SubResource("SphereMesh_3s1kx")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8717334, 0.1349504, 3.5556502)
+mesh = SubResource("SphereMesh_3s1kx")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8717334, 0.1349504, 0.12013078)
+mesh = SubResource("SphereMesh_3s1kx")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7971902, 0.1349504, -3.286131)
+mesh = SubResource("SphereMesh_3s1kx")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7971902, 0.1349504, 2.1737833)
+mesh = SubResource("SphereMesh_3s1kx")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9210563, 0.1349504, 0.4942994)
+mesh = SubResource("SphereMesh_3s1kx")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="PointsOfInterest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6635542, 0.1349504, 4.0317965)
+mesh = SubResource("SphereMesh_3s1kx")
+
+[editable path="Spawner"]

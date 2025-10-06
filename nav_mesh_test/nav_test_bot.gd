@@ -19,16 +19,11 @@ func _physics_process(delta):
 	var next_position := _nav_agent.get_next_path_position()
 	var offset := next_position - global_position
 	global_position = global_position.move_toward(next_position, delta * character_speed)
-
-	# Make the robot look at the direction we're traveling.
-	# Clamp y to 0 so the robot only looks left and right, not up/down.
 	offset.y = 0
 	look_at(global_position + offset, Vector3.UP)
 
 func set_target_position(target_position: Vector3):
 	_nav_agent.set_target_position(target_position)
-	# Get a full navigation path with the NavigationServer API.
-
 	var start_position := global_transform.origin
 	var optimize := true
 	var navigation_map := get_world_3d().get_navigation_map()
