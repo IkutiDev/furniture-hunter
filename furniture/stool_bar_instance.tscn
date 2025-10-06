@@ -69,9 +69,10 @@ shadow_mesh = SubResource("ArrayMesh_gwtx7")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ud750"]
 
-[node name="stoolBar" instance=ExtResource("1_6jvhj")]
+[node name="stoolBar" node_paths=PackedStringArray("static_body") instance=ExtResource("1_6jvhj")]
 script = ExtResource("2_ud750")
 visual_mesh = SubResource("ArrayMesh_ud750")
+static_body = NodePath("StaticBody3D")
 
 [node name="stoolBar(Clone)" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)

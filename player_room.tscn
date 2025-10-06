@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
+[ext_resource type="PackedScene" uid="uid://5eeyn2nbl4it" path="res://UI/building_phase_ui.tscn" id="2_2dulj"]
 [ext_resource type="MeshLibrary" uid="uid://d2uj2lhtrmjgf" path="res://mesh_libraries/walls_mesh_library.tres" id="2_plsfm"]
 [ext_resource type="MeshLibrary" uid="uid://n8md08bf2oeb" path="res://mesh_libraries/occupation_mesh_library.tres" id="4_3q6a7"]
 [ext_resource type="Script" uid="uid://bx5l051p6ecdf" path="res://object_placer.gd" id="5_3q6a7"]
-[ext_resource type="Resource" uid="uid://c7pum5eui71o7" path="res://furniture/sofa_data.tres" id="6_wo40j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -146,7 +146,6 @@ visual_mesh_parent = NodePath("Node3D")
 visual_mesh = NodePath("Node3D/SelectedFurnitureMesh")
 can_place_material = SubResource("StandardMaterial3D_2dulj")
 cant_place_material = SubResource("StandardMaterial3D_wo40j")
-selected_furniture = ExtResource("6_wo40j")
 nav_mesh_region = NodePath("../NavigationRegion3D")
 
 [node name="Node3D" type="Node3D" parent="ObjectPlacer"]
@@ -156,3 +155,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
 mesh = SubResource("ArrayMesh_wo40j")
 skeleton = NodePath("../..")
+
+[node name="BuildingPhaseUI" parent="." instance=ExtResource("2_2dulj")]

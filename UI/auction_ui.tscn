@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8myxwy4rg0ac"]
+
+[sub_resource type="FoldableGroup" id="FoldableGroup_lpe4v"]
+
+[node name="AuctionUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FoldableContainer" type="FoldableContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 86.0
+grow_vertical = 2
+title = "Auction"
+title_position = 1
+foldable_group = SubResource("FoldableGroup_lpe4v")
+
+[node name="Panel" type="Panel" parent="FoldableContainer"]
+layout_mode = 2

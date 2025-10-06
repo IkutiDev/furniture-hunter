@@ -7,11 +7,27 @@ const MAGICAL_Z_NUMBER = 0.2 # Without this raycasting position where the furnit
 @export var visual_mesh : MeshInstance3D
 @export var can_place_material : StandardMaterial3D
 @export var cant_place_material : StandardMaterial3D
-@export var selected_furniture : FurnitureData
 @export var nav_mesh_region : NavigationRegion3D
+var selected_furniture : FurnitureData = null
 var current_mouse_position_on_grid : Vector3 = Vector3.ZERO
 var current_rotation_in_degrees : float = 0.0
 var can_place_furniture : bool = false
+var hovered_over_furniture_instance : FurnitureInstance = null
+var delete_mode_active : bool = false
+
+func _ready() -> void:
+	selected_furniture = null
+	EventBus.deselect_current_furniture.connect(deselect_furniture)
+	EventBus.selected_furniture_to_place.connect(select_furniture)
+	EventBus.set_remove_furniture_mode.connect(toggled_delete_mode)
+	EventBus.mouse_over_furniture.connect(hover_over_furniture)
+	EventBus.mouse_exits_furniture.connect(exit_hover_over_furniture)
+	
+func deselect_furniture() -> void:
+	selected_furniture = null
+
+func select_furniture(data : FurnitureData) -> void:
+	selected_furniture = data
 
 func _process(_delta: float) -> void:
 	visual_mesh.visible = selected_furniture != null
@@ -25,13 +41,25 @@ func _process(_delta: float) -> void:
 	visual_mesh_parent.position = occupation_grid_map.map_to_local(current_mouse_position_on_grid)
 	visual_mesh.mesh = selected_furniture.get_visual_mesh()
 	
-	
+func toggled_delete_mode(active : bool) -> void:
+	delete_mode_active = active
+
+func hover_over_furniture(instance : FurnitureInstance) -> void:
+	if instance == null:
+		return
+	hovered_over_furniture_instance = instance
+func exit_hover_over_furniture(instance : FurnitureInstance) -> void:
+	if instance == null:
+		return
+	if hovered_over_furniture_instance == instance:
+		hovered_over_furniture_instance = null
+
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("place_object"):
-		if can_place_furniture:
+	if event.is_action_pressed("press"):
+		if can_place_furniture and selected_furniture != null:
 			place_object()
-		else:
-			print("cant place")
+		elif hovered_over_furniture_instance != null and delete_mode_active:
+			remove_object()
 	if event.is_action_pressed("rotate"):
 		current_rotation_in_degrees += 90.0
 		if current_rotation_in_degrees >= 360.0:
@@ -42,12 +70,24 @@ func place_object() -> void:
 	var furnitue_instance := selected_furniture.furniture_scene.instantiate() as FurnitureInstance
 	furnitue_instance.position =  occupation_grid_map.map_to_local(current_mouse_position_on_grid)
 	furnitue_instance.rotation_degrees = Vector3(0, current_rotation_in_degrees, 0)
+	furnitue_instance.furniture_data = selected_furniture
 	nav_mesh_region.add_child(furnitue_instance)
 	nav_mesh_region.bake_navigation_mesh()
 	occupation_grid_map.set_cell_item(current_mouse_position_on_grid, 1)
 	for p in furnitue_instance.extra_size:
 		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(current_rotation_in_degrees))
 		occupation_grid_map.set_cell_item(current_mouse_position_on_grid + p, 1)
+	PlayerInventory.remove_furniture_from_inventory(selected_furniture)
+	deselect_furniture()
+
+func remove_object() -> void:
+	var furniture_position := occupation_grid_map.local_to_map(hovered_over_furniture_instance.position)
+	occupation_grid_map.set_cell_item(furniture_position, 0)
+	for p in hovered_over_furniture_instance.extra_size:
+		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(hovered_over_furniture_instance.rotation_degrees.y))
+		occupation_grid_map.set_cell_item(current_mouse_position_on_grid + p, 0)
+	hovered_over_furniture_instance.remove_this_instance()
+	nav_mesh_region.bake_navigation_mesh()
 
 func raycast_and_check_if_position_is_occupied() -> bool:
 	var mouse_pos = get_viewport().get_mouse_position()

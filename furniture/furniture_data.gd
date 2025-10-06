@@ -1,6 +1,7 @@
 class_name FurnitureData
 extends Resource
 @export var furniture_name : String
+@export var furniture_icon : Texture2D
 @export var furniture_value : int
 @export var furniture_scene : PackedScene
 
