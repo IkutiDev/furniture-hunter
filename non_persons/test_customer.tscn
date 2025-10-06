@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://eyncoqtnwsi"]
+
+[ext_resource type="Script" uid="uid://b3usttdhhexhq" path="res://non_persons/test_customer.gd" id="1_qrjrq"]
+[ext_resource type="Script" uid="uid://7yxpa5q1midc" path="res://non_persons/state_machine.gd" id="1_y15eb"]
+[ext_resource type="Script" uid="uid://jgjiwy0iwrqu" path="res://non_persons/states/henlo_world.gd" id="3_ns5w7"]
+[ext_resource type="Script" uid="uid://dsivn84btguvx" path="res://non_persons/states/walk.gd" id="4_ns5w7"]
+[ext_resource type="Script" uid="uid://ca42y8672fagb" path="res://non_persons/states/idle.gd" id="5_3ekre"]
+[ext_resource type="Script" uid="uid://dv3tdcfa13qr1" path="res://non_persons/states/think.gd" id="6_3oqfh"]
+[ext_resource type="Texture2D" uid="uid://2e1qky7w1am" path="res://test_mimic/oczy.png" id="6_twq3s"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qrjrq"]
+height = 1.0
+radius = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3oqfh"]
+resource_local_to_scene = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3oqfh"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_3oqfh")
+radius = 0.28
+height = 1.6
+
+[node name="test_customer" type="Area3D" groups=["Customer"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_qrjrq")
+points_of_interest = PackedVector3Array()
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_y15eb")
+initial_state = NodePath("HenloWorld")
+
+[node name="HenloWorld" type="Node" parent="StateMachine"]
+script = ExtResource("3_ns5w7")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("4_ns5w7")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("5_3ekre")
+
+[node name="Think" type="Node" parent="StateMachine"]
+script = ExtResource("6_3oqfh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_qrjrq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8424703, 0)
+mesh = SubResource("CapsuleMesh_3oqfh")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2048209, -0.2896664)
+pixel_size = 0.0013
+texture = ExtResource("6_twq3s")
+
+[connection signal="i_chose_to_leave" from="StateMachine/Think" to="." method="_on_think_i_chose_to_leave"]
+[connection signal="i_chose_to_walk" from="StateMachine/Think" to="." method="_on_think_i_chose_to_walk"]

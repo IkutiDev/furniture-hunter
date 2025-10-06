@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh7xwd15ho7lk"]
+
+[ext_resource type="Script" uid="uid://ci82qsb7i7ppg" path="res://non_persons/spawner.gd" id="1_ep3nv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ep3nv"]
+size = Vector3(2, 2, 2)
+
+[node name="Spawner" type="Node3D"]
+script = ExtResource("1_ep3nv")
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+
+[node name="TheAreaThatEatsPeople" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TheAreaThatEatsPeople"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_ep3nv")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.95
+autostart = true
+
+[node name="ShopEntrance" type="Marker3D" parent="."]
+
+[connection signal="area_entered" from="TheAreaThatEatsPeople" to="." method="_on_the_area_that_eats_people_area_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
