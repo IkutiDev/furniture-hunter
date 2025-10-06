@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=17 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -18,6 +18,15 @@ sky_material = SubResource("ProceduralSkyMaterial_1ojmq")
 background_mode = 2
 sky = SubResource("Sky_3q6a7")
 tonemap_mode = 2
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_wo40j"]
+vertices = PackedVector3Array(-1.75, 0.52, -1.75, -1.75, 0.52, 4.75, 3.75, 0.52, 4.75, 3.75, 0.52, -1.75)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 2, 0)]
+geometry_parsed_geometry_type = 1
+cell_height = 0.01
+agent_radius = 0.2
+region_min_size = 1.0
+vertices_per_polygon = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dulj"]
 transparency = 1
@@ -93,7 +102,7 @@ shadow_mesh = SubResource("ArrayMesh_numow")
 
 [node name="PlayerRoom" type="Node3D" node_paths=PackedStringArray("floor_grid_map", "occupation_grid_map")]
 script = ExtResource("1_1ojmq")
-floor_grid_map = NodePath("FloorMap")
+floor_grid_map = NodePath("NavigationRegion3D/FloorMap")
 occupation_grid_map = NodePath("OccupationMap")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -103,7 +112,10 @@ environment = SubResource("Environment_wo40j")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="FloorMap" type="GridMap" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_wo40j")
+
+[node name="FloorMap" type="GridMap" parent="NavigationRegion3D"]
 mesh_library = ExtResource("1_8tnse")
 cell_size = Vector3(1, 1, 1)
 cell_center_y = false
@@ -127,7 +139,7 @@ collision_mask = 0
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.78371894, -0.55442053, 0.28000447, 0, 0.4508089, 0.8926205, -0.6211156, -0.6995636, 0.3533075, 3.211844, 8.9703865, 5.437821)
 
-[node name="ObjectPlacer" type="Node" parent="." node_paths=PackedStringArray("occupation_grid_map", "visual_mesh_parent", "visual_mesh")]
+[node name="ObjectPlacer" type="Node" parent="." node_paths=PackedStringArray("occupation_grid_map", "visual_mesh_parent", "visual_mesh", "nav_mesh_region")]
 script = ExtResource("5_3q6a7")
 occupation_grid_map = NodePath("../OccupationMap")
 visual_mesh_parent = NodePath("Node3D")
@@ -135,6 +147,7 @@ visual_mesh = NodePath("Node3D/SelectedFurnitureMesh")
 can_place_material = SubResource("StandardMaterial3D_2dulj")
 cant_place_material = SubResource("StandardMaterial3D_wo40j")
 selected_furniture = ExtResource("6_wo40j")
+nav_mesh_region = NodePath("../NavigationRegion3D")
 
 [node name="Node3D" type="Node3D" parent="ObjectPlacer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)

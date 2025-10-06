@@ -8,6 +8,7 @@ const MAGICAL_Z_NUMBER = 0.2 # Without this raycasting position where the furnit
 @export var can_place_material : StandardMaterial3D
 @export var cant_place_material : StandardMaterial3D
 @export var selected_furniture : FurnitureData
+@export var nav_mesh_region : NavigationRegion3D
 var current_mouse_position_on_grid : Vector3 = Vector3.ZERO
 var current_rotation_in_degrees : float = 0.0
 var can_place_furniture : bool = false
@@ -39,9 +40,10 @@ func _input(event: InputEvent) -> void:
 
 func place_object() -> void:
 	var furnitue_instance := selected_furniture.furniture_scene.instantiate() as FurnitureInstance
-	furnitue_instance.position = occupation_grid_map.map_to_local(current_mouse_position_on_grid)
+	furnitue_instance.position =  occupation_grid_map.map_to_local(current_mouse_position_on_grid)
 	furnitue_instance.rotation_degrees = Vector3(0, current_rotation_in_degrees, 0)
-	get_tree().root.add_child(furnitue_instance)
+	nav_mesh_region.add_child(furnitue_instance)
+	nav_mesh_region.bake_navigation_mesh()
 	occupation_grid_map.set_cell_item(current_mouse_position_on_grid, 1)
 	for p in furnitue_instance.extra_size:
 		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(current_rotation_in_degrees))

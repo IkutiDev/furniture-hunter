@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cymsy73cmwhrf"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_w1lgj"]
+geometry_parsed_geometry_type = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_rnyd2"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D"]
+navigation_mesh = SubResource("NavigationMesh_w1lgj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_rnyd2")
