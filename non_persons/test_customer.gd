@@ -11,6 +11,9 @@ var visited_points = PackedVector3Array()
 
 @export var character_speed = 2.0
 
+@export var money = 100
+
+@export var energy = 100.0
 
 func _ready() -> void:
 	
@@ -21,6 +24,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
+	$EnergyBar.scale.x = energy/100.0
 	if $NavigationAgent3D.is_navigation_finished():
 		return
 	var next_position = $NavigationAgent3D.get_next_path_position()
@@ -48,6 +52,7 @@ func set_target_position(target_position: Vector3):
 
 
 
+
 func _on_think_i_chose_to_walk() -> void:
 	assert(!points_of_interest.is_empty())
 	var going_to = points_of_interest[randi()%points_of_interest.size()]
@@ -59,4 +64,32 @@ func _on_think_i_chose_to_walk() -> void:
 func _on_think_i_chose_to_leave() -> void:
 
 	set_target_position(exit_location)
+	pass # Replace with function body.
+
+
+func _on_think_i_chose_to_buy() -> void:
+	var objects_seen = $LookingEyes.get_overlapping_areas()
+	if objects_seen.is_empty():
+		print("I want to buy, but I dont see anything!")
+		return
+		
+	var the_shelf = objects_seen[0]
+	var item_list = the_shelf.stored_items.duplicate() as Dictionary
+	
+	if item_list.is_empty():
+		print("I want to buy an item from a thing, but the thing has no items!")
+		return
+	
+	var selected_item = item_list.keys()[randi()%item_list.keys().size()]
+	var items_price = item_list[selected_item]
+	
+	if items_price > money:
+		print("I want to buy an ",selected_item ,", but I cant afford it!")
+		energy -= 15
+		return
+	else:
+		money -= items_price
+		the_shelf.remove_item(selected_item)
+		print("I bought a ", selected_item,", I now have only this much money: ", money)
+	
 	pass # Replace with function body.

@@ -25,9 +25,11 @@ PlayerInventory="*res://player_inventory.tscn"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+
 [global_group]
 
 Customer="default NPC group"
+Shelf="a thing for holding sellaable objects"
 
 [input]
 
@@ -52,6 +54,7 @@ cancel={
 3d_physics/layer_1="DO NOT USE"
 3d_physics/layer_2="Walls"
 3d_physics/layer_3="People"
+3d_physics/layer_4="Objects"
 
 [rendering]
 

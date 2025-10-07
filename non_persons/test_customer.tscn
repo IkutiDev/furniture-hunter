@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://eyncoqtnwsi"]
+[gd_scene load_steps=15 format=3 uid="uid://eyncoqtnwsi"]
 
 [ext_resource type="Script" uid="uid://b3usttdhhexhq" path="res://non_persons/test_customer.gd" id="1_qrjrq"]
 [ext_resource type="Script" uid="uid://7yxpa5q1midc" path="res://non_persons/state_machine.gd" id="1_y15eb"]
@@ -21,6 +21,24 @@ material = SubResource("StandardMaterial3D_3oqfh")
 radius = 0.28
 height = 1.6
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_twq3s"]
+height = 2.57
+radius = 1.165
+
+[sub_resource type="Gradient" id="Gradient_twq3s"]
+offsets = PackedFloat32Array(0, 0.016713092)
+colors = PackedColorArray(0, 0, 0, 1, 1.7567725e-06, 0.61674327, 0.18504336, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rinmi"]
+frequency = 0.0277
+offset = Vector3(0, -944, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q2p6i"]
+width = 160
+height = 20
+noise = SubResource("FastNoiseLite_rinmi")
+color_ramp = SubResource("Gradient_twq3s")
+
 [node name="test_customer" type="Area3D" groups=["Customer"]]
 collision_layer = 4
 collision_mask = 0
@@ -40,8 +58,9 @@ script = ExtResource("4_ns5w7")
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("5_3ekre")
 
-[node name="Think" type="Node" parent="StateMachine"]
+[node name="Think" type="Node" parent="StateMachine" node_paths=PackedStringArray("customer_body")]
 script = ExtResource("6_3oqfh")
+customer_body = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -58,5 +77,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2048209, -0.2896664)
 pixel_size = 0.0013
 texture = ExtResource("6_twq3s")
 
+[node name="LookingEyes" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LookingEyes"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_twq3s")
+
+[node name="EnergyBar" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8959954, 0)
+billboard = 1
+texture = SubResource("NoiseTexture2D_q2p6i")
+
+[connection signal="i_chose_to_buy" from="StateMachine/Think" to="." method="_on_think_i_chose_to_buy"]
 [connection signal="i_chose_to_leave" from="StateMachine/Think" to="." method="_on_think_i_chose_to_leave"]
 [connection signal="i_chose_to_walk" from="StateMachine/Think" to="." method="_on_think_i_chose_to_walk"]

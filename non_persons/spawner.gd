@@ -17,7 +17,11 @@ func _ready() -> void:
 		where_to_plonk_customers = get_tree().current_scene
 	
 
-
+func end_day():
+	desired_customer_count = 0
+	for cusomter in get_tree().get_nodes_in_group("Customer"):
+		cusomter.energy -= 80
+	pass
 
 func spawn_customer() -> void:
 	var new_customer = customer_scene.instantiate() as Node3D
