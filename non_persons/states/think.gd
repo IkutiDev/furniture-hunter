@@ -14,6 +14,8 @@ signal i_chose_to_walk
 
 signal i_chose_to_buy
 
+var brain_power = 1.0
+
 ## pairs of options + weights
 var possible_choices = {
 	"i_chose_to_walk" : 6,
@@ -23,6 +25,8 @@ var possible_choices = {
 	}
 
 func enter(msg = []) -> void:
+	print(msg)
+	brain_power = 1.0
 	var choice_list = possible_choices.duplicate()
 	if !msg.is_empty():
 		assert(typeof(msg[0]) == TYPE_STRING)
@@ -31,6 +35,10 @@ func enter(msg = []) -> void:
 		make_a_choice()
 	pass
 
+func _process(delta: float) -> void:
+	brain_power -= delta
+	assert(brain_power > 0)
+	pass
 
 func exit() -> void:
 	
@@ -41,20 +49,29 @@ func exit() -> void:
 
 func make_a_choice(message = "nothing"):
 	var selected_choice : String
+	
+	if customer_body.energy < 10 or customer_body.money < 20:
+		selected_choice = "i_chose_to_leave"
+		message = "nothing"
 	match message:
+		"buy failed":
+			
+			selected_choice = "i_chose_to_walk"
+			pass
 		"henlo world": # go stright to walk
 			selected_choice = "i_chose_to_walk"
 			pass
 		"walking completed":
 			selected_choice = "i_chose_to_browse"
 			pass
+		"nothing to buy":
+			selected_choice = "i_chose_to_walk"
+			pass
 		"idle completed":
-			if customer_body.energy < 10 or customer_body.money < 20:
-				selected_choice = "i_chose_to_leave"
 				
-			elif randf() > 0.7:
+			if randf() > 0.7:
 				selected_choice = "i_chose_to_browse"
-			elif randf() > 0.65:
+			elif randf() > 0.25:
 				selected_choice = "i_chose_to_buy"
 			else:
 				selected_choice = "i_chose_to_walk"
@@ -66,15 +83,5 @@ func make_a_choice(message = "nothing"):
 	
 	print("selected_choice: ",selected_choice)
 	emit_signal(selected_choice)
-	match selected_choice:
-		"i_chose_to_walk":
-			customer_body.energy -= 10
-			state_machine.transition_to("Walk")
-		"i_chose_to_browse":
-			customer_body.energy -= 5
-			state_machine.transition_to("Idle",[3.0])
-		"i_chose_to_leave":
-			state_machine.transition_to("Walk")
-		"i_chose_to_buy":
-			state_machine.transition_to("Idle",[1.5])
+
 	pass

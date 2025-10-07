@@ -81,7 +81,7 @@ mesh = SubResource("PlaneMesh_uxq0g")
 
 [node name="Spawner" parent="." instance=ExtResource("1_w3er8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5411167, 0, 0.08339167)
-desired_customer_count = 8
+desired_customer_count = 15
 
 [node name="SpawnPoint" parent="Spawner" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60138893, 0, 0)

@@ -54,16 +54,23 @@ func set_target_position(target_position: Vector3):
 
 
 func _on_think_i_chose_to_walk() -> void:
-	assert(!points_of_interest.is_empty())
+	if points_of_interest.is_empty():
+		energy = 0
+		$StateMachine.transition_to("Think",[])
+		return
 	var going_to = points_of_interest[randi()%points_of_interest.size()]
-
+	points_of_interest.erase(going_to)
+	
 	set_target_position(going_to)
+	energy -= 15
+	$StateMachine.transition_to("Walk")
 	pass # Replace with function body.
 
 
 func _on_think_i_chose_to_leave() -> void:
 
 	set_target_position(exit_location)
+	$StateMachine.transition_to("Walk")
 	pass # Replace with function body.
 
 
@@ -78,6 +85,8 @@ func _on_think_i_chose_to_buy() -> void:
 	
 	if item_list.is_empty():
 		print("I want to buy an item from a thing, but the thing has no items!")
+		energy -= 15
+		$StateMachine.transition_to("Think",["nothing to buy"])
 		return
 	
 	var selected_item = item_list.keys()[randi()%item_list.keys().size()]
@@ -85,11 +94,34 @@ func _on_think_i_chose_to_buy() -> void:
 	
 	if items_price > money:
 		print("I want to buy an ",selected_item ,", but I cant afford it!")
-		energy -= 15
+		$StateMachine.transition_to("Think",["buy failed"])
+		energy -= 10
 		return
 	else:
 		money -= items_price
+		PlayerInventory.earn_money(items_price)
 		the_shelf.remove_item(selected_item)
 		print("I bought a ", selected_item,", I now have only this much money: ", money)
+		$StateMachine.transition_to("Idle",[1.5])
 	
+	pass # Replace with function body.
+
+
+func _on_think_i_chose_to_browse() -> void:
+	var objects_seen = $LookingEyes.get_overlapping_areas()
+	if objects_seen.is_empty():
+		print("I wanted to browse, but I dont see anything!")
+		return
+		
+	var the_shelf = objects_seen[0]
+	var item_list = the_shelf.stored_items.duplicate() as Dictionary
+	
+	if item_list.is_empty():
+		print("Silly me! I wanted to browse, but there are no items!")
+		energy -= 10
+		$StateMachine.transition_to("Think",["nothing to buy"])
+		return
+	energy -= 5
+	$StateMachine.transition_to("Idle",[3.0])
+			#
 	pass # Replace with function body.
