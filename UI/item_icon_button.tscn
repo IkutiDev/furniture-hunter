@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://co6h4573ya6fr"]
+
+[ext_resource type="Texture2D" uid="uid://b7ctuocvuoegn" path="res://UI/WIP_icons/bar-stool.png" id="1_ihgmp"]
+[ext_resource type="Script" uid="uid://bd76h0slh5owf" path="res://UI/item_button.gd" id="2_ihgmp"]
+
+[node name="ItemIconButton" type="TextureButton"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_ihgmp")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_ihgmp")

@@ -3,6 +3,8 @@ extends Node
 signal deselect_current_furniture()
 signal selected_furniture_to_place(furniture_data)
 signal available_furniture_changed()
+signal available_items_changed()
+signal available_lootboxes_changed()
 signal mouse_over_furniture(instance)
 signal mouse_exits_furniture(instance)
 signal set_remove_furniture_mode(active)

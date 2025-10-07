@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg83k0fhcv1t4"]
+
+[ext_resource type="Texture2D" uid="uid://b7ctuocvuoegn" path="res://UI/WIP_icons/bar-stool.png" id="1_ocn1h"]
+[ext_resource type="Script" uid="uid://bogs0emt5fhl3" path="res://UI/lootbox_button.gd" id="2_ocn1h"]
+
+[node name="LootboxIconButton" type="TextureButton"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_ocn1h")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_ocn1h")

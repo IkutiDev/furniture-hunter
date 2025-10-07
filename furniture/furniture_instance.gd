@@ -1,7 +1,7 @@
 class_name FurnitureInstance
 extends Node3D
 @export var extra_size : PackedVector3Array
-@export var visual_mesh : Mesh
+@export var visual_mesh : MeshInstance3D
 @export var static_body : StaticBody3D
 var furniture_data : FurnitureData
 
@@ -15,7 +15,12 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exit() -> void:
 	EventBus.mouse_exits_furniture.emit(self)
 
+func get_mesh_offset() -> Vector3:
+	return visual_mesh.position
+
+func get_mesh() -> Mesh:
+	return visual_mesh.mesh
 
 func remove_this_instance() -> void:
-	PlayerInventory.add_furniture_to_inventory(furniture_data)
+	PlayerInventory.add_object_to_inventory(furniture_data)
 	queue_free()

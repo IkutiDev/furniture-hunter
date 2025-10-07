@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8myxwy4rg0ac"]
+[gd_scene load_steps=3 format=3 uid="uid://b8myxwy4rg0ac"]
 
-[sub_resource type="FoldableGroup" id="FoldableGroup_lpe4v"]
+[ext_resource type="Script" uid="uid://dvc8a68nt4mhp" path="res://UI/auction_ui.gd" id="1_3q04y"]
+[ext_resource type="PackedScene" uid="uid://b5ntk4q1744f7" path="res://UI/lootbox_entry.tscn" id="2_g0ads"]
 
-[node name="AuctionUI" type="Control"]
+[node name="AuctionUI" type="Control" node_paths=PackedStringArray("auctions_menu", "open_menu_button", "lootbox_buttons_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,16 +11,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_3q04y")
+auctions_menu = NodePath("Panel")
+open_menu_button = NodePath("Button")
+lootbox_buttons_container = NodePath("Panel/ScrollContainer/VBoxContainer")
+lootbox_buy_button_scene = ExtResource("2_g0ads")
 
-[node name="FoldableContainer" type="FoldableContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 86.0
+offset_right = 634.0
 grow_vertical = 2
-title = "Auction"
-title_position = 1
-foldable_group = SubResource("FoldableGroup_lpe4v")
 
-[node name="Panel" type="Panel" parent="FoldableContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.92200005
+offset_bottom = 0.15997314
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 8.0
+grow_vertical = 0
+text = "Auctions"

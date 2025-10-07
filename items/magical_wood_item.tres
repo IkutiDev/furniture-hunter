@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bt1kfdhws41qu"]
+
+[ext_resource type="Texture2D" uid="uid://2h3urj4an27y" path="res://UI/WIP_icons/wizard-staff.png" id="1_6dec6"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_ohys2"]
+
+[resource]
+script = ExtResource("1_ohys2")
+item_name = "Magical Wood"
+item_icon = ExtResource("1_6dec6")
+item_value = 200
+rarity_weight = 0.5
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"

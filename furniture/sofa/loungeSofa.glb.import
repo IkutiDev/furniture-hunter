@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bj1vuy1pidpn"
-path="res://.godot/imported/deskCorner.glb-30df83e1bea094f4dd05052a1f86ae99.scn"
+uid="uid://vd1j8nnemnno"
+path="res://.godot/imported/loungeSofa.glb-6509dfed0d8e8afd876d5c20a744beef.scn"
 
 [deps]
 
-source_file="res://furniture/deskCorner.glb"
-dest_files=["res://.godot/imported/deskCorner.glb-30df83e1bea094f4dd05052a1f86ae99.scn"]
+source_file="res://furniture/sofa/loungeSofa.glb"
+dest_files=["res://.godot/imported/loungeSofa.glb-6509dfed0d8e8afd876d5c20a744beef.scn"]
 
 [params]
 

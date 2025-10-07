@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="LootboxData" load_steps=11 format=3 uid="uid://be0gr64ieq76o"]
+
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_h68v7"]
+[ext_resource type="Texture2D" uid="uid://di7f4ya7swuuo" path="res://UI/WIP_icons/chest.png" id="2_1fejj"]
+[ext_resource type="Resource" uid="uid://bfqihe8vmxij" path="res://furniture/spooky_table/spooky_table_data.tres" id="2_4xiua"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="2_j1h6y"]
+[ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="3_1fejj"]
+[ext_resource type="Resource" uid="uid://d0q1f2xsmgc4n" path="res://furniture/witch_couldron/witch_couldron.tres" id="3_4kr8e"]
+[ext_resource type="Resource" uid="uid://811xlgkcu47" path="res://items/crystal_ball_item.tres" id="6_ff0dn"]
+[ext_resource type="Resource" uid="uid://bt1kfdhws41qu" path="res://items/magical_wood_item.tres" id="7_a3vav"]
+[ext_resource type="Resource" uid="uid://b4ltrjgylo2a4" path="res://items/old_skull_item.tres" id="8_8dxca"]
+[ext_resource type="Resource" uid="uid://y3grlahpail" path="res://items/unknown_potion_item.tres" id="9_tpfn8"]
+
+[resource]
+script = ExtResource("3_1fejj")
+icon = ExtResource("2_1fejj")
+lootbox_title = "Odd Oddities Chest"
+lootbox_description = "Chest full of odd trinkets and even more odd bits and bobs. Truly odd."
+lootbox_price = 100
+spawn_method = 1
+random_elements_per_box = 5
+furniture = Array[ExtResource("1_h68v7")]([ExtResource("2_4xiua"), ExtResource("3_4kr8e")])
+items = Array[ExtResource("2_j1h6y")]([ExtResource("6_ff0dn"), ExtResource("7_a3vav"), ExtResource("8_8dxca"), ExtResource("9_tpfn8")])
+metadata/_custom_type_script = "uid://dm25m6de7wwfq"

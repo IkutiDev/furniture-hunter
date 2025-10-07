@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LootboxData" load_steps=8 format=3 uid="uid://duajv1ywffbcd"]
+
+[ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="1_03efm"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_d3dof"]
+[ext_resource type="Resource" uid="uid://ck46x8tutplks" path="res://furniture/stool/stool_data.tres" id="2_cw0e1"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="2_fqnwl"]
+[ext_resource type="Resource" uid="uid://c7pum5eui71o7" path="res://furniture/sofa/sofa_data.tres" id="3_js8p2"]
+[ext_resource type="Texture2D" uid="uid://dy3ukadk6h3g6" path="res://UI/WIP_icons/locked-box.png" id="4_2kjst"]
+[ext_resource type="Resource" uid="uid://bmvysw6hqkiuk" path="res://furniture/table/table_data.tres" id="4_js8p2"]
+
+[resource]
+script = ExtResource("1_03efm")
+icon = ExtResource("4_2kjst")
+lootbox_title = "Old Furniture Box"
+lootbox_description = "Box filled with old furniture from furniture dimension. Given away for free."
+furniture = Array[ExtResource("1_d3dof")]([ExtResource("2_cw0e1"), ExtResource("3_js8p2"), ExtResource("3_js8p2"), ExtResource("4_js8p2"), ExtResource("4_js8p2")])
+metadata/_custom_type_script = "uid://dm25m6de7wwfq"

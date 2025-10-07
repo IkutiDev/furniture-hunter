@@ -40,6 +40,7 @@ func _process(_delta: float) -> void:
 		visual_mesh.material_override = cant_place_material
 	visual_mesh_parent.position = occupation_grid_map.map_to_local(current_mouse_position_on_grid)
 	visual_mesh.mesh = selected_furniture.get_visual_mesh()
+	visual_mesh.position = selected_furniture.get_offset()
 	
 func toggled_delete_mode(active : bool) -> void:
 	delete_mode_active = active
@@ -77,7 +78,7 @@ func place_object() -> void:
 	for p in furnitue_instance.extra_size:
 		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(current_rotation_in_degrees))
 		occupation_grid_map.set_cell_item(current_mouse_position_on_grid + p, 1)
-	PlayerInventory.remove_furniture_from_inventory(selected_furniture)
+	PlayerInventory.remove_object_from_inventory(selected_furniture)
 	deselect_furniture()
 
 func remove_object() -> void:

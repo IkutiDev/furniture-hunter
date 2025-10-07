@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://vd1j8nnemnno"
-path="res://.godot/imported/loungeSofa.glb-6f7d0feb1f4d59d70280f88d9631e0e2.scn"
+uid="uid://cq41a185u6bp0"
+path="res://.godot/imported/cauldron.gltf.glb-9cb2e8db3073be56129166ffd013db33.scn"
 
 [deps]
 
-source_file="res://furniture/loungeSofa.glb"
-dest_files=["res://.godot/imported/loungeSofa.glb-6f7d0feb1f4d59d70280f88d9631e0e2.scn"]
+source_file="res://furniture/witch_couldron/cauldron.gltf.glb"
+dest_files=["res://.godot/imported/cauldron.gltf.glb-9cb2e8db3073be56129166ffd013db33.scn"]
 
 [params]
 

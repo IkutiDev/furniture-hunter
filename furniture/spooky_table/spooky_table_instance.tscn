@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxgdd3i25howc"]
+
+[ext_resource type="PackedScene" uid="uid://c1ie88vxsrdgw" path="res://furniture/spooky_table/coffinA_top.gltf.glb" id="1_6wyc7"]
+[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="2_ji0h4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6wyc7"]
+size = Vector3(1, 1, 2)
+
+[node name="coffinA_top_gltf" node_paths=PackedStringArray("visual_mesh", "static_body") instance=ExtResource("1_6wyc7")]
+script = ExtResource("2_ji0h4")
+extra_size = PackedVector3Array(0, 0, 1)
+visual_mesh = NodePath("coffinA_top")
+static_body = NodePath("StaticBody3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.1)
+shape = SubResource("BoxShape3D_6wyc7")

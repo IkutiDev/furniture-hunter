@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://blnoh5tgmt04j"]
+
+[ext_resource type="PackedScene" uid="uid://vd1j8nnemnno" path="res://furniture/sofa/loungeSofa.glb" id="1_2d8id"]
+[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="2_rla2s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rla2s"]
+size = Vector3(2, 1, 1)
+
+[node name="loungeSofa" node_paths=PackedStringArray("visual_mesh", "static_body") instance=ExtResource("1_2d8id")]
+script = ExtResource("2_rla2s")
+extra_size = PackedVector3Array(1, 0, 0)
+visual_mesh = NodePath("loungeSofa(Clone)")
+static_body = NodePath("StaticBody3D")
+
+[node name="loungeSofa(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+shape = SubResource("BoxShape3D_rla2s")

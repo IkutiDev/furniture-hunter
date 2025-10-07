@@ -19,12 +19,14 @@ config/icon="res://icon.svg"
 
 EventBus="*res://event_bus.tscn"
 PlayerInventory="*res://player_inventory.tscn"
+AuctionManager="*res://auction_manager.tscn"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+
 [global_group]
 
 Customer="default NPC group"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://d0q1f2xsmgc4n"]
+
+[ext_resource type="Texture2D" uid="uid://cgwxxjgt6riah" path="res://UI/WIP_icons/cauldron.png" id="1_fceym"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_mpp0f"]
+[ext_resource type="PackedScene" uid="uid://b8mdxmomt5tuc" path="res://furniture/witch_couldron/cauldron_instance.tscn" id="2_hiqhs"]
+
+[resource]
+script = ExtResource("1_mpp0f")
+furniture_name = "Witch Couldron"
+furniture_icon = ExtResource("1_fceym")
+furniture_renown = 100
+furniture_base_value = 100
+furniture_scene = ExtResource("2_hiqhs")
+rarity_weight = 0.1
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"

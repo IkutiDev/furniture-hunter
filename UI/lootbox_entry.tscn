@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ntk4q1744f7"]
+
+[ext_resource type="Texture2D" uid="uid://dy3ukadk6h3g6" path="res://UI/WIP_icons/locked-box.png" id="1_8nye4"]
+[ext_resource type="Script" uid="uid://okkwfejuni2m" path="res://UI/lootbox_entry.gd" id="1_cbigy"]
+
+[node name="LootboxEntry" type="HBoxContainer" node_paths=PackedStringArray("icon", "lootbox_title", "lootbox_description", "lootbox_price", "buy_button")]
+script = ExtResource("1_cbigy")
+icon = NodePath("TextureRect")
+lootbox_title = NodePath("MarginContainer/Label")
+lootbox_description = NodePath("MarginContainer2/Label")
+lootbox_price = NodePath("MarginContainer3/Label")
+buy_button = NodePath("Button2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_8nye4")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "Old Furniture Box"
+autowrap_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+text = "Box filled with old furniture from furniture dimension. Given away for free."
+autowrap_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer3"]
+layout_mode = 2
+text = "Price: 0$"
+autowrap_mode = 2
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Buy"

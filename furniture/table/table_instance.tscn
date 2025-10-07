@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3vebjuj7rkoi"]
+
+[ext_resource type="PackedScene" uid="uid://csr8j14xx3qys" path="res://furniture/table/table.glb" id="1_7qxf5"]
+[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="2_51dcd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qxf5"]
+size = Vector3(2, 1, 1)
+
+[node name="table" node_paths=PackedStringArray("visual_mesh", "static_body") instance=ExtResource("1_7qxf5")]
+script = ExtResource("2_51dcd")
+extra_size = PackedVector3Array(1, 0, 0)
+visual_mesh = NodePath("table(Clone)")
+static_body = NodePath("StaticBody3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.25)
+shape = SubResource("BoxShape3D_7qxf5")

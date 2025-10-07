@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c6pgdlgd6ir5o"
-path="res://.godot/imported/stoolBar.glb-209a8139b152e27a42ba8fdf5cb71bec.scn"
+uid="uid://csr8j14xx3qys"
+path="res://.godot/imported/table.glb-ffa9f9778d8f83baf51b33f10c2353b3.scn"
 
 [deps]
 
-source_file="res://furniture/stoolBar.glb"
-dest_files=["res://.godot/imported/stoolBar.glb-209a8139b152e27a42ba8fdf5cb71bec.scn"]
+source_file="res://furniture/table/table.glb"
+dest_files=["res://.godot/imported/table.glb-ffa9f9778d8f83baf51b33f10c2353b3.scn"]
 
 [params]
 
