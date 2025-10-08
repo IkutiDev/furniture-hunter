@@ -28,7 +28,8 @@ func _ready() -> void:
 func _on_day_started() -> void:
 	deselect_furniture()
 	
-func update_navmesh() -> void:
+func update_navmesh(instance : FurnitureInstance) -> void:
+	await get_tree().process_frame
 	nav_mesh_region.bake_navigation_mesh()
 	
 func deselect_furniture() -> void:

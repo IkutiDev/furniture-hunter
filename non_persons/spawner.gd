@@ -62,7 +62,7 @@ func de_spawn_customer(customer : Node3D) -> void:
 	customer.queue_free()
 	if is_instance_valid(customer):
 		await customer.tree_exited
-	if _customer_count == 0:
+	if _customer_count == 0 and GameManager.game_state == GameManager.GameState.ENDING_DAY:
 		assert(_customer_count == get_tree().get_nodes_in_group("Customer").size())
 		GameManager.set_game_state(GameManager.GameState.NIGHT)
 
