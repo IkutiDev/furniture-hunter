@@ -157,7 +157,7 @@ cell_size = Vector3(1, 1, 1)
 collision_mask = 0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.78371894, -0.55442053, 0.28000447, 0, 0.4508089, 0.8926205, -0.6211156, -0.6995636, 0.3533075, 3.211844, 8.9703865, 5.437821)
+transform = Transform3D(0.78371894, -0.55442053, 0.28000447, 0, 0.4508089, 0.8926205, -0.6211156, -0.6995636, 0.3533075, 3.2090774, 8.968706, 5.4426007)
 
 [node name="ObjectPlacer" type="Node" parent="." node_paths=PackedStringArray("occupation_grid_map", "visual_mesh_parent", "visual_mesh", "nav_mesh_region")]
 script = ExtResource("5_3q6a7")

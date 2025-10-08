@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://i50sqoaybgb1"]
+
+[ext_resource type="Texture2D" uid="uid://d3akdai50ie5u" path="res://furniture/gamejam_lamp_Base_color.png" id="1_3nfbs"]
+[ext_resource type="Texture2D" uid="uid://th1dndtthaqb" path="res://furniture/gamejam_lamp_Metallic-lamp_Roughness.png" id="2_hngc1"]
+[ext_resource type="Texture2D" uid="uid://cei0s8m2xtqse" path="res://furniture/gamejam_lamp_Normal_OpenGL.png" id="3_tqh5q"]
+
+[resource]
+resource_name = "lamp"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_3nfbs")
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture = ExtResource("2_hngc1")
+metallic_texture_channel = 2
+roughness = 0.5
+roughness_texture = ExtResource("2_hngc1")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_tqh5q")
