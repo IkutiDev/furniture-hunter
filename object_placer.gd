@@ -23,6 +23,10 @@ func _ready() -> void:
 	EventBus.mouse_over_furniture.connect(hover_over_furniture)
 	EventBus.mouse_exits_furniture.connect(exit_hover_over_furniture)
 	EventBus.furniture_sold.connect(update_navmesh)
+	EventBus.start_day.connect(_on_day_started)
+	
+func _on_day_started() -> void:
+	deselect_furniture()
 	
 func update_navmesh() -> void:
 	nav_mesh_region.bake_navigation_mesh()
@@ -31,6 +35,8 @@ func deselect_furniture() -> void:
 	selected_furniture = null
 
 func select_furniture(data : FurnitureData) -> void:
+	if GameManager.game_state == GameManager.GameState.DAY:
+		return
 	selected_furniture = data
 
 func _process(_delta: float) -> void:
