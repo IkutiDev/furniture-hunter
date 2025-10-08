@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cdbq8wrngbnav"]
+[gd_scene load_steps=20 format=4 uid="uid://b4cnrus0hqvo4"]
 
 [ext_resource type="PackedScene" uid="uid://cxlli3y21vljl" path="res://furniture/gamejam.glb" id="1_yxda3"]
 [ext_resource type="Material" uid="uid://c1upboxliaxyx" path="res://materials/new_standard_material_3d.tres" id="2_5igs5"]
@@ -225,6 +225,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.137306, 0, 0)
 
 [node name="box_2" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.702601, 0, -16.194626)
+material_override = ExtResource("7_5ga08")
 
 [node name="case_2" parent="." index="5"]
 transform = Transform3D(1.3975688, 0, 0, 0, 1.3975688, 0, 0, 0, 1.3975688, -23.882751, 0, -10.801964)
@@ -343,9 +344,11 @@ material_override = ExtResource("7_5ga08")
 
 [node name="box_3" parent="." index="35"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.218704)
+material_override = ExtResource("7_5ga08")
 
 [node name="box_1" parent="." index="36"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6718483, 0, -16.25048)
+material_override = ExtResource("7_5ga08")
 
 [node name="vial_set_1" parent="." index="37"]
 transform = Transform3D(0.48395473, 0, 0, 0, 0.48395473, 0, 0, 0, 0.48395473, -3.740806, 0, 5.9821854)
@@ -373,6 +376,7 @@ transform = Transform3D(0.48395473, 0, 0, 0, 0.48395473, 0, 0, 0, 0.48395473, 3.
 
 [node name="cofin_01" parent="." index="45"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.569511, 0.05880022, -9.92451)
+material_override = ExtResource("3_5ga08")
 mesh = SubResource("ArrayMesh_0gc0w")
 
 [node name="mirror_01" parent="." index="46"]
