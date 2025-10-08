@@ -1,14 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://5eeyn2nbl4it"]
+[gd_scene load_steps=6 format=3 uid="uid://5eeyn2nbl4it"]
 
-[ext_resource type="Script" uid="uid://c1ja3t7yps2yn" path="res://UI/building_phase_ui.gd" id="1_qfk0h"]
+[ext_resource type="Script" uid="uid://c1ja3t7yps2yn" path="res://UI/inventory_ui.gd" id="1_qfk0h"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_oaa25"]
 [ext_resource type="Texture2D" uid="uid://rts31v4bln5h" path="res://UI/WIP_icons/wrecking-ball.png" id="2_rymvy"]
 [ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_skrcx"]
 [ext_resource type="PackedScene" uid="uid://dg83k0fhcv1t4" path="res://UI/lootbox_icon_button.tscn" id="4_ylc1n"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qfk0h"]
-
-[node name="InventoryUI" type="Control" node_paths=PackedStringArray("destroy_button", "main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container")]
+[node name="InventoryUI" type="Control" node_paths=PackedStringArray("destroy_button", "main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container", "money_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,71 +16,82 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_qfk0h")
 destroy_button = NodePath("RemoveFurnitureButton")
-main_inventory_fold_container = NodePath("InvetoryContainer/FoldableContainer")
-furniture_inventory_visual_container = NodePath("InvetoryContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer/VBoxContainer")
-items_inventory_visual_container = NodePath("InvetoryContainer/FoldableContainer/HBoxContainer/ItemsContainer/ScrollContainer/VBoxContainer")
-lootboxes_inventory_visual_container = NodePath("InvetoryContainer/FoldableContainer/HBoxContainer/LootboxesContainer/ScrollContainer/VBoxContainer")
+main_inventory_fold_container = NodePath("HSplitContainer/FoldableContainer")
+furniture_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer/VBoxContainer")
+items_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/ItemsContainer/ScrollContainer/VBoxContainer")
+lootboxes_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/LootboxesContainer/ScrollContainer/VBoxContainer")
 furniture_button_scene = ExtResource("2_oaa25")
 item_button_scene = ExtResource("3_skrcx")
 lootbox_button_scene = ExtResource("4_ylc1n")
+money_label = NodePath("HSplitContainer/VBoxContainer/HBoxContainer/MoneyDynamicLabel")
 
-[node name="InvetoryContainer" type="HSplitContainer" parent="."]
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 2
-mouse_filter = 2
-split_offset = 330
 
-[node name="Panel" type="Panel" parent="InvetoryContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_qfk0h")
 
-[node name="FoldableContainer" type="FoldableContainer" parent="InvetoryContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MoneyStaticLabel" type="Label" parent="HSplitContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Money:"
+
+[node name="MoneyDynamicLabel" type="Label" parent="HSplitContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "9999$"
+
+[node name="FoldableContainer" type="FoldableContainer" parent="HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 title = "Inventory"
 title_position = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="InvetoryContainer/FoldableContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/FoldableContainer"]
 layout_mode = 2
 
-[node name="FurnitureContainer" type="FoldableContainer" parent="InvetoryContainer/FoldableContainer/HBoxContainer"]
+[node name="FurnitureContainer" type="FoldableContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 title = "Furniture"
 title_position = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="InvetoryContainer/FoldableContainer/HBoxContainer/FurnitureContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="InvetoryContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer"]
 layout_mode = 2
 
-[node name="ItemsContainer" type="FoldableContainer" parent="InvetoryContainer/FoldableContainer/HBoxContainer"]
+[node name="ItemsContainer" type="FoldableContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 title = "Items"
 title_position = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="InvetoryContainer/FoldableContainer/HBoxContainer/ItemsContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/ItemsContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="InvetoryContainer/FoldableContainer/HBoxContainer/ItemsContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/ItemsContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="LootboxesContainer" type="FoldableContainer" parent="InvetoryContainer/FoldableContainer/HBoxContainer"]
+[node name="LootboxesContainer" type="FoldableContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 title = "Lootboxes"
 title_position = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="InvetoryContainer/FoldableContainer/HBoxContainer/LootboxesContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/LootboxesContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="InvetoryContainer/FoldableContainer/HBoxContainer/LootboxesContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/LootboxesContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 

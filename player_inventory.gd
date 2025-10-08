@@ -24,10 +24,12 @@ func spend_money(amount : int) -> bool:
 	if money - amount < 0:
 		return false
 	money -= amount
+	EventBus.money_value_changed.emit()
 	return true
 
 func earn_money(amount : int) -> void:
 	money += amount
+	EventBus.money_value_changed.emit()
 
 func remove_furniture_from_inventory(data : FurnitureData) -> void:
 	furniture.erase(data)

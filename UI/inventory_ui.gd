@@ -10,12 +10,19 @@ extends Control
 @export var item_button_scene : PackedScene
 @export var lootbox_button_scene : PackedScene
 
+@export var money_label : Label
+
 func _ready() -> void:
 	destroy_button.pressed.connect(destroy_furniture_button_pressed)
 	EventBus.available_furniture_changed.connect(update_furniture_inventory)
 	EventBus.available_items_changed.connect(update_items_inventory)
 	EventBus.available_lootboxes_changed.connect(update_lootboxes_inventory)
+	EventBus.money_value_changed.connect(on_money_value_changed)
 	update_furniture_inventory()
+	on_money_value_changed()
+	
+func on_money_value_changed() -> void:
+	money_label.text = str(PlayerInventory.money) + "$"
 	
 func destroy_furniture_button_pressed() -> void:
 	EventBus.deselect_current_furniture.emit()

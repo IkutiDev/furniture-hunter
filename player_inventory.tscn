@@ -8,3 +8,4 @@
 [node name="PlayerInventory" type="Node"]
 script = ExtResource("1_mdht6")
 furniture = Array[ExtResource("2_xv76c")]([ExtResource("3_i8bca"), ExtResource("3_i8bca"), ExtResource("4_3amdi")])
+money = 1000

@@ -13,6 +13,8 @@ signal clicked_on_furniture(furniture)
 signal set_price_on_furniture(furniture)
 signal furniture_sold()
 
+signal money_value_changed()
+
 signal start_day()
 signal end_day()
 signal start_night()
