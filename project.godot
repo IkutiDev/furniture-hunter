@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 EventBus="*res://event_bus.tscn"
 PlayerInventory="*res://player_inventory.tscn"
 AuctionManager="*res://auction_manager.tscn"
+GameManager="*res://game_manager.tscn"
 
 [display]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=27 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -6,9 +6,11 @@
 [ext_resource type="MeshLibrary" uid="uid://d2uj2lhtrmjgf" path="res://mesh_libraries/walls_mesh_library.tres" id="2_plsfm"]
 [ext_resource type="MeshLibrary" uid="uid://n8md08bf2oeb" path="res://mesh_libraries/occupation_mesh_library.tres" id="4_3q6a7"]
 [ext_resource type="Script" uid="uid://bx5l051p6ecdf" path="res://object_placer.gd" id="5_3q6a7"]
+[ext_resource type="Script" uid="uid://brjslag6tqsvp" path="res://UI/main_ui.gd" id="6_d0s76"]
 [ext_resource type="PackedScene" uid="uid://b8myxwy4rg0ac" path="res://UI/auction_ui.tscn" id="7_2dulj"]
 [ext_resource type="PackedScene" uid="uid://bh0yjjoyposcl" path="res://UI/set_furniture_price_ui.tscn" id="8_o6f6g"]
 [ext_resource type="PackedScene" uid="uid://dh7xwd15ho7lk" path="res://non_persons/spawner.tscn" id="9_8qgar"]
+[ext_resource type="Texture2D" uid="uid://rts31v4bln5h" path="res://UI/WIP_icons/wrecking-ball.png" id="10_8qgar"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -103,6 +105,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_numow")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1t0pb"]
+bg_color = Color(0.61574835, 0.12566853, 0.2409707, 1)
+
+[sub_resource type="Theme" id="Theme_358ef"]
+Button/styles/normal = SubResource("StyleBoxFlat_1t0pb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gq20"]
+bg_color = Color(0.16916928, 0.40496358, 0.21367723, 1)
+
+[sub_resource type="Theme" id="Theme_1t0pb"]
+Button/styles/normal = SubResource("StyleBoxFlat_3gq20")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0s76"]
+bg_color = Color(0, 0.42836863, 0, 0.6)
+
 [node name="PlayerRoom" type="Node3D" node_paths=PackedStringArray("floor_grid_map", "occupation_grid_map")]
 script = ExtResource("1_1ojmq")
 floor_grid_map = NodePath("NavigationRegion3D/FloorMap")
@@ -159,11 +176,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
 mesh = SubResource("ArrayMesh_wo40j")
 skeleton = NodePath("../..")
 
+[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("remove_furnitue_button", "change_shop_state_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_d0s76")
+remove_furnitue_button = NodePath("RemoveFurnitureButton")
+change_shop_state_button = NodePath("ChangeShopStateButton")
+button_color_during_day = SubResource("Theme_358ef")
+button_text_during_day = "Close Shop"
+button_color_during_night = SubResource("Theme_1t0pb")
+button_text_during_night = "Open Shop"
+
+[node name="RemoveFurnitureButton" type="TextureButton" parent="MainUI"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 90.0
+texture_normal = ExtResource("10_8qgar")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ChangeShopStateButton" type="Button" parent="MainUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_right = 43.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/align_to_largest_stylebox = 285
+theme_override_styles/normal = SubResource("StyleBoxFlat_d0s76")
+text = "Open Shop"
+
 [node name="InventoryUI" parent="." instance=ExtResource("2_2dulj")]
 
 [node name="AuctionUI" parent="." instance=ExtResource("7_2dulj")]
-
-[node name="SetFurniturePriceUI" parent="." instance=ExtResource("8_o6f6g")]
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("where_to_plonk_customers") instance=ExtResource("9_8qgar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.060858, 0, 0)
@@ -177,5 +228,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8687177, 0, -0.52262264)
 
 [node name="DayToggle" parent="Spawner" index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4850283, 1.72174, 0)
+
+[node name="ContexSpecificUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SetFurniturePriceUI" parent="ContexSpecificUI" instance=ExtResource("8_o6f6g")]
+visible = false
+layout_mode = 1
 
 [editable path="Spawner"]

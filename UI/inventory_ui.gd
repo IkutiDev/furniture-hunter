@@ -1,7 +1,5 @@
 class_name InventoryUI
 extends Control
-
-@export var destroy_button : BaseButton
 @export var main_inventory_fold_container : FoldableContainer
 @export var furniture_inventory_visual_container : Control
 @export var items_inventory_visual_container : Control
@@ -13,7 +11,6 @@ extends Control
 @export var money_label : Label
 
 func _ready() -> void:
-	destroy_button.pressed.connect(destroy_furniture_button_pressed)
 	EventBus.available_furniture_changed.connect(update_furniture_inventory)
 	EventBus.available_items_changed.connect(update_items_inventory)
 	EventBus.available_lootboxes_changed.connect(update_lootboxes_inventory)
@@ -23,10 +20,6 @@ func _ready() -> void:
 	
 func on_money_value_changed() -> void:
 	money_label.text = str(PlayerInventory.money) + "$"
-	
-func destroy_furniture_button_pressed() -> void:
-	EventBus.deselect_current_furniture.emit()
-	EventBus.set_remove_furniture_mode.emit(true)
 
 func update_furniture_inventory() -> void:
 	var children = furniture_inventory_visual_container.get_children()
