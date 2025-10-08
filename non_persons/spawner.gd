@@ -1,26 +1,41 @@
 extends Node3D
 
+signal all_customers_left_shop
+
 var customer_scene = preload("res://non_persons/test_customer.tscn")
 
 ## defaults to "get_tree().current_scene" if non provided
 @export var where_to_plonk_customers : Node3D
 
-@export var desired_customer_count = 5 
+var desired_customer_count = 5 
+
+@export var max_customer_count = 5 
 
 @export var points_of_interest : PackedVector3Array
 
 var _customer_count = 0
 
+var is_day = true
+
 func _ready() -> void:
 	
 	if where_to_plonk_customers == null:
 		where_to_plonk_customers = get_tree().current_scene
-	
+		
+	start_day()
+
+func start_day():
+	$DayToggle/DayIndicator.mesh.material.albedo_color = Color("yellow")
+	is_day = true
+	desired_customer_count = max_customer_count
+	pass
 
 func end_day():
+	$DayToggle/DayIndicator.mesh.material.albedo_color = Color("dark blue")
 	desired_customer_count = 0
 	for cusomter in get_tree().get_nodes_in_group("Customer"):
 		cusomter.energy -= 80
+	is_day = false
 	pass
 
 func spawn_customer() -> void:
@@ -36,6 +51,9 @@ func spawn_customer() -> void:
 
 func de_spawn_customer(customer : Node3D) -> void:
 	_customer_count -= 1
+	if _customer_count == 0:
+		assert(_customer_count == get_tree().get_nodes_in_group("Customer").size())
+		all_customers_left_shop.emit()
 	customer.queue_free()
 	pass
 
@@ -52,4 +70,13 @@ func _on_spawn_timer_timeout() -> void:
 	if randf() > 0.47:
 		spawn_customer()
 
+	pass # Replace with function body.
+
+
+func _on_day_toggle_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event.is_action_pressed("press"):
+		if is_day:
+			end_day()
+		else:
+			start_day()
 	pass # Replace with function body.
