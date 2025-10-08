@@ -1,28 +1,31 @@
 extends Node3D
 
-signal all_customers_left_shop
-
 var customer_scene = preload("res://non_persons/test_customer.tscn")
 
 ## defaults to "get_tree().current_scene" if non provided
 @export var where_to_plonk_customers : Node3D
 
-var desired_customer_count = 5 
+var desired_customer_count = 0
 
 @export var max_customer_count = 5 
 
-@export var points_of_interest : PackedVector3Array
-
+var furniture_set_to_be_sold : Array[FurnitureInstance]
 var _customer_count = 0
 
-var is_day = true
+var is_day = false
 
 func _ready() -> void:
 	
 	if where_to_plonk_customers == null:
 		where_to_plonk_customers = get_tree().current_scene
 		
-	start_day()
+	EventBus.start_day.connect(start_day)
+	EventBus.end_day.connect(end_day)
+	EventBus.set_price_on_furniture.connect(add_furniture_to_collection)
+	
+
+func add_furniture_to_collection(instance : FurnitureInstance) -> void:
+	furniture_set_to_be_sold.append(instance)
 
 func start_day():
 	$DayToggle/DayIndicator.mesh.material.albedo_color = Color("yellow")
@@ -43,7 +46,10 @@ func spawn_customer() -> void:
 	new_customer.global_position = $SpawnPoint.global_position
 	new_customer.exit_location = $TheAreaThatEatsPeople.global_position
 	new_customer.entrance_location = $ShopEntrance.global_position
-	new_customer.points_of_interest = points_of_interest.duplicate()
+	var points_of_interests_positions : PackedVector3Array
+	for p in furniture_set_to_be_sold:
+		points_of_interests_positions.append(p.position)
+	new_customer.points_of_interest = points_of_interests_positions.duplicate()
 	where_to_plonk_customers.add_child(new_customer)
 	_customer_count += 1
 	pass
@@ -53,7 +59,7 @@ func de_spawn_customer(customer : Node3D) -> void:
 	_customer_count -= 1
 	if _customer_count == 0:
 		assert(_customer_count == get_tree().get_nodes_in_group("Customer").size())
-		all_customers_left_shop.emit()
+		EventBus.start_night.emit()
 	customer.queue_free()
 	pass
 

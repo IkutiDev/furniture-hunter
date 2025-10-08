@@ -9,4 +9,11 @@ signal mouse_over_furniture(instance)
 signal mouse_exits_furniture(instance)
 signal set_remove_furniture_mode(active)
 signal clicked_on_furniture(furniture)
+
+signal set_price_on_furniture(furniture)
+signal furniture_sold()
+
+signal start_day()
+signal end_day()
+signal start_night()
 @warning_ignore_restore("UNUSED_SIGNAL")
