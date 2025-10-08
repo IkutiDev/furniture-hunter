@@ -75,52 +75,64 @@ func _on_think_i_chose_to_leave() -> void:
 
 
 func _on_think_i_chose_to_buy() -> void:
-	var objects_seen = $LookingEyes.get_overlapping_areas()
+	var objects_seen = $LookingEyes.get_overlapping_bodies()
 	if objects_seen.is_empty():
 		print("I want to buy, but I dont see anything!")
 		return
 		
-	var the_shelf = objects_seen[0]
-	var item_list = the_shelf.stored_items.duplicate() as Dictionary
+	var selected_object = objects_seen[0].get_parent()
 	
-	if item_list.is_empty():
-		print("I want to buy an item from a thing, but the thing has no items!")
-		energy -= 15
+	
+	#if item_list.is_empty():
+		#print("I want to buy an item from a thing, but the thing has no items!")
+		#energy -= 15
+		#$StateMachine.transition_to("Think",["nothing to buy"])
+		#return
+	
+	var items_price = selected_object.current_price
+	
+	if items_price < 0:
+		print("I want to buy an ",selected_object ,", but it's not for sale!")
 		$StateMachine.transition_to("Think",["nothing to buy"])
+		energy -= 5
 		return
 	
-	var selected_item = item_list.keys()[randi()%item_list.keys().size()]
-	var items_price = item_list[selected_item]
-	
 	if items_price > money:
-		print("I want to buy an ",selected_item ,", but I cant afford it!")
+		print("I want to buy an ",selected_object ,", but I cant afford it!")
 		$StateMachine.transition_to("Think",["buy failed"])
 		energy -= 10
 		return
 	else:
 		money -= items_price
 		PlayerInventory.earn_money(items_price)
-		the_shelf.remove_item(selected_item)
-		print("I bought a ", selected_item,", I now have only this much money: ", money)
+		# call to selected_object to get sold goes here
+		print("I bought a ", selected_object,", I now have only this much money: ", money)
 		$StateMachine.transition_to("Idle",[1.5])
 	
 	pass # Replace with function body.
 
 
 func _on_think_i_chose_to_browse() -> void:
-	var objects_seen = $LookingEyes.get_overlapping_areas()
+	var objects_seen = $LookingEyes.get_overlapping_bodies()
 	if objects_seen.is_empty():
-		print("I wanted to browse, but I dont see anything!")
+		print("I want to buy, but I dont see anything!")
 		return
 		
-	var the_shelf = objects_seen[0]
-	var item_list = the_shelf.stored_items.duplicate() as Dictionary
+	var selected_object = objects_seen[0].get_parent()
 	
-	if item_list.is_empty():
-		print("Silly me! I wanted to browse, but there are no items!")
-		energy -= 10
+	var items_price = selected_object.current_price
+		
+	if items_price < 0:
+		print("I want to browse ",selected_object ,", but it's not for sale since it's ", items_price)
 		$StateMachine.transition_to("Think",["nothing to buy"])
+		energy -= 5
 		return
+	
+	#if item_list.is_empty():
+		#print("Silly me! I wanted to browse, but there are no items!")
+		#energy -= 10
+		#$StateMachine.transition_to("Think",["nothing to buy"])
+		#return
 	energy -= 5
 	$StateMachine.transition_to("Idle",[3.0])
 			#

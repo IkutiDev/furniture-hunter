@@ -1,8 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ba0mv7d2ewfn6"]
 
-[ext_resource type="Script" path="res://non_persons/test_buy_spot.gd" id="1_0528c"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_lj6pj"]
+[ext_resource type="Script" uid="uid://mtq67i0wodk3" path="res://non_persons/test_buy_spot.gd" id="1_0528c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxq0g"]
 transparency = 1
@@ -11,15 +9,17 @@ albedo_color = Color(0.7137255, 0.6392157, 0.13725491, 0.5176471)
 [sub_resource type="SphereMesh" id="SphereMesh_3s1kx"]
 material = SubResource("StandardMaterial3D_uxq0g")
 
-[node name="TestBuySpot" type="Area3D" groups=["Shelf"]]
-collision_layer = 8
-collision_mask = 0
-monitoring = false
-script = ExtResource("1_0528c")
-metadata/_edit_group_ = true
+[sub_resource type="SphereShape3D" id="SphereShape3D_lj6pj"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_lj6pj")
+[node name="TestBuySpot" type="Node3D" groups=["Shelf"]]
+script = ExtResource("1_0528c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_3s1kx")
+
+[node name="RigidBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_lj6pj")
