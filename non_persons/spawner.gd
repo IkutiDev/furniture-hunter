@@ -9,7 +9,7 @@ var desired_customer_count = 0
 
 @export var max_customer_count = 5 
 
-var furniture_set_to_be_sold : Array[FurnitureInstance]
+@export var furniture_set_to_be_sold : Array[Node3D]
 var _customer_count = 0
 
 var is_day = false
@@ -57,10 +57,13 @@ func spawn_customer() -> void:
 
 func de_spawn_customer(customer : Node3D) -> void:
 	_customer_count -= 1
+	customer.queue_free()
+	if is_instance_valid(customer):
+		await customer.tree_exited
 	if _customer_count == 0:
 		assert(_customer_count == get_tree().get_nodes_in_group("Customer").size())
 		GameManager.set_game_state(GameManager.GameState.NIGHT)
-	customer.queue_free()
+
 	pass
 
 

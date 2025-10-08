@@ -1,19 +1,7 @@
-extends Area3D
+extends Node3D
+
+@export var current_price : int = -1
 
 
-@export var stored_items = {"fancy_book" : 75, "old_book" : 38}
-
-
-
-
-func add_item(name : String, price : int):
-	assert (!stored_items.has(name))
-	stored_items[name] = price
-	pass
-	
-
-
-func remove_item(name : String):
-	assert (stored_items.has(name))
-	stored_items.erase(name)
-	pass
+func _ready() -> void:
+	print(current_price)
