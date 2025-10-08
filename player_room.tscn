@@ -220,6 +220,7 @@ text = "Open Shop"
 [node name="Spawner" parent="." node_paths=PackedStringArray("where_to_plonk_customers") instance=ExtResource("9_8qgar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.060858, 0, 3.5197692)
 where_to_plonk_customers = NodePath("../NavigationRegion3D")
+max_customer_count = 1
 
 [node name="SpawnPoint" parent="Spawner" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.410407, 0.54527146, -0.07077289)

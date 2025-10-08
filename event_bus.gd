@@ -11,7 +11,7 @@ signal set_remove_furniture_mode(active)
 signal clicked_on_furniture(furniture)
 
 signal set_price_on_furniture(furniture)
-signal furniture_sold()
+signal furniture_sold(furniture)
 
 signal money_value_changed()
 

@@ -40,8 +40,9 @@ func price_set(price : int) -> void:
 	
 func sold() -> void:
 	PlayerInventory.earn_money(current_price)
+	
+	EventBus.furniture_sold.emit(self)
 	queue_free()
-	EventBus.furniture_sold.emit()
 
 
 func _on_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
