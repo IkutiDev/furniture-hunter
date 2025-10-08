@@ -20,4 +20,5 @@ func set_data(data : LootboxData) -> void:
 	lootbox_price.text = "Price: " + str(data.lootbox_price) + "$"
 
 func bought_lootbox() -> void:
-	PlayerInventory.add_object_to_inventory(lootbox_data)
+	if PlayerInventory.spend_money(lootbox_data.lootbox_price):
+		PlayerInventory.add_object_to_inventory(lootbox_data)
