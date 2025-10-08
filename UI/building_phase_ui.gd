@@ -1,4 +1,4 @@
-class_name BuildingUI
+class_name InventoryUI
 extends Control
 
 @export var destroy_button : BaseButton

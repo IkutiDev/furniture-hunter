@@ -8,7 +8,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qfk0h"]
 
-[node name="BuildingPhaseUI" type="Control" node_paths=PackedStringArray("destroy_button", "main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container")]
+[node name="InventoryUI" type="Control" node_paths=PackedStringArray("destroy_button", "main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

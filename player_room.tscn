@@ -1,12 +1,13 @@
-[gd_scene load_steps=18 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=19 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
-[ext_resource type="PackedScene" uid="uid://5eeyn2nbl4it" path="res://UI/building_phase_ui.tscn" id="2_2dulj"]
+[ext_resource type="PackedScene" uid="uid://5eeyn2nbl4it" path="res://UI/inventory_ui.tscn" id="2_2dulj"]
 [ext_resource type="MeshLibrary" uid="uid://d2uj2lhtrmjgf" path="res://mesh_libraries/walls_mesh_library.tres" id="2_plsfm"]
 [ext_resource type="MeshLibrary" uid="uid://n8md08bf2oeb" path="res://mesh_libraries/occupation_mesh_library.tres" id="4_3q6a7"]
 [ext_resource type="Script" uid="uid://bx5l051p6ecdf" path="res://object_placer.gd" id="5_3q6a7"]
 [ext_resource type="PackedScene" uid="uid://b8myxwy4rg0ac" path="res://UI/auction_ui.tscn" id="7_2dulj"]
+[ext_resource type="PackedScene" uid="uid://bh0yjjoyposcl" path="res://UI/set_furniture_price_ui.tscn" id="8_o6f6g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -157,6 +158,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
 mesh = SubResource("ArrayMesh_wo40j")
 skeleton = NodePath("../..")
 
-[node name="BuildingPhaseUI" parent="." instance=ExtResource("2_2dulj")]
+[node name="InventoryUI" parent="." instance=ExtResource("2_2dulj")]
 
 [node name="AuctionUI" parent="." instance=ExtResource("7_2dulj")]
+
+[node name="SetFurniturePriceUI" parent="." instance=ExtResource("8_o6f6g")]

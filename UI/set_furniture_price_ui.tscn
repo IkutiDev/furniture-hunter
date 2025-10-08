@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh0yjjoyposcl"]
+
+[ext_resource type="Script" uid="uid://bel8y3m2oh7xh" path="res://UI/set_furniture_price_ui.gd" id="1_yva15"]
+
+[node name="SetFurniturePriceUI" type="Control" node_paths=PackedStringArray("furniture_title_label", "furniture_description_label", "recommended_price_label", "price_box", "set_price_button", "close_ui_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yva15")
+furniture_title_label = NodePath("Panel/HFlowContainer/TitleLabel")
+furniture_description_label = NodePath("Panel/HFlowContainer/DescriptionLabel")
+recommended_price_label = NodePath("Panel/HFlowContainer/RecomendPriceLabelValue")
+price_box = NodePath("Panel/HFlowContainer/SetPriceSpinBox")
+set_price_button = NodePath("Panel/HFlowContainer/SetPriceButton")
+close_ui_button = NodePath("Panel/HFlowContainer/ExitButton")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -115.0
+offset_right = 264.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Panel/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Furniture Name"
+
+[node name="ExitButton" type="Button" parent="Panel/HFlowContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="Seperator" type="Control" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 20)
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Furniture Long Description Furniture Long Description Furniture Long Description Furniture Long Description"
+autowrap_mode = 2
+
+[node name="Seperator2" type="Control" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 20)
+layout_mode = 2
+
+[node name="RecomendPriceLabel" type="Label" parent="Panel/HFlowContainer"]
+layout_mode = 2
+text = "Recomended Price:"
+
+[node name="RecomendPriceLabelValue" type="Label" parent="Panel/HFlowContainer"]
+layout_mode = 2
+text = "999$"
+
+[node name="Seperator3" type="Control" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 10)
+layout_mode = 2
+
+[node name="SetPriceLabel" type="Label" parent="Panel/HFlowContainer"]
+layout_mode = 2
+text = "Currently set price:"
+
+[node name="SetPriceSpinBox" type="SpinBox" parent="Panel/HFlowContainer"]
+layout_mode = 2
+max_value = 9999.0
+suffix = "$"
+
+[node name="Seperator4" type="Control" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="SetPriceButton" type="Button" parent="Panel/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Set the price"
