@@ -4,61 +4,84 @@ extends State
 # will need to send a lot of calls to the top
 # all external events should transition the NPC to this state
 
+@export var customer_body : Node3D
+
 signal i_chose_to_browse
 
 signal i_chose_to_leave
 
 signal i_chose_to_walk
 
+signal i_chose_to_buy
+
+var brain_power = 1.0
 
 ## pairs of options + weights
 var possible_choices = {
 	"i_chose_to_walk" : 6,
 	"i_chose_to_browse" : 7,
-	"i_chose_to_leave" : 1
-		}
+	"i_chose_to_buy" : 5,
+	"i_chose_to_leave" : 1,
+	}
 
 func enter(msg = []) -> void:
+	print(msg)
+	brain_power = 1.0
 	var choice_list = possible_choices.duplicate()
 	if !msg.is_empty():
-		if msg[0] == "henlo world":
-			choice_list["i_chose_to_leave"] -= 1
-			choice_list["i_chose_to_browse"] -= 7
-		if msg[0] == "idle completed":
-			choice_list["i_chose_to_browse"] -= 3
-		if msg[0] == "walking completed":
-			choice_list["i_chose_to_walk"] -= 5
-	make_a_choice(choice_list)
+		assert(typeof(msg[0]) == TYPE_STRING)
+		make_a_choice(msg[0])
+	else:
+		make_a_choice()
 	pass
 
+func _process(delta: float) -> void:
+	brain_power -= delta
+	assert(brain_power > 0)
+	pass
 
 func exit() -> void:
 	
 	pass
 
 
-func make_a_choice(choice_list = {}):
-	var total_choice_weight = 0
-	for key in choice_list.keys():
-		total_choice_weight += choice_list[key]
 
-	print("my choices are: ",choice_list)
-	var random_choice = randi()%total_choice_weight
+
+func make_a_choice(message = "nothing"):
 	var selected_choice : String
-	print("I rolled a: ",random_choice)
-	for key in choice_list.keys():
-		random_choice -= choice_list[key]
-		if random_choice < 0:
-			selected_choice = key
-			break
+	
+	if customer_body.energy < 10 or customer_body.money < 20:
+		selected_choice = "i_chose_to_leave"
+		message = "nothing"
+	match message:
+		"buy failed":
+			
+			selected_choice = "i_chose_to_walk"
+			pass
+		"henlo world": # go stright to walk
+			selected_choice = "i_chose_to_walk"
+			pass
+		"walking completed":
+			selected_choice = "i_chose_to_browse"
+			pass
+		"nothing to buy":
+			selected_choice = "i_chose_to_walk"
+			pass
+		"idle completed":
+				
+			if randf() > 0.7:
+				selected_choice = "i_chose_to_browse"
+			elif randf() > 0.25:
+				selected_choice = "i_chose_to_buy"
+			else:
+				selected_choice = "i_chose_to_walk"
+				
+			pass
+		
+
+
 	
 	print("selected_choice: ",selected_choice)
 	emit_signal(selected_choice)
-	match selected_choice:
-		"i_chose_to_walk":
-			state_machine.transition_to("Walk")
-		"i_chose_to_browse":
-			state_machine.transition_to("Idle",[4.0])
-		"i_chose_to_leave":
-			state_machine.transition_to("Walk")
+
 	pass

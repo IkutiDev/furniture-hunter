@@ -10,7 +10,8 @@ func enter(msg = []) -> void:
 	pass
 
 func _process(delta: float) -> void:
-	if $"../../NavigationAgent3D".is_navigation_finished():
+	
+	if $"../../NavigationAgent3D".is_navigation_finished(): # this is bad an needs to be fixed... later
 		state_machine.transition_to("Think",["walking completed"])
 	pass
 
