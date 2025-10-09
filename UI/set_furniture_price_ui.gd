@@ -17,12 +17,17 @@ func _ready() -> void:
 	close_ui()
 
 func open_ui(instance: FurnitureInstance) -> void:
+	if instance == null:
+		return
+	if instance is FurnitureContainerInstance:
+		return
 	if visible:
 		return
 	furniture_instance = instance
 	furniture_title_label.text = furniture_instance.furniture_data.furniture_name
 	furniture_description_label.text = furniture_instance.furniture_data.furniture_description
 	recommended_price_label.text = str(furniture_instance.furniture_data.furniture_base_value) +"$"
+	price_box.value = furniture_instance.current_price if furniture_instance.current_price >= 0 else 0
 	
 	show()
 	

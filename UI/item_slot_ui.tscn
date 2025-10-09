@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdjjeooebwrsi"]
+
+[ext_resource type="Texture2D" uid="uid://bf7mqg2nn3b4l" path="res://UI/WIP_icons/empty.png" id="1_rxip1"]
+[ext_resource type="Script" uid="uid://cujky50ca88rj" path="res://UI/item_slot_ui.gd" id="1_sapmr"]
+
+[node name="ItemSlotUI" type="HFlowContainer" node_paths=PackedStringArray("icon", "recommeneded_price_label", "price_spin_box", "set_price_button")]
+custom_minimum_size = Vector2(210, 0)
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("1_sapmr")
+icon = NodePath("TextureRect")
+empty_icon = ExtResource("1_rxip1")
+recommeneded_price_label = NodePath("Label2")
+price_spin_box = NodePath("SpinBox")
+set_price_button = NodePath("Button")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 45.22)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_rxip1")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Recommended price:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = "999$"
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(163.96, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+text = "Current Price: "
+
+[node name="SpinBox" type="SpinBox" parent="."]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="."]
+custom_minimum_size = Vector2(163.96, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "Set the Price"
