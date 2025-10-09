@@ -1,0 +1,300 @@
+[gd_scene load_steps=20 format=3 uid="uid://bi2qjpbwkn8mu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wmfu"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_naaar"]
+material = SubResource("StandardMaterial3D_8wmfu")
+size = Vector2(8, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6r8v"]
+albedo_color = Color(0.93333334, 0.6862745, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_k6r8v"]
+material = SubResource("StandardMaterial3D_k6r8v")
+text = " F
+I
+8"
+font_size = 19
+line_spacing = -14.005
+
+[sub_resource type="BoxMesh" id="BoxMesh_k6r8v"]
+size = Vector3(1, 0.1, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8wmfu"]
+size = Vector3(0.1, 2.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_naaar"]
+albedo_color = Color(0.6322447, 0.2211101, 2.8878452e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_83est"]
+material = SubResource("StandardMaterial3D_naaar")
+size = Vector3(1, 1.905, 0.105)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7v5n"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dlaq6"]
+material = SubResource("StandardMaterial3D_n7v5n")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.065
+
+[sub_resource type="BoxMesh" id="BoxMesh_naaar"]
+size = Vector3(0.37, 0.05, 0.115)
+
+[sub_resource type="Animation" id="Animation_8wmfu"]
+resource_name = "FadeIn"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/BlackScreen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(-0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.5), Vector3(0, 0, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.266667, 5.9, 7.65, 8),
+"transitions": PackedFloat32Array(1, -2, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.8, 3), Vector3(0, 1, 0.4), Vector3(0, 1, 0.3), Vector3(0, 1, 0.29999995), Vector3(0, 1, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Key:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.76, 3.38, 4.63, 5.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.85, 2.5), Vector3(0, 0.73, 1.2), Vector3(-0.315, 0.845, 0.025), Vector3(-0.295, 0.775, -0.53), Vector3(-0.37, 0.775, -1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Key:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.3, 6.4666667, 6.92),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.8954276, -1.8797196), Vector3(0, 1.5969763, -1.6824974), Vector3(1.4835298, 1.5969763, -1.6824974)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DoorPart/DoorProper:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7.3333335, 7.6666665),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Key:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 7.0333333, 7.3333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_k6r8v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/BlackScreen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.8, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Key:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.85, 2.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Key:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.8954276, -1.8797196)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DoorPart/DoorProper:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Key:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_naaar"]
+_data = {
+&"FadeIn": SubResource("Animation_8wmfu"),
+&"RESET": SubResource("Animation_k6r8v")
+}
+
+[sub_resource type="Environment" id="Environment_k6r8v"]
+background_mode = 1
+background_color = Color(0, 0.16371307, 0.23242693, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83est"]
+albedo_color = Color(0.421763, 0.15026918, 0.030308994, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n7v5n"]
+material = SubResource("StandardMaterial3D_83est")
+flip_faces = true
+size = Vector3(1.2, 2, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlaq6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pxlwc"]
+material = SubResource("StandardMaterial3D_dlaq6")
+size = Vector3(1, 2, 1)
+
+[node name="LootboxWorld" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 3)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+transform = Transform3D(0.009023262, 0.9999593, 2.6891417e-10, -0.8625139, 0.007783006, 0.5059736, 0.50595295, -0.0045655323, 0.862549, 0, 0.9761139, 2.899251)
+light_energy = 0.3
+sky_mode = 1
+
+[node name="BlackScreen" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.5)
+mesh = SubResource("PlaneMesh_naaar")
+
+[node name="Key" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.09697419, -0.30386025, 0.9477684, -0.95266145, -0.30403307, 0, 0.28815293, -0.9029024, -0.31895933, 0, 0.85, 2.5)
+mesh = SubResource("TextMesh_k6r8v")
+
+[node name="DoorPart" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5619853)
+
+[node name="DoorFrame" type="Node3D" parent="DoorPart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.46129036)
+
+[node name="FrameBottom" type="MeshInstance3D" parent="DoorPart/DoorFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.016482294, 0)
+mesh = SubResource("BoxMesh_k6r8v")
+skeleton = NodePath("../..")
+
+[node name="FrameRight" type="MeshInstance3D" parent="DoorPart/DoorFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55846864, 0.92072153, 0)
+mesh = SubResource("BoxMesh_8wmfu")
+skeleton = NodePath("../..")
+
+[node name="FrameLeft" type="MeshInstance3D" parent="DoorPart/DoorFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53521615, 0.9377581, 0)
+mesh = SubResource("BoxMesh_8wmfu")
+skeleton = NodePath("../..")
+
+[node name="FrameTop" type="MeshInstance3D" parent="DoorPart/DoorFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9183277, 0)
+mesh = SubResource("BoxMesh_k6r8v")
+skeleton = NodePath("../..")
+
+[node name="DoorProper" type="Node3D" parent="DoorPart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5473201, 0, 0.50917673)
+
+[node name="Body" type="MeshInstance3D" parent="DoorPart/DoorProper"]
+transform = Transform3D(0.9998387, 0, 0.017958473, 0, 1, 0, -0.017958473, 0, 0.9998387, -0.5390738, 0.93379855, -0.028383732)
+mesh = SubResource("BoxMesh_83est")
+
+[node name="KeyHole" type="MeshInstance3D" parent="DoorPart/DoorProper/Body"]
+transform = Transform3D(0.5, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.38717666, -0.17991346, 0.03208947)
+mesh = SubResource("CylinderMesh_dlaq6")
+skeleton = NodePath("../..")
+
+[node name="Klamka" type="MeshInstance3D" parent="DoorPart/DoorProper/Body"]
+transform = Transform3D(0.9998388, 0, -0.017958475, 0, 1, 0, 0.017958475, 0, 0.9998388, -0.23961347, 0.025335789, 0.077770114)
+mesh = SubResource("BoxMesh_naaar")
+skeleton = NodePath("../..")
+
+[node name="MainAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_naaar")
+}
+autoplay = "FadeIn"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k6r8v")
+
+[node name="Corridor" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Corridor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9517894, 0)
+mesh = SubResource("BoxMesh_n7v5n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Corridor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, -1.61)
+mesh = SubResource("BoxMesh_pxlwc")
