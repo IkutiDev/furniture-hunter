@@ -147,7 +147,7 @@ func _on_think_i_chose_to_buy() -> void:
 	else:
 		money -= items_price
 		if object_seen is FurnitureContainerInstance:
-			thing_to_buy.sold_item(optional_index)
+			object_seen.sold_item(optional_index)
 		elif object_seen is FurnitureInstance:
 			thing_to_buy.sold()
 
