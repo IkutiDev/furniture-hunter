@@ -5,6 +5,9 @@ extends Node
 @export var lootboxes : Array[LootboxData]
 @export var money : int
 
+var renown : int = 0
+const MAX_RENOWN = 9000
+
 func remove_object_from_inventory(data) -> void:
 	if data is FurnitureData:
 		furniture.erase(data)

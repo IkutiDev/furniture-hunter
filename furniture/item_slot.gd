@@ -4,6 +4,9 @@ extends Node3D
 var item_data : ItemData
 var furniture_instance : FurnitureContainerInstance
 var current_price : int = -1
+var perfect_price : int:
+	get:
+		return item_data.furniture_base_value + item_data.furniture_base_value * (PlayerInventory.renown / PlayerInventory.MAX_RENOWN)
 
 func set_data(data : ItemData, instance : FurnitureContainerInstance) -> void:
 	for c in get_children():

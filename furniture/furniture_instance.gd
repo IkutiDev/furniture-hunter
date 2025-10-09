@@ -6,6 +6,9 @@ extends Node3D
 var furniture_data : FurnitureData
 var first_press := true
 var current_price : int = -1
+var perfect_price : int:
+	get:
+		return furniture_data.furniture_base_value + furniture_data.furniture_base_value * (PlayerInventory.renown / PlayerInventory.MAX_RENOWN)
 
 @onready var for_sale_sign = preload("res://furniture/for_sale_sign.tscn").instantiate()
 
