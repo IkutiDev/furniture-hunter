@@ -7,7 +7,7 @@ extends HFlowContainer
 @export var price_spin_box : SpinBox
 @export var set_price_button : Button
 
-var item_slot : ItemSlot
+var item_instance : ItemInstance
 
 func _ready() -> void:
 	set_price_button.pressed.connect(set_the_price)
@@ -18,30 +18,30 @@ func on_icon_clicked(event : InputEvent) -> void:
 		remove_item_from_item_slot()
 
 func remove_item_from_item_slot() -> void:
-	item_slot.current_price = -1
-	PlayerInventory.add_object_to_inventory(item_slot.item_data)
-	item_slot.set_data(null, item_slot.furniture_instance)
-	item_slot.furniture_instance.slots_updated()
+	item_instance.current_price = -1
+	PlayerInventory.add_object_to_inventory(item_instance.item_data)
+	item_instance.set_data(null, item_instance.furniture_instance)
+	item_instance.furniture_instance.slots_updated()
 	update_item_slot_ui()
 
-func set_item_slot(current_item_slot : ItemSlot) -> void:
-	item_slot = current_item_slot
+func set_item_slot(current_item_instance : ItemInstance) -> void:
+	item_instance = current_item_instance
 	update_item_slot_ui()
 
 func update_item_slot_ui() -> void:
-	if item_slot.item_data == null:
+	if item_instance.item_data == null:
 		recommeneded_price_label.text = "0$"
 		price_spin_box.value = 0
 		icon.texture = empty_icon
 	else:
-		recommeneded_price_label.text = str(item_slot.item_data.item_value) +"$"
-		price_spin_box.value = item_slot.current_price if item_slot.current_price >= 0 else 0
-		icon.texture = item_slot.item_data.item_icon
+		recommeneded_price_label.text = str(item_instance.item_data.item_value) +"$"
+		price_spin_box.value = item_instance.current_price if item_instance.current_price >= 0 else 0
+		icon.texture = item_instance.item_data.item_icon
 
 func set_the_price() -> void:
-	if item_slot == null:
+	if item_instance == null:
 		return
-	if item_slot.item_data == null:
+	if item_instance.item_data == null:
 		return
 	@warning_ignore("narrowing_conversion")
-	item_slot.set_price(price_spin_box.value)
+	item_instance.set_price(price_spin_box.value)

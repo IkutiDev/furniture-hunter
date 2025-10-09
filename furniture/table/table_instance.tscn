@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3vebjuj7rkoi"]
 
 [ext_resource type="PackedScene" uid="uid://csr8j14xx3qys" path="res://furniture/table/table.glb" id="1_7qxf5"]
-[ext_resource type="Script" path="res://furniture/furniture_container_instance.gd" id="2_dq02x"]
-[ext_resource type="Script" uid="uid://6isvmyrvafx1" path="res://furniture/item_slot.gd" id="3_650gy"]
+[ext_resource type="Script" uid="uid://c0rm10sjn8jpn" path="res://furniture/furniture_container_instance.gd" id="2_dq02x"]
+[ext_resource type="Script" uid="uid://6isvmyrvafx1" path="res://furniture/item_instance.gd" id="3_650gy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7qxf5"]
 size = Vector3(2, 1, 1)
