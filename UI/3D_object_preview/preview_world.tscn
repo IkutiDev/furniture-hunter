@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://umkkxofd71cw"]
+
+[ext_resource type="PackedScene" uid="uid://bc6ea3ibonrko" path="res://furniture/stool/stool_bar_instance.tscn" id="1_labj0"]
+[ext_resource type="Script" uid="uid://baq0t6kfp1l0g" path="res://UI/3D_object_preview/preview_world.gd" id="1_u3efb"]
+
+[sub_resource type="Animation" id="Animation_psrbp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Gimble:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fcj5b"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Gimble:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_psrbp"]
+_data = {
+&"RESET": SubResource("Animation_psrbp"),
+&"new_animation": SubResource("Animation_fcj5b")
+}
+
+[sub_resource type="Environment" id="Environment_w3er8"]
+background_mode = 1
+background_color = Color(0.8475281, 0.84996575, 0.9072279, 1)
+
+[node name="PreviewWorld" type="Node3D"]
+script = ExtResource("1_u3efb")
+
+[node name="Gimble" type="Node3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Gimble"]
+transform = Transform3D(1, 0, 0, 0, 0.9063077, 0.42261824, 0, -0.42261824, 0.9063077, 0, 1.138, 1.898)
+fov = 25.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Gimble"]
+root_node = NodePath("../../ObjectHolder")
+libraries = {
+&"": SubResource("AnimationLibrary_psrbp")
+}
+autoplay = "new_animation"
+
+[node name="ObjectHolder" type="Node3D" parent="."]
+
+[node name="stoolBar" parent="ObjectHolder" instance=ExtResource("1_labj0")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w3er8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4044912, 0)
