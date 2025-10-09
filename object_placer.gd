@@ -72,6 +72,9 @@ func _input(event: InputEvent) -> void:
 			place_object()
 		elif hovered_over_furniture_instance != null and delete_mode_active:
 			remove_object()
+	if event.is_action_pressed("right_click"):
+		if can_place_furniture and selected_furniture != null:
+			deselect_furniture()
 	if event.is_action_pressed("rotate"):
 		current_rotation_in_degrees += 90.0
 		if current_rotation_in_degrees >= 360.0:
