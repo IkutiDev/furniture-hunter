@@ -93,42 +93,66 @@ func _on_think_i_chose_to_leave() -> void:
 
 func _on_think_i_chose_to_buy() -> void:
 	var object_seen = what_do_i_see()
+	
+	
 	if object_seen == null:
 		print("I want to buy, but I dont see anything!")
 		$StateMachine.transition_to("Think",["nothing to buy"])
 		energy -= 15
 		return
 	
+	var thing_to_buy
+	var optional_index
 	var items_price = -1
 
-	if object_seen is FurnitureInstance:
+
+	
+	if object_seen is FurnitureContainerInstance:
+		var items_in_container = object_seen.item_slots as Array[ItemSlot]
+		if items_in_container.is_empty():
+
+			print("I want to buy an item from ",object_seen ,", but there are no items on it!")
+			$StateMachine.transition_to("Think",["nothing to buy"])
+			energy -= 5
+			return
+		else:
+			var selected_item_slot_index = randi()%items_in_container.size() 
+			var selected_item_slot = items_in_container[selected_item_slot_index] as ItemSlot
+			items_price = selected_item_slot.current_price
+			thing_to_buy = selected_item_slot.item_data
+			optional_index = selected_item_slot_index
+
+	elif object_seen is FurnitureInstance:
 		items_price = object_seen.current_price
-	
-	
+		thing_to_buy = object_seen
 	#if item_list.is_empty():
 		#print("I want to buy an item from a thing, but the thing has no items!")
 		#energy -= 15
 		#$StateMachine.transition_to("Think",["nothing to buy"])
 		#return
 	
-	
+
 	
 	if items_price < 0:
-		print("I want to buy an ",object_seen ,", but it's not for sale!")
+		print("I want to buy an ",thing_to_buy ,", but it's not for sale!")
 		$StateMachine.transition_to("Think",["nothing to buy"])
 		energy -= 5
 		return
 	
 	if items_price > money:
-		print("I want to buy an ",object_seen ,", but I cant afford it!")
+		print("I want to buy an ",thing_to_buy ,", but I cant afford it!")
 		$StateMachine.transition_to("Think",["buy failed"])
 		energy -= 10
 		return
 	else:
 		money -= items_price
-		PlayerInventory.earn_money(items_price)
-		object_seen.sold()
-		print("I bought a ", object_seen,", I now have only this much money: ", money)
+		if object_seen is FurnitureContainerInstance:
+			thing_to_buy.sold_item(optional_index)
+		elif object_seen is FurnitureInstance:
+			thing_to_buy.sold()
+
+		
+		print("I bought a ", thing_to_buy,", I now have only this much money: ", money)
 		$StateMachine.transition_to("Idle",[1.5])
 	
 	pass # Replace with function body.
@@ -149,8 +173,15 @@ func _on_think_i_chose_to_browse() -> void:
 
 	if object_seen is FurnitureInstance:
 		items_price = object_seen.current_price
-
-
+	if object_seen is FurnitureContainerInstance:
+		var items_in_container = object_seen.item_slots as Array[ItemSlot]
+		if items_in_container.is_empty():
+			items_price = -1
+		else:
+			
+			var random_item = items_in_container[randi()%items_in_container.size()] as ItemSlot
+			items_price = random_item.current_price
+		
 		
 	if items_price < 0:
 		print("I want to browse ",object_seen ,", but it's not for sale since it's ", items_price)
