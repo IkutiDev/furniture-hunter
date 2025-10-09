@@ -56,7 +56,9 @@ func what_do_i_see() -> Variant:
 	var selected_object = objects_seen[0].get_parent()
 	return selected_object
 
-
+func check_offer_quality(item) -> float: 
+	
+	return 1.0
 
 func _on_think_i_chose_to_walk() -> void:
 	

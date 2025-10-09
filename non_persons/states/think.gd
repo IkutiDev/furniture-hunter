@@ -14,20 +14,17 @@ signal i_chose_to_walk
 
 signal i_chose_to_buy
 
+signal i_chose_to_haggle
+
 var brain_power = 1.0
 
-## pairs of options + weights
-var possible_choices = {
-	"i_chose_to_walk" : 6,
-	"i_chose_to_browse" : 7,
-	"i_chose_to_buy" : 5,
-	"i_chose_to_leave" : 1,
-	}
+
+
 
 func enter(msg = []) -> void:
 	print(msg)
 	brain_power = 1.0
-	var choice_list = possible_choices.duplicate()
+
 	if !msg.is_empty():
 		assert(typeof(msg[0]) == TYPE_STRING)
 		make_a_choice(msg[0])
@@ -55,7 +52,6 @@ func make_a_choice(message = "nothing"):
 		message = "nothing"
 	match message:
 		"buy failed":
-			
 			selected_choice = "i_chose_to_walk"
 			pass
 		"henlo world": # go stright to walk
@@ -67,6 +63,21 @@ func make_a_choice(message = "nothing"):
 		"nothing to buy":
 			selected_choice = "i_chose_to_walk"
 			pass
+		"great offer":
+			if randf() > 0.4:
+				selected_choice = "i_chose_to_buy"
+			else:
+				selected_choice = "i_chose_to_haggle"
+			pass
+		"weak offer":
+			if randf() > 0.7:
+				selected_choice = "i_chose_to_haggle"
+		
+		"bad offer":
+			if randf() > 0.7:
+				selected_choice = "i_chose_to_browse"
+			else:
+				selected_choice = "i_chose_to_walk"
 		"idle completed":
 				
 			if randf() > 0.7:

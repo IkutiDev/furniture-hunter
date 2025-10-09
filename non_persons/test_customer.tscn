@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://eyncoqtnwsi"]
+[gd_scene load_steps=16 format=3 uid="uid://eyncoqtnwsi"]
 
 [ext_resource type="Script" uid="uid://b3usttdhhexhq" path="res://non_persons/test_customer.gd" id="1_qrjrq"]
 [ext_resource type="Script" uid="uid://7yxpa5q1midc" path="res://non_persons/state_machine.gd" id="1_y15eb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ca42y8672fagb" path="res://non_persons/states/idle.gd" id="5_3ekre"]
 [ext_resource type="Script" uid="uid://dv3tdcfa13qr1" path="res://non_persons/states/think.gd" id="6_3oqfh"]
 [ext_resource type="Texture2D" uid="uid://2e1qky7w1am" path="res://test_mimic/oczy.png" id="6_twq3s"]
+[ext_resource type="Script" uid="uid://dsvs1ii0ur6tw" path="res://non_persons/states/haggle.gd" id="7_rinmi"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qrjrq"]
 height = 1.0
@@ -60,6 +61,9 @@ script = ExtResource("5_3ekre")
 [node name="Think" type="Node" parent="StateMachine" node_paths=PackedStringArray("customer_body")]
 script = ExtResource("6_3oqfh")
 customer_body = NodePath("../..")
+
+[node name="Haggle" type="Node" parent="StateMachine"]
+script = ExtResource("7_rinmi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
