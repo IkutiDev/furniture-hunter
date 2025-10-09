@@ -11,4 +11,4 @@ func set_data(_data : ItemData) -> void:
 	texture_normal = data.item_icon
 
 func _on_pressed_item_button() -> void:
-	pass
+	EventBus.clicked_on_item.emit(data)
