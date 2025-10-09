@@ -165,6 +165,7 @@ cell_size = Vector3(1, 1, 1)
 collision_mask = 0
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.86427045, -0.40119925, 0.30342412, 0, 0.603206, 0.79757994, -0.50301737, -0.6893294, 0.5213348, 4.955, 7.685, 7.253605)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
@@ -265,17 +266,21 @@ visible = false
 layout_mode = 1
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.86427045, -0.40119925, 0.30342412, 0, 0.603206, 0.79757994, -0.50301737, -0.6893294, 0.5213348, 4.955, 7.685, 7.253605)
 top_level = true
 script = ExtResource("14_4pcic")
 follow_mode = 2
 follow_target = NodePath("../CameraController")
 tween_resource = SubResource("Resource_1l8t1")
+follow_offset = Vector3(4.955, 7.685, 4.7)
 follow_damping = true
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="CameraController" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.553605)
 script = ExtResource("15_pq8mr")
 limit_x = Vector2(5, -5)
 limit_z = Vector2(5, -5)
+speed = 10.0
 
 [editable path="Spawner"]
