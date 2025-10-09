@@ -20,7 +20,8 @@ func on_icon_clicked(event : InputEvent) -> void:
 func remove_item_from_item_slot() -> void:
 	item_slot.current_price = -1
 	PlayerInventory.add_object_to_inventory(item_slot.item_data)
-	item_slot.set_data(null)
+	item_slot.set_data(null, item_slot.furniture_instance)
+	item_slot.furniture_instance.slots_updated()
 	update_item_slot_ui()
 
 func set_item_slot(current_item_slot : ItemSlot) -> void:
@@ -43,4 +44,4 @@ func set_the_price() -> void:
 	if item_slot.item_data == null:
 		return
 	@warning_ignore("narrowing_conversion")
-	item_slot.current_price = price_spin_box.value
+	item_slot.set_price(price_spin_box.value)

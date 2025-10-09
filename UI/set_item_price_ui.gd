@@ -60,7 +60,7 @@ func set_item_inside_container(data : ItemData) -> void:
 		return
 	for i in furniture_instance.item_slots.size():
 		if furniture_instance.item_slots[i].item_data == null:
-			furniture_instance.item_slots[i].set_data(data)
+			furniture_instance.item_slots[i].set_data(data, furniture_instance)
 			(item_slots_list.get_child(i) as ItemSlotUI).set_item_slot(furniture_instance.item_slots[i])
 			PlayerInventory.remove_object_from_inventory(data)
 			return

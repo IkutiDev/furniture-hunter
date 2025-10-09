@@ -27,6 +27,8 @@ func _ready() -> void:
 	
 
 func add_furniture_to_collection(instance : FurnitureInstance) -> void:
+	if furniture_set_to_be_sold.find(instance) != -1:
+		return
 	furniture_set_to_be_sold.append(instance)
 
 func remove_furniture_from_collection(instance : FurnitureInstance) -> void:
