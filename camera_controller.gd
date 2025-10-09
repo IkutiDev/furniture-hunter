@@ -5,8 +5,8 @@ extends Node3D
 @export var speed : float = 100
 
 func _process(delta: float) -> void:
-	var move_vector = Input.get_vector("left", "right", "up", "down")
-	var move_delta = position + Vector3(move_vector.x, 0, move_vector.y) * speed * delta
+	var move_vector = Input.get_vector("right", "left", "down", "up")
+	var move_delta = position + Vector3(move_vector.x, 0, move_vector.y) * speed * delta * global_transform.basis
 	if move_delta.x > limit_x.x:
 		move_delta.x = limit_x.x
 	if move_delta.x < limit_x.y:

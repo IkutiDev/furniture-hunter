@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3vebjuj7rkoi"]
+[gd_scene load_steps=6 format=3 uid="uid://b3vebjuj7rkoi"]
 
 [ext_resource type="PackedScene" uid="uid://csr8j14xx3qys" path="res://furniture/table/table.glb" id="1_7qxf5"]
 [ext_resource type="Script" uid="uid://c0rm10sjn8jpn" path="res://furniture/furniture_container_instance.gd" id="2_dq02x"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7qxf5"]
 size = Vector3(2, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_650gy"]
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="table" node_paths=PackedStringArray("item_slots", "visual_mesh", "static_body") instance=ExtResource("1_7qxf5")]
 script = ExtResource("2_dq02x")
@@ -26,6 +29,20 @@ shape = SubResource("BoxShape3D_7qxf5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22310776, 0.32149953, -0.22155508)
 script = ExtResource("3_650gy")
 
+[node name="StaticBody3D2" type="StaticBody3D" parent="Marker3D" index="0"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Marker3D/StaticBody3D2" index="0"]
+shape = SubResource("BoxShape3D_650gy")
+
 [node name="Marker3D2" type="Marker3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5937435, 0.32149953, -0.22155508)
 script = ExtResource("3_650gy")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Marker3D2" index="0"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Marker3D2/StaticBody3D3" index="0"]
+shape = SubResource("BoxShape3D_650gy")

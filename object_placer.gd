@@ -22,7 +22,7 @@ func _ready() -> void:
 	EventBus.set_remove_furniture_mode.connect(toggled_delete_mode)
 	EventBus.mouse_over_furniture.connect(hover_over_furniture)
 	EventBus.mouse_exits_furniture.connect(exit_hover_over_furniture)
-	EventBus.furniture_sold.connect(update_navmesh)
+	EventBus.object_sold.connect(update_navmesh)
 	EventBus.start_day.connect(_on_day_started)
 	
 func _on_day_started() -> void:

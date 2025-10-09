@@ -37,12 +37,12 @@ func price_set(price : int) -> void:
 		for_sale_sign.visible = true
 	else:
 		for_sale_sign.visible = false
-	EventBus.set_price_on_furniture.emit(self)
+	EventBus.set_price.emit(self)
 	
 func sold() -> void:
 	PlayerInventory.earn_money(current_price)
 	
-	EventBus.furniture_sold.emit(self)
+	EventBus.object_sold.emit(self)
 	queue_free()
 
 

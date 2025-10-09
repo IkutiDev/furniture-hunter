@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://teevnykaumjf" path="res://UI/set_item_price_ui.tscn" id="12_1t0pb"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_358ef"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="14_4pcic"]
-[ext_resource type="Script" path="res://camera_controller.gd" id="15_pq8mr"]
+[ext_resource type="Script" uid="uid://c8ndgo8lrx3b4" path="res://camera_controller.gd" id="15_pq8mr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -277,7 +277,7 @@ follow_damping = true
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="CameraController" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.553605)
+transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071067, 0, 0, 2.553605)
 script = ExtResource("15_pq8mr")
 limit_x = Vector2(5, -5)
 limit_z = Vector2(5, -5)

@@ -20,8 +20,7 @@ func on_icon_clicked(event : InputEvent) -> void:
 func remove_item_from_item_slot() -> void:
 	item_instance.current_price = -1
 	PlayerInventory.add_object_to_inventory(item_instance.item_data)
-	item_instance.set_data(null, item_instance.furniture_instance)
-	item_instance.furniture_instance.slots_updated()
+	item_instance.set_data(null)
 	update_item_slot_ui()
 
 func set_item_slot(current_item_instance : ItemInstance) -> void:
