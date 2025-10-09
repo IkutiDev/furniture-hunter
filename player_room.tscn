@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=33 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -6,13 +6,16 @@
 [ext_resource type="MeshLibrary" uid="uid://d2uj2lhtrmjgf" path="res://mesh_libraries/walls_mesh_library.tres" id="2_plsfm"]
 [ext_resource type="MeshLibrary" uid="uid://n8md08bf2oeb" path="res://mesh_libraries/occupation_mesh_library.tres" id="4_3q6a7"]
 [ext_resource type="Script" uid="uid://bx5l051p6ecdf" path="res://object_placer.gd" id="5_3q6a7"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_358ef"]
 [ext_resource type="Script" uid="uid://brjslag6tqsvp" path="res://UI/main_ui.gd" id="6_d0s76"]
 [ext_resource type="PackedScene" uid="uid://b8myxwy4rg0ac" path="res://UI/auction_ui.tscn" id="7_2dulj"]
 [ext_resource type="PackedScene" uid="uid://bh0yjjoyposcl" path="res://UI/set_furniture_price_ui.tscn" id="8_o6f6g"]
 [ext_resource type="PackedScene" uid="uid://dh7xwd15ho7lk" path="res://non_persons/spawner.tscn" id="9_8qgar"]
 [ext_resource type="Texture2D" uid="uid://rts31v4bln5h" path="res://UI/WIP_icons/wrecking-ball.png" id="10_8qgar"]
 [ext_resource type="PackedScene" uid="uid://teevnykaumjf" path="res://UI/set_item_price_ui.tscn" id="12_1t0pb"]
-[ext_resource type="PackedScene" uid="uid://c6pgdlgd6ir5o" path="res://furniture/stool/stoolBar.glb" id="12_3gq20"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_358ef"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="14_4pcic"]
+[ext_resource type="Script" path="res://camera_controller.gd" id="15_pq8mr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -122,6 +125,9 @@ Button/styles/normal = SubResource("StyleBoxFlat_3gq20")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0s76"]
 bg_color = Color(0, 0.42836863, 0, 0.6)
 
+[sub_resource type="Resource" id="Resource_1l8t1"]
+script = ExtResource("13_358ef")
+
 [node name="PlayerRoom" type="Node3D" node_paths=PackedStringArray("floor_grid_map", "occupation_grid_map")]
 script = ExtResource("1_1ojmq")
 floor_grid_map = NodePath("NavigationRegion3D/FloorMap")
@@ -159,7 +165,12 @@ cell_size = Vector3(1, 1, 1)
 collision_mask = 0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.78371894, -0.55442053, 0.28000447, 0, 0.4508089, 0.8926205, -0.6211156, -0.6995636, 0.3533075, 3.2090774, 8.968706, 5.4426007)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("5_358ef")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="ObjectPlacer" type="Node" parent="." node_paths=PackedStringArray("occupation_grid_map", "visual_mesh_parent", "visual_mesh", "nav_mesh_region")]
 script = ExtResource("5_3q6a7")
@@ -253,7 +264,18 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="stoolBar" parent="." instance=ExtResource("12_3gq20")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7714019, 9.536743e-07, 13.313535)
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+top_level = true
+script = ExtResource("14_4pcic")
+follow_mode = 2
+follow_target = NodePath("../CameraController")
+tween_resource = SubResource("Resource_1l8t1")
+follow_damping = true
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="CameraController" type="Node3D" parent="."]
+script = ExtResource("15_pq8mr")
+limit_x = Vector2(5, -5)
+limit_z = Vector2(5, -5)
 
 [editable path="Spawner"]
