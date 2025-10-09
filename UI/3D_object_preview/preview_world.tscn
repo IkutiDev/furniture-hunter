@@ -1,11 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://umkkxofd71cw"]
+[gd_scene load_steps=7 format=3 uid="uid://umkkxofd71cw"]
 
 [ext_resource type="PackedScene" uid="uid://bc6ea3ibonrko" path="res://furniture/stool/stool_bar_instance.tscn" id="1_labj0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcj5b"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_fcj5b"]
-material = SubResource("StandardMaterial3D_fcj5b")
+[ext_resource type="Script" uid="uid://baq0t6kfp1l0g" path="res://UI/3D_object_preview/preview_world.gd" id="1_u3efb"]
 
 [sub_resource type="Animation" id="Animation_psrbp"]
 length = 0.001
@@ -49,7 +45,8 @@ _data = {
 background_mode = 1
 background_color = Color(0.8475281, 0.84996575, 0.9072279, 1)
 
-[node name="World" type="Node3D"]
+[node name="PreviewWorld" type="Node3D"]
+script = ExtResource("1_u3efb")
 
 [node name="Gimble" type="Node3D" parent="."]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -58,20 +55,17 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 0.9063077, 0.42261824, 0, -0.42261824, 0.9063077, 0, 1.138, 1.898)
 fov = 25.0
 
-[node name="ObjectHolder" type="Node3D" parent="."]
-
-[node name="stoolBar" parent="ObjectHolder" instance=ExtResource("1_labj0")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjectHolder"]
-visible = false
-mesh = SubResource("BoxMesh_fcj5b")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ObjectHolder"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Gimble"]
+root_node = NodePath("../../ObjectHolder")
 libraries = {
 &"": SubResource("AnimationLibrary_psrbp")
 }
 autoplay = "new_animation"
+
+[node name="ObjectHolder" type="Node3D" parent="."]
+
+[node name="stoolBar" parent="ObjectHolder" instance=ExtResource("1_labj0")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w3er8")
