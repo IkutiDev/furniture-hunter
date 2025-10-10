@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_b880l")
-furniture_name = "Sofa"
+object_name = "Sofa"
 furniture_icon = ExtResource("1_b880l")
 furniture_renown = 15
 furniture_scene = ExtResource("1_o5s8y")
