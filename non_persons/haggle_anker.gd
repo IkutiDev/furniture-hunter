@@ -1,15 +1,39 @@
 extends Node3D
 
+@export var haggle_time_left = 8.0
+
+signal haggle_resolved(result)
+
+func _ready() -> void:
+	$SubViewport/HaggleWorld/VBoxContainer/ProgressBar.max_value = haggle_time_left
+
+func _process(delta: float) -> void:
+	if haggle_time_left < 0.1:
+		haggle_time_out()
+		
+	haggle_time_left -= delta
+	$SubViewport/HaggleWorld/VBoxContainer/ProgressBar.value = haggle_time_left
+	
+
+func haggle_time_out():
+	haggle_resolved.emit("time_out")
+	queue_free()
+	pass
 
 
+func haggle_agree():
+	haggle_resolved.emit("agree")
+	pass
 
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "new_animation":
-		pass
-		#$Sprite3D.visible = false
-	pass # Replace with function body.
+func haggle_refuse():
+	haggle_resolved.emit("refuse")
+	pass
 
+func load_haggle_data(data):
+	# needs to extract relevant details like price
+
+	pass
 
 #func _on_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	#if event.is_class("InputEventMouseMotion"):
@@ -23,7 +47,7 @@ func _on_no_deal_input_event(camera: Node, event: InputEvent, event_position: Ve
 	if event.is_class("InputEventMouseMotion"):
 		$SubViewport/HaggleWorld/VBoxContainer/NoDeal.grab_focus()
 	if event.is_action_pressed("press"):
-		print("NO DEAL")
+		haggle_refuse()
 	pass # Replace with function body.
 
 
@@ -31,7 +55,7 @@ func _on_deal_input_event(camera: Node, event: InputEvent, event_position: Vecto
 	if event.is_class("InputEventMouseMotion"):
 		$SubViewport/HaggleWorld/VBoxContainer/Deal.grab_focus()
 	if event.is_action_pressed("press"):
-		print("DEAL")
+		haggle_agree()
 	pass # Replace with function body.
 
 

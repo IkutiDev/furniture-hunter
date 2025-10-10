@@ -59,11 +59,12 @@ size = Vector2i(100, 200)
 
 [node name="HaggleWorld" parent="SubViewport" instance=ExtResource("1_wsoj2")]
 
-[connection signal="input_event" from="MeshInstance3D/StaticBody3D" to="." method="_on_static_body_3d_input_event"]
+[node name="ProgressBar" parent="SubViewport/HaggleWorld/VBoxContainer" index="1"]
+value = 0.0
+
 [connection signal="input_event" from="MeshInstance3D/NoDeal" to="." method="_on_no_deal_input_event"]
 [connection signal="mouse_exited" from="MeshInstance3D/NoDeal" to="." method="_on_no_deal_mouse_exited"]
 [connection signal="input_event" from="MeshInstance3D/Deal" to="." method="_on_deal_input_event"]
 [connection signal="mouse_exited" from="MeshInstance3D/Deal" to="." method="_on_deal_mouse_exited"]
-[connection signal="animation_finished" from="SubViewport/HaggleWorld/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="SubViewport/HaggleWorld"]
