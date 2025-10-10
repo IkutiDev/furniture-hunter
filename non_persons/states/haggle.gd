@@ -14,7 +14,7 @@ func enter(msg = []) -> void:
 	pass
 
 func _process(delta: float) -> void:
-	assert(haggle_node.haggle_time_left > 0.0)
+
 	pass
 
 func exit() -> void:
@@ -24,5 +24,15 @@ func exit() -> void:
 
 
 func post_haggle_clarity(result : String): # :D hehehe
-	
+	match result:
+		"time_out":
+			state_machine.transition_to("Think",["buy failed"])
+
+		"agree":
+
+			state_machine.transition_to("Think",["buy sucesful"])
+		"refuse":
+			state_machine.transition_to("Think",["buy failed"])
+
+	haggle_node.queue_free()
 	pass

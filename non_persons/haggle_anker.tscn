@@ -55,11 +55,11 @@ billboard = 1
 texture = SubResource("ViewportTexture_vlqrr")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(100, 200)
+size = Vector2i(120, 240)
 
 [node name="HaggleWorld" parent="SubViewport" instance=ExtResource("1_wsoj2")]
 
-[node name="ProgressBar" parent="SubViewport/HaggleWorld/VBoxContainer" index="1"]
+[node name="ProgressBar" parent="SubViewport/HaggleWorld/VBoxContainer" index="3"]
 value = 0.0
 
 [connection signal="input_event" from="MeshInstance3D/NoDeal" to="." method="_on_no_deal_input_event"]

@@ -4,6 +4,14 @@ extends Node3D
 
 signal haggle_resolved(result)
 
+var object_being_haggled
+
+var counter_offers = []
+
+var current_offer = -1
+
+var accepted_price = -1
+
 func _ready() -> void:
 	$SubViewport/HaggleWorld/VBoxContainer/ProgressBar.max_value = haggle_time_left
 
@@ -17,22 +25,42 @@ func _process(delta: float) -> void:
 
 func haggle_time_out():
 	haggle_resolved.emit("time_out")
-	queue_free()
+
 	pass
 
 
 func haggle_agree():
+
+	object_being_haggled.sold(current_offer)
 	haggle_resolved.emit("agree")
+
 	pass
 
 
 func haggle_refuse():
+	if load_next_counter_offer():
+		
+		return
 	haggle_resolved.emit("refuse")
+
 	pass
 
-func load_haggle_data(data):
-	# needs to extract relevant details like price
+func load_haggle_data(thing_haggled : Node3D, object_name : String, starting_price : int, offers : Array):
+	object_being_haggled = thing_haggled
+	$SubViewport/HaggleWorld/VBoxContainer/ObjectName.text = object_name
+	$SubViewport/HaggleWorld/VBoxContainer/StartingPrice.text = "Starting price:\n" + str(starting_price)
+	counter_offers = offers.duplicate()
+	load_next_counter_offer()
 
+	pass
+
+func load_next_counter_offer() -> bool:
+	if counter_offers.is_empty():
+		return false
+	else:
+		current_offer = counter_offers.pop_front()
+		$SubViewport/HaggleWorld/VBoxContainer/CounterOffer.text = "Counter offer:\n" + str(current_offer)
+		return true
 	pass
 
 #func _on_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:

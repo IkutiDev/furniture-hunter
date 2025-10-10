@@ -101,28 +101,28 @@ func _on_think_i_chose_to_leave() -> void:
 
 
 func _on_think_i_chose_to_buy() -> void:
-	var objects_seen = what_do_i_see()
-	
-	
-	if objects_seen.size() == 0:
-		print("I want to buy, but I dont see anything!")
-		$StateMachine.transition_to("Think",["nothing to buy"])
-		energy -= 15
-		return
-	
-	var thing_to_buy
-	var optional_index
-	var items_price = -1
-	var object_seen
-
-	for o in objects_seen:
-		object_seen = o.get_parent()
-		if object_seen is FurnitureInstance or object_seen is ItemInstance:
-			if object_seen.current_price < 0:
-				continue
-			items_price = object_seen.current_price
-			thing_to_buy = object_seen
-			break
+	#var objects_seen = what_do_i_see()
+	#
+	#
+	#if objects_seen.size() == 0:
+		#print("I want to buy, but I dont see anything!")
+		#$StateMachine.transition_to("Think",["nothing to buy"])
+		#energy -= 15
+		#return
+	#
+	#var thing_to_buy
+	#var optional_index
+	#var items_price = -1
+	#var object_seen
+#
+	#for o in objects_seen:
+		#object_seen = o.get_parent()
+		#if object_seen is FurnitureInstance or object_seen is ItemInstance:
+			#if object_seen.current_price < 0:
+				#continue
+			#items_price = object_seen.current_price
+			#thing_to_buy = object_seen
+			#break
 		
 		
 	#if object_seen is FurnitureContainerInstance:
@@ -148,28 +148,32 @@ func _on_think_i_chose_to_buy() -> void:
 		#energy -= 15
 		#$StateMachine.transition_to("Think",["nothing to buy"])
 		#return
-	
+		
+	if !is_instance_valid(i_want_to_buy_this):
+		print("the thing i wanted to buy does not exist!")
+		return
+	var items_price = i_want_to_buy_this.current_price
 
+		
 	
 	if items_price < 0:
-		print("I want to buy an ",thing_to_buy ,", but it's not for sale!")
+		print("I want to buy an ",i_want_to_buy_this ,", but it's not for sale!")
 		$StateMachine.transition_to("Think",["nothing to buy"])
 		energy -= 5
 		return
 	
 	if items_price > money:
-		print("I want to buy an ",thing_to_buy ,", but I cant afford it!")
+		print("I want to buy an ",i_want_to_buy_this ,", but I cant afford it!")
 		$StateMachine.transition_to("Think",["buy failed"])
 		energy -= 10
 		return
 	else:
-		if thing_to_buy != null:
-			thing_to_buy.sold()
-			money -= items_price
+		i_want_to_buy_this.sold(items_price)
+		money -= items_price
 
 		
-		print("I bought a ", thing_to_buy,", I now have only this much money: ", money)
-		$StateMachine.transition_to("Idle",[1.5])
+		print("I bought a ", i_want_to_buy_this,", I now have only this much money: ", money)
+		$StateMachine.transition_to("Think",["buy sucesful"])
 	
 	pass # Replace with function body.
 
@@ -201,6 +205,8 @@ func _on_think_i_chose_to_browse() -> void:
 		$StateMachine.transition_to("Think",["nothing to buy"])
 		energy -= 5
 		return
+	$StateMachine.transition_to("Idle",[2.5])
+	await $StateMachine/Idle.idle_complete
 	
 	# mark thing as i_want_to_buy_this
 	
@@ -209,11 +215,12 @@ func _on_think_i_chose_to_browse() -> void:
 	# use check_offer_quality to asses if its a "great offer" / "weak offer" / "bad offer"
 
 	var offer_quality = check_offer_quality(i_want_to_buy_this.current_price, i_want_to_buy_this.perfect_price) as String
-	
-	$StateMachine.transition_to("Think",[offer_quality])
-	energy -= 5
-	# go back to Think with result
 
+
+	# go back to Think with result
+	energy -= 5
+	$StateMachine.transition_to("Think",[offer_quality])
+	
 	#print("I want to browse ",object_seen ,", but it's not for sale since it's ", items_price)
 
 
@@ -242,11 +249,25 @@ func _on_think_i_chose_to_browse() -> void:
 
 
 func _on_think_i_chose_to_haggle() -> void:
+
+	var object_name : String # name of thing bought
+	var object_price : int # starting price
+	var offers : Array # a 1+ Array of offers
 	
+	if i_want_to_buy_this is FurnitureInstance:
+		object_name = i_want_to_buy_this.furniture_data.object_name
+		object_price = i_want_to_buy_this.current_price
+		offers.push_back(object_price/2)
+		offers.push_back(object_price-1)
+	if i_want_to_buy_this is ItemInstance:
+		object_name = i_want_to_buy_this.item_data.object_name
+		object_price = i_want_to_buy_this.current_price
+		offers.push_back(object_price/2)
+		offers.push_back(object_price-1)
 	var haggle_node = haggle_scene.instantiate() as Node3D
 	haggle_node.global_position = global_position
-	haggle_node.load_haggle_data
+	haggle_node.load_haggle_data(i_want_to_buy_this,object_name,object_price,offers)
 	get_parent().add_child(haggle_node)
-	
+	$StateMachine.transition_to("Haggle",[haggle_node])
 	
 	pass # Replace with function body.

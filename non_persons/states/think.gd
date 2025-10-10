@@ -16,14 +16,14 @@ signal i_chose_to_buy
 
 signal i_chose_to_haggle
 
-var brain_power = 1.0
+var brain_power = 3.0
 
 
 
 
 func enter(msg = []) -> void:
 	print(msg)
-	brain_power = 1.0
+	brain_power = 3.0
 
 	if !msg.is_empty():
 		assert(typeof(msg[0]) == TYPE_STRING)
@@ -64,29 +64,23 @@ func make_a_choice(message = "nothing"):
 			selected_choice = "i_chose_to_walk"
 			pass
 		"great offer":
-			if randf() > 0.4:
+			if randf() > 0.9:
 				selected_choice = "i_chose_to_buy"
 			else:
 				selected_choice = "i_chose_to_haggle"
 			pass
 		"weak offer":
-			if randf() > 0.7:
+			if randf() > 0.1:
 				selected_choice = "i_chose_to_haggle"
-		
+			else:
+				selected_choice = "i_chose_to_walk"
 		"bad offer":
 			if randf() > 0.7:
 				selected_choice = "i_chose_to_browse"
 			else:
 				selected_choice = "i_chose_to_walk"
-		"idle completed":
-				
-			if randf() > 0.7:
-				selected_choice = "i_chose_to_browse"
-			elif randf() > 0.25:
-				selected_choice = "i_chose_to_buy"
-			else:
-				selected_choice = "i_chose_to_walk"
-				
+		"buy sucesful":
+			selected_choice = "i_chose_to_walk"
 			pass
 		
 
