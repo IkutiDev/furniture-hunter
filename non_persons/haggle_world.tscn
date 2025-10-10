@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://lv3pxnk12yvr"]
+
+[node name="HaggleWorld" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 240.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09154721, 0, 0.7066006, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ObjectName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Object name"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(1, 0.07058824, 1, 1)
+
+[node name="StartingPrice" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Starting price:
+999999"
+horizontal_alignment = 1
+
+[node name="CounterOffer" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Counter offer:
+3.14"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+size_flags_vertical = 1
+value = 100.0
+
+[node name="NoDeal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "NO DEAL"
+
+[node name="Deal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "DEAL"
