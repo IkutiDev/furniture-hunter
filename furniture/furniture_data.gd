@@ -1,6 +1,6 @@
 class_name FurnitureData
 extends Resource
-@export var furniture_name : String
+@export var object_name : String
 @export_multiline var furniture_description : String
 @export var furniture_icon : Texture2D
 @export var furniture_renown : int
@@ -12,7 +12,7 @@ extends Resource
 
 var perfect_price : int:
 	get:
-		return furniture_base_value + furniture_base_value * (PlayerInventory.renown / PlayerInventory.MAX_RENOWN)
+		return furniture_base_value + furniture_base_value * (PlayerInventory.renown as float / PlayerInventory.MAX_RENOWN as float)
 
 func get_visual_mesh() -> Mesh:
 	var furniture_instance := furniture_scene.instantiate() as FurnitureInstance

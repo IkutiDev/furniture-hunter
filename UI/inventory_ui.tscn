@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://5eeyn2nbl4it"]
+[gd_scene load_steps=6 format=3 uid="uid://5eeyn2nbl4it"]
 
 [ext_resource type="Script" uid="uid://c1ja3t7yps2yn" path="res://UI/inventory_ui.gd" id="1_qfk0h"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_oaa25"]
 [ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_skrcx"]
 [ext_resource type="PackedScene" uid="uid://dg83k0fhcv1t4" path="res://UI/lootbox_icon_button.tscn" id="4_ylc1n"]
+[ext_resource type="PackedScene" uid="uid://b1q3webi276mx" path="res://UI/tool_tip_panel.tscn" id="5_6128g"]
 
 [node name="InventoryUI" type="Control" node_paths=PackedStringArray("main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container", "money_label")]
 layout_mode = 3
@@ -96,5 +97,20 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/LootboxesContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+
+[node name="ToolTipPanel" parent="." instance=ExtResource("5_6128g")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.23999786
+grow_horizontal = 1
+grow_vertical = 1
+offset = Vector2(-110, 0)
 
 [editable path="HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer/VBoxContainer/FurnitureIconButton"]
