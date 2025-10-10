@@ -42,8 +42,8 @@ func set_price(new_price : int) -> void:
 	else:
 		for_sale_sign.visible = false
 	
-func sold() -> void:
-	PlayerInventory.earn_money(current_price)
+func sold(offer) -> void:
+	PlayerInventory.earn_money(offer)
 	EventBus.object_sold.emit(self)
 	set_data(null)
 	

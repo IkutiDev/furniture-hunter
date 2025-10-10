@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://85q6sneor42y"]
+
+[ext_resource type="Script" uid="uid://ceajqfmp546n1" path="res://non_persons/haggle_anker.gd" id="1_5ngml"]
+[ext_resource type="PackedScene" uid="uid://lv3pxnk12yvr" path="res://non_persons/haggle_world.tscn" id="1_wsoj2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5ngml"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dntw4"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_5ngml")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k7ha8"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_dntw4")
+size = Vector2(1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uimp3"]
+size = Vector3(1, 0.05, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ngml"]
+size = Vector3(1, 0.375, 0.3)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vlqrr"]
+viewport_path = NodePath("SubViewport")
+
+[node name="HaggleAnker" type="Node3D"]
+script = ExtResource("1_5ngml")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.87519664, 0.39828703, 0.2745872, -0.0017321955, 0.57017815, -0.82151914, -0.48376417, 0.71851504, 0.49970803, 0, 2.4360628, 0)
+mesh = SubResource("PlaneMesh_k7ha8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_uimp3")
+
+[node name="NoDeal" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, 0.0067003253, 0.0033010244, 0.49743986)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/NoDeal"]
+shape = SubResource("BoxShape3D_5ngml")
+
+[node name="Deal" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, -0.009059947, -0.04555881, 0.87657773)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Deal"]
+shape = SubResource("BoxShape3D_5ngml")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+billboard = 1
+texture = SubResource("ViewportTexture_vlqrr")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(120, 240)
+
+[node name="HaggleWorld" parent="SubViewport" instance=ExtResource("1_wsoj2")]
+
+[node name="ProgressBar" parent="SubViewport/HaggleWorld/VBoxContainer" index="3"]
+value = 0.0
+
+[connection signal="input_event" from="MeshInstance3D/NoDeal" to="." method="_on_no_deal_input_event"]
+[connection signal="mouse_exited" from="MeshInstance3D/NoDeal" to="." method="_on_no_deal_mouse_exited"]
+[connection signal="input_event" from="MeshInstance3D/Deal" to="." method="_on_deal_input_event"]
+[connection signal="mouse_exited" from="MeshInstance3D/Deal" to="." method="_on_deal_mouse_exited"]
+
+[editable path="SubViewport/HaggleWorld"]

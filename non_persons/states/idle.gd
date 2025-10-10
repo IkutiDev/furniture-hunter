@@ -1,9 +1,11 @@
 extends State
 
+signal idle_complete
+
 # for simulating looking at / browsing things
 # idle_time is collected and sent as a signal to track the actual time the NPC has spent idling for calculating exit time
 # goes to Think once time runs out
-
+#
 var wait_time = 0.5
 
 var idle_time = 0.0
@@ -22,11 +24,11 @@ func _process(delta: float) -> void:
 	wait_time -= delta
 	idle_time += delta
 	if wait_time <= 0:
-		state_machine.transition_to("Think",["idle completed"])
+		idle_complete.emit()
 	pass
-
-
-func exit() -> void:
-	# emit signal with idle_time
-	wait_time = 0.5
-	pass
+#
+#
+#func exit() -> void:
+	## emit signal with idle_time
+	#wait_time = 0.5
+	#pass
