@@ -40,6 +40,7 @@ text = "Current Price: "
 
 [node name="SpinBox" type="SpinBox" parent="."]
 layout_mode = 2
+max_value = 9999.0
 
 [node name="Control2" type="Control" parent="."]
 custom_minimum_size = Vector2(163.96, 0)
