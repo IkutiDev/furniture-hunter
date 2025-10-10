@@ -9,7 +9,7 @@ var desired_customer_count = 0
 
 @export var max_customer_count = 5 
 
-@export var furniture_set_to_be_sold : Array[FurnitureInstance]
+var objects_set_to_be_sold : Array[Node3D]
 
 var _customer_count = 0
 
@@ -22,17 +22,15 @@ func _ready() -> void:
 		
 	EventBus.start_day.connect(start_day)
 	EventBus.end_day.connect(end_day)
-	EventBus.set_price_on_furniture.connect(add_furniture_to_collection)
-	EventBus.furniture_sold.connect(remove_furniture_from_collection)
+	EventBus.set_price.connect(add_object_to_collection)
+	EventBus.object_sold.connect(remove_object_from_collection)
 	
 
-func add_furniture_to_collection(instance : FurnitureInstance) -> void:
-	if furniture_set_to_be_sold.find(instance) != -1:
-		return
-	furniture_set_to_be_sold.append(instance)
+func add_object_to_collection(instance : Node3D) -> void:
+	objects_set_to_be_sold.append(instance)
 
-func remove_furniture_from_collection(instance : FurnitureInstance) -> void:
-	furniture_set_to_be_sold.erase(instance)
+func remove_object_from_collection(instance : Node3D) -> void:
+	objects_set_to_be_sold.erase(instance)
 
 func start_day():
 	$DayToggle/DayIndicator.mesh.material.albedo_color = Color("yellow")
@@ -53,7 +51,7 @@ func spawn_customer() -> void:
 	new_customer.global_position = $SpawnPoint.global_position
 	new_customer.exit_location = $TheAreaThatEatsPeople.global_position
 	new_customer.entrance_location = $ShopEntrance.global_position
-	new_customer.furniture_set_to_be_sold = furniture_set_to_be_sold
+	new_customer.objects_set_to_be_sold = objects_set_to_be_sold
 	where_to_plonk_customers.add_child(new_customer)
 	_customer_count += 1
 	pass

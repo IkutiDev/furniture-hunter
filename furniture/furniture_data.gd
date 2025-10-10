@@ -5,9 +5,14 @@ extends Resource
 @export var furniture_icon : Texture2D
 @export var furniture_renown : int
 @export var furniture_base_value : int
+@export var collection_set_type : CollectionSet.Types
 @export var furniture_scene : PackedScene
 @export_group("Lootbox Variables")
 @export var rarity_weight : float
+
+var perfect_price : int:
+	get:
+		return furniture_base_value + furniture_base_value * (PlayerInventory.renown / PlayerInventory.MAX_RENOWN)
 
 func get_visual_mesh() -> Mesh:
 	var furniture_instance := furniture_scene.instantiate() as FurnitureInstance

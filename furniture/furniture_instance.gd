@@ -6,9 +6,7 @@ extends Node3D
 var furniture_data : FurnitureData
 var first_press := true
 var current_price : int = -1
-var perfect_price : int:
-	get:
-		return furniture_data.furniture_base_value + furniture_data.furniture_base_value * (PlayerInventory.renown / PlayerInventory.MAX_RENOWN)
+
 
 @onready var for_sale_sign = preload("res://furniture/for_sale_sign.tscn").instantiate()
 
@@ -39,12 +37,12 @@ func price_set(price : int) -> void:
 		for_sale_sign.visible = true
 	else:
 		for_sale_sign.visible = false
-	EventBus.set_price_on_furniture.emit(self)
+	EventBus.set_price.emit(self)
 	
 func sold() -> void:
 	PlayerInventory.earn_money(current_price)
 	
-	EventBus.furniture_sold.emit(self)
+	EventBus.object_sold.emit(self)
 	queue_free()
 
 

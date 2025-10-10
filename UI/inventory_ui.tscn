@@ -66,6 +66,10 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FurnitureIconButton" parent="HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_oaa25")]
+layout_mode = 2
 
 [node name="ItemsContainer" type="FoldableContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
@@ -92,3 +96,5 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/LootboxesContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+
+[editable path="HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer/VBoxContainer/FurnitureIconButton"]
