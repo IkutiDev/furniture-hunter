@@ -14,6 +14,7 @@ var perfect_price : int:
 
 func _ready() -> void:
 	add_child(for_sale_sign)
+	
 
 func set_data(data : ItemData) -> void:
 	for c in get_children():
@@ -22,12 +23,17 @@ func set_data(data : ItemData) -> void:
 		if c is Sprite3D:
 			continue
 		c.queue_free()
-	item_data = data
+	
 	if data == null:
 		set_price(-1)
+		if item_data != null:
+			PlayerInventory.change_renown_amount(-item_data.item_renown)
 	else:
-		var item_instance := item_data.item_scene.instantiate()
+		var item_instance := data.item_scene.instantiate()
 		add_child(item_instance)
+		PlayerInventory.change_renown_amount(data.item_renown)
+	item_data = data
+		
 func set_price(new_price : int) -> void:
 	current_price = new_price
 	if current_price > 0:

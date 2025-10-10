@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://pr4loltppqer"]
+
+[ext_resource type="PackedScene" uid="uid://b5ntk4q1744f7" path="res://UI/lootbox_entry.tscn" id="1_kujbr"]
+
+[node name="LootboxEntrySpecialDeal" node_paths=PackedStringArray("highest_bid_amount_label", "highest_bidder_label", "player_bid_amount_label", "time_label") instance=ExtResource("1_kujbr")]
+offset_right = 800.0
+offset_bottom = 101.0
+highest_bid_amount_label = NodePath("MarginContainer3/VBoxContainer/Label")
+highest_bidder_label = NodePath("MarginContainer3/VBoxContainer/Label2")
+player_bid_amount_label = NodePath("MarginContainer4/Label")
+time_label = NodePath("MarginContainer5/Label")
+
+[node name="MarginContainer3" parent="." index="3"]
+custom_minimum_size = Vector2(150, 0)
+
+[node name="Label" parent="MarginContainer3" index="0"]
+visible = false
+text = "Highest bid: 0$"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer3/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Highest bid: 0$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer3/VBoxContainer" index="1"]
+layout_mode = 2
+text = "by You"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="." index="4"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer4" index="0"]
+layout_mode = 2
+text = "Your bid: 9000$"
+autowrap_mode = 2
+
+[node name="MarginContainer5" type="MarginContainer" parent="." index="5"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer5" index="0"]
+layout_mode = 2
+text = "Time left: 180"
+autowrap_mode = 2
+
+[node name="Button2" parent="." index="6"]
+text = "Bid"

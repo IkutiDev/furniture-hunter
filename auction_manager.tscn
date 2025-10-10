@@ -1,10 +1,52 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckf2d83lccpx1"]
+[gd_scene load_steps=13 format=3 uid="uid://ckf2d83lccpx1"]
 
 [ext_resource type="Script" uid="uid://b8ihflysbnm47" path="res://auction_manager.gd" id="1_5rqs3"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_mdoh6"]
 [ext_resource type="Resource" uid="uid://duajv1ywffbcd" path="res://lootbox/low_quality_furniture_box.tres" id="3_y2fsq"]
 [ext_resource type="Resource" uid="uid://be0gr64ieq76o" path="res://lootbox/odd_oddities_box.tres" id="4_14qvs"]
+[ext_resource type="Resource" uid="uid://d132gekhpxqut" path="res://lootbox/random_box.tres" id="5_qp8ad"]
+[ext_resource type="Script" uid="uid://hpll4o6wcend" path="res://lootbox/bidder_entity.gd" id="5_x71aw"]
+
+[sub_resource type="Resource" id="Resource_qp8ad"]
+script = ExtResource("5_x71aw")
+name = "You"
+metadata/_custom_type_script = "uid://hpll4o6wcend"
+
+[sub_resource type="Resource" id="Resource_g7ww3"]
+script = ExtResource("5_x71aw")
+name = "Dracula"
+max_bid = 500
+metadata/_custom_type_script = "uid://hpll4o6wcend"
+
+[sub_resource type="Resource" id="Resource_xvycd"]
+script = ExtResource("5_x71aw")
+name = "Alucard"
+max_bid = 700
+metadata/_custom_type_script = "uid://hpll4o6wcend"
+
+[sub_resource type="Resource" id="Resource_limxv"]
+script = ExtResource("5_x71aw")
+name = "The Void"
+max_bid = 1000
+metadata/_custom_type_script = "uid://hpll4o6wcend"
+
+[sub_resource type="Resource" id="Resource_ewi0p"]
+script = ExtResource("5_x71aw")
+name = "Ye Olde Lich"
+max_bid = 300
+metadata/_custom_type_script = "uid://hpll4o6wcend"
+
+[sub_resource type="Resource" id="Resource_immhd"]
+script = ExtResource("5_x71aw")
+name = "Primal Darkness"
+max_bid = 3000
+metadata/_custom_type_script = "uid://hpll4o6wcend"
 
 [node name="AuctionManager" type="Node"]
 script = ExtResource("1_5rqs3")
 lootboxes = Array[ExtResource("2_mdoh6")]([ExtResource("3_y2fsq"), ExtResource("4_14qvs")])
+special_lootboxes = Array[ExtResource("2_mdoh6")]([ExtResource("5_qp8ad")])
+new_deal_cooldown = 20.0
+entities_bidding_cooldown = 5.0
+player_bidder_entity = SubResource("Resource_qp8ad")
+other_bidder_entities = Array[ExtResource("5_x71aw")]([SubResource("Resource_g7ww3"), SubResource("Resource_xvycd"), SubResource("Resource_limxv"), SubResource("Resource_ewi0p"), SubResource("Resource_immhd")])

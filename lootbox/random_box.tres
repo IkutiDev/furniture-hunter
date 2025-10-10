@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="LootboxData" load_steps=11 format=3 uid="uid://d132gekhpxqut"]
+
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_vtvp2"]
+[ext_resource type="Resource" uid="uid://bfqihe8vmxij" path="res://furniture/spooky_table/spooky_table_data.tres" id="2_urh65"]
+[ext_resource type="Resource" uid="uid://d0q1f2xsmgc4n" path="res://furniture/witch_couldron/witch_couldron.tres" id="3_k4r2p"]
+[ext_resource type="Texture2D" uid="uid://di7f4ya7swuuo" path="res://UI/WIP_icons/chest.png" id="4_tb2b1"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="5_vkxpn"]
+[ext_resource type="Resource" uid="uid://811xlgkcu47" path="res://items/crystal_ball_item.tres" id="6_dud1w"]
+[ext_resource type="Resource" uid="uid://bt1kfdhws41qu" path="res://items/magical_wood_item.tres" id="7_qupsy"]
+[ext_resource type="Resource" uid="uid://b4ltrjgylo2a4" path="res://items/old_skull_item.tres" id="8_4l7bg"]
+[ext_resource type="Resource" uid="uid://y3grlahpail" path="res://items/unknown_potion_item.tres" id="9_2g7ri"]
+[ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="10_cbam2"]
+
+[resource]
+script = ExtResource("10_cbam2")
+icon = ExtResource("4_tb2b1")
+lootbox_title = "Random Chest"
+lootbox_description = "Chest full of random items"
+lootbox_price = 100
+special_deal_time_min = 40.0
+special_deal_time_max = 70.0
+spawn_method = 1
+random_elements_per_box = 5
+furniture = Array[ExtResource("1_vtvp2")]([ExtResource("2_urh65"), ExtResource("3_k4r2p")])
+items = Array[ExtResource("5_vkxpn")]([ExtResource("6_dud1w"), ExtResource("7_qupsy"), ExtResource("8_4l7bg"), ExtResource("9_2g7ri")])
+metadata/_custom_type_script = "uid://dm25m6de7wwfq"

@@ -20,6 +20,8 @@ signal on_icon_hovered(control, data)
 
 signal update_game_time(hour)
 
+signal update_auctions_ui()
+
 signal start_day()
 signal end_day()
 signal start_night()

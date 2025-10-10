@@ -38,7 +38,8 @@ func remove_furniture_from_inventory(data : FurnitureData) -> void:
 	furniture.erase(data)
 	EventBus.available_furniture_changed.emit()
 
-
+func change_renown_amount(addtivie_renown_amount : int) -> void:
+	renown += addtivie_renown_amount
 
 func add_object_to_inventory(data) -> void:
 	if data is FurnitureData:

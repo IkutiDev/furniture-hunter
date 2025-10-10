@@ -7,6 +7,10 @@ enum SpawnMethod {ONE_OF_EACH, RANDOM}
 @export var lootbox_title : String
 @export_multiline var lootbox_description : String
 @export var lootbox_price : int
+@export var renown_required : int
+@export var special_deal_spawn_chance : int
+@export var special_deal_time_min : float
+@export var special_deal_time_max : float
 
 @export var spawn_method : SpawnMethod
 @export var random_elements_per_box: int
