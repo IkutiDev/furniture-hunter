@@ -7,6 +7,12 @@ var furniture_data : FurnitureData
 var first_press := true
 var current_price : int = -1
 
+var perfect_price : int:
+	get:
+		if furniture_data != null:
+			return furniture_data.perfect_price
+		else:
+			return -1
 
 @onready var for_sale_sign = preload("res://furniture/for_sale_sign.tscn").instantiate()
 
