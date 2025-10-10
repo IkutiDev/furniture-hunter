@@ -39,7 +39,7 @@ func haggle_agree():
 
 func haggle_refuse():
 	if load_next_counter_offer():
-		
+		haggle_time_left = min(haggle_time_left + 2.0, 8.0)
 		return
 	haggle_resolved.emit("refuse")
 

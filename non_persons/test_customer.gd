@@ -60,9 +60,14 @@ func what_do_i_see() -> Array[Variant]:
 	return objects_seen
 
 func check_offer_quality(item_price : int, perfect_price: int) -> String: 
-	if randf() > 0.7:
+	if item_price > 2 * money:
 		return "bad offer"
-	elif randf() > 0.7:
+	
+	var desire_to_buy = randi_range(-40,80) # this will need to be expanded later
+	
+	if item_price > desire_to_buy + perfect_price * 2:
+		return "bad offer"
+	elif item_price > desire_to_buy + perfect_price:
 		return "weak offer" 
 	else:
 		return "great offer"
@@ -254,16 +259,25 @@ func _on_think_i_chose_to_haggle() -> void:
 	var object_price : int # starting price
 	var offers : Array # a 1+ Array of offers
 	
+
+	
 	if i_want_to_buy_this is FurnitureInstance:
 		object_name = i_want_to_buy_this.furniture_data.object_name
 		object_price = i_want_to_buy_this.current_price
-		offers.push_back(object_price/2)
-		offers.push_back(object_price-1)
+
 	if i_want_to_buy_this is ItemInstance:
 		object_name = i_want_to_buy_this.item_data.object_name
 		object_price = i_want_to_buy_this.current_price
-		offers.push_back(object_price/2)
-		offers.push_back(object_price-1)
+
+
+	var offer_range = randi_range(1,5)
+	var bottom = (object_price/2) + randi_range(5,15) # lowest offer
+	var next_offer = bottom
+	for offer in offer_range:
+		offers.push_back(next_offer)
+		next_offer += int( (object_price - next_offer) / 2.0) - offer_range # increase next offer by half distance between starting price and current offer
+
+
 	var haggle_node = haggle_scene.instantiate() as Node3D
 	haggle_node.global_position = global_position
 	haggle_node.load_haggle_data(i_want_to_buy_this,object_name,object_price,offers)
