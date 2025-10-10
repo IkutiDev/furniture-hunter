@@ -18,6 +18,8 @@ signal money_value_changed()
 
 signal on_icon_hovered(control, data)
 
+signal update_game_time(hour)
+
 signal start_day()
 signal end_day()
 signal start_night()

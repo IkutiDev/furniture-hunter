@@ -190,7 +190,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
 mesh = SubResource("ArrayMesh_wo40j")
 skeleton = NodePath("../..")
 
-[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("remove_furnitue_button", "change_shop_state_button")]
+[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("remove_furnitue_button", "change_shop_state_button", "hour_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -205,6 +205,7 @@ button_color_during_day = SubResource("Theme_358ef")
 button_text_during_day = "Close Shop"
 button_color_during_night = SubResource("Theme_1t0pb")
 button_text_during_night = "Open Shop"
+hour_label = NodePath("ChangeShopStateButton/Label")
 
 [node name="RemoveFurnitureButton" type="TextureButton" parent="MainUI"]
 layout_mode = 0
@@ -226,6 +227,21 @@ grow_horizontal = 2
 theme_override_constants/align_to_largest_stylebox = 285
 theme_override_styles/normal = SubResource("StyleBoxFlat_d0s76")
 text = "Open Shop"
+
+[node name="Label" type="Label" parent="MainUI/ChangeShopStateButton"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -11.5
+offset_right = 65.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "8:00"
 
 [node name="InventoryUI" parent="." instance=ExtResource("2_2dulj")]
 

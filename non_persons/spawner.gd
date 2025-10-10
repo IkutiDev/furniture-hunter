@@ -44,6 +44,8 @@ func end_day():
 	for cusomter in get_tree().get_nodes_in_group("Customer"):
 		cusomter.energy -= 80
 	is_day = false
+	if _customer_count == desired_customer_count:
+		GameManager.set_game_state(GameManager.GameState.NIGHT)
 	pass
 
 func spawn_customer() -> void:
