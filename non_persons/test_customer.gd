@@ -55,7 +55,7 @@ func what_do_i_see() -> Array[Variant]:
 		return []
 	return objects_seen
 
-func check_offer_quality(item) -> float: 
+func check_offer_quality(item_price : int, perfect_price: int) -> float: 
 	
 	return 1.0
 
@@ -212,4 +212,12 @@ func _on_think_i_chose_to_browse() -> void:
 	
 	
 			#
+	pass # Replace with function body.
+
+
+func _on_think_i_chose_to_haggle() -> void:
+	
+	
+	
+	
 	pass # Replace with function body.

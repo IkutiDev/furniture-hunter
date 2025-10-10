@@ -96,5 +96,6 @@ texture = SubResource("NoiseTexture2D_q2p6i")
 
 [connection signal="i_chose_to_browse" from="StateMachine/Think" to="." method="_on_think_i_chose_to_browse"]
 [connection signal="i_chose_to_buy" from="StateMachine/Think" to="." method="_on_think_i_chose_to_buy"]
+[connection signal="i_chose_to_haggle" from="StateMachine/Think" to="." method="_on_think_i_chose_to_haggle"]
 [connection signal="i_chose_to_leave" from="StateMachine/Think" to="." method="_on_think_i_chose_to_leave"]
 [connection signal="i_chose_to_walk" from="StateMachine/Think" to="." method="_on_think_i_chose_to_walk"]
