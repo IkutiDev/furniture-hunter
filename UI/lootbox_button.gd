@@ -12,5 +12,5 @@ func set_data(_data : LootboxData) -> void:
 
 func _on_pressed_lootbox_button() -> void:
 	EventBus.lootbox_opened.emit(data)
-	data.spawn_objects()
+
 	PlayerInventory.remove_object_from_inventory(data)

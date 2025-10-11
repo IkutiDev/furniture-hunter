@@ -1,4 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://bi2qjpbwkn8mu"]
+[gd_scene load_steps=21 format=3 uid="uid://bi2qjpbwkn8mu"]
+
+[ext_resource type="Script" uid="uid://okcvwe5kxct0" path="res://lootbox/animation/lootbox_world.gd" id="1_8wmfu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wmfu"]
 shading_mode = 0
@@ -43,82 +45,6 @@ height = 0.065
 
 [sub_resource type="BoxMesh" id="BoxMesh_naaar"]
 size = Vector3(0.37, 0.05, 0.115)
-
-[sub_resource type="Animation" id="Animation_8wmfu"]
-resource_name = "FadeIn"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D/BlackScreen:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(-0.5, 1),
-"update": 0,
-"values": [Vector3(0, 0, -0.5), Vector3(0, 0, -5)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.266667, 5.9, 7.65, 8),
-"transitions": PackedFloat32Array(1, -2, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0.8, 3), Vector3(0, 1, 0.4), Vector3(0, 1, 0.3), Vector3(0, 1, 0.29999995), Vector3(0, 1, -1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Key:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.76, 3.38, 4.63, 5.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0.85, 2.5), Vector3(0, 0.73, 1.2), Vector3(-0.315, 0.845, 0.025), Vector3(-0.295, 0.775, -0.53), Vector3(-0.37, 0.775, -1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Key:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 4.3, 6.4666667, 6.92),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.8954276, -1.8797196), Vector3(0, 1.5969763, -1.6824974), Vector3(1.4835298, 1.5969763, -1.6824974)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("DoorPart/DoorProper:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 7.3333335, 7.6666665),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Key:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 7.0333333, 7.3333335),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, false]
-}
 
 [sub_resource type="Animation" id="Animation_k6r8v"]
 length = 0.001
@@ -195,9 +121,85 @@ tracks/5/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_8wmfu"]
+resource_name = "OpenDoor"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/BlackScreen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(-0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.5), Vector3(0, 0, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.266667, 5.9, 7.65, 8),
+"transitions": PackedFloat32Array(1, -2, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.8, 3), Vector3(0, 1, 0.4), Vector3(0, 1, 0.3), Vector3(0, 1, 0.29999995), Vector3(0, 1, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Key:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.76, 3.38, 4.63, 5.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.85, 2.5), Vector3(0, 0.73, 1.2), Vector3(-0.315, 0.845, 0.025), Vector3(-0.295, 0.775, -0.53), Vector3(-0.37, 0.775, -1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Key:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.3, 6.4666667, 6.92),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.8954276, -1.8797196), Vector3(0, 1.5969763, -1.6824974), Vector3(1.4835298, 1.5969763, -1.6824974)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DoorPart/DoorProper:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7.3333335, 7.6666665),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Key:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 7.0333333, 7.3333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_naaar"]
 _data = {
-&"FadeIn": SubResource("Animation_8wmfu"),
+&"OpenDoor": SubResource("Animation_8wmfu"),
 &"RESET": SubResource("Animation_k6r8v")
 }
 
@@ -220,6 +222,7 @@ material = SubResource("StandardMaterial3D_dlaq6")
 size = Vector3(1, 2, 1)
 
 [node name="LootboxWorld" type="Node3D"]
+script = ExtResource("1_8wmfu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 3)
@@ -284,7 +287,8 @@ skeleton = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_naaar")
 }
-autoplay = "FadeIn"
+autoplay = "OpenDoor"
+speed_scale = 2.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k6r8v")
@@ -298,3 +302,5 @@ mesh = SubResource("BoxMesh_n7v5n")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Corridor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, -1.61)
 mesh = SubResource("BoxMesh_pxlwc")
+
+[connection signal="animation_finished" from="MainAnimation" to="." method="_on_main_animation_animation_finished"]

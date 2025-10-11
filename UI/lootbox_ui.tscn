@@ -1,16 +1,48 @@
-[gd_scene format=3 uid="uid://bkgqd0cei32ye"]
+[gd_scene load_steps=3 format=3 uid="uid://bkgqd0cei32ye"]
 
-[node name="LootboxUI" type="Control"]
+[ext_resource type="PackedScene" uid="uid://bi2qjpbwkn8mu" path="res://lootbox/animation/lootbox_world.tscn" id="1_5edwe"]
+[ext_resource type="Script" uid="uid://d3c8hqd6dysyr" path="res://UI/lootbox_ui.gd" id="1_lbq0n"]
+
+[node name="LootboxUI" type="Control" node_paths=PackedStringArray("lootbox_menu", "open_menu_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_lbq0n")
+lootbox_menu = NodePath("Panel")
+open_menu_button = NodePath("Button")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 189.0
-offset_top = 47.0
-offset_right = 1168.0
-offset_bottom = 634.0
+offset_left = 294.0
+offset_top = 31.0
+offset_right = 934.0
+offset_bottom = 671.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="Panel/SubViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(640, 640)
+render_target_update_mode = 0
+
+[node name="LootboxWorld" parent="Panel/SubViewportContainer/SubViewport" instance=ExtResource("1_5edwe")]
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 687.0
+offset_right = 219.0
+offset_bottom = 718.0
+text = "Lootbox"
