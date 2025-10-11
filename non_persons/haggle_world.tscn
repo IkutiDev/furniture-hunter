@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://lv3pxnk12yvr"]
+[gd_scene load_steps=0 format=3 uid="uid://lv3pxnk12yvr"]
 
 [node name="HaggleWorld" type="Control"]
 layout_mode = 3
