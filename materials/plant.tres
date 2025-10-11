@@ -1,20 +1,13 @@
-[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cw27mxnumbj5s"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cw27mxnumbj5s"]
 
 [ext_resource type="Texture2D" uid="uid://dg5mp85ryc34y" path="res://furniture/gamejam_kwiaty_Base_color.png" id="1_y7hi0"]
-[ext_resource type="Texture2D" uid="uid://d1k053vvalslh" path="res://furniture/gamejam_kwiaty_Metallic-kwiaty_Roughness.png" id="2_at0qk"]
-[ext_resource type="Texture2D" uid="uid://cql46rwgaculc" path="res://furniture/gamejam_kwiaty_Normal_OpenGL.png" id="3_xmvmx"]
 
 [resource]
 resource_name = "kwiaty"
 cull_mode = 2
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 albedo_texture = ExtResource("1_y7hi0")
-metallic = 1.0
+metallic = 0.3
 metallic_specular = 0.0
-metallic_texture = ExtResource("2_at0qk")
 metallic_texture_channel = 2
-roughness = 0.5
-roughness_texture = ExtResource("2_at0qk")
 roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("3_xmvmx")

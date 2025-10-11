@@ -3,15 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://dv5cx7bna2j8s" path="res://furniture/gamejam_okna_Base_color.png" id="1_ksopf"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ns5l8"]
-load_path = "res://.godot/imported/gamejam_okna_Metallic.png-okna_Roughness.png-9a4c51696b11c03e105c54e9837b60c6.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lxqrq"]
-load_path = "res://.godot/imported/gamejam_okna_Normal_OpenGL.png-334d9782749b43f05e02815c28aab622.s3tc.ctex"
 
 [resource]
 resource_name = "okna"
 cull_mode = 2
 albedo_texture = ExtResource("1_ksopf")
+metallic = 0.3
 metallic_specular = 0.0
 metallic_texture = SubResource("CompressedTexture2D_ns5l8")
 metallic_texture_channel = 2

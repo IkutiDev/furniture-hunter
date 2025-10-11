@@ -1,19 +1,13 @@
-[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://c1upboxliaxyx"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c1upboxliaxyx"]
 
 [ext_resource type="Texture2D" uid="uid://c6mo2m1j6wcxi" path="res://furniture/gamejam_komody_Base_color.png" id="1_isyce"]
-[ext_resource type="Texture2D" uid="uid://dfyibhgu3fv5d" path="res://furniture/gamejam_komody_Metallic-komody_Roughness.png" id="2_346bd"]
-[ext_resource type="Texture2D" uid="uid://bj0fslynhhtdw" path="res://furniture/gamejam_komody_Normal.png" id="3_mpp88"]
 
 [resource]
 resource_name = "komody"
 cull_mode = 2
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 albedo_texture = ExtResource("1_isyce")
-metallic = 1.0
+metallic = 0.3
 metallic_specular = 0.0
-metallic_texture = ExtResource("2_346bd")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("2_346bd")
 roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("3_mpp88")

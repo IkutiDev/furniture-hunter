@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c63lj8lvud4jl"]
+
+[ext_resource type="PackedScene" uid="uid://byi6oheylurn5" path="res://furniture/pole_2.glb" id="1_cmj6k"]
+[ext_resource type="Material" uid="uid://cbwyrf1fqq3qw" path="res://materials/pole.tres" id="2_tp455"]
+
+[node name="pole_22" instance=ExtResource("1_cmj6k")]
+
+[node name="pole_2" parent="." index="0"]
+material_override = ExtResource("2_tp455")
