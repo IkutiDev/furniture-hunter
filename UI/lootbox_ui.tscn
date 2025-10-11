@@ -21,6 +21,7 @@ furniture_button_scene = ExtResource("2_ihxcr")
 item_button_scene = ExtResource("3_apek5")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 294.0
 offset_top = 31.0
@@ -47,7 +48,7 @@ grow_vertical = 2
 own_world_3d = true
 handle_input_locally = false
 size = Vector2i(640, 640)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="LootboxWorld" parent="Panel/SubViewportContainer/SubViewport" instance=ExtResource("1_5edwe")]
 
