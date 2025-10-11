@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkgqd0cei32ye"]
+
+[ext_resource type="PackedScene" uid="uid://bi2qjpbwkn8mu" path="res://lootbox/animation/lootbox_world.tscn" id="1_5edwe"]
+[ext_resource type="Script" uid="uid://d3c8hqd6dysyr" path="res://UI/lootbox_ui.gd" id="1_lbq0n"]
+[ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_ihxcr"]
+[ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_apek5"]
+[ext_resource type="PackedScene" uid="uid://b1q3webi276mx" path="res://UI/tool_tip_panel.tscn" id="3_r8gls"]
+
+[node name="LootboxUI" type="Control" node_paths=PackedStringArray("lootbox_menu", "open_menu_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_lbq0n")
+lootbox_menu = NodePath("Panel")
+open_menu_button = NodePath("Button")
+furniture_button_scene = ExtResource("2_ihxcr")
+item_button_scene = ExtResource("3_apek5")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 294.0
+offset_top = 31.0
+offset_right = 934.0
+offset_bottom = 671.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = -432.0
+offset_top = -158.0
+offset_right = 1298.0
+offset_bottom = 787.0
+color = Color(0.8039216, 0.8039216, 0.8039216, 0.33333334)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="Panel/SubViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(640, 640)
+render_target_update_mode = 0
+
+[node name="LootboxWorld" parent="Panel/SubViewportContainer/SubViewport" instance=ExtResource("1_5edwe")]
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 86.0
+offset_right = 526.0
+offset_bottom = 342.0
+
+[node name="ToolTipPanel" parent="Panel/CenterContainer" instance=ExtResource("3_r8gls")]
+layout_mode = 2
+
+[node name="ButtonsShowingObjectsGoHere" type="HBoxContainer" parent="Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 429.0
+offset_right = 641.0
+offset_bottom = 509.0
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Panel/ButtonsShowingObjectsGoHere"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 687.0
+offset_right = 219.0
+offset_bottom = 718.0
+text = "Lootbox"

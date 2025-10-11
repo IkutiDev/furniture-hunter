@@ -13,6 +13,8 @@ signal clicked_on_item(item_data)
 
 signal set_price(object)
 signal object_sold(object)
+signal lootbox_opened(lootbox_data)
+
 
 signal money_value_changed()
 
