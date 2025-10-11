@@ -1,3 +1,4 @@
+class_name Customer
 extends Node3D
 
 
@@ -13,11 +14,15 @@ var i_want_to_buy_this
 
 @export var objects_set_to_be_sold : Array[Node3D]
 
-@export var character_speed = 2.0
+@export var preferences : Dictionary
+
+@export var walk_speed = 2.0
 
 @export var money = 100
 
 @export var energy = 100.0
+
+@export var customer_data : CustomerData
 
 func _ready() -> void:
 
@@ -26,6 +31,15 @@ func _ready() -> void:
 	set_target_position(entrance_location)
 
 
+func load_customer(data : CustomerData):
+	money = data.starting_money
+	preferences = data.purchase_preferences.duplicate()
+	exit_location = data.exit_location
+	entrance_location = data.entrance_location
+	walk_speed = data.walk_speed
+	customer_data = data
+	pass
+
 
 func _physics_process(delta):
 	$EnergyBar.scale.x = energy/100.0
@@ -33,7 +47,7 @@ func _physics_process(delta):
 		return
 	var next_position = $NavigationAgent3D.get_next_path_position()
 	var offset = next_position - global_position
-	global_position = global_position.move_toward(next_position, delta * character_speed)
+	global_position = global_position.move_toward(next_position, delta * walk_speed)
 	
 	# makes the character look forward
 	offset.y = 0

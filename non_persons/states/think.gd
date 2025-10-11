@@ -64,18 +64,18 @@ func make_a_choice(message = "nothing"):
 			selected_choice = "i_chose_to_walk"
 			pass
 		"great offer":
-			if randf() > 0.9:
+			if randf() > 0.4:
 				selected_choice = "i_chose_to_buy"
 			else:
 				selected_choice = "i_chose_to_haggle"
 			pass
 		"weak offer":
-			if randf() > 0.1:
+			if randf() > 0.45:
 				selected_choice = "i_chose_to_haggle"
 			else:
 				selected_choice = "i_chose_to_walk"
 		"bad offer":
-			if randf() > 0.7:
+			if randf() > 0.75:
 				selected_choice = "i_chose_to_browse"
 			else:
 				selected_choice = "i_chose_to_walk"

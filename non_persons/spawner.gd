@@ -7,13 +7,19 @@ var customer_scene = preload("res://non_persons/test_customer.tscn")
 
 var desired_customer_count = 0
 
-@export var max_customer_count = 5 
+@export var max_customer_count = 5
+
+
 
 var objects_set_to_be_sold : Array[Node3D]
 
 var _customer_count = 0
 
 var is_day = false
+
+
+
+
 
 func _ready() -> void:
 	
@@ -35,7 +41,7 @@ func remove_object_from_collection(instance : Node3D) -> void:
 func start_day():
 	$DayToggle/DayIndicator.mesh.material.albedo_color = Color("yellow")
 	is_day = true
-	desired_customer_count = max_customer_count
+	desired_customer_count = max_customer_count + roundi(PlayerInventory.renown / 15.0)
 	pass
 
 func end_day():
@@ -48,12 +54,13 @@ func end_day():
 		GameManager.set_game_state(GameManager.GameState.NIGHT)
 	pass
 
-func spawn_customer() -> void:
+func spawn_customer(data : CustomerData) -> void:
 	var new_customer = customer_scene.instantiate() as Node3D
+	data.entrance_location = $ShopEntrance.global_position
+	data.exit_location = $TheAreaThatEatsPeople.global_position
 	new_customer.global_position = $SpawnPoint.global_position
-	new_customer.exit_location = $TheAreaThatEatsPeople.global_position
-	new_customer.entrance_location = $ShopEntrance.global_position
 	new_customer.objects_set_to_be_sold = objects_set_to_be_sold
+	new_customer.load_customer(data)
 	where_to_plonk_customers.add_child(new_customer)
 	_customer_count += 1
 	pass
@@ -78,10 +85,15 @@ func _on_the_area_that_eats_people_area_entered(area: Area3D) -> void:
 
 
 func _on_spawn_timer_timeout() -> void:
+
+		
 	if _customer_count >= desired_customer_count:
 		return
-	if randf() > 0.47:
-		spawn_customer()
+	if randf() > 0.62:
+		var new_data = CustomerData.new()
+		new_data.starting_money = randi_range(80,160) + int(PlayerInventory.renown * 2)
+		
+		spawn_customer(new_data)
 
 	pass # Replace with function body.
 
