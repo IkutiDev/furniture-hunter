@@ -1,20 +1,21 @@
 [gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dr8yxhv1lmpko"]
 
 [ext_resource type="Texture2D" uid="uid://dv5cx7bna2j8s" path="res://furniture/gamejam_okna_Base_color.png" id="1_ksopf"]
-[ext_resource type="Texture2D" uid="uid://b0g8ohwhjp16g" path="res://furniture/gamejam_okna_Metallic.png-okna_Roughness.png" id="2_ydx3r"]
-[ext_resource type="Texture2D" uid="uid://cmj7qb6u6ltej" path="res://furniture/gamejam_okna_Normal_OpenGL.png" id="3_88g0f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ns5l8"]
+load_path = "res://.godot/imported/gamejam_okna_Metallic.png-okna_Roughness.png-9a4c51696b11c03e105c54e9837b60c6.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lxqrq"]
+load_path = "res://.godot/imported/gamejam_okna_Normal_OpenGL.png-334d9782749b43f05e02815c28aab622.s3tc.ctex"
 
 [resource]
 resource_name = "okna"
 cull_mode = 2
-albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 albedo_texture = ExtResource("1_ksopf")
-metallic = 1.0
 metallic_specular = 0.0
-metallic_texture = ExtResource("2_ydx3r")
+metallic_texture = SubResource("CompressedTexture2D_ns5l8")
 metallic_texture_channel = 2
-roughness = 0.5
-roughness_texture = ExtResource("2_ydx3r")
+roughness = 0.0
+roughness_texture = SubResource("CompressedTexture2D_ns5l8")
 roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("3_88g0f")
+normal_texture = SubResource("CompressedTexture2D_lxqrq")

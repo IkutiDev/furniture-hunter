@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b4cnrus0hqvo4"]
+[gd_scene load_steps=25 format=4 uid="uid://b4cnrus0hqvo4"]
 
 [ext_resource type="PackedScene" uid="uid://cxlli3y21vljl" path="res://furniture/gamejam.glb" id="1_yxda3"]
 [ext_resource type="Material" uid="uid://c1upboxliaxyx" path="res://materials/new_standard_material_3d.tres" id="2_5igs5"]
@@ -8,6 +8,8 @@
 [ext_resource type="Material" uid="uid://cq4xa75t6c3bk" path="res://materials/case.tres" id="5_fm5tk"]
 [ext_resource type="Material" uid="uid://dxwsrhfhrn3ng" path="res://materials/formalin.tres" id="6_ahobe"]
 [ext_resource type="Material" uid="uid://dr8yxhv1lmpko" path="res://materials/window.tres" id="7_5ga08"]
+[ext_resource type="PackedScene" uid="uid://do75sbbrkw76d" path="res://furniture/pole_1.glb" id="9_ktukd"]
+[ext_resource type="PackedScene" uid="uid://byi6oheylurn5" path="res://furniture/pole_2.glb" id="10_hy3kp"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mmds8"]
 _surfaces = [{
@@ -433,3 +435,9 @@ material_override = ExtResource("3_5ga08")
 [node name="carpet_3_001" parent="." index="48"]
 transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 31.158546, 1.0615406, 8.565757)
 material_override = ExtResource("2_5igs5")
+
+[node name="pole_1" parent="." index="49" instance=ExtResource("9_ktukd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2394834, 41.665585, 20.702696)
+
+[node name="pole_22" parent="." index="50" instance=ExtResource("10_hy3kp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.764099, 41.4962, 20.643812)
