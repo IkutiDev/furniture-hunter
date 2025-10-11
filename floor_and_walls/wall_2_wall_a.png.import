@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rj1oak01r3pm"
-path.s3tc="res://.godot/imported/waal_wall.png-1c96f87620121176bac959c853a2b951.s3tc.ctex"
+uid="uid://cl54hmlsxfeo5"
+path.s3tc="res://.godot/imported/wall_2_wall_a.png-c707ba9105a7de68aa62dbe38703c9a2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8de9fe2c7332c6111f0b317443726632"
+"md5": "1130dcb64387b88620bd38e504a7f275"
 }
 
 [deps]
 
-source_file="res://floor_and_walls/waal_wall.png"
-dest_files=["res://.godot/imported/waal_wall.png-1c96f87620121176bac959c853a2b951.s3tc.ctex"]
+source_file="res://floor_and_walls/wall_2_wall_a.png"
+dest_files=["res://.godot/imported/wall_2_wall_a.png-c707ba9105a7de68aa62dbe38703c9a2.s3tc.ctex"]
 
 [params]
 
