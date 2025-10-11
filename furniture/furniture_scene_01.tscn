@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=4 uid="uid://b4cnrus0hqvo4"]
+[gd_scene load_steps=23 format=4 uid="uid://b4cnrus0hqvo4"]
 
 [ext_resource type="PackedScene" uid="uid://cxlli3y21vljl" path="res://furniture/gamejam.glb" id="1_yxda3"]
 [ext_resource type="Material" uid="uid://c1upboxliaxyx" path="res://materials/new_standard_material_3d.tres" id="2_5igs5"]
 [ext_resource type="Material" uid="uid://i50sqoaybgb1" path="res://materials/lamp.tres" id="2_nogub"]
 [ext_resource type="Material" uid="uid://cw27mxnumbj5s" path="res://materials/plant.tres" id="3_5ga08"]
+[ext_resource type="Material" uid="uid://btbvef6o2ufoq" path="res://materials/tables.tres" id="5_ahobe"]
 [ext_resource type="Material" uid="uid://cq4xa75t6c3bk" path="res://materials/case.tres" id="5_fm5tk"]
 [ext_resource type="Material" uid="uid://dxwsrhfhrn3ng" path="res://materials/formalin.tres" id="6_ahobe"]
 [ext_resource type="Material" uid="uid://dr8yxhv1lmpko" path="res://materials/window.tres" id="7_5ga08"]
@@ -73,6 +74,40 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_581o2")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rcskc"]
+_surfaces = [{
+"aabb": AABB(-3.022049, -1.4502271, -1.2482834, 6.044098, 2.3523393, 2.496564),
+"format": 34896613377,
+"index_count": 132,
+"index_data": PackedByteArray("AwAQAAcABwARAAMAAwASABAAEQASAAMABwAQAAYABwATABEABwAGABMAFAARABMAEQAAABIACgAUABMACgATAAYAFAAVABEAAAARABUAFAAMABUAFAAJAAwADAAIABUAAAAVAAgACQAWAAwADAAWAAgAFAAXAAkACQAXABYAFAAKABcABgAAAAgABgAIAAoACAAWAA0AFwAKAAsACgAIAA8ACAANAA8ACgAPAAsAFgAOAA0AFgAXAA4ADgAPAA0AFwALAA4ADgALAA8AAAAGAAEABgAFAAEABgAQAAUAAAABAAIAEgAAAAIAAQAFAAQAEAAEAAUAAQAEAAIAEAASAAQAEgACAAQA"),
+"lods": [0.001348391, PackedByteArray("AAABAAIAAwAAAAIAAQAEAAIAAwACAAQAAQAFAAQAAAAGAAEABgAFAAEABwAEAAUABgAHAAUABwADAAQABgAAAAgAAAADAAgABwAGAAkABwAJAAMACgAJAAYABgAIAAoACQAKAAsADAAIAAMACQAMAAMACAAMAA0ADAAJAA4ACQALAA4ADAAOAA0ACgAPAAsACgAIAA8ADgALAA8ACAANAA8ADgAPAA0A")],
+"name": "stoly",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("exB42f//AAB7EAAAAAAAAHsQAAD//wAAAAD/////AAAAAAAA//8AAAAAAAAAAAAAexB42QAAAAAAAP//AAAAAIPveNn//wAA/////wAAAACD73jZAAAAAIPvAAAAAAAA////////AAD//wAA//8AAP//AAAAAAAAg+8AAP//AAAAAHjZAAAAAHsQ/////wAAAAB42f//AAB7EP//AAAAAIPv//8AAAAAg+//////AAD//3jZ//8AAP//eNkAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yewm6"]
+resource_name = "gamejam_Cube_027"
+_surfaces = [{
+"aabb": AABB(-3.022049, -1.4502271, -1.2482834, 6.044098, 2.3523393, 2.496564),
+"attribute_data": PackedByteArray("8cNEqSXmAdQl5kSp8cMB1KTjLXVN6nFKpONxSk3qLXVWk+HU4Cvh1FaTnf/gK53/GJSd/yia9PgYlCeYXbyd/1289PgomtGeXbzRnl28J5jCtc42fuCaFMK1mhR+4M42hFrAVmEABCxhAMBWhFoELK2MzLFWk72riTLMsa2MAdRWkwHU4Cu9q+ArAdSJMgHUCF6PkEwz5olMM4+QCF7mifLD4dQ17J3/Nezh1PLDnf9HW4otioNGWIqDii1HW0ZYVmGKLVZhRlgByuHUAcqd/62Mnf+tjOHUiTLh1Ikynf8YlPT4KJqd/xiU0Z4omieYrYy9q1aTzLGJMr2r4CvMsQ=="),
+"format": 34896613399,
+"index_count": 132,
+"index_data": PackedByteArray("LwAwACwALwAxADAAMAAxAC0AMAAtAC4AAAABAAIAAAADAAEAKwAyACgAKwAzADIAMgAzACkAMgApACoABAAFAAYABAAHAAUACAA0AAoACAA1ADQANgA0ADUANgA3ADQANgALADcANgAJAAsADAANADgADAA5AA0ADQA5AA8ADQAPABAAEQA4AA0AEQA6ADgAOgARADsAOgA7AA4AOwARABIAOwASABMAFAAVABYAFAAXABUAPAA9AB0APAAcAD0AHAA8AD4APQAcAB8APQAfACAAHAA+AB4AIQAeAD4AIQA/AB4AHgA/ACIAHgAiACMAGAAZABoAGAAbABkAJAAlACYAJAAnACUA"),
+"lods": [0.001348391, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACQALAAoADAANAA4ADQAMAA8ADQAPABAAEQAOAA0ADgARABIADgASABMAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHQAcAB8AHQAfACAAIQAeAB0AHgAhACIAHgAiACMAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A")],
+"material": ExtResource("5_ahobe"),
+"name": "stoly",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("exB42f//qip7EAAAAACqKnsQAAD//6oqexB42QAAqir//wAAAAAAAIPvAAD//wAA//8AAP//AACD7wAAAAAAAAAA//8AAAAA/////wAAAAAAAP////8AAP///////wAA/////////z+D73jZ////PwAA//////8///8AAP///z+D7wAA////P3sQeNn///8/exAAAP///z8AAAAA////P4PveNkAAP8/g+8AAP///z+D7wAAAAD/P4PveNn///8/exB42QAAAACD73jZ//8AAIPveNkAAAAAexB42f//AACD73jZAAAAAP////8AAAAAexB42QAAAACD7wAAAAAAAP//AAAAAAAAAAD//wAAAAAAAAAAAAAAAHsQAAAAAAAAexAAAAAAqioAAAAA//+qKnsQAAD//6oqAAAAAAAAqir///////+qKv//AAAAAKoq//8AAP//qir/////AACqKgAA//8AAKoqAAAAAP//qioAAAAAAACqKgAA/////6oqAAB42QAAqioAAHjZ//+qKv//eNn//6oq//942QAAqip7EP////8AAHsQ//8AAAAAg+///wAAAACD7/////8AAIPv//////8///942f///z97EP//////PwAAeNn///8/g+///wAAAAD//3jZAAAAAHsQ//8AAAAAAAB42QAAAACpqlRVqapUVaqqVFWpqlRV/3//P/9//z//f/8//3//P/9//7//f/+//3//v/9//7//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9/////f////3////9/////f/8//3//P/9//z//f/8/////f////3////9/////f////3////9//v//f/7//39UVVRVVFVUVVRVVFVUVVRVqqpUVamqVFWpqlRVqqpUVVVVqqpUVaqqVFWqqlVVqqpVVaqqVFWqqqqqVFWqqlRV/3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//3////9/////f/7//3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_rcskc")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_agg2o"]
 _surfaces = [{
@@ -209,184 +244,192 @@ shadow_mesh = SubResource("ArrayMesh_wus8i")
 [node name="gamejam" instance=ExtResource("1_yxda3")]
 
 [node name="lamp_1" parent="." index="0"]
-transform = Transform3D(0.547789, 0, 0, 0, 0.547789, 0, 0, 0, 0.547789, -3.3968532, 0, 0)
+transform = Transform3D(0.36801383, 0, 0, 0, 0.29101497, 0, 0, 0, 0.29176024, -3.3968532, 0, 0)
 material_override = ExtResource("2_nogub")
 
 [node name="plant_2" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.629873, 0, -5.3499985)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 21.629873, 0, -5.3499985)
 material_override = ExtResource("3_5ga08")
 
 [node name="carpet_3" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4379158, 0, -9.804588)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, -3.4379158, 0, -9.804588)
 material_override = ExtResource("2_5igs5")
 
 [node name="table_1" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.137306, 0, 0)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 22.137306, 0, 0)
+material_override = ExtResource("5_ahobe")
 
 [node name="box_2" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.702601, 0, -16.194626)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 5.702601, 0, -16.194626)
 material_override = ExtResource("7_5ga08")
 
 [node name="case_2" parent="." index="5"]
-transform = Transform3D(1.3975688, 0, 0, 0, 1.3975688, 0, 0, 0, 1.3975688, -23.882751, 0, -10.801964)
+transform = Transform3D(0.9389102, 0, 0, 0, 0.74246377, 0, 0, 0, 0.74436516, -23.882751, 0, -10.801964)
 mesh = SubResource("ArrayMesh_ktukd")
 
 [node name="formalin_1" parent="." index="6"]
-transform = Transform3D(2.1379297, 0, 0, 0, 2.1379297, 0, 0, 0, 2.1379297, -30.278767, 0, 0)
+transform = Transform3D(1.436297, 0, 0, 0, 1.1357832, 0, 0, 0, 1.138692, -30.278767, 0, 0)
 material_override = ExtResource("6_ahobe")
 
 [node name="big_dresser_2" parent="." index="7"]
-transform = Transform3D(1.4205314, 0, 0, 0, 1.4205314, 0, 0, 0, 1.4205314, -49.6922, 0, -10.231508)
+transform = Transform3D(0.9543368, 0, 0, 0, 0.7546627, 0, 0, 0, 0.7565953, -49.6922, 0, -10.231508)
 material_override = ExtResource("5_fm5tk")
 
 [node name="big_dresser_1" parent="." index="8"]
-transform = Transform3D(1.4192845, 0, -0.059510462, 0, 1.4205314, 0, 0.059510462, 0, 1.4192845, -57.487957, 0, -9.977922)
+transform = Transform3D(0.9534991, 0, -0.031696122, 0, 0.7546627, 0, 0.039980125, 0, 0.7559312, -57.487957, 0, -9.977922)
 material_override = ExtResource("5_fm5tk")
 
 [node name="bookcase_3" parent="." index="9"]
-transform = Transform3D(1.4205314, 0, 0, 0, 1.4205314, 0, 0, 0, 1.4205314, -58.304977, 0, 0)
+transform = Transform3D(0.9543368, 0, 0, 0, 0.7546627, 0, 0, 0, 0.7565953, -58.304977, 0, 0)
 material_override = ExtResource("5_fm5tk")
 
 [node name="bookcase_2" parent="." index="10"]
-transform = Transform3D(1.4205314, 0, 0, 0, 1.4205314, 0, 0, 0, 1.4205314, -51.503143, 0, 0)
+transform = Transform3D(0.9543368, 0, 0, 0, 0.7546627, 0, 0, 0, 0.7565953, -51.503143, 0, 0)
 material_override = ExtResource("5_fm5tk")
 
 [node name="bookcase_1" parent="." index="11"]
-transform = Transform3D(1.4205314, 0, 0, 0, 1.4205314, 0, 0, 0, 1.4205314, -65.33566, 0, 0)
+transform = Transform3D(0.9543368, 0, 0, 0, 0.7546627, 0, 0, 0, 0.7565953, -65.33566, 0, 0)
 material_override = ExtResource("5_fm5tk")
 
 [node name="case_1" parent="." index="12"]
-transform = Transform3D(1.2652888, 0, 0, 0, 1.2652888, 0, 0, 0, 1.2652888, -31.972366, -0.0516119, -11.454996)
+transform = Transform3D(0.8500422, 0, 0, 0, 0.6721895, 0, 0, 0, 0.6739109, -31.972366, -0.0516119, -11.454996)
 material_override = ExtResource("5_fm5tk")
 
 [node name="dresser_3" parent="." index="13"]
-transform = Transform3D(1.4205314, 0, 0, 0, 1.4205314, 0, 0, 0, 1.4205314, -66.03752, 0, -9.589735)
+transform = Transform3D(0.9543368, 0, 0, 0, 0.7546627, 0, 0, 0, 0.7565953, -66.03752, 0, -9.589735)
 material_override = ExtResource("5_fm5tk")
 
 [node name="formalin_3" parent="." index="14"]
-transform = Transform3D(2.1379297, 0, 0, 0, 2.1379297, 0, 0, 0, 2.1379297, -44.14637, 0, 0)
+transform = Transform3D(1.436297, 0, 0, 0, 1.1357832, 0, 0, 0, 1.138692, -44.14637, 0, 0)
 material_override = ExtResource("6_ahobe")
 
 [node name="formalin_2" parent="." index="15"]
-transform = Transform3D(2.1379297, 0, 0, 0, 2.1379297, 0, 0, 0, 2.1379297, -18.761993, 0, 0)
+transform = Transform3D(1.436297, 0, 0, 0, 1.1357832, 0, 0, 0, 1.138692, -18.761993, 0, 0)
 mesh = SubResource("ArrayMesh_hy3kp")
 
 [node name="table_3" parent="." index="16"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.737184, 0, 0)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 12.737184, 0, 0)
+material_override = ExtResource("5_ahobe")
+mesh = SubResource("ArrayMesh_yewm6")
 
 [node name="table_2" parent="." index="17"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.575428, 0, 0)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 30.575428, 0, 0)
+material_override = ExtResource("5_ahobe")
 
 [node name="chair_3" parent="." index="18"]
-transform = Transform3D(1.1755937, 0, 0, 0, 1.1929009, 0, 0, 0, 1.343322, 4.068388, 0, -4.806767)
+transform = Transform3D(0.7897836, 0, 0, 0, 0.63373315, 0, 0, 0, 0.7154725, 4.068388, 0, -4.806767)
+material_override = ExtResource("5_ahobe")
 
 [node name="chair_1" parent="." index="19"]
-transform = Transform3D(1.1755937, 0, 0, 0, 1.1929009, 0, 0, 0, 1.343322, 6.8577776, 0, -5.340466)
+transform = Transform3D(0.7897836, 0, 0, 0, 0.63373315, 0, 0, 0, 0.7154725, 6.8577776, 0, -5.340466)
+material_override = ExtResource("5_ahobe")
 
 [node name="chair_2" parent="." index="20"]
-transform = Transform3D(1.1755937, 0, 0, 0, 1.1929009, 0, 0, 0, 1.343322, 9.651211, 0, -5.533829)
+transform = Transform3D(0.7897836, 0, 0, 0, 0.63373315, 0, 0, 0, 0.7154725, 9.651211, 0, -5.533829)
+material_override = ExtResource("5_ahobe")
 
 [node name="carpet_1" parent="." index="21"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.326944, 0, 8.294886)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 19.326944, 0, 8.294886)
 material_override = ExtResource("2_5igs5")
 
 [node name="carpet_2" parent="." index="22"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.664478, 0, 8.343893)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 9.664478, 0, 8.343893)
 material_override = ExtResource("2_5igs5")
 
 [node name="dresser_2" parent="." index="23"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.924786, 0, -9.910416)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, -14.924786, 0, -9.910416)
+material_override = ExtResource("2_5igs5")
 mesh = SubResource("ArrayMesh_y31l2")
 
 [node name="dresser_1" parent="." index="24"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.672759, 0.004389286, -9.902256)
+transform = Transform3D(0.67178863, -0.0036604083, 0.0032027222, 0.004632149, 0.53124094, -0.00041684468, -0.0040360554, 0.0004377891, 0.53260446, -8.672759, 0.004389286, -9.902256)
 material_override = ExtResource("2_5igs5")
 
 [node name="plant_1" parent="." index="25"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.798563, 0, -4.9294844)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 16.798563, 0, -4.9294844)
 material_override = ExtResource("3_5ga08")
 
 [node name="plant_3" parent="." index="26"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.03799, 0, -5.840701)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 27.03799, 0, -5.840701)
 material_override = ExtResource("3_5ga08")
 
 [node name="bracket_lamp_1" parent="." index="27"]
-transform = Transform3D(0.5615346, 0, 0, 0, 0.5615346, 0, 0, 0, 0.5615346, 10.61784, 0, -21.623228)
+transform = Transform3D(0.37724835, 0, 0, 0, 0.29831737, 0, 0, 0, 0.29908136, 10.61784, 0, -21.623228)
 material_override = ExtResource("2_nogub")
 
 [node name="bracket_lamp_2" parent="." index="28"]
-transform = Transform3D(0.5615346, 0, 0, 0, 0.5615346, 0, 0, 0, 0.5615346, 6.323059, 0, -23.899347)
+transform = Transform3D(0.37724835, 0, 0, 0, 0.29831737, 0, 0, 0, 0.29908136, 6.323059, 0, -23.899347)
 material_override = ExtResource("2_nogub")
 
 [node name="bracket_lamp_3" parent="." index="29"]
-transform = Transform3D(0.5615346, 0, 0, 0, 0.5615346, 0, 0, 0, 0.5615346, 8.312887, 0, -24.130678)
+transform = Transform3D(0.37724835, 0, 0, 0, 0.29831737, 0, 0, 0, 0.29908136, 8.312887, 0, -24.130678)
 material_override = ExtResource("2_nogub")
 
 [node name="lamp_3" parent="." index="30"]
-transform = Transform3D(0.547789, 0, 0, 0, 0.547789, 0, 0, 0, 0.547789, -9.807445, 0, 0)
+transform = Transform3D(0.36801383, 0, 0, 0, 0.29101497, 0, 0, 0, 0.29176024, -9.807445, 0, 0)
 mesh = SubResource("ArrayMesh_ba1ce")
 
 [node name="lamp_2" parent="." index="31"]
-transform = Transform3D(0.547789, 0, 0, 0, 0.547789, 0, 0, 0, 0.547789, -6.486774, 0, -0.05688286)
+transform = Transform3D(0.36801383, 0, 0, 0, 0.29101497, 0, 0, 0, 0.29176024, -6.486774, 0, -0.05688286)
 material_override = ExtResource("2_nogub")
 
 [node name="Window_3" parent="." index="32"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.8065, 1.1131468, -22.534948)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, -69.8065, 1.1131468, -22.534948)
 material_override = ExtResource("7_5ga08")
 
 [node name="Window_2" parent="." index="33"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.210533, 0, -21.691)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, -59.210533, 0, -21.691)
 mesh = SubResource("ArrayMesh_fm5tk")
 
 [node name="Window_1" parent="." index="34"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.32865, 4.7683716e-07, -22.476063)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, -47.32865, 4.7683716e-07, -22.476063)
 material_override = ExtResource("7_5ga08")
 
 [node name="box_3" parent="." index="35"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.218704)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 0, 0, -16.218704)
 material_override = ExtResource("7_5ga08")
 
 [node name="box_1" parent="." index="36"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6718483, 0, -16.25048)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 2.6718483, 0, -16.25048)
 material_override = ExtResource("7_5ga08")
 
 [node name="vial_set_1" parent="." index="37"]
-transform = Transform3D(0.48395473, 0, 0, 0, 0.48395473, 0, 0, 0, 0.48395473, -3.740806, 0, 5.9821854)
+transform = Transform3D(0.3251289, 0, 0, 0, 0.2571028, 0, 0, 0, 0.2577612, -3.740806, 0, 5.9821854)
 
 [node name="vial_set_2" parent="." index="38"]
-transform = Transform3D(0.48395473, 0, 0, 0, 0.48395473, 0, 0, 0, 0.48395473, -7, 0, 6)
+transform = Transform3D(0.3251289, 0, 0, 0, 0.2571028, 0, 0, 0, 0.2577612, -7, 0, 6)
 
 [node name="vial_set_3" parent="." index="39"]
-transform = Transform3D(0.48395473, 0, 0, 0, 0.48395473, 0, 0, 0, 0.48395473, 0, 0, 6)
+transform = Transform3D(0.3251289, 0, 0, 0, 0.2571028, 0, 0, 0, 0.2577612, 0, 0, 6)
 
 [node name="vial_1" parent="." index="40"]
-transform = Transform3D(0.48395473, 0, 0, 0, 0.48395473, 0, 0, 0, 0.48395473, 1.3596506, 0, 0)
+transform = Transform3D(0.3251289, 0, 0, 0, 0.2571028, 0, 0, 0, 0.2577612, 1.3596506, 0, 0)
 
 [node name="vial_2" parent="." index="41"]
-transform = Transform3D(0.48395473, 0, 0, 0, 0.48395473, 0, 0, 0, 0.48395473, 4.8660526, 0, 0)
+transform = Transform3D(0.3251289, 0, 0, 0, 0.2571028, 0, 0, 0, 0.2577612, 4.8660526, 0, 0)
 
 [node name="vial_3" parent="." index="42"]
-transform = Transform3D(0.48395473, 0, 0, 0, 0.48395473, 0, 0, 0, 0.48395473, 5.673897, 0, 0)
+transform = Transform3D(0.3251289, 0, 0, 0, 0.2571028, 0, 0, 0, 0.2577612, 5.673897, 0, 0)
 
 [node name="vial_4" parent="." index="43"]
-transform = Transform3D(0.48395473, 0, 0, 0, 0.48395473, 0, 0, 0, 0.48395473, 2.654549, 0, 0)
+transform = Transform3D(0.3251289, 0, 0, 0, 0.2571028, 0, 0, 0, 0.2577612, 2.654549, 0, 0)
 
 [node name="vial_5" parent="." index="44"]
-transform = Transform3D(0.48395473, 0, 0, 0, 0.48395473, 0, 0, 0, 0.48395473, 3.8226838, 0, 0)
+transform = Transform3D(0.3251289, 0, 0, 0, 0.2571028, 0, 0, 0, 0.2577612, 3.8226838, 0, 0)
 
 [node name="cofin_01" parent="." index="45"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.569511, 0.05880022, -9.92451)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 21.569511, 0.05880022, -9.92451)
 material_override = ExtResource("3_5ga08")
 mesh = SubResource("ArrayMesh_0gc0w")
 
 [node name="mirror_01" parent="." index="46"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.091716, 0, -10.16876)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 15.091716, 0, -10.16876)
 material_override = ExtResource("3_5ga08")
 
 [node name="clock_1" parent="." index="47"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.783741, 0, -10.813077)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 17.783741, 0, -10.813077)
 material_override = ExtResource("3_5ga08")
 
 [node name="carpet_3_001" parent="." index="48"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.158546, 1.0615406, 8.565757)
+transform = Transform3D(0.67181677, 0, 0, 0, 0.5312538, 0, 0, 0, 0.5326143, 31.158546, 1.0615406, 8.565757)
 material_override = ExtResource("2_5igs5")
