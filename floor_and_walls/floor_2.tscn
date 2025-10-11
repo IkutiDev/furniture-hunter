@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=4 uid="uid://drwkyvdmpddmd"]
+
+[ext_resource type="PackedScene" uid="uid://8rd7niobwwqc" path="res://floor_and_walls/floor_2.glb" id="1_wgysj"]
+[ext_resource type="Material" uid="uid://dam32r63ot66t" path="res://materials/wood_floor.tres" id="2_lvoyb"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b5bk7"]
+_surfaces = [{
+"aabb": AABB(-0.49874756, 0.03451887, 0, 0.49717867, 0.025527533, 0.5),
+"format": 34359742465,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAAAEAAEABAAFAAEAAAADAAYABAAAAAYABwADAAUABAAHAAUABwAGAAMABAAGAAcA"),
+"name": "floot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("11v/vjjzdT0AAAA/11v/vqljDT0AAACA11v/vjjzdT0AAACAgKLNujjzdT0AAACA11v/vqljDT0AAAA/gKLNuqljDT0AAACAgKLNujjzdT0AAAA/gKLNuqljDT0AAAA/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4qyuj"]
+resource_name = "floor_2_floot"
+_surfaces = [{
+"aabb": AABB(-0.49874756, 0.03451887, 0, 0.49717867, 0.025527533, 0.5),
+"attribute_data": PackedByteArray("AD7yuq/Vfz8APvK6AJDfuQA+8roAkN+5AD7yuq/Vfz8APvK6r9V/P4J4fz+v1X8/gnh/P6/Vfz8APvK6r9V/P4J4fz+v1X8/gnh/PwCQ37mCeH8/AJDfuYJ4fz+v1X8/AD7yuq/Vfz+CeH8/AJDfuYJ4fz+v1X8/AD7yugCQ37kAPvK6r9V/P4J4fz8AkN+5AD7yugCQ37mCeH8/r9V/Pw=="),
+"format": 34359742487,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEA"),
+"material": ExtResource("2_lvoyb"),
+"name": "floot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("11v/vjjzdT0AAAA/11v/vqljDT0AAACA11v/vjjzdT0AAACA11v/vqljDT0AAAA/11v/vqljDT0AAAA/gKLNujjzdT0AAAA/gKLNuqljDT0AAAA/11v/vjjzdT0AAAA/gKLNuqljDT0AAAA/gKLNujjzdT0AAACAgKLNuqljDT0AAACAgKLNujjzdT0AAAA/11v/vjjzdT0AAAA/gKLNujjzdT0AAACAgKLNujjzdT0AAAA/11v/vjjzdT0AAACA11v/vqljDT0AAAA/gKLNuqljDT0AAACA11v/vqljDT0AAACAgKLNuqljDT0AAAA/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//f/9/////P/9//3////8//3//f////z//f/9/////P////3////+/////f////7////9/////v////3////+//3///////7//f///////v/9///////+//3///////7//fwAA////P/9/AAD///8//38AAP///z//fwAA////Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b5bk7")
+
+[node name="floor_22" instance=ExtResource("1_wgysj")]
+
+[node name="floor_2" parent="." index="0"]
+mesh = SubResource("ArrayMesh_4qyuj")
