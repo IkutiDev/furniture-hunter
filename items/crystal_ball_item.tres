@@ -6,9 +6,7 @@
 
 [resource]
 script = ExtResource("1_lf3vg")
-item_name = "Crystal Ball"
-item_icon = ExtResource("1_22by5")
-item_value = 300
+icon = ExtResource("1_22by5")
 item_scene = ExtResource("2_xqrce")
 rarity_weight = 0.1
 metadata/_custom_type_script = "uid://c1nrhtbb30bm"

@@ -7,7 +7,6 @@
 [resource]
 script = ExtResource("1_npaj5")
 object_name = "Stool"
-furniture_icon = ExtResource("1_8wk54")
-furniture_renown = 5
+icon = ExtResource("1_8wk54")
 furniture_scene = ExtResource("1_51rqf")
 metadata/_custom_type_script = "uid://cjx3ofmytnupc"

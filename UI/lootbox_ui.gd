@@ -24,7 +24,7 @@ func _open_lootbox(data : LootboxData):
 	$Panel/SubViewportContainer/SubViewport/LootboxWorld.play()
 	await $Panel/SubViewportContainer/SubViewport/LootboxWorld.animation_complete # wait for the animation to finish
 	var spawned_objects = data.spawn_objects() as Array # actual spawn the objects
-	print(spawned_objects)
+
 	for object in spawned_objects:
 		var button_scene : Control
 		if object is ItemData:

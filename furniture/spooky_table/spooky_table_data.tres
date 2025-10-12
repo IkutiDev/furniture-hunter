@@ -7,8 +7,7 @@
 [resource]
 script = ExtResource("1_u7vkf")
 object_name = "Spooky Table"
-furniture_icon = ExtResource("1_5fcrg")
-furniture_renown = 50
+icon = ExtResource("1_5fcrg")
 furniture_scene = ExtResource("2_08f0a")
 rarity_weight = 0.5
 metadata/_custom_type_script = "uid://cjx3ofmytnupc"

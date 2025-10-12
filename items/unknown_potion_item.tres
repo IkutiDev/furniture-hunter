@@ -6,9 +6,7 @@
 
 [resource]
 script = ExtResource("1_odgmt")
-item_name = "Potion"
-item_icon = ExtResource("1_l7blu")
-item_value = 100
+icon = ExtResource("1_l7blu")
 item_scene = ExtResource("2_u8hke")
 rarity_weight = 0.7
 metadata/_custom_type_script = "uid://c1nrhtbb30bm"

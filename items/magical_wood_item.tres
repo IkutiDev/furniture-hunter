@@ -6,9 +6,7 @@
 
 [resource]
 script = ExtResource("1_ohys2")
-item_name = "Magical Wood"
-item_icon = ExtResource("1_6dec6")
-item_value = 200
+icon = ExtResource("1_6dec6")
 item_scene = ExtResource("2_m5y1g")
 rarity_weight = 0.5
 metadata/_custom_type_script = "uid://c1nrhtbb30bm"

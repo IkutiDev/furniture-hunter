@@ -6,10 +6,7 @@
 
 [resource]
 script = ExtResource("1_mpp0f")
-furniture_name = "Witch Couldron"
-furniture_icon = ExtResource("1_fceym")
-furniture_renown = 100
-furniture_base_value = 100
+icon = ExtResource("1_fceym")
 furniture_scene = ExtResource("2_hiqhs")
 rarity_weight = 0.1
 metadata/_custom_type_script = "uid://cjx3ofmytnupc"

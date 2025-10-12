@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=43 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -261,7 +261,7 @@ cell_size = Vector3(1, 1, 1)
 collision_mask = 0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.86427045, -0.40119925, 0.30342412, 0, 0.603206, 0.79757994, -0.50301737, -0.6893294, 0.5213348, 4.955, 7.685, 7.253605)
+transform = Transform3D(0.86427486, -0.4012006, 0.30342564, 0, 0.60320807, 0.7975839, -0.5030199, -0.6893317, 0.5213375, 4.955, 7.685, 7.253605)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300

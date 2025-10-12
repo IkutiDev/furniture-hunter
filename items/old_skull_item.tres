@@ -6,9 +6,7 @@
 
 [resource]
 script = ExtResource("1_h737r")
-item_name = "Skull"
-item_icon = ExtResource("1_174d2")
-item_value = 50
+icon = ExtResource("1_174d2")
 item_scene = ExtResource("2_74te2")
 rarity_weight = 1.0
 metadata/_custom_type_script = "uid://c1nrhtbb30bm"
