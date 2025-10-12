@@ -53,6 +53,7 @@ size = Vector3(2.2, 1, 1)
 
 [node name="Table1" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
 script = ExtResource("1_ksljv")
+extra_size = PackedVector3Array(1, 0, 0, -1, 0, 0)
 visual_mesh = NodePath("table_1")
 static_body = NodePath("StaticBody3D")
 

@@ -51,6 +51,7 @@ func _process(_delta: float) -> void:
 		visual_mesh.material_override = cant_place_material
 	visual_mesh_parent.position = occupation_grid_map.map_to_local(current_mouse_position_on_grid)
 	visual_mesh.mesh = selected_furniture.get_visual_mesh()
+	visual_mesh.scale = selected_furniture.get_scale()
 	visual_mesh.position = selected_furniture.get_offset()
 	
 func toggled_delete_mode(active : bool) -> void:

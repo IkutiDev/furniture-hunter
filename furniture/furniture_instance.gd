@@ -35,6 +35,9 @@ func get_mesh_offset() -> Vector3:
 func get_mesh() -> Mesh:
 	return visual_mesh.mesh
 
+func get_mesh_scale() -> Vector3:
+	return visual_mesh.scale
+
 func remove_this_instance() -> void:
 	PlayerInventory.add_object_to_inventory(furniture_data)
 	queue_free()
