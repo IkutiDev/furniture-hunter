@@ -25,8 +25,8 @@ func open_ui(instance: FurnitureInstance) -> void:
 		return
 	furniture_instance = instance
 	furniture_title_label.text = furniture_instance.furniture_data.object_name
-	furniture_description_label.text = furniture_instance.furniture_data.furniture_description
-	recommended_price_label.text = str(furniture_instance.furniture_data.furniture_base_value) +"$"
+	furniture_description_label.text = furniture_instance.furniture_data.description
+	recommended_price_label.text = str(furniture_instance.furniture_data.base_value) +"$"
 	price_box.value = furniture_instance.current_price if furniture_instance.current_price >= 0 else 0
 	
 	show()

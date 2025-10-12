@@ -27,11 +27,11 @@ func set_data(data : ItemData) -> void:
 	if data == null:
 		set_price(-1)
 		if item_data != null:
-			PlayerInventory.change_renown_amount(-item_data.item_renown)
+			PlayerInventory.change_renown_amount(-item_data.renown)
 	else:
 		var item_instance := data.item_scene.instantiate()
 		add_child(item_instance)
-		PlayerInventory.change_renown_amount(data.item_renown)
+		PlayerInventory.change_renown_amount(data.renown)
 	item_data = data
 		
 func set_price(new_price : int) -> void:

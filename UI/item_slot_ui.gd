@@ -33,9 +33,9 @@ func update_item_slot_ui() -> void:
 		price_spin_box.value = 0
 		icon.texture = empty_icon
 	else:
-		recommeneded_price_label.text = str(item_instance.item_data.item_value) +"$"
+		recommeneded_price_label.text = str(item_instance.item_data.base_value) +"$"
 		price_spin_box.value = item_instance.current_price if item_instance.current_price >= 0 else 0
-		icon.texture = item_instance.item_data.item_icon
+		icon.texture = item_instance.item_data.icon
 
 func set_the_price() -> void:
 	if item_instance == null:
