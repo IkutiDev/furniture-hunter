@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://budsynv344b2q"]
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://budsynv344b2q"]
 
 [ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_btw5p"]
 [ext_resource type="Texture2D" uid="uid://cx1msm3qysq3" path="res://UI/WIP_icons/broken-tablet.png" id="1_e5je0"]
+[ext_resource type="PackedScene" uid="uid://b7u70f2t85knc" path="res://furniture/scenes/pentacle.tscn" id="1_hbwaj"]
 
 [resource]
 script = ExtResource("1_btw5p")
@@ -12,5 +13,6 @@ icon = ExtResource("1_e5je0")
 base_value = 60
 renown = 60
 collection_set_type = 4
+furniture_scene = ExtResource("1_hbwaj")
 tags = Array[int]([-1])
 rarity_weight = 480.0

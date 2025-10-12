@@ -6,6 +6,8 @@ enum RarityType {COMMON, UNCOMMON, RARE, LEGENDARY}
 @export_tool_button("Import Data from CSV") var import_action = import_from_csv
 @export var csv_file_path : String
 @export var icons_file_path : String
+@export var furniture_mesh_scenes_path : String
+@export var items_mesh_scenes_path : String
 func import_from_csv() -> void:
 	
 	var file = FileAccess.open(csv_file_path, FileAccess.READ)
@@ -19,26 +21,28 @@ func import_from_csv() -> void:
 		match content[12]:
 			"Item":
 				data = ItemData.new()
+				data.item_scene = load(items_mesh_scenes_path + content[7] +".tscn")
 				
 			"Furniture":
 				data = FurnitureData.new()
+				data.furniture_scene = load(furniture_mesh_scenes_path + content[7] +".tscn")
 				
 		data.ID = content[0]
-		data.description = content[2]
 		data.object_name = content[1]
+		data.description = content[2]
+		data.icon = load(icons_file_path + content[3])
 		data.base_value = (content[4] as String).to_int()
 		data.renown = (content[5] as String).to_int()
-		data.rarity_weight = (content[10] as String).to_int()
-		data.rarity_type = RarityType.keys().find((content[8] as String).to_upper())
-		var tags = (content[9] as String).split(";")
-		for t in tags:
-			data.tags.append(Tags.Types.keys().find(t.to_upper()))
-
 		var collection_set_id = CollectionSet.Types.keys().find((content[6] as String).to_snake_case().to_upper())
 		if collection_set_id == -1:
 			collection_set_id = 0
 		data.collection_set_type = collection_set_id
-		data.icon = load(icons_file_path + content[3])
+		
+		data.rarity_type = RarityType.keys().find((content[8] as String).to_upper())
+		var tags = (content[9] as String).split(";")
+		for t in tags:
+			data.tags.append(Tags.Types.keys().find(t.to_upper()))
+		data.rarity_weight = (content[10] as String).to_int()
 		var can_be_sold = content[11] as String
 		if can_be_sold == "yes":
 			data.can_be_sold = true

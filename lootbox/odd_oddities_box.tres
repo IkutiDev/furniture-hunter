@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_h68v7"]
 [ext_resource type="Texture2D" uid="uid://di7f4ya7swuuo" path="res://UI/WIP_icons/chest.png" id="2_1fejj"]
-[ext_resource type="Resource" uid="uid://bfqihe8vmxij" path="res://furniture/spooky_table/spooky_table_data.tres" id="2_4xiua"]
+[ext_resource type="Resource" uid="uid://clak1m6k3ns3n" path="res://data/207_suitcase_full_of_rare_vials.tres" id="2_ff0dn"]
 [ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="2_j1h6y"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="3_1fejj"]
-[ext_resource type="Resource" uid="uid://d0q1f2xsmgc4n" path="res://furniture/witch_couldron/witch_couldron.tres" id="3_4kr8e"]
-[ext_resource type="Resource" uid="uid://811xlgkcu47" path="res://items/crystal_ball_item.tres" id="6_ff0dn"]
-[ext_resource type="Resource" uid="uid://bt1kfdhws41qu" path="res://items/magical_wood_item.tres" id="7_a3vav"]
-[ext_resource type="Resource" uid="uid://b4ltrjgylo2a4" path="res://items/old_skull_item.tres" id="8_8dxca"]
-[ext_resource type="Resource" uid="uid://y3grlahpail" path="res://items/unknown_potion_item.tres" id="9_tpfn8"]
+[ext_resource type="Resource" uid="uid://bal06ojm0p7vp" path="res://data/204_divineing_table.tres" id="3_a3vav"]
+[ext_resource type="Resource" uid="uid://b0vhyp3lgabpb" path="res://data/100_offering_chalice.tres" id="6_8dxca"]
+[ext_resource type="Resource" uid="uid://dpqurryjq3yhd" path="res://data/101_goblet_of_forecasting.tres" id="7_tpfn8"]
+[ext_resource type="Resource" uid="uid://ceriynmxuyan5" path="res://data/102_tarnished_chalice.tres" id="8_26y6w"]
+[ext_resource type="Resource" uid="uid://5p5vt5ly82ru" path="res://data/105_genuine_unicorn_horn.tres" id="9_1v4oy"]
 
 [resource]
 script = ExtResource("3_1fejj")
@@ -19,6 +19,6 @@ lootbox_description = "Chest full of odd trinkets and even more odd bits and bob
 lootbox_price = 100
 spawn_method = 1
 random_elements_per_box = 5
-furniture = Array[ExtResource("1_h68v7")]([ExtResource("2_4xiua"), ExtResource("3_4kr8e")])
-items = Array[ExtResource("2_j1h6y")]([ExtResource("6_ff0dn"), ExtResource("7_a3vav"), ExtResource("8_8dxca"), ExtResource("9_tpfn8")])
+furniture = Array[ExtResource("1_h68v7")]([ExtResource("2_ff0dn"), ExtResource("3_a3vav")])
+items = Array[ExtResource("2_j1h6y")]([ExtResource("6_8dxca"), ExtResource("7_tpfn8"), ExtResource("8_26y6w"), ExtResource("9_1v4oy")])
 metadata/_custom_type_script = "uid://dm25m6de7wwfq"

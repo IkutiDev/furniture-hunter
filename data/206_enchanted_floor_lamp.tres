@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://bfcdesquqeert"]
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://bfcdesquqeert"]
 
+[ext_resource type="PackedScene" uid="uid://bei0td6dkbvoq" path="res://furniture/scenes/lamp_1.tscn" id="1_gc4hk"]
 [ext_resource type="Texture2D" uid="uid://dcarkiaa050sh" path="res://UI/WIP_icons/bed-lamp.png" id="1_hhjy6"]
 [ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_me50k"]
 
@@ -10,6 +11,7 @@ object_name = "Enchanted Floor Lamp"
 icon = ExtResource("1_hhjy6")
 base_value = 120
 renown = 120
+furniture_scene = ExtResource("1_gc4hk")
 tags = Array[int]([-1])
 rarity_type = 1
 rarity_weight = 290.0
