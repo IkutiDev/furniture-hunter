@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=4 uid="uid://cj51ikkn14x5h"]
+
+[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="1_4dgxq"]
+[ext_resource type="Material" uid="uid://btbvef6o2ufoq" path="res://materials/tables.tres" id="2_af2d6"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dcvb1"]
+_surfaces = [{
+"aabb": AABB(-3.022049, -1.4502271, -1.2482834, 6.044098, 2.3523393, 2.496564),
+"format": 34896613377,
+"index_count": 132,
+"index_data": PackedByteArray("AwAQAAcABwARAAMAAwASABAAEQASAAMABwAQAAYABwATABEABwAGABMAFAARABMAEQAAABIACgAUABMACgATAAYAFAAVABEAAAARABUAFAAMABUAFAAJAAwADAAIABUAAAAVAAgACQAWAAwADAAWAAgAFAAXAAkACQAXABYAFAAKABcABgAAAAgABgAIAAoACAAWAA0AFwAKAAsACgAIAA8ACAANAA8ACgAPAAsAFgAOAA0AFgAXAA4ADgAPAA0AFwALAA4ADgALAA8AAAAGAAEABgAFAAEABgAQAAUAAAABAAIAEgAAAAIAAQAFAAQAEAAEAAUAAQAEAAIAEAASAAQAEgACAAQA"),
+"lods": [0.001348391, PackedByteArray("AAABAAIAAwAAAAIAAQAEAAIAAwACAAQAAQAFAAQAAAAGAAEABgAFAAEABwAEAAUABgAHAAUABwADAAQABgAAAAgAAAADAAgABwAGAAkABwAJAAMACgAJAAYABgAIAAoACQAKAAsADAAIAAMACQAMAAMACAAMAA0ADAAJAA4ACQALAA4ADAAOAA0ACgAPAAsACgAIAA8ADgALAA8ACAANAA8ADgAPAA0A")],
+"name": "stoly",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("exB42f//AAB7EAAAAAAAAHsQAAD//wAAAAD/////AAAAAAAA//8AAAAAAAAAAAAAexB42QAAAAAAAP//AAAAAIPveNn//wAA/////wAAAACD73jZAAAAAIPvAAAAAAAA////////AAD//wAA//8AAP//AAAAAAAAg+8AAP//AAAAAHjZAAAAAHsQ/////wAAAAB42f//AAB7EP//AAAAAIPv//8AAAAAg+//////AAD//3jZ//8AAP//eNkAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k6caw"]
+resource_name = "gamejam_Cube_027"
+_surfaces = [{
+"aabb": AABB(-3.022049, -1.4502271, -1.2482834, 6.044098, 2.3523393, 2.496564),
+"attribute_data": PackedByteArray("8cNEqSXmAdQl5kSp8cMB1KTjLXVN6nFKpONxSk3qLXVWk+HU4Cvh1FaTnf/gK53/GJSd/yia9PgYlCeYXbyd/1289PgomtGeXbzRnl28J5jCtc42fuCaFMK1mhR+4M42hFrAVmEABCxhAMBWhFoELK2MzLFWk72riTLMsa2MAdRWkwHU4Cu9q+ArAdSJMgHUCF6PkEwz5olMM4+QCF7mifLD4dQ17J3/Nezh1PLDnf9HW4otioNGWIqDii1HW0ZYVmGKLVZhRlgByuHUAcqd/62Mnf+tjOHUiTLh1Ikynf8YlPT4KJqd/xiU0Z4omieYrYy9q1aTzLGJMr2r4CvMsQ=="),
+"format": 34896613399,
+"index_count": 132,
+"index_data": PackedByteArray("LwAwACwALwAxADAAMAAxAC0AMAAtAC4AAAABAAIAAAADAAEAKwAyACgAKwAzADIAMgAzACkAMgApACoABAAFAAYABAAHAAUACAA0AAoACAA1ADQANgA0ADUANgA3ADQANgALADcANgAJAAsADAANADgADAA5AA0ADQA5AA8ADQAPABAAEQA4AA0AEQA6ADgAOgARADsAOgA7AA4AOwARABIAOwASABMAFAAVABYAFAAXABUAPAA9AB0APAAcAD0AHAA8AD4APQAcAB8APQAfACAAHAA+AB4AIQAeAD4AIQA/AB4AHgA/ACIAHgAiACMAGAAZABoAGAAbABkAJAAlACYAJAAnACUA"),
+"lods": [0.001348391, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACQALAAoADAANAA4ADQAMAA8ADQAPABAAEQAOAA0ADgARABIADgASABMAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHQAcAB8AHQAfACAAIQAeAB0AHgAhACIAHgAiACMAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A")],
+"material": ExtResource("2_af2d6"),
+"name": "stoly",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("exB42f//qip7EAAAAACqKnsQAAD//6oqexB42QAAqir//wAAAAAAAIPvAAD//wAA//8AAP//AACD7wAAAAAAAAAA//8AAAAA/////wAAAAAAAP////8AAP///////wAA/////////z+D73jZ////PwAA//////8///8AAP///z+D7wAA////P3sQeNn///8/exAAAP///z8AAAAA////P4PveNkAAP8/g+8AAP///z+D7wAAAAD/P4PveNn///8/exB42QAAAACD73jZ//8AAIPveNkAAAAAexB42f//AACD73jZAAAAAP////8AAAAAexB42QAAAACD7wAAAAAAAP//AAAAAAAAAAD//wAAAAAAAAAAAAAAAHsQAAAAAAAAexAAAAAAqioAAAAA//+qKnsQAAD//6oqAAAAAAAAqir///////+qKv//AAAAAKoq//8AAP//qir/////AACqKgAA//8AAKoqAAAAAP//qioAAAAAAACqKgAA/////6oqAAB42QAAqioAAHjZ//+qKv//eNn//6oq//942QAAqip7EP////8AAHsQ//8AAAAAg+///wAAAACD7/////8AAIPv//////8///942f///z97EP//////PwAAeNn///8/g+///wAAAAD//3jZAAAAAHsQ//8AAAAAAAB42QAAAACpqlRVqapUVaqqVFWpqlRV/3//P/9//z//f/8//3//P/9//7//f/+//3//v/9//7//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9/////f////3////9/////f/8//3//P/9//z//f/8/////f////3////9/////f////3////9//v//f/7//39UVVRVVFVUVVRVVFVUVVRVqqpUVamqVFWpqlRVqqpUVVVVqqpUVaqqVFWqqlVVqqpVVaqqVFWqqqqqVFWqqlRV/3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//3////9/////f/7//3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_dcvb1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fh6qx"]
+size = Vector3(2.2, 1, 1)
+
+[node name="Table3" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
+script = ExtResource("1_4dgxq")
+visual_mesh = NodePath("table_3")
+static_body = NodePath("StaticBody3D")
+
+[node name="table_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.35, 0, 0, 0, 0.281, 0, 0, 0, 0.317, 0, 0.43020964, 0)
+material_override = ExtResource("2_af2d6")
+mesh = SubResource("ArrayMesh_k6caw")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_fh6qx")

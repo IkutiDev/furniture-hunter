@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=4 uid="uid://dkrehejbu0xs3"]
+
+[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="1_3oqg1"]
+[ext_resource type="Material" uid="uid://c1upboxliaxyx" path="res://materials/new_standard_material_3d.tres" id="2_mhqf8"]
+[ext_resource type="Texture2D" uid="uid://c6mo2m1j6wcxi" path="res://furniture/gamejam_komody_Base_color.png" id="3_cogeh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hxyv"]
+resource_name = "komody"
+cull_mode = 2
+albedo_texture = ExtResource("3_cogeh")
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+normal_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p5t3y"]
+_surfaces = [{
+"aabb": AABB(-4.316765, -3.5762787e-07, -2.3592262, 8.63352, 1e-05, 4.7184505),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("EAARABIAEgARAAEAEQAAAAEAEgABAAIAEQAKAAAAEwAKABEAEAATABEAEwAMAAoAFAASAAIAFAACAAQAAwAUAAQAAwAEAAUABgAUAAMAFQASABQABgAVABQAFQAQABIABwAVAAYABwAWABUAFgAQABUACQAWAAcACQAIABYAFgAXABAACAAXABYAFwATABAACAALABcAFwAYABMACwAYABcAGAAMABMACwAOABgAGAANAAwADgANABgADgAPAA0A"),
+"lods": [1e-10, PackedByteArray("AAABAAIAAwAAAAIAAwACAAQAAwAEAAUABgAAAAMABwAAAAYABwAIAAAACQAIAAcACAAKAAAACAALAAoACwAMAAoACwANAAwADgANAAsADgAPAA0A")],
+"name": "komody",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 25,
+"vertex_data": PackedByteArray("odsAABciAACL9gAAm0wAAP//AAD/fwAAqbEAAIz3AACL9gAAY7MAAKHbAADn3QAA/38AAP//AABVTgAAjPcAAHMJAABjswAAXSQAAOfdAACpsQAAcggAAAAAAAD/fwAA/38AAAAAAABVTgAAcggAAHMJAACbTAAAXSQAABciAAD/fwAA/38AALW7AAC4QwAA/78AAP9/AAD/fwAA/z8AALW7AABGvAAA/38AAP+/AABJRAAARrwAAP8/AAD/fwAASUQAALhDAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3oqg1"]
+resource_name = "gamejam_Plane_001"
+_surfaces = [{
+"aabb": AABB(-4.316765, -3.5762787e-07, -2.3592262, 8.63352, 1e-05, 4.7184505),
+"attribute_data": PackedByteArray("DAlWR0MRcD+BGkE9CS0xWDAjGkHOKWJKCS0uaBYq5HcoHMWMXyTfhFQDUVTpEvSOYgAHZGIABHQ6ChuLnAPTgbUWGmb3DRJSmxiuUYwLEWX+IgZU3yEkZ3MfI3rPFId6bAoveA=="),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("EAARABIAEgARAAEAEQAAAAEAEgABAAIAEQAKAAAAEwAKABEAEAATABEAEwAMAAoAFAASAAIAFAACAAQAAwAUAAQAAwAEAAUABgAUAAMAFQASABQABgAVABQAFQAQABIABwAVAAYABwAWABUAFgAQABUACQAWAAcACQAIABYAFgAXABAACAAXABYAFwATABAACAALABcAFwAYABMACwAYABcAGAAMABMACwAOABgAGAANAAwADgANABgADgAPAA0A"),
+"lods": [1e-10, PackedByteArray("AAABAAIAAwAAAAIAAwACAAQAAwAEAAUABgAAAAMABwAAAAYABwAIAAAACQAIAAcACAAKAAAACAALAAoACwAMAAoACwANAAwADgANAAsADgAPAA0A")],
+"material": SubResource("StandardMaterial3D_6hxyv"),
+"name": "komody",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 25,
+"vertex_data": PackedByteArray("odsAABciL9OL9gAAm0wv0///AAD/fy/TqbEAAIz3L9OL9gAAY7Mv06HbAADn3S/T/38AAP//L9NVTgAAjPcv03MJAABjsy/TXSQAAOfdL9OpsQAAcggv0wAAAAD/fy/T/38AAAAAL9NVTgAAcggv03MJAACbTC/TXSQAABciL9P/fwAA/38v07W7AAC4Qy/T/78AAP9/L9P/fwAA/z8v07W7AABGvC/T/38AAP+/L9NJRAAARrwv0/8/AAD/fy/TSUQAALhDL9NYrVKpWK1SqVitUqlYrVOpWK1SqVetU6lYrVKpWK1SqVitUqlYrVKpWK1SqVitUqlYrVKpWK1SqVitUqlYrVKpWK1SqVitUqlYrVKpWK1SqVitUqlYrVKpWK1SqVitUqlYrVKp")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_p5t3y")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mhqf8"]
+size = Vector3(2.6, 1, 1.4)
+
+[node name="Carpet1" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
+script = ExtResource("1_3oqg1")
+visual_mesh = NodePath("carpet_1")
+static_body = NodePath("StaticBody3D")
+
+[node name="carpet_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, 0, 0, 0)
+material_override = ExtResource("2_mhqf8")
+mesh = SubResource("ArrayMesh_3oqg1")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_mhqf8")
