@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://cvrfxcygt7r77"]
+
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_1e23b"]
+[ext_resource type="Texture2D" uid="uid://55rcqe7ge1d0" path="res://UI/WIP_icons/rocking-chair.png" id="1_qq5h1"]
+
+[resource]
+script = ExtResource("1_1e23b")
+ID = 211
+object_name = "Animated Chair"
+description = "infused with the power of God and Anime"
+icon = ExtResource("1_qq5h1")
+base_value = 90
+renown = 90
+tags = Array[int]([-1])
+rarity_type = 2
+rarity_weight = 75.0

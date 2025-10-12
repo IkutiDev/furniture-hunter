@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ckcyj8u5d1sv5"]
+
+[ext_resource type="Texture2D" uid="uid://cv2nj8g11e3uj" path="res://UI/WIP_icons/scroll-unfurled.png" id="1_3mujm"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_bavsc"]
+
+[resource]
+script = ExtResource("1_bavsc")
+ID = 113
+object_name = "Counterfeit Book of the Dead"
+description = "a forgery so good it's almost better than the original"
+icon = ExtResource("1_3mujm")
+base_value = 320
+renown = 120
+collection_set_type = 5
+tags = Array[int]([2])
+rarity_type = 2
+rarity_weight = 120.0

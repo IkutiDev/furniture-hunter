@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://bal06ojm0p7vp"]
+
+[ext_resource type="Texture2D" uid="uid://34lfaqw2hk6g" path="res://UI/WIP_icons/table.png" id="1_4bvhx"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_e8ppk"]
+
+[resource]
+script = ExtResource("1_e8ppk")
+ID = 204
+object_name = "Divineing Table"
+icon = ExtResource("1_4bvhx")
+base_value = 100
+renown = 100
+collection_set_type = 3
+tags = Array[int]([-1])
+rarity_type = 1
+rarity_weight = 260.0

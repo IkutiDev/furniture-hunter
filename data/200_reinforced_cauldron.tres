@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://cey2doror8btj"]
+
+[ext_resource type="Texture2D" uid="uid://cgwxxjgt6riah" path="res://UI/WIP_icons/cauldron.png" id="1_eomx8"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_yv11x"]
+
+[resource]
+script = ExtResource("1_yv11x")
+ID = 200
+object_name = "Reinforced Cauldron"
+description = "prized by hags and hipsters alike"
+icon = ExtResource("1_eomx8")
+base_value = 120
+renown = 120
+collection_set_type = 4
+tags = Array[int]([1])
+rarity_type = 1
+rarity_weight = 210.0

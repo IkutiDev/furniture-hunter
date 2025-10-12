@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://bbg2vh8h84y8e"]
+
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_6hxom"]
+[ext_resource type="Texture2D" uid="uid://crdevvrlksan2" path="res://UI/WIP_icons/desk.png" id="1_p1618"]
+
+[resource]
+script = ExtResource("1_6hxom")
+ID = 216
+object_name = "Soul Infused Dresser"
+icon = ExtResource("1_p1618")
+base_value = 120
+renown = 120
+collection_set_type = 6
+tags = Array[int]([-1])
+rarity_type = 1
+rarity_weight = 270.0

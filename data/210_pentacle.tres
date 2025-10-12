@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://budsynv344b2q"]
+
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_btw5p"]
+[ext_resource type="Texture2D" uid="uid://cx1msm3qysq3" path="res://UI/WIP_icons/broken-tablet.png" id="1_e5je0"]
+
+[resource]
+script = ExtResource("1_btw5p")
+ID = 210
+object_name = "Pentacle"
+description = "inscribed with various occult symbols"
+icon = ExtResource("1_e5je0")
+base_value = 60
+renown = 60
+collection_set_type = 4
+tags = Array[int]([-1])
+rarity_weight = 480.0

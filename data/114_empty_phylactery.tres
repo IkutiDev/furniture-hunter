@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bn36m3rwcbhr5"]
+
+[ext_resource type="Texture2D" uid="uid://d4bho42dfbw86" path="res://UI/WIP_icons/crystal-shine.png" id="1_aa3mf"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_ggn3x"]
+
+[resource]
+script = ExtResource("1_ggn3x")
+ID = 114
+object_name = "Empty Phylactery"
+icon = ExtResource("1_aa3mf")
+base_value = 420
+renown = 420
+collection_set_type = 6
+tags = Array[int]([-1])
+rarity_type = 2
+rarity_weight = 80.0

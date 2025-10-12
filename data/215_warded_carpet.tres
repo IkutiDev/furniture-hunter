@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://bladi2ua4hikg"]
+
+[ext_resource type="Texture2D" uid="uid://0pum6256ybbb" path="res://UI/WIP_icons/rolled-cloth.png" id="1_fj1y8"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_w10r7"]
+
+[resource]
+script = ExtResource("1_w10r7")
+ID = 215
+object_name = "Warded Carpet"
+description = "nullifies most entry level curses"
+icon = ExtResource("1_fj1y8")
+base_value = 190
+renown = 190
+tags = Array[int]([-1])
+rarity_type = 1
+rarity_weight = 240.0

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://fmp08p6m5wgk"]
+
+[ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="1_1eecs"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_j5nfy"]
+
+[resource]
+script = ExtResource("1_j5nfy")
+ID = 301
+object_name = "Advanced Catoptromancy Set"
+icon = ExtResource("1_1eecs")
+renown = 2660
+tags = Array[int]([2])
+can_be_sold = false
+rarity_type = 3

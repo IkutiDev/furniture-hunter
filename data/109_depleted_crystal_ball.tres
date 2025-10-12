@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bro4ynygougxu"]
+
+[ext_resource type="Texture2D" uid="uid://crqn0ee2e3174" path="res://UI/WIP_icons/crystal-ball.png" id="1_hrmw3"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_temaf"]
+
+[resource]
+script = ExtResource("1_temaf")
+ID = 109
+object_name = "Depleted Crystal Ball"
+description = "foretold obsolesence"
+icon = ExtResource("1_hrmw3")
+base_value = 40
+renown = 40
+tags = Array[int]([-1])
+rarity_weight = 550.0

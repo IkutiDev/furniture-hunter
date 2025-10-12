@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bo65vhkdmuaru"]
+
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_m8fr8"]
+[ext_resource type="Texture2D" uid="uid://c6nhiy23jwcg" path="res://UI/WIP_icons/jeweled-chalice.png" id="1_qhkym"]
+
+[resource]
+script = ExtResource("1_m8fr8")
+ID = 103
+object_name = "Reverse Pythagorean Cup"
+description = "very generous"
+icon = ExtResource("1_qhkym")
+base_value = 500
+renown = 500
+tags = Array[int]([-1])
+rarity_type = 3
+rarity_weight = 50.0
