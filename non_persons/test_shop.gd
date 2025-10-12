@@ -1,8 +1,12 @@
 extends Node3D
 
 func _ready() -> void:
-
-	print(Tags.get_tag_name(Tags.Types.EGYPT))
+#	print(CollectionSet.get_set_name(CollectionSet.Types.TEST_NAME))
+	
+	print("Minimalistic Lich Setup".to_upper())
+	#Advanced Catoptromancy Set
+	#Essential Witch Tools)
+	#print(Tags.get_tag_name(Tags.Types.EGYPT))
 	pass
 	#var points_of_interest = []
 #

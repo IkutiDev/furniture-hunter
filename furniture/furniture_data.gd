@@ -10,7 +10,7 @@ extends Resource
 @export var collection_set_type : CollectionSet.Types
 @export var furniture_scene : PackedScene
 @export var tags : Array[Tags.Types]
-@export var can_be_sold : bool
+@export var can_be_sold = true
 
 @export_group("Lootbox Variables")
 @export_enum("Common:0", "Uncommon:1", "Rare:2", "Legendary:3") var rarity_type : int

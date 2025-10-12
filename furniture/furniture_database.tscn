@@ -1,0 +1,227 @@
+[gd_scene load_steps=31 format=3 uid="uid://ygjym7kcmvof"]
+
+[ext_resource type="Script" uid="uid://h0mal6q0dql3" path="res://furniture/furniture_database.gd" id="1_5m3kd"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="2_cxv4n"]
+[ext_resource type="Texture2D" uid="uid://cgwxxjgt6riah" path="res://UI/WIP_icons/cauldron.png" id="3_ly5xv"]
+[ext_resource type="Texture2D" uid="uid://dw7xtwkmjw60c" path="res://UI/WIP_icons/mirror-mirror.png" id="4_477en"]
+[ext_resource type="Texture2D" uid="uid://di7f4ya7swuuo" path="res://UI/WIP_icons/chest.png" id="5_7vac2"]
+[ext_resource type="Texture2D" uid="uid://55rcqe7ge1d0" path="res://UI/WIP_icons/rocking-chair.png" id="6_tnvaw"]
+[ext_resource type="Texture2D" uid="uid://34lfaqw2hk6g" path="res://UI/WIP_icons/table.png" id="7_ox6fo"]
+[ext_resource type="Texture2D" uid="uid://dcarkiaa050sh" path="res://UI/WIP_icons/bed-lamp.png" id="8_ox6fo"]
+[ext_resource type="Texture2D" uid="uid://e2qcw2la76q1" path="res://UI/WIP_icons/suitcase.png" id="9_cr337"]
+[ext_resource type="Texture2D" uid="uid://rh4ipxwywkrg" path="res://UI/WIP_icons/magic-broom.png" id="10_t04kb"]
+[ext_resource type="Texture2D" uid="uid://b7ctuocvuoegn" path="res://UI/WIP_icons/bar-stool.png" id="11_vl2g0"]
+[ext_resource type="Texture2D" uid="uid://cx1msm3qysq3" path="res://UI/WIP_icons/broken-tablet.png" id="12_vl2g0"]
+[ext_resource type="Texture2D" uid="uid://0pum6256ybbb" path="res://UI/WIP_icons/rolled-cloth.png" id="13_i84ff"]
+
+[sub_resource type="Resource" id="Resource_ly5xv"]
+script = ExtResource("2_cxv4n")
+ID = 200
+object_name = "Reinforced Cauldron"
+description = "prized by hags and hipsters alike"
+icon = ExtResource("3_ly5xv")
+base_value = 120
+renown = 120
+collection_set_type = 4
+tags = Array[int]([1])
+rarity_type = 1
+rarity_weight = 210.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_477en"]
+script = ExtResource("2_cxv4n")
+ID = 201
+object_name = "Divination Mirror"
+description = "has decent reception, but only when slightly tilted backwards"
+icon = ExtResource("4_477en")
+base_value = 320
+renown = 320
+collection_set_type = 5
+rarity_type = 2
+rarity_weight = 100.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_7vac2"]
+script = ExtResource("2_cxv4n")
+ID = 202
+object_name = "Warded chest"
+description = "Magically reinforced durability, key not included"
+icon = ExtResource("5_7vac2")
+base_value = 90
+renown = 90
+rarity_type = 1
+rarity_weight = 280.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_5ku8y"]
+script = ExtResource("2_cxv4n")
+ID = 203
+object_name = "Predicting Armchair"
+description = "predicts how you'll sit and adjusts itself accordingly"
+icon = ExtResource("6_tnvaw")
+base_value = 160
+renown = 160
+collection_set_type = 3
+rarity_type = 1
+rarity_weight = 230.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_tnvaw"]
+script = ExtResource("2_cxv4n")
+ID = 204
+object_name = "Divineing Table"
+icon = ExtResource("7_ox6fo")
+base_value = 100
+renown = 100
+collection_set_type = 3
+rarity_type = 1
+rarity_weight = 260.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_cr337"]
+script = ExtResource("2_cxv4n")
+ID = 205
+object_name = "Illuminator of Souls"
+description = "guides souls of the deceased to the light"
+icon = ExtResource("8_ox6fo")
+base_value = 550
+renown = 550
+collection_set_type = 5
+rarity_type = 3
+rarity_weight = 80.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_ox6fo"]
+script = ExtResource("2_cxv4n")
+ID = 206
+object_name = "Enchanted Floor Lamp"
+icon = ExtResource("8_ox6fo")
+base_value = 120
+renown = 120
+rarity_type = 1
+rarity_weight = 290.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_dhpwj"]
+script = ExtResource("2_cxv4n")
+ID = 207
+object_name = "Suitcase full of rare vials"
+description = "a collection of bloods and venoms from various magical beasts"
+icon = ExtResource("9_cr337")
+base_value = 340
+renown = 340
+collection_set_type = 6
+rarity_type = 2
+rarity_weight = 90.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_t04kb"]
+script = ExtResource("2_cxv4n")
+ID = 208
+object_name = "Flying Broom"
+description = "also works as a poor man's rumba"
+icon = ExtResource("10_t04kb")
+base_value = 190
+renown = 190
+tags = Array[int]([1])
+rarity_type = 1
+rarity_weight = 310.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_i84ff"]
+script = ExtResource("2_cxv4n")
+ID = 209
+object_name = "Blessed Preservation Stand"
+description = "smells like embalming chemicals"
+icon = ExtResource("11_vl2g0")
+base_value = 140
+renown = 140
+collection_set_type = 5
+rarity_type = 1
+rarity_weight = 260.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_ni17u"]
+script = ExtResource("2_cxv4n")
+ID = 210
+object_name = "Pentacle"
+description = "inscribed with various occult symbols"
+icon = ExtResource("12_vl2g0")
+base_value = 60
+renown = 60
+collection_set_type = 4
+rarity_weight = 480.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_fpppu"]
+script = ExtResource("2_cxv4n")
+ID = 211
+object_name = "Animated Chair"
+description = "infused with the power of God and Anime"
+icon = ExtResource("6_tnvaw")
+base_value = 90
+renown = 90
+rarity_type = 2
+rarity_weight = 75.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_yegbp"]
+script = ExtResource("2_cxv4n")
+ID = 212
+object_name = "Magically reinforced table"
+description = "Strong enough to serve as a makeshift bunker"
+icon = ExtResource("7_ox6fo")
+base_value = 390
+renown = 390
+rarity_type = 2
+rarity_weight = 80.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_s3utt"]
+script = ExtResource("2_cxv4n")
+ID = 213
+object_name = "Old alchemical table"
+description = "covered in residue from countless reactions"
+icon = ExtResource("7_ox6fo")
+base_value = 40
+renown = 40
+rarity_weight = 460.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_ud8mp"]
+script = ExtResource("2_cxv4n")
+ID = 214
+object_name = "Disenchanted Carpet"
+description = "has a barely noticeable magical aura"
+icon = ExtResource("13_i84ff")
+base_value = 80
+renown = 80
+rarity_weight = 510.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_22gll"]
+script = ExtResource("2_cxv4n")
+ID = 215
+object_name = "Warded Carpet"
+description = "nullifies most entry level curses"
+icon = ExtResource("13_i84ff")
+base_value = 190
+renown = 190
+rarity_type = 1
+rarity_weight = 240.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[sub_resource type="Resource" id="Resource_nomvk"]
+script = ExtResource("2_cxv4n")
+ID = 216
+object_name = "Soul Infused Dresser"
+base_value = 120
+renown = 120
+collection_set_type = 6
+rarity_type = 1
+rarity_weight = 270.0
+metadata/_custom_type_script = "uid://cjx3ofmytnupc"
+
+[node name="FurnitureDatabase" type="Node"]
+script = ExtResource("1_5m3kd")
+database = Array[ExtResource("2_cxv4n")]([SubResource("Resource_ly5xv"), SubResource("Resource_477en"), SubResource("Resource_7vac2"), SubResource("Resource_5ku8y"), SubResource("Resource_tnvaw"), SubResource("Resource_cr337"), SubResource("Resource_ox6fo"), SubResource("Resource_dhpwj"), SubResource("Resource_t04kb"), SubResource("Resource_i84ff"), SubResource("Resource_ni17u"), SubResource("Resource_fpppu"), SubResource("Resource_yegbp"), SubResource("Resource_s3utt"), SubResource("Resource_ud8mp"), SubResource("Resource_22gll"), SubResource("Resource_nomvk")])

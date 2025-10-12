@@ -1,0 +1,207 @@
+[gd_scene load_steps=28 format=3 uid="uid://c88gfqvjdx5xx"]
+
+[ext_resource type="Script" uid="uid://tn6dkwa1ygdn" path="res://items/item_database.gd" id="1_6qkwi"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="2_nmev7"]
+[ext_resource type="Texture2D" uid="uid://c6nhiy23jwcg" path="res://UI/WIP_icons/jeweled-chalice.png" id="3_o2rq3"]
+[ext_resource type="Texture2D" uid="uid://bakd0cwc08pm0" path="res://UI/WIP_icons/unicorn.png" id="4_o2rq3"]
+[ext_resource type="Texture2D" uid="uid://csu5tpweur54y" path="res://UI/WIP_icons/emerald-necklace.png" id="5_1jjme"]
+[ext_resource type="Texture2D" uid="uid://crqn0ee2e3174" path="res://UI/WIP_icons/crystal-ball.png" id="6_d6ky8"]
+[ext_resource type="Texture2D" uid="uid://ixyaw4sargqn" path="res://UI/WIP_icons/empty-chessboard.png" id="7_rqb8b"]
+[ext_resource type="Texture2D" uid="uid://c5id25wt38a8x" path="res://UI/WIP_icons/great-pyramid.png" id="8_aqx5o"]
+[ext_resource type="Texture2D" uid="uid://cv2nj8g11e3uj" path="res://UI/WIP_icons/scroll-unfurled.png" id="9_rqb8b"]
+[ext_resource type="Texture2D" uid="uid://fqve8x6cjwy7" path="res://UI/WIP_icons/anubis.png" id="10_aqx5o"]
+[ext_resource type="Texture2D" uid="uid://d4bho42dfbw86" path="res://UI/WIP_icons/crystal-shine.png" id="11_801mm"]
+
+[sub_resource type="Resource" id="Resource_1jjme"]
+script = ExtResource("2_nmev7")
+ID = 100
+object_name = "Offering chalice"
+description = "covered in stains from past offerings"
+icon = ExtResource("3_o2rq3")
+base_value = 220
+renown = 220
+collection_set_type = 4
+tags = Array[int]([1])
+rarity_type = 1
+rarity_weight = 200.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_7x3pt"]
+script = ExtResource("2_nmev7")
+ID = 101
+object_name = "Goblet of Forecasting"
+description = "predicts the weather, sometimes correctly"
+icon = ExtResource("3_o2rq3")
+base_value = 80
+renown = 80
+collection_set_type = 3
+rarity_type = 2
+rarity_weight = 80.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_pxnr7"]
+script = ExtResource("2_nmev7")
+ID = 102
+object_name = "Tarnished chalice"
+description = "most likely maiden less"
+icon = ExtResource("3_o2rq3")
+base_value = 30
+renown = 30
+rarity_weight = 500.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_d6ky8"]
+script = ExtResource("2_nmev7")
+ID = 103
+object_name = "Reverse Pythagorean Cup"
+description = "very generous"
+icon = ExtResource("3_o2rq3")
+base_value = 500
+renown = 500
+rarity_type = 3
+rarity_weight = 50.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_rqb8b"]
+script = ExtResource("2_nmev7")
+ID = 104
+object_name = "Imitation Unicorn Horn"
+description = "I Can't Believe It's Not Unicorn!"
+icon = ExtResource("4_o2rq3")
+base_value = 40
+renown = 40
+rarity_weight = 480.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_aqx5o"]
+script = ExtResource("2_nmev7")
+ID = 105
+object_name = "Genuine Unicorn Horn"
+icon = ExtResource("4_o2rq3")
+base_value = 400
+renown = 400
+collection_set_type = 6
+rarity_type = 2
+rarity_weight = 100.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_801mm"]
+script = ExtResource("2_nmev7")
+ID = 106
+object_name = "Golden Neklace"
+icon = ExtResource("5_1jjme")
+base_value = 140
+renown = 140
+rarity_weight = 480.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_qwxfx"]
+script = ExtResource("2_nmev7")
+ID = 107
+object_name = "Attuned Merlin Locket"
+description = "allegedly blessed by Merlin himself, limited edition"
+icon = ExtResource("5_1jjme")
+base_value = 600
+renown = 600
+rarity_type = 3
+rarity_weight = 40.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_t3kih"]
+script = ExtResource("2_nmev7")
+ID = 108
+object_name = "Enchanted pendant"
+description = "emanates arcane energy"
+icon = ExtResource("5_1jjme")
+base_value = 240
+renown = 240
+rarity_type = 1
+rarity_weight = 260.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_wkbry"]
+script = ExtResource("2_nmev7")
+ID = 109
+object_name = "Depleted Crystal Ball"
+description = "foretold obsolesence"
+icon = ExtResource("6_d6ky8")
+base_value = 40
+renown = 40
+rarity_weight = 550.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_f5tj7"]
+script = ExtResource("2_nmev7")
+ID = 110
+object_name = "Magic Crystal Ball"
+icon = ExtResource("6_d6ky8")
+base_value = 160
+renown = 160
+collection_set_type = 3
+rarity_type = 1
+rarity_weight = 200.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_nevex"]
+script = ExtResource("2_nmev7")
+ID = 111
+object_name = "Bewitched Chess Set"
+description = "voice controlled, works with most accents"
+icon = ExtResource("7_rqb8b")
+base_value = 250
+renown = 250
+rarity_type = 2
+rarity_weight = 80.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_vomex"]
+script = ExtResource("2_nmev7")
+ID = 112
+object_name = "Giza Necropolis Diorama"
+icon = ExtResource("8_aqx5o")
+base_value = 50
+renown = 50
+tags = Array[int]([2])
+rarity_weight = 600.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_ed2yo"]
+script = ExtResource("2_nmev7")
+ID = 113
+object_name = "Counterfeit Book of the Dead"
+description = "a forgery so good it's almost better than the original"
+icon = ExtResource("9_rqb8b")
+base_value = 320
+renown = 320
+collection_set_type = 5
+tags = Array[int]([2])
+rarity_type = 2
+rarity_weight = 120.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_egfw5"]
+script = ExtResource("2_nmev7")
+ID = 114
+object_name = "Set Animal Statue"
+icon = ExtResource("10_aqx5o")
+base_value = 150
+renown = 150
+tags = Array[int]([2])
+rarity_type = 2
+rarity_weight = 100.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[sub_resource type="Resource" id="Resource_5x0qs"]
+script = ExtResource("2_nmev7")
+ID = 114
+object_name = "Empty Phylactery"
+icon = ExtResource("11_801mm")
+base_value = 420
+renown = 420
+rarity_type = 2
+rarity_weight = 80.0
+metadata/_custom_type_script = "uid://c1nrhtbb30bm"
+
+[node name="ItemDatabase" type="Node"]
+script = ExtResource("1_6qkwi")
+database = Array[ExtResource("2_nmev7")]([SubResource("Resource_1jjme"), SubResource("Resource_7x3pt"), SubResource("Resource_pxnr7"), SubResource("Resource_d6ky8"), SubResource("Resource_rqb8b"), SubResource("Resource_aqx5o"), SubResource("Resource_801mm"), SubResource("Resource_qwxfx"), SubResource("Resource_t3kih"), SubResource("Resource_wkbry"), SubResource("Resource_f5tj7"), SubResource("Resource_nevex"), SubResource("Resource_vomex"), SubResource("Resource_ed2yo"), SubResource("Resource_egfw5"), SubResource("Resource_5x0qs")])
