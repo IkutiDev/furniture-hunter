@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://b6e61gjgbo4ly"]
 
-[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_1m27t"]
 [ext_resource type="PackedScene" uid="uid://cj51ikkn14x5h" path="res://furniture/scenes/table_3.tscn" id="1_aauqi"]
-[ext_resource type="Texture2D" uid="uid://34lfaqw2hk6g" path="res://UI/WIP_icons/table.png" id="1_rpuic"]
+[ext_resource type="Texture2D" uid="uid://34lfaqw2hk6g" path="res://UI/WIP_icons/table.png" id="2_0txot"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_k73yn"]
 
 [resource]
-script = ExtResource("1_1m27t")
+script = ExtResource("3_k73yn")
 ID = 213
 object_name = "Old alchemical table"
 description = "covered in residue from countless reactions"
-icon = ExtResource("1_rpuic")
+icon = ExtResource("2_0txot")
 base_value = 40
 renown = 40
 furniture_scene = ExtResource("1_aauqi")

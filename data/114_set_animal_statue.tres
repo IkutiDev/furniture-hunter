@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cot4jk8g7jfdf"]
 
-[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_2lonf"]
-[ext_resource type="Texture2D" uid="uid://fqve8x6cjwy7" path="res://UI/WIP_icons/anubis.png" id="1_8pkf7"]
-[ext_resource type="PackedScene" uid="uid://bqiwhyob2ndks" path="res://items/scenes/set.tscn" id="2_uxdxe"]
+[ext_resource type="Texture2D" uid="uid://fqve8x6cjwy7" path="res://UI/WIP_icons/anubis.png" id="1_uxdxe"]
+[ext_resource type="PackedScene" uid="uid://bqiwhyob2ndks" path="res://items/scenes/set.tscn" id="2_8jkh3"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_6p6g1"]
 
 [resource]
-script = ExtResource("1_2lonf")
+script = ExtResource("3_6p6g1")
 ID = 114
 object_name = "Set Animal Statue"
-icon = ExtResource("1_8pkf7")
+icon = ExtResource("1_uxdxe")
 base_value = 150
 renown = 150
-item_scene = ExtResource("2_uxdxe")
+item_scene = ExtResource("2_8jkh3")
 tags = Array[int]([2])
 rarity_type = 2
 rarity_weight = 100.0

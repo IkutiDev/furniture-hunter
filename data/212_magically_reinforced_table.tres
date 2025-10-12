@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://yya5varkoxgd"]
 
-[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_bh20b"]
-[ext_resource type="Texture2D" uid="uid://34lfaqw2hk6g" path="res://UI/WIP_icons/table.png" id="1_pcl8q"]
 [ext_resource type="PackedScene" uid="uid://cj51ikkn14x5h" path="res://furniture/scenes/table_3.tscn" id="1_rdcop"]
+[ext_resource type="Texture2D" uid="uid://34lfaqw2hk6g" path="res://UI/WIP_icons/table.png" id="2_3jt6p"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_01eil"]
 
 [resource]
-script = ExtResource("1_bh20b")
+script = ExtResource("3_01eil")
 ID = 212
 object_name = "Magically reinforced table"
 description = "Strong enough to serve as a makeshift bunker"
-icon = ExtResource("1_pcl8q")
+icon = ExtResource("2_3jt6p")
 base_value = 390
 renown = 390
 furniture_scene = ExtResource("1_rdcop")

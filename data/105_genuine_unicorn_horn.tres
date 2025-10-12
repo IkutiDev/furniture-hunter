@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://5p5vt5ly82ru"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://5p5vt5ly82ru"]
 
 [ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_e4m21"]
 [ext_resource type="Texture2D" uid="uid://bakd0cwc08pm0" path="res://UI/WIP_icons/unicorn.png" id="1_rbjey"]
+[ext_resource type="PackedScene" uid="uid://tyhnu045xph3" path="res://items/scenes/unicorn_horn.tscn" id="2_82uy4"]
 
 [resource]
 script = ExtResource("1_e4m21")
@@ -11,6 +12,7 @@ icon = ExtResource("1_rbjey")
 base_value = 400
 renown = 400
 collection_set_type = 6
+item_scene = ExtResource("2_82uy4")
 tags = Array[int]([-1])
 rarity_type = 2
 rarity_weight = 100.0

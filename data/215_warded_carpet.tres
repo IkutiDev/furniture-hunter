@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://bladi2ua4hikg"]
 
-[ext_resource type="Texture2D" uid="uid://0pum6256ybbb" path="res://UI/WIP_icons/rolled-cloth.png" id="1_fj1y8"]
 [ext_resource type="PackedScene" uid="uid://dkrehejbu0xs3" path="res://furniture/scenes/carpet_1.tscn" id="1_vto5g"]
-[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_w10r7"]
+[ext_resource type="Texture2D" uid="uid://0pum6256ybbb" path="res://UI/WIP_icons/rolled-cloth.png" id="2_uvxsc"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_glev6"]
 
 [resource]
-script = ExtResource("1_w10r7")
+script = ExtResource("3_glev6")
 ID = 215
 object_name = "Warded Carpet"
 description = "nullifies most entry level curses"
-icon = ExtResource("1_fj1y8")
+icon = ExtResource("2_uvxsc")
 base_value = 190
 renown = 190
 furniture_scene = ExtResource("1_vto5g")

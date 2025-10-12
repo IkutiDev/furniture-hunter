@@ -1,16 +1,18 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://5yxa2f2vm8e1"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://5yxa2f2vm8e1"]
 
-[ext_resource type="Texture2D" uid="uid://csu5tpweur54y" path="res://UI/WIP_icons/emerald-necklace.png" id="1_avut5"]
-[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_axnj8"]
+[ext_resource type="Texture2D" uid="uid://csu5tpweur54y" path="res://UI/WIP_icons/emerald-necklace.png" id="1_uvwpj"]
+[ext_resource type="PackedScene" uid="uid://cb37i4mvqo8t" path="res://items/scenes/necklace.tscn" id="2_7jtcx"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_51uvg"]
 
 [resource]
-script = ExtResource("1_axnj8")
+script = ExtResource("3_51uvg")
 ID = 108
 object_name = "Enchanted pendant"
 description = "emanates arcane energy"
-icon = ExtResource("1_avut5")
+icon = ExtResource("1_uvwpj")
 base_value = 240
 renown = 240
+item_scene = ExtResource("2_7jtcx")
 tags = Array[int]([-1])
 rarity_type = 1
 rarity_weight = 260.0

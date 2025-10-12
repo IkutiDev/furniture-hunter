@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://bbg2vh8h84y8e"]
 
-[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_6hxom"]
-[ext_resource type="Texture2D" uid="uid://crdevvrlksan2" path="res://UI/WIP_icons/desk.png" id="1_p1618"]
 [ext_resource type="PackedScene" uid="uid://dm4weoc73jiue" path="res://furniture/scenes/box_2.tscn" id="1_tkmo6"]
+[ext_resource type="Texture2D" uid="uid://crdevvrlksan2" path="res://UI/WIP_icons/desk.png" id="2_ivhtc"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_31awe"]
 
 [resource]
-script = ExtResource("1_6hxom")
+script = ExtResource("3_31awe")
 ID = 216
 object_name = "Soul Infused Dresser"
-icon = ExtResource("1_p1618")
+icon = ExtResource("2_ivhtc")
 base_value = 120
 renown = 120
 collection_set_type = 6

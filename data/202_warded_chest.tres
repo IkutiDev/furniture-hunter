@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://dw643ebaxamo6"]
 
-[ext_resource type="Texture2D" uid="uid://di7f4ya7swuuo" path="res://UI/WIP_icons/chest.png" id="1_48yra"]
-[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_pkr55"]
 [ext_resource type="PackedScene" uid="uid://uu8t4ixrti1y" path="res://furniture/scenes/box_3.tscn" id="1_uo53v"]
+[ext_resource type="Texture2D" uid="uid://di7f4ya7swuuo" path="res://UI/WIP_icons/chest.png" id="2_2srmd"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_2rysy"]
 
 [resource]
-script = ExtResource("1_pkr55")
+script = ExtResource("3_2rysy")
 ID = 202
 object_name = "Warded chest"
 description = "Magically reinforced durability, key not included"
-icon = ExtResource("1_48yra")
+icon = ExtResource("2_2srmd")
 base_value = 90
 renown = 90
 furniture_scene = ExtResource("1_uo53v")
