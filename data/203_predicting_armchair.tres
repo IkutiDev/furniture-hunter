@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://c84hpck8pfmt4"]
+
+[ext_resource type="Texture2D" uid="uid://55rcqe7ge1d0" path="res://UI/WIP_icons/rocking-chair.png" id="1_2lmrb"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_2tkcd"]
+
+[resource]
+script = ExtResource("1_2tkcd")
+ID = 203
+object_name = "Predicting Armchair"
+description = "predicts how you'll sit and adjusts itself accordingly"
+icon = ExtResource("1_2lmrb")
+base_value = 160
+renown = 160
+collection_set_type = 3
+tags = Array[int]([-1])
+rarity_type = 1
+rarity_weight = 230.0

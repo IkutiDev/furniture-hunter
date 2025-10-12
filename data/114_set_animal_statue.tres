@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cot4jk8g7jfdf"]
+
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_2lonf"]
+[ext_resource type="Texture2D" uid="uid://fqve8x6cjwy7" path="res://UI/WIP_icons/anubis.png" id="1_8pkf7"]
+
+[resource]
+script = ExtResource("1_2lonf")
+ID = 114
+object_name = "Set Animal Statue"
+icon = ExtResource("1_8pkf7")
+base_value = 150
+renown = 150
+tags = Array[int]([2])
+rarity_type = 2
+rarity_weight = 100.0

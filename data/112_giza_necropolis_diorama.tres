@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cfg48m2glwvim"]
+
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_5658i"]
+[ext_resource type="Texture2D" uid="uid://c5id25wt38a8x" path="res://UI/WIP_icons/great-pyramid.png" id="1_nw0xl"]
+
+[resource]
+script = ExtResource("1_5658i")
+ID = 112
+object_name = "Giza Necropolis Diorama"
+icon = ExtResource("1_nw0xl")
+base_value = 50
+renown = 50
+tags = Array[int]([2, 1])
+rarity_weight = 600.0

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://clak1m6k3ns3n"]
+
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_3lpwv"]
+[ext_resource type="Texture2D" uid="uid://e2qcw2la76q1" path="res://UI/WIP_icons/suitcase.png" id="1_e4ros"]
+
+[resource]
+script = ExtResource("1_3lpwv")
+ID = 207
+object_name = "Suitcase full of rare vials"
+description = "a collection of bloods and venoms from various magical beasts"
+icon = ExtResource("1_e4ros")
+base_value = 340
+renown = 340
+collection_set_type = 6
+tags = Array[int]([-1])
+rarity_type = 2
+rarity_weight = 90.0

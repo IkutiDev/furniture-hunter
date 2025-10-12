@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://b6e61gjgbo4ly"]
+
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_1m27t"]
+[ext_resource type="Texture2D" uid="uid://34lfaqw2hk6g" path="res://UI/WIP_icons/table.png" id="1_rpuic"]
+
+[resource]
+script = ExtResource("1_1m27t")
+ID = 213
+object_name = "Old alchemical table"
+description = "covered in residue from countless reactions"
+icon = ExtResource("1_rpuic")
+base_value = 40
+renown = 40
+tags = Array[int]([-1])
+rarity_weight = 460.0

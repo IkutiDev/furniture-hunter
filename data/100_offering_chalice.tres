@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b0vhyp3lgabpb"]
+
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_k12pa"]
+[ext_resource type="Texture2D" uid="uid://c6nhiy23jwcg" path="res://UI/WIP_icons/jeweled-chalice.png" id="1_ktc2r"]
+
+[resource]
+script = ExtResource("1_k12pa")
+ID = 100
+object_name = "Offering chalice"
+description = "covered in stains from past offerings"
+icon = ExtResource("1_ktc2r")
+base_value = 220
+renown = 300
+collection_set_type = 4
+tags = Array[int]([-1])
+rarity_type = 1
+rarity_weight = 200.0

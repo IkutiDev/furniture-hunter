@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://syrcb1r6moee"]
+
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_70yvl"]
+[ext_resource type="Texture2D" uid="uid://0pum6256ybbb" path="res://UI/WIP_icons/rolled-cloth.png" id="1_upn4k"]
+
+[resource]
+script = ExtResource("1_70yvl")
+ID = 214
+object_name = "Disenchanted Carpet"
+description = "has a barely noticeable magical aura"
+icon = ExtResource("1_upn4k")
+base_value = 80
+renown = 80
+tags = Array[int]([-1])
+rarity_weight = 510.0

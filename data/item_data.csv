@@ -1,0 +1,38 @@
+ID,object_name,description,icon,base_value,renown,collection_set_type,Mesh,rarity_type,tags,rarity_weight,can_be_sold,Item czy Mebel
+100,Offering chalice,covered in stains from past offerings,jeweled-chalice.png,220,300,Essential Witch Tools,cup1,Uncommon,,200,yes,Item
+101,Goblet of Forecasting,"predicts the weather, sometimes correctly",jeweled-chalice.png,80,80,Augur Starter Pack,cup1_001,Rare,,80,yes,Item
+102,Tarnished chalice,most likely maiden less,jeweled-chalice.png,30,30,,cup1_002,Common,,500,yes,Item
+103,Reverse Pythagorean Cup,very generous,jeweled-chalice.png,500,500,,cup1_001,Legendary,,50,yes,Item
+104,Imitation Unicorn Horn,I Can't Believe It's Not Unicorn!,unicorn.png,40,40,,unicorn_corn,Common,,480,yes,Item
+105,Genuine Unicorn Horn,,unicorn.png,400,400,Minimalistic Lich Setup,unicorn_corn,Rare,,100,yes,Item
+106,Golden Neklace,,emerald-necklace.png,140,140,,neckels,Common,,480,yes,Item
+107,Attuned Merlin Locket,"allegedly blessed by Merlin himself, limited edition",emerald-necklace.png,600,600,,neckels,Legendary,,40,yes,Item
+108,Enchanted pendant,emanates arcane energy,emerald-necklace.png,240,240,,neckels,Uncommon,,260,yes,Item
+109,Depleted Crystal Ball,foretold obsolesence,crystal-ball.png,40,40,,magic_ball,Common,,550,yes,Item
+110,Magic Crystal Ball,,crystal-ball.png,160,160,Augur Starter Pack,magic_ball,Uncommon,,200,yes,Item
+111,Bewitched Chess Set,"voice controlled, works with most accents",empty-chessboard.png,250,250,,chees,Rare,,80,yes,Item
+200,Reinforced Cauldron,prized by hags and hipsters alike,cauldron.png,120,120,Essential Witch Tools,cauldron,Uncommon,Witch,210,yes,Furniture
+201,Divination Mirror,"has decent reception, but only when slightly tilted backwards",mirror-mirror.png,320,320,Advanced Catoptromancy Set,mirror,Rare,,100,yes,Furniture
+202,Warded chest,"Magically reinforced durability, key not included",chest.png,90,90,,box_3,Uncommon,,280,yes,Furniture
+203,Predicting Armchair,predicts how you'll sit and adjusts itself accordingly,rocking-chair.png,160,160,Augur Starter Pack,chair_1,Uncommon,,230,yes,Furniture
+204,Divineing Table,,table.png,100,100,Augur Starter Pack,table_1,Uncommon,,260,yes,Furniture
+112,Giza Necropolis Diorama,,great-pyramid.png,50,50,,piramides,Common,Egypt;Witch,600,yes,Item
+113,Counterfeit Book of the Dead,a forgery so good it's almost better than the original,scroll-unfurled.png,320,120,Advanced Catoptromancy Set,papirus,Rare,Egypt,120,yes,Item
+205,Illuminator of Souls,guides souls of the deceased to the light,bed-lamp.png,550,550,Advanced Catoptromancy Set,lamp_1,Legendary,,80,yes,Furniture
+206,Enchanted Floor Lamp,,bed-lamp.png,120,120,,lamp_1,Uncommon,,290,yes,Furniture
+300,Augur Starter Pack,,barricade.png,,1000,,TBD,Rare,,,nie,Furniture
+301,Advanced Catoptromancy Set,,barricade.png,,2660,,TBD,Legendary,Egypt,,nie,Furniture
+114,Set Animal Statue,,anubis.png,150,150,,set,Rare,Egypt,100,yes,Item
+302,Essential Witch Tools,,barricade.png,,1180,,TBD,Uncommon,Witch,,nie,Furniture
+303,Minimalistic Lich Setup,,barricade.png,,2560,,TBD,Rare,,,nie,Furniture
+207,Suitcase full of rare vials,a collection of bloods and venoms from various magical beasts,suitcase.png,340,340,Minimalistic Lich Setup,box_1,Rare,,90,yes,Furniture
+208,Flying Broom,also works as a poor man's rumba,magic-broom.png,190,190,Essential Witch Tools,broom,Uncommon,Witch,310,yes,Furniture
+209,Blessed Preservation Stand,smells like embalming chemicals,bar-stool.png,140,140,Advanced Catoptromancy Set,chair_3,Uncommon,,260,yes,Furniture
+210,Pentacle,inscribed with various occult symbols,broken-tablet.png,60,60,Essential Witch Tools,pentacle,Common,,480,yes,Furniture
+211,Animated Chair,infused with the power of God and Anime,rocking-chair.png,90,90,,chair_2,Rare,,75,yes,Furniture
+212,Magically reinforced table,Strong enough to serve as a makeshift bunker,table.png,390,390,,table_3,Rare,,80,yes,Furniture
+213,Old alchemical table,covered in residue from countless reactions,table.png,40,40,,table_3,Common,,460,yes,Furniture
+214,Disenchanted Carpet,has a barely noticeable magical aura,rolled-cloth.png,80,80,,carpet_3,Common,,510,yes,Furniture
+215,Warded Carpet,nullifies most entry level curses,rolled-cloth.png,190,190,,carpet_1,Uncommon,,240,yes,Furniture
+216,Soul Infused Dresser,,desk.png,120,120,Minimalistic Lich Setup,box_2,Uncommon,,270,yes,Furniture
+114,Empty Phylactery,,crystal-shine.png,420,420,Minimalistic Lich Setup,crystal_002,Rare,,80,yes,Item

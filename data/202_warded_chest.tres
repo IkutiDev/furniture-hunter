@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://dw643ebaxamo6"]
+
+[ext_resource type="Texture2D" uid="uid://di7f4ya7swuuo" path="res://UI/WIP_icons/chest.png" id="1_48yra"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_pkr55"]
+
+[resource]
+script = ExtResource("1_pkr55")
+ID = 202
+object_name = "Warded chest"
+description = "Magically reinforced durability, key not included"
+icon = ExtResource("1_48yra")
+base_value = 90
+renown = 90
+tags = Array[int]([-1])
+rarity_type = 1
+rarity_weight = 280.0

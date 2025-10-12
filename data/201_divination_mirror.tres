@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://by46d3atj7xt4"]
+
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_7s6qo"]
+[ext_resource type="Texture2D" uid="uid://dw7xtwkmjw60c" path="res://UI/WIP_icons/mirror-mirror.png" id="1_8xw25"]
+
+[resource]
+script = ExtResource("1_7s6qo")
+ID = 201
+object_name = "Divination Mirror"
+description = "has decent reception, but only when slightly tilted backwards"
+icon = ExtResource("1_8xw25")
+base_value = 320
+renown = 320
+collection_set_type = 5
+tags = Array[int]([-1])
+rarity_type = 2
+rarity_weight = 100.0

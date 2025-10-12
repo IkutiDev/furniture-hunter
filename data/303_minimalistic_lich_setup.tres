@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://dhoc77wu157a2"]
+
+[ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="1_bynvv"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_ju1yf"]
+
+[resource]
+script = ExtResource("1_ju1yf")
+ID = 303
+object_name = "Minimalistic Lich Setup"
+icon = ExtResource("1_bynvv")
+renown = 2560
+tags = Array[int]([-1])
+can_be_sold = false
+rarity_type = 2

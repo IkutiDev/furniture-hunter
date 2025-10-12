@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dak6nps80kp3"]
+
+[ext_resource type="Script" uid="uid://ba7xcmv4jaxtw" path="res://tools/importer_tool.gd" id="1_ejije"]
+
+[node name="ImporterTool" type="Node"]
+script = ExtResource("1_ejije")
+csv_file_path = "res://data/item_data.csv"
+icons_file_path = "res://UI/WIP_icons/"
