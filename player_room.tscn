@@ -255,7 +255,6 @@ data = {
 }
 
 [node name="OccupationMap" type="GridMap" parent="."]
-visible = false
 mesh_library = ExtResource("4_3q6a7")
 cell_size = Vector3(1, 1, 1)
 collision_mask = 0

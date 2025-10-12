@@ -22,15 +22,21 @@ func _ready() -> void:
 	EventBus.set_remove_furniture_mode.connect(toggled_delete_mode)
 	EventBus.mouse_over_furniture.connect(hover_over_furniture)
 	EventBus.mouse_exits_furniture.connect(exit_hover_over_furniture)
-	EventBus.object_sold.connect(update_navmesh)
+	EventBus.object_sold.connect(furniture_sold)
 	EventBus.start_day.connect(_on_day_started)
 	
 func _on_day_started() -> void:
 	deselect_furniture()
 	
-func update_navmesh(instance : FurnitureInstance) -> void:
-	await get_tree().process_frame
+func update_navmesh() -> void:
+	await get_tree().create_timer(1).timeout
 	nav_mesh_region.bake_navigation_mesh()
+	
+func furniture_sold(instance : FurnitureInstance) -> void:
+	if instance == null:
+		return
+	remove_object(instance)
+	update_navmesh()
 	
 func deselect_furniture() -> void:
 	selected_furniture = null
@@ -72,7 +78,7 @@ func _input(event: InputEvent) -> void:
 		if can_place_furniture and selected_furniture != null:
 			place_object()
 		elif hovered_over_furniture_instance != null and delete_mode_active:
-			remove_object()
+			remove_object(hovered_over_furniture_instance)
 	if event.is_action_pressed("right_click"):
 		if can_place_furniture and selected_furniture != null:
 			deselect_furniture()
@@ -92,17 +98,18 @@ func place_object() -> void:
 	occupation_grid_map.set_cell_item(current_mouse_position_on_grid, 1)
 	for p in furnitue_instance.extra_size:
 		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(current_rotation_in_degrees))
-		occupation_grid_map.set_cell_item(current_mouse_position_on_grid + p, 1)
+		print(current_mouse_position_on_grid)
+		occupation_grid_map.set_cell_item(Vector3i(current_mouse_position_on_grid) + Vector3i(p), 1)
 	PlayerInventory.remove_object_from_inventory(selected_furniture)
 	deselect_furniture()
 
-func remove_object() -> void:
-	var furniture_position := occupation_grid_map.local_to_map(hovered_over_furniture_instance.position)
+func remove_object(instance : FurnitureInstance) -> void:
+	var furniture_position := occupation_grid_map.local_to_map(instance.position)
 	occupation_grid_map.set_cell_item(furniture_position, 0)
-	for p in hovered_over_furniture_instance.extra_size:
+	for p in instance.extra_size:
 		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(hovered_over_furniture_instance.rotation_degrees.y))
 		occupation_grid_map.set_cell_item(current_mouse_position_on_grid + p, 0)
-	hovered_over_furniture_instance.remove_this_instance()
+	instance.remove_this_instance()
 	nav_mesh_region.bake_navigation_mesh()
 
 func raycast_and_check_if_position_is_occupied() -> bool:

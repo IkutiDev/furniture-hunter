@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cbkm60bxjgr4e" path="res://player_inventory.gd" id="1_mdht6"]
 [ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="2_xv76c"]
-[ext_resource type="Resource" uid="uid://c7pum5eui71o7" path="res://furniture/sofa/sofa_data.tres" id="3_i8bca"]
-[ext_resource type="Resource" uid="uid://ck46x8tutplks" path="res://furniture/stool/stool_data.tres" id="4_3amdi"]
+[ext_resource type="Resource" uid="uid://bal06ojm0p7vp" path="res://data/204_divineing_table.tres" id="3_xv76c"]
+[ext_resource type="Resource" uid="uid://cey2doror8btj" path="res://data/200_reinforced_cauldron.tres" id="4_i8bca"]
 
 [node name="PlayerInventory" type="Node"]
 script = ExtResource("1_mdht6")
-furniture = Array[ExtResource("2_xv76c")]([ExtResource("3_i8bca"), ExtResource("3_i8bca"), ExtResource("4_3amdi")])
+furniture = Array[ExtResource("2_xv76c")]([ExtResource("3_xv76c"), ExtResource("3_xv76c"), ExtResource("3_xv76c"), ExtResource("3_xv76c"), ExtResource("3_xv76c"), ExtResource("4_i8bca"), ExtResource("4_i8bca"), ExtResource("4_i8bca"), ExtResource("4_i8bca")])
 money = 1000
