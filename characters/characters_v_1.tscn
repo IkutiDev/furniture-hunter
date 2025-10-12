@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b774elxqoirce"]
+
+[ext_resource type="PackedScene" uid="uid://bp1kjsdnjxcbq" path="res://characters/characters_v1.glb" id="1_g6pxd"]
+[ext_resource type="Material" uid="uid://cvkee21aejphv" path="res://materials/characters.tres" id="2_ry236"]
+
+[node name="characters_v1" instance=ExtResource("1_g6pxd")]
+
+[node name="witch" parent="." index="0"]
+material_override = ExtResource("2_ry236")
+
+[node name="strange_man" parent="." index="1"]
+material_override = ExtResource("2_ry236")
+
+[node name="vampir" parent="." index="2"]
+material_override = ExtResource("2_ry236")
+
+[node name="lady" parent="." index="3"]
+material_override = ExtResource("2_ry236")
