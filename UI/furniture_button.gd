@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func set_data(_data : FurnitureData) -> void:
 	data = _data
-	texture_normal = data.furniture_icon
+	texture_normal = data.icon
 	
 
 func _on_pressed_furniture_button() -> void:

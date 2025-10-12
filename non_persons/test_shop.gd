@@ -1,6 +1,8 @@
 extends Node3D
 
 func _ready() -> void:
+
+	print(Tags.get_tag_name(Tags.Types.EGYPT))
 	pass
 	#var points_of_interest = []
 #

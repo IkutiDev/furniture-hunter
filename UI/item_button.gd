@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func set_data(_data : ItemData) -> void:
 	data = _data
-	texture_normal = data.item_icon
+	texture_normal = data.icon
 
 func _on_pressed_item_button() -> void:
 	EventBus.clicked_on_item.emit(data)

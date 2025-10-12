@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=13 format=4 uid="uid://byu67pqu2ls5g"]
+[gd_resource type="MeshLibrary" load_steps=14 format=4 uid="uid://byu67pqu2ls5g"]
 
 [ext_resource type="Texture2D" uid="uid://c6n244acm2nte" path="res://floor_and_walls/floor_floot.png" id="1_ky80v"]
 
@@ -107,6 +107,8 @@ data = {
 [sub_resource type="ImageTexture" id="ImageTexture_wyslx"]
 image = SubResource("Image_xebkf")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ky80v"]
+
 [resource]
 item/0/name = "floot"
 item/0/mesh = SubResource("ArrayMesh_ky80v")
@@ -120,7 +122,7 @@ item/1/name = "floor_2"
 item/1/mesh = SubResource("ArrayMesh_qtc8a")
 item/1/mesh_transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 item/1/mesh_cast_shadow = 1
-item/1/shapes = []
+item/1/shapes = [SubResource("BoxShape3D_ky80v"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)]
 item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/navigation_layers = 1
 item/1/preview = SubResource("ImageTexture_wyslx")

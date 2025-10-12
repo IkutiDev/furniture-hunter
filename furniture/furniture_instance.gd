@@ -21,7 +21,7 @@ func _ready() -> void:
 	static_body.mouse_entered.connect(_on_mouse_entered)
 	static_body.mouse_exited.connect(_on_mouse_exit)
 	static_body.input_event.connect(_on_static_body_3d_input_event)
-	PlayerInventory.change_renown_amount(furniture_data.furniture_renown)
+	PlayerInventory.change_renown_amount(furniture_data.renown)
 	
 func _on_mouse_entered() -> void:
 	EventBus.mouse_over_furniture.emit(self)
@@ -50,7 +50,7 @@ func sold(offer) -> void:
 	PlayerInventory.earn_money(offer)
 	
 	EventBus.object_sold.emit(self)
-	PlayerInventory.change_renown_amount(-furniture_data.furniture_renown)
+	PlayerInventory.change_renown_amount(-furniture_data.renown)
 	queue_free()
 
 

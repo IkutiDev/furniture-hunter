@@ -92,6 +92,7 @@ func _on_spawn_timer_timeout() -> void:
 	if randf() > 0.62:
 		var new_data = CustomerData.new()
 		new_data.starting_money = randi_range(80,160) + int(PlayerInventory.renown * 2)
+		new_data.walk_speed = 2.0
 		
 		spawn_customer(new_data)
 

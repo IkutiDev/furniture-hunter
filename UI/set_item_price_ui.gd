@@ -26,7 +26,7 @@ func open_ui(instance: FurnitureContainerInstance) -> void:
 		return
 	furniture_instance = instance
 	furniture_title_label.text = furniture_instance.furniture_data.object_name
-	furniture_description_label.text = furniture_instance.furniture_data.furniture_description
+	furniture_description_label.text = furniture_instance.furniture_data.description
 	update_item_slots()
 	show()
 	
