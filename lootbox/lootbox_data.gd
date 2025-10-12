@@ -17,13 +17,16 @@ enum SpawnMethod {ONE_OF_EACH, RANDOM}
 @export var furniture : Array[FurnitureData]
 @export var items : Array[ItemData]
 
-func spawn_objects() -> void:
+func spawn_objects() -> Array:
+	var objects_spawned = []
 	match spawn_method:
 		SpawnMethod.ONE_OF_EACH:
 			for f in furniture:
 				PlayerInventory.add_object_to_inventory(f)
+				objects_spawned.push_back(f)
 			for i in items:
 				PlayerInventory.add_object_to_inventory(i)
+				objects_spawned.push_back(i)
 		SpawnMethod.RANDOM:
 			var rnd = RandomNumberGenerator.new()
 			var random_elements_array : Array = []
@@ -37,3 +40,5 @@ func spawn_objects() -> void:
 			for r in random_elements_per_box:
 				var random_element = random_elements_array[rnd.rand_weighted(random_elements_weight)]
 				PlayerInventory.add_object_to_inventory(random_element)
+				objects_spawned.push_back(random_element)
+	return objects_spawned

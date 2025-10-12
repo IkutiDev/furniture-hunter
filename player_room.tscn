@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b8myxwy4rg0ac" path="res://UI/auction_ui.tscn" id="7_2dulj"]
 [ext_resource type="PackedScene" uid="uid://bh0yjjoyposcl" path="res://UI/set_furniture_price_ui.tscn" id="8_o6f6g"]
 [ext_resource type="PackedScene" uid="uid://dh7xwd15ho7lk" path="res://non_persons/spawner.tscn" id="9_8qgar"]
+[ext_resource type="PackedScene" uid="uid://bkgqd0cei32ye" path="res://UI/lootbox_ui.tscn" id="10_1l8t1"]
 [ext_resource type="Texture2D" uid="uid://rts31v4bln5h" path="res://UI/WIP_icons/wrecking-ball.png" id="10_8qgar"]
 [ext_resource type="PackedScene" uid="uid://teevnykaumjf" path="res://UI/set_item_price_ui.tscn" id="12_1t0pb"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_358ef"]
@@ -338,6 +339,8 @@ grow_vertical = 2
 text = "8:00"
 
 [node name="InventoryUI" parent="." instance=ExtResource("2_2dulj")]
+
+[node name="LootboxUI" parent="." instance=ExtResource("10_1l8t1")]
 
 [node name="AuctionUI" parent="." instance=ExtResource("7_2dulj")]
 
