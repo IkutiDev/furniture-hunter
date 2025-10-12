@@ -88,7 +88,7 @@ size_flags_horizontal = 4
 [node name="LootboxesContainer" type="FoldableContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-title = "Lootboxes"
+title = "Keys"
 title_position = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/LootboxesContainer"]

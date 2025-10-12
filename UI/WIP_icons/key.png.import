@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ma6msyqlp7yj"
-path="res://.godot/imported/sofa.png-7fce7fc66a65ba9865aaa253276408ea.ctex"
+uid="uid://dbt27wptocc6f"
+path="res://.godot/imported/key.png-1658cf599cc2cdd3067d31b0b590a38e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/WIP_icons/sofa.png"
-dest_files=["res://.godot/imported/sofa.png-7fce7fc66a65ba9865aaa253276408ea.ctex"]
+source_file="res://UI/WIP_icons/key.png"
+dest_files=["res://.godot/imported/key.png-1658cf599cc2cdd3067d31b0b590a38e.ctex"]
 
 [params]
 

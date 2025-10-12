@@ -48,9 +48,9 @@ func select_furniture(data : FurnitureData) -> void:
 
 func _process(_delta: float) -> void:
 	visual_mesh.visible = selected_furniture != null
+	can_place_furniture = (not raycast_and_check_if_position_is_occupied()) and selected_furniture != null
 	if selected_furniture == null:
 		return
-	can_place_furniture = (not raycast_and_check_if_position_is_occupied()) and selected_furniture != null
 	if can_place_furniture:
 		visual_mesh.material_override = can_place_material
 	else:
@@ -59,6 +59,7 @@ func _process(_delta: float) -> void:
 	visual_mesh.mesh = selected_furniture.get_visual_mesh()
 	visual_mesh.scale = selected_furniture.get_scale()
 	visual_mesh.position = selected_furniture.get_offset()
+	visual_mesh.rotation_degrees = selected_furniture.get_rotation()
 	
 func toggled_delete_mode(active : bool) -> void:
 	delete_mode_active = active
@@ -74,14 +75,12 @@ func exit_hover_over_furniture(instance : FurnitureInstance) -> void:
 		hovered_over_furniture_instance = null
 
 func _input(event: InputEvent) -> void:
+	if not can_place_furniture:
+		return
 	if event.is_action_pressed("press"):
-		if can_place_furniture and selected_furniture != null:
-			place_object()
-		elif hovered_over_furniture_instance != null and delete_mode_active:
-			remove_object(hovered_over_furniture_instance)
+		place_object()
 	if event.is_action_pressed("right_click"):
-		if can_place_furniture and selected_furniture != null:
-			deselect_furniture()
+		deselect_furniture()
 	if event.is_action_pressed("rotate"):
 		current_rotation_in_degrees += 90.0
 		if current_rotation_in_degrees >= 360.0:
@@ -96,10 +95,13 @@ func place_object() -> void:
 	nav_mesh_region.add_child(furnitue_instance)
 	nav_mesh_region.bake_navigation_mesh()
 	occupation_grid_map.set_cell_item(current_mouse_position_on_grid, 1)
+	print(Vector3i(current_mouse_position_on_grid))
 	for p in furnitue_instance.extra_size:
 		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(current_rotation_in_degrees))
-		print(current_mouse_position_on_grid)
-		occupation_grid_map.set_cell_item(Vector3i(current_mouse_position_on_grid) + Vector3i(p), 1)
+		var pi = Vector3i()
+		for i in 3:
+			pi[i] = round(p[i])
+		occupation_grid_map.set_cell_item(Vector3i(current_mouse_position_on_grid) + pi, 1)
 	PlayerInventory.remove_object_from_inventory(selected_furniture)
 	deselect_furniture()
 
@@ -113,6 +115,8 @@ func remove_object(instance : FurnitureInstance) -> void:
 	nav_mesh_region.bake_navigation_mesh()
 
 func raycast_and_check_if_position_is_occupied() -> bool:
+	if selected_furniture == null:
+		return true
 	var mouse_pos = get_viewport().get_mouse_position()
 	var ray_length = 1000
 	var from = get_viewport().get_camera_3d().project_ray_origin(mouse_pos)

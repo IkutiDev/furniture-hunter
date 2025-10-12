@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=4 uid="uid://casn5uqk8hx72"]
+
+[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="1_snnas"]
+[ext_resource type="Material" uid="uid://c1upboxliaxyx" path="res://materials/new_standard_material_3d.tres" id="2_1fpjv"]
+[ext_resource type="Texture2D" uid="uid://c6mo2m1j6wcxi" path="res://furniture/gamejam_komody_Base_color.png" id="3_o3vy3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hxyv"]
+resource_name = "komody"
+cull_mode = 2
+albedo_texture = ExtResource("3_o3vy3")
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+normal_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4pu0r"]
+_surfaces = [{
+"aabb": AABB(-2.3539772, 1.1920929e-07, -2.353979, 4.7079544, 1e-05, 4.7079563),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAAAAQABgAHAAAABwADAAAABwAIAAMA"),
+"name": "komody",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("/38AAP9/AACB2gAAfSUAAP//AAD/fwAA/38AAAAAAAD/fwAA//8AAIHaAACB2gAAfSUAAIHaAAAAAAAA/38AAH0lAAB9JQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_snnas"]
+resource_name = "gamejam_Plane_002"
+_surfaces = [{
+"aabb": AABB(-2.3539772, 1.1920929e-07, -2.353979, 4.7079544, 1e-05, 4.7079563),
+"attribute_data": PackedByteArray("deODGMrO8w/m2tgDys4TISH48w8F7NgDIfgTIQXsLi3m2i4t"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAAAAQABgAHAAAABwADAAAABwAIAAMA"),
+"material": SubResource("StandardMaterial3D_6hxyv"),
+"name": "komody",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("/38AAP9/Gd+B2gAAfSUZ3///AAD/fxnf/38AAAAAGd//fwAA//8Z34HaAACB2hnffSUAAIHaGd8AAAAA/38Z330lAAB9JRnfDaD4rw2g+K8NoPivDaD4rw2g+K8NoPivDaD4rw2g+K8NoPiv")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4pu0r")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mhqf8"]
+size = Vector3(2, 1, 2)
+
+[node name="Carpet1" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
+script = ExtResource("1_snnas")
+extra_size = PackedVector3Array(1, 0, 0, 1, 0, 1, -1, 0, 0)
+visual_mesh = NodePath("carpet_2")
+static_body = NodePath("StaticBody3D")
+
+[node name="carpet_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.401, 0, 0, 0, 0.453, 0, 0.15, 0)
+material_override = ExtResource("2_1fpjv")
+mesh = SubResource("ArrayMesh_snnas")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_mhqf8")

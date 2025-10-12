@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=4 uid="uid://t7elomwp0k0"]
+
+[ext_resource type="Texture2D" uid="uid://d2wk4opf0bah4" path="res://items/new_items/items_Material.png" id="1_vt5ki"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vt5ki"]
+resource_name = "items"
+cull_mode = 2
+albedo_texture = ExtResource("1_vt5ki")
+metallic = 0.3
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pnkda"]
+_surfaces = [{
+"aabb": AABB(-0.25102717, -0.35843372, -0.37998772, 0.5020545, 0.71686745, 0.7599735),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAQADAAIABAAAAAIAAwAEAAIABQABAAAABQADAAEABQAAAAQABQAEAAMA"),
+"name": "items",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("5Dr//3mFAAB0ZR9/AAAAAP//daI0dAAAGsUAAIV6AACKmt+A//8AAAAAiV3KiwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bm04a"]
+resource_name = "items_crystal_001"
+_surfaces = [{
+"aabb": AABB(-0.25102717, -0.35843372, -0.37998772, 0.5020545, 0.71686745, 0.7599735),
+"attribute_data": PackedByteArray("r1I4TSNKLUevUidE3vN8KEb7fCje87ktRvt8KEb79TLe87ktRvv1Mt7z9TLe87ktHeYNhVnrDYVZ63WMHeYNhVnrdYzh4HWMUw0GvhcIBr4XCJ62Uw0GvhcInraQEp62"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcA"),
+"material": SubResource("StandardMaterial3D_vt5ki"),
+"name": "items",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("5Dr//3mFkep0ZR9/AACR6v//daI0dJHqdGUffwAA2foaxQAAhXrZ+v//daI0dNn6GsUAAIV6GemKmt+A//8Z6f//daI0dBnpiprfgP//MsnkOv//eYUyyf//daI0dDLJAACJXcqLjcDkOv//eYWNwIqa34D//43AAACJXcqLs8eKmt+A//+zxxrFAACFerPHAACJXcqLhO8axQAAhXqE73RlH38AAITvAACJXcqLO9F0ZR9/AAA70eQ6//95hTvRlMDpn5TA6Z+UwOmfesAIY3rACGN6wAhjhaYwZ4WmMGeFpjBnN7uPhTe7j4U3u4+F8uPC2PLjwtjy48LYDjD58Q4w+fEOMPnx4bul7eG7pe3hu6XtqrGZ2qqxmdqqsZna")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_pnkda")
+
+[node name="Crystal1" type="Node3D"]
+
+[node name="crystal_001" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0037386832, 0.039432462, 0.48405224, -0.18300427, 0.44849902, -0.035122696, -0.4498566, -0.18212427, 0.018310994, 0, 0.17902616, 0)
+mesh = SubResource("ArrayMesh_bm04a")
+skeleton = NodePath("")

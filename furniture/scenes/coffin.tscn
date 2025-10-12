@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=4 uid="uid://3hlm0lscnyum"]
+
+[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="1_mj2k8"]
+[ext_resource type="Material" uid="uid://cw27mxnumbj5s" path="res://materials/plant.tres" id="2_npyii"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_s5f7q"]
+_surfaces = [{
+"aabb": AABB(-0.95422363, -2.6841025, -0.6122818, 1.9084492, 4.6008034, 1.0457039),
+"format": 34896613377,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAADAAEAAgADAAUABQADAAQABgACAAUABAABAAcABQAEAAgACAAEAAcABwABAAkAAAAJAAEABwAJAAoACwAAAAIACwACAAYADAAJAAAADAAKAAkADQAHAAoADQAKAAwACAAHAA0ADgAMAAAADgAAAAsADwANAAwADwAMAA4AEAAIAA0AEAANAA8ACwARAA4AEgAIABAAEgAFAAgABgAFABIAEAATABIABgAUAAsACwAUABEAEgAVAAYAEgATABUABgAVABQAEAAWABMAFgAVABMADwAWABAAFwAUABUAFgAXABUADwAXABYAFwARABQADgAXAA8ADgARABcA"),
+"name": "kwiaty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("WEUdBP//AAAAAL+7qx8AAAAA3b+fqAAAWEXh+wAAAACmuuH7AAAAAFhF///0iAAA4Q6/vjGpAAD//7+7qx8AAKa6///0iAAAWEUAAAp3AACmugAACncAAD9RDQvE/AAAprodBP//AAD//92/n6gAAL+uDQvE/AAAHfG/vjGpAAAOshD5YIwAAL+uqgoC8AAA8E0Q+WCMAADwTa34nn8AAD9RqgoC8AAA4Q5bvm+cAAAOsq34nn8AAB3xW75vnAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7dn6b"]
+resource_name = "gamejam_Plane_024"
+_surfaces = [{
+"aabb": AABB(-0.95422363, -2.6841025, -0.6122818, 1.9084492, 4.6008034, 1.0457039),
+"attribute_data": PackedByteArray("9qKMN9Bme0GRZnY3NaORQVk9SDdkAJFBoACNNx09TUGEJtHOEDbYxAw20c6IJtjESmXRAVae8gBQnuEBUGXjAAwogLQDMgHEDCgHxAMyebSRZnY3WVKRQRpSjDfQZntBzEx2AUYTSgI/E1sB0kxlAlZRjDcdPU1BWT1INxpRkUFmAGDDHBmc/5MJnP9LImDDlQnLrksiYMNmAGDDHRnLrv0et+oyJvmuxicxsQUdE+tXJ2T9BR0T6/0et+o0Jpz/mTRk/TQmnP9XJ2T9vTWc/8YnMbG7NfmuJzQxsTIm+a7yPLfqvTWc/5k0ZP3rPhPrJzQxses+E+vyPLfquzX5rgzKabNxtBbGyrxps2bSFsZm0hbGPL2c/3G0FsadyZz/Z5ve8gaPzPMGj97yZ5vM8z8TWwFrAGUCZQB2AUYTSgITUuEBUGXjAEpl0QEZUvIABkfM80dU3vJHVMzzBkfe8g=="),
+"format": 34896613399,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUA"),
+"material": ExtResource("2_npyii"),
+"name": "kwiaty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 88,
+"vertex_data": PackedByteArray("WEUdBP//Dc8AAL+7qx8NzwAA3b+fqA3PWEUAAAp3Dc///92/n6j9zqa6AAAKd/3OprodBP///c7//7+7qx/9zlhF///0iFrFprrh+wAAWsWmuv//9IhaxVhF4fsAAFrF4Q6/vjGpudQ/UaoKAvC51D9RDQvE/LnU4Q5bvm+cudSmuh0E//9f0lhFAAAKd1/SWEUdBP//X9KmugAACndf0gAA3b+fqCreWEXh+wAAKt5YRf//9Igq3gAAv7urHyrev64NC8T81dYd8Vu+b5zV1h3xv74xqdXWv66qCgLw1damuv//9Ihc3v//v7urH1ze///dv5+oXN6muuH7AABc3v//v7urH///WEUAAAp3//+mugAACnf//wAAv7urH///prrh+wAA//8AAL+7qx//////v7urH///WEXh+wAA//8d8b++Man//6a6HQT/////v64NC8T8/////92/n6j//w6yEPlgjP/////dv5+o//8d8b++Man//6a6///0iP//8E0Q+WCM//+muv//9Ij//w6yEPlgjP//WEX///SI//+/rg0LxPz//1hFHQT/////P1ENC8T8//+muh0E/////+EOv74xqf//WEX///SI///wTRD5YIz//wAA3b+fqP//P1ENC8T8//8AAN2/n6j//+EOv74xqf//WEUdBP////8Osq34nn+NhOEOW75vnI2E8E2t+J5/jYQd8Vu+b5yNhB3xW75vnEmEP1GqCgLwSYThDlu+b5xJhL+uqgoC8EmEP1ENC8T8//+/rqoKAvD//7+uDQvE/P//P1GqCgLw//8d8b++ManJyA6yrfief8nIDrIQ+WCMycgd8Vu+b5zJyPBNEPlgjKnh4Q5bvm+cqeHhDr++Mamp4fBNrfief6nhDrIQ+WCM///wTa34nn////BNEPlgjP//DrKt+J5///+ZUm2rmVJtq5lSbauZUm2rhStcLYUrXC2FK1wthStcLf///3////9/////f////3+psFBaqbBQWqmwUFqpsFBaUFc2V1BXNldQVzZXUFc2V8thxLPLYcSzy2HEs8thxLPwWv+v8Fr/r/Ba/6/wWv+vkDNaHpAzWh6QM1oekDNaHmmG//9phv//aYb//2mG///Ghv//xob//8aG///Ghv//DYBlhmYGCwBmBgkADYBlhjT5BgAJgMmGBYDJhsoGBQD/f8aG/3/Ghv9/xob/f8aG/39phv9/aYb/f2mG/39phjX5CQD5f8mG9n/JhjT5CAD0f2WGmfkOAJj5DgD0f2WG////f////3////9/////f////3////9/////f////3//f0XE/39FxP9/RcT/f0XEOErgpjhK4KY4SuCmOErgpqGgPVOhoD1ToaA9U6GgPVP/f0ZE/39GRP9/RkT/f0ZE")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_s5f7q")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4yhsa"]
+
+[node name="Coffin" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
+script = ExtResource("1_mj2k8")
+visual_mesh = NodePath("cofin_01")
+static_body = NodePath("StaticBody3D")
+
+[node name="cofin_01" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.401, 0, 0, 0, 0.453, 0, 1.0155832, 0)
+material_override = ExtResource("2_npyii")
+mesh = SubResource("ArrayMesh_7dn6b")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_4yhsa")

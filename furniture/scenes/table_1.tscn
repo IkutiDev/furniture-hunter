@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bmvuafocqp7wj"]
+[gd_scene load_steps=9 format=4 uid="uid://bmvuafocqp7wj"]
 
-[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="1_ksljv"]
+[ext_resource type="Script" uid="uid://c0rm10sjn8jpn" path="res://furniture/furniture_container_instance.gd" id="1_x5dth"]
 [ext_resource type="Material" uid="uid://btbvef6o2ufoq" path="res://materials/tables.tres" id="2_x5dth"]
 [ext_resource type="Texture2D" uid="uid://cgepx634q17gi" path="res://furniture/gamejam_stoly_Base_color.png" id="3_hpie0"]
+[ext_resource type="PackedScene" uid="uid://1qaqx47nyxun" path="res://furniture/item_slot.tscn" id="4_hpie0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8isn1"]
 resource_name = "stoly"
@@ -51,8 +52,9 @@ shadow_mesh = SubResource("ArrayMesh_ny0ij")
 resource_local_to_scene = true
 size = Vector3(2.2, 1, 1)
 
-[node name="Table1" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
-script = ExtResource("1_ksljv")
+[node name="Table1" type="Node3D" node_paths=PackedStringArray("item_slots", "visual_mesh", "static_body")]
+script = ExtResource("1_x5dth")
+item_slots = [NodePath("ItemSlot"), NodePath("ItemSlot2"), NodePath("ItemSlot3")]
 extra_size = PackedVector3Array(1, 0, 0, -1, 0, 0)
 visual_mesh = NodePath("table_1")
 static_body = NodePath("StaticBody3D")
@@ -70,3 +72,12 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_ksljv")
+
+[node name="ItemSlot" parent="." instance=ExtResource("4_hpie0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7362995, 0.674512, 0)
+
+[node name="ItemSlot2" parent="." instance=ExtResource("4_hpie0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003774643, 0.674512, 0)
+
+[node name="ItemSlot3" parent="." instance=ExtResource("4_hpie0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7296854, 0.674512, 0)

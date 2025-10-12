@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://cj51ikkn14x5h"]
+[gd_scene load_steps=7 format=4 uid="uid://cj51ikkn14x5h"]
 
-[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="1_4dgxq"]
+[ext_resource type="Script" uid="uid://c0rm10sjn8jpn" path="res://furniture/furniture_container_instance.gd" id="1_af2d6"]
 [ext_resource type="Material" uid="uid://btbvef6o2ufoq" path="res://materials/tables.tres" id="2_af2d6"]
+[ext_resource type="PackedScene" uid="uid://1qaqx47nyxun" path="res://furniture/item_slot.tscn" id="3_k6caw"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dcvb1"]
 _surfaces = [{
@@ -40,8 +41,10 @@ shadow_mesh = SubResource("ArrayMesh_dcvb1")
 [sub_resource type="BoxShape3D" id="BoxShape3D_fh6qx"]
 size = Vector3(2.2, 1, 1)
 
-[node name="Table3" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
-script = ExtResource("1_4dgxq")
+[node name="Table3" type="Node3D" node_paths=PackedStringArray("item_slots", "visual_mesh", "static_body")]
+script = ExtResource("1_af2d6")
+item_slots = [NodePath("ItemSlot"), NodePath("ItemSlot2")]
+extra_size = PackedVector3Array(1, 0, 0)
 visual_mesh = NodePath("table_3")
 static_body = NodePath("StaticBody3D")
 
@@ -58,3 +61,9 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_fh6qx")
+
+[node name="ItemSlot" parent="." instance=ExtResource("3_k6caw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57683885, 0.72965956, 0)
+
+[node name="ItemSlot2" parent="." instance=ExtResource("3_k6caw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4346497, 0.72965956, 0)

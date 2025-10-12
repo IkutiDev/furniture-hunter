@@ -26,6 +26,9 @@ func get_visual_mesh() -> Mesh:
 func get_scale() -> Vector3:
 	var furniture_instance := furniture_scene.instantiate() as FurnitureInstance
 	return furniture_instance.get_mesh_scale()
+func get_rotation() -> Vector3:
+	var furniture_instance := furniture_scene.instantiate() as FurnitureInstance
+	return furniture_instance.get_mesh_rotation()
 func get_offset() -> Vector3:
 	var furniture_instance := furniture_scene.instantiate() as FurnitureInstance
 	return furniture_instance.get_mesh_offset()

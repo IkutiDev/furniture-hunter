@@ -38,6 +38,9 @@ func get_mesh() -> Mesh:
 func get_mesh_scale() -> Vector3:
 	return visual_mesh.scale
 
+func get_mesh_rotation() -> Vector3:
+	return visual_mesh.rotation_degrees
+
 func remove_this_instance() -> void:
 	PlayerInventory.add_object_to_inventory(furniture_data)
 	queue_free()

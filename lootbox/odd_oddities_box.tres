@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="LootboxData" load_steps=11 format=3 uid="uid://be0gr64ieq76o"]
 
 [ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_h68v7"]
-[ext_resource type="Texture2D" uid="uid://di7f4ya7swuuo" path="res://UI/WIP_icons/chest.png" id="2_1fejj"]
 [ext_resource type="Resource" uid="uid://clak1m6k3ns3n" path="res://data/207_suitcase_full_of_rare_vials.tres" id="2_ff0dn"]
 [ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="2_j1h6y"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="3_1fejj"]
 [ext_resource type="Resource" uid="uid://bal06ojm0p7vp" path="res://data/204_divineing_table.tres" id="3_a3vav"]
+[ext_resource type="Texture2D" uid="uid://dbt27wptocc6f" path="res://UI/WIP_icons/key.png" id="4_ff0dn"]
 [ext_resource type="Resource" uid="uid://b0vhyp3lgabpb" path="res://data/100_offering_chalice.tres" id="6_8dxca"]
 [ext_resource type="Resource" uid="uid://dpqurryjq3yhd" path="res://data/101_goblet_of_forecasting.tres" id="7_tpfn8"]
 [ext_resource type="Resource" uid="uid://ceriynmxuyan5" path="res://data/102_tarnished_chalice.tres" id="8_26y6w"]
@@ -13,7 +13,7 @@
 
 [resource]
 script = ExtResource("3_1fejj")
-icon = ExtResource("2_1fejj")
+icon = ExtResource("4_ff0dn")
 lootbox_title = "Odd Oddities Chest"
 lootbox_description = "Chest full of odd trinkets and even more odd bits and bobs. Truly odd."
 lootbox_price = 100
