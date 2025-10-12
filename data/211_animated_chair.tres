@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://cvrfxcygt7r77"]
 
-[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_1e23b"]
-[ext_resource type="Texture2D" uid="uid://55rcqe7ge1d0" path="res://UI/WIP_icons/rocking-chair.png" id="1_qq5h1"]
 [ext_resource type="PackedScene" uid="uid://d0mpp1fx5eb1y" path="res://furniture/scenes/chair_2.tscn" id="1_smwtm"]
+[ext_resource type="Texture2D" uid="uid://55rcqe7ge1d0" path="res://UI/WIP_icons/rocking-chair.png" id="2_qeitu"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_xt7yj"]
 
 [resource]
-script = ExtResource("1_1e23b")
+script = ExtResource("3_xt7yj")
 ID = 211
 object_name = "Animated Chair"
 description = "infused with the power of God and Anime"
-icon = ExtResource("1_qq5h1")
+icon = ExtResource("2_qeitu")
 base_value = 90
 renown = 90
 furniture_scene = ExtResource("1_smwtm")

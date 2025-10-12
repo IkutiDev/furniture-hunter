@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bro4ynygougxu"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bro4ynygougxu"]
 
-[ext_resource type="Texture2D" uid="uid://crqn0ee2e3174" path="res://UI/WIP_icons/crystal-ball.png" id="1_hrmw3"]
-[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_temaf"]
+[ext_resource type="Texture2D" uid="uid://crqn0ee2e3174" path="res://UI/WIP_icons/crystal-ball.png" id="1_50xnl"]
+[ext_resource type="PackedScene" uid="uid://cpj5rctnh4xru" path="res://items/scenes/magic_ball.tscn" id="2_d4we7"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_keog2"]
 
 [resource]
-script = ExtResource("1_temaf")
+script = ExtResource("3_keog2")
 ID = 109
 object_name = "Depleted Crystal Ball"
 description = "foretold obsolesence"
-icon = ExtResource("1_hrmw3")
+icon = ExtResource("1_50xnl")
 base_value = 40
 renown = 40
+item_scene = ExtResource("2_d4we7")
 tags = Array[int]([-1])
 rarity_weight = 550.0

@@ -1,16 +1,18 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cjt16gd7jfny6"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cjt16gd7jfny6"]
 
-[ext_resource type="Texture2D" uid="uid://csu5tpweur54y" path="res://UI/WIP_icons/emerald-necklace.png" id="1_lklqn"]
-[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_phuno"]
+[ext_resource type="Texture2D" uid="uid://csu5tpweur54y" path="res://UI/WIP_icons/emerald-necklace.png" id="1_10fnh"]
+[ext_resource type="PackedScene" uid="uid://cb37i4mvqo8t" path="res://items/scenes/necklace.tscn" id="2_iljqh"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_prbh5"]
 
 [resource]
-script = ExtResource("1_phuno")
+script = ExtResource("3_prbh5")
 ID = 107
 object_name = "Attuned Merlin Locket"
 description = "allegedly blessed by Merlin himself, limited edition"
-icon = ExtResource("1_lklqn")
+icon = ExtResource("1_10fnh")
 base_value = 600
 renown = 600
+item_scene = ExtResource("2_iljqh")
 tags = Array[int]([-1])
 rarity_type = 3
 rarity_weight = 40.0

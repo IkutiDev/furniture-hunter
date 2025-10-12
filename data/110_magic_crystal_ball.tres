@@ -1,16 +1,18 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cfqpiskpo8j4k"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cfqpiskpo8j4k"]
 
-[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_cfg32"]
-[ext_resource type="Texture2D" uid="uid://crqn0ee2e3174" path="res://UI/WIP_icons/crystal-ball.png" id="1_g8kdh"]
+[ext_resource type="Texture2D" uid="uid://crqn0ee2e3174" path="res://UI/WIP_icons/crystal-ball.png" id="1_bpq3s"]
+[ext_resource type="PackedScene" uid="uid://cpj5rctnh4xru" path="res://items/scenes/magic_ball.tscn" id="2_lvyn4"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_ddqdh"]
 
 [resource]
-script = ExtResource("1_cfg32")
+script = ExtResource("3_ddqdh")
 ID = 110
 object_name = "Magic Crystal Ball"
-icon = ExtResource("1_g8kdh")
+icon = ExtResource("1_bpq3s")
 base_value = 160
 renown = 160
 collection_set_type = 3
+item_scene = ExtResource("2_lvyn4")
 tags = Array[int]([-1])
 rarity_type = 1
 rarity_weight = 200.0

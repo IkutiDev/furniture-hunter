@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="FurnitureData" load_steps=3 format=3 uid="uid://b1wt73x234yi7"]
 
-[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_c8q64"]
 [ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="1_d3d8h"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="2_mlnkp"]
 
 [resource]
-script = ExtResource("1_c8q64")
+script = ExtResource("2_mlnkp")
 ID = 300
 object_name = "Augur Starter Pack"
 icon = ExtResource("1_d3d8h")

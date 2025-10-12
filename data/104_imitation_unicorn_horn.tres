@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c48uc85ju75vt"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://c48uc85ju75vt"]
 
-[ext_resource type="Texture2D" uid="uid://bakd0cwc08pm0" path="res://UI/WIP_icons/unicorn.png" id="1_86qds"]
-[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_awd8y"]
+[ext_resource type="Texture2D" uid="uid://bakd0cwc08pm0" path="res://UI/WIP_icons/unicorn.png" id="1_coqfa"]
+[ext_resource type="PackedScene" uid="uid://tyhnu045xph3" path="res://items/scenes/unicorn_horn.tscn" id="2_oyvou"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_lq0yc"]
 
 [resource]
-script = ExtResource("1_awd8y")
+script = ExtResource("3_lq0yc")
 ID = 104
 object_name = "Imitation Unicorn Horn"
 description = "I Can't Believe It's Not Unicorn!"
-icon = ExtResource("1_86qds")
+icon = ExtResource("1_coqfa")
 base_value = 40
 renown = 40
+item_scene = ExtResource("2_oyvou")
 tags = Array[int]([-1])
 rarity_weight = 480.0

@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://belhkkheh67jo"]
 
 [ext_resource type="PackedScene" uid="uid://doauio3qfv6l1" path="res://furniture/scenes/broom.tscn" id="1_5d2ci"]
-[ext_resource type="Texture2D" uid="uid://rh4ipxwywkrg" path="res://UI/WIP_icons/magic-broom.png" id="1_lddtw"]
-[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="1_pxio4"]
+[ext_resource type="Texture2D" uid="uid://rh4ipxwywkrg" path="res://UI/WIP_icons/magic-broom.png" id="2_3nb3y"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_dn4gi"]
 
 [resource]
-script = ExtResource("1_pxio4")
+script = ExtResource("3_dn4gi")
 ID = 208
 object_name = "Flying Broom"
 description = "also works as a poor man's rumba"
-icon = ExtResource("1_lddtw")
+icon = ExtResource("2_3nb3y")
 base_value = 190
 renown = 190
 collection_set_type = 4

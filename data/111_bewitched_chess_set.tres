@@ -1,16 +1,18 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dfpsrnc2k3vrq"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dfpsrnc2k3vrq"]
 
-[ext_resource type="Texture2D" uid="uid://ixyaw4sargqn" path="res://UI/WIP_icons/empty-chessboard.png" id="1_3l1ho"]
-[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_ra0s0"]
+[ext_resource type="Texture2D" uid="uid://ixyaw4sargqn" path="res://UI/WIP_icons/empty-chessboard.png" id="1_5rorp"]
+[ext_resource type="PackedScene" uid="uid://b5l4n1775enx0" path="res://items/scenes/chess.tscn" id="2_rglwk"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_3b67o"]
 
 [resource]
-script = ExtResource("1_ra0s0")
+script = ExtResource("3_3b67o")
 ID = 111
 object_name = "Bewitched Chess Set"
 description = "voice controlled, works with most accents"
-icon = ExtResource("1_3l1ho")
+icon = ExtResource("1_5rorp")
 base_value = 250
 renown = 250
+item_scene = ExtResource("2_rglwk")
 tags = Array[int]([-1])
 rarity_type = 2
 rarity_weight = 80.0
