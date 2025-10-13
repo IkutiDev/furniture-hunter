@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bmunaaace51pi"]
+
+[ext_resource type="Texture2D" uid="uid://blvbk361yexju" path="res://characters/2.png" id="1_dk2aj"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_dk2aj")
+metallic = 0.3
+metallic_specular = 0.0
