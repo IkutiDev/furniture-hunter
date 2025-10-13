@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://du5pkafdjd268"]
+
+[ext_resource type="Script" uid="uid://botxorv4wnywe" path="res://UI/crafting_ui.gd" id="1_sac6m"]
+[ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_2idwb"]
+[ext_resource type="PackedScene" uid="uid://bypcdpjljnjfc" path="res://UI/crafting_recipe.tscn" id="2_c5m30"]
+[ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_y8hct"]
+
+[node name="CraftingUI" type="Control" node_paths=PackedStringArray("crafting_menu", "open_menu_button", "recipes_go_here")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sac6m")
+crafting_menu = NodePath("Panel")
+open_menu_button = NodePath("ToggleVisibility")
+recipes_go_here = NodePath("Panel/ScrollContainer/VBoxContainer")
+crafting_recipe_scene = ExtResource("2_c5m30")
+furniture_button_scene = ExtResource("2_2idwb")
+item_button_scene = ExtResource("3_y8hct")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 183.0
+offset_right = 970.0
+offset_bottom = 676.0
+
+[node name="MouseBlocker" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = -522.0
+offset_top = -287.0
+offset_right = 1208.0
+offset_bottom = 658.0
+color = Color(0.40205058, 0.65349877, 0.8920514, 0.20392157)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 719.0
+offset_bottom = 484.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="ColorRect" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("2_c5m30")]
+layout_mode = 2
+
+[node name="ColorRect2" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("2_c5m30")]
+layout_mode = 2
+
+[node name="ColorRect3" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("2_c5m30")]
+layout_mode = 2
+
+[node name="ToggleVisibility" type="Button" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 687.0
+offset_right = 305.0
+offset_bottom = 718.0
+text = "Crafting"

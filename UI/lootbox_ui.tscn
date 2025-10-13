@@ -16,25 +16,24 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_lbq0n")
 lootbox_menu = NodePath("Panel")
-open_menu_button = NodePath("Button")
+open_menu_button = NodePath("ToggleVisibility")
 furniture_button_scene = ExtResource("2_ihxcr")
 item_button_scene = ExtResource("3_apek5")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 294.0
 offset_top = 31.0
 offset_right = 934.0
 offset_bottom = 671.0
 
-[node name="ColorRect" type="ColorRect" parent="Panel"]
+[node name="MouseBlocker" type="ColorRect" parent="Panel"]
 layout_mode = 0
 offset_left = -432.0
 offset_top = -158.0
 offset_right = 1298.0
 offset_bottom = 787.0
-color = Color(0.8039216, 0.8039216, 0.8039216, 0.33333334)
+color = Color(0.8648356, 0.5444204, 0.29672363, 0.20392157)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Panel"]
 layout_mode = 1
@@ -48,7 +47,7 @@ grow_vertical = 2
 own_world_3d = true
 handle_input_locally = false
 size = Vector2i(640, 640)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
 [node name="LootboxWorld" parent="Panel/SubViewportContainer/SubViewport" instance=ExtResource("1_5edwe")]
 
@@ -72,7 +71,7 @@ offset_right = 641.0
 offset_bottom = 509.0
 alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="ToggleVisibility" type="Button" parent="."]
 layout_mode = 0
 offset_left = 147.0
 offset_top = 687.0
