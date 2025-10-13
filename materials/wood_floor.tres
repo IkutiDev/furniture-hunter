@@ -6,6 +6,6 @@
 resource_name = "floot"
 cull_mode = 2
 albedo_texture = ExtResource("1_gjqd6")
-metallic = 0.3
+metallic = 0.78
 metallic_specular = 0.0
 texture_repeat = false

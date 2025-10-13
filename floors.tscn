@@ -84,5 +84,6 @@ skeleton = NodePath("")
 
 [node name="floor_2" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = ExtResource("2_k6cl7")
 mesh = SubResource("ArrayMesh_6mv4r")
 skeleton = NodePath("")
