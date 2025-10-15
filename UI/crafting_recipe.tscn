@@ -1,22 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bypcdpjljnjfc"]
+[gd_scene load_steps=5 format=3 uid="uid://bypcdpjljnjfc"]
 
 [ext_resource type="Script" uid="uid://fwd8qv7v4nbd" path="res://UI/crafting_recipe.gd" id="1_5tfuo"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_bkk45"]
-[ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="2_ijbav"]
-[ext_resource type="Resource" uid="uid://cinq18tg3y7m8" path="res://data/115_empty_phylactery.tres" id="3_cogrx"]
 [ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_k0fux"]
 [ext_resource type="PackedScene" uid="uid://d0aosvog7ndme" path="res://UI/collection_icon_button.tscn" id="4_gnrvk"]
-[ext_resource type="Resource" uid="uid://c84hpck8pfmt4" path="res://data/203_predicting_armchair.tres" id="4_xlf3w"]
-[ext_resource type="Resource" uid="uid://cvrfxcygt7r77" path="res://data/211_animated_chair.tres" id="5_vkl1o"]
-[ext_resource type="Resource" uid="uid://b6e61gjgbo4ly" path="res://data/213_old_alchemical_table.tres" id="6_abke6"]
-[ext_resource type="Script" uid="uid://5c0qa32k8lq2" path="res://collections/collection_data.gd" id="7_iq1sm"]
-
-[sub_resource type="Resource" id="Resource_ec1nx"]
-script = ExtResource("7_iq1sm")
-object_name = "ABC"
-icon = ExtResource("2_ijbav")
-parts = Array[Resource]([ExtResource("3_cogrx"), ExtResource("4_xlf3w"), ExtResource("5_vkl1o"), ExtResource("6_abke6")])
-metadata/_custom_type_script = "uid://5c0qa32k8lq2"
 
 [node name="CraftingRecipe" type="ColorRect"]
 custom_minimum_size = Vector2(640, 100)
@@ -24,7 +11,6 @@ offset_right = 640.0
 offset_bottom = 100.0
 color = Color(0.23653147, 0.4275488, 0.78465223, 1)
 script = ExtResource("1_5tfuo")
-collection_data = SubResource("Resource_ec1nx")
 furniture_button_scene = ExtResource("2_bkk45")
 item_button_scene = ExtResource("3_k0fux")
 collection_button_scene = ExtResource("4_gnrvk")
@@ -40,12 +26,6 @@ offset_right = -370.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Placeholder5" type="ColorRect" parent="ResultGoesHere"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
 [node name="PartsGoHere" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
@@ -57,34 +37,6 @@ offset_right = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
-
-[node name="Placeholder1" type="ColorRect" parent="PartsGoHere"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-color = Color(0.23496205, 0.5707708, 0.87877065, 1)
-
-[node name="Placeholder2" type="ColorRect" parent="PartsGoHere"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-color = Color(0.23496205, 0.5707708, 0.87877065, 1)
-
-[node name="Placeholder3" type="ColorRect" parent="PartsGoHere"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-color = Color(0.23496205, 0.5707708, 0.87877065, 1)
-
-[node name="Placeholder4" type="ColorRect" parent="PartsGoHere"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-color = Color(0.23496205, 0.5707708, 0.87877065, 1)
 
 [node name="MakeSetButton" type="Button" parent="."]
 layout_mode = 0

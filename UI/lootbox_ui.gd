@@ -10,6 +10,7 @@ extends Control
 func _ready() -> void:
 	open_menu_button.pressed.connect(_toggle_auctions_menu)
 	EventBus.lootbox_opened.connect(_open_lootbox)
+	lootbox_menu.visible = false
 	
 func _toggle_auctions_menu() -> void:
 	lootbox_menu.visible = !lootbox_menu.visible

@@ -5,16 +5,17 @@ signal selected_furniture_to_place(furniture_data)
 signal available_furniture_changed()
 signal available_items_changed()
 signal available_lootboxes_changed()
+signal available_collections_changed()
 signal mouse_over_furniture(instance)
 signal mouse_exits_furniture(instance)
 signal set_remove_furniture_mode(active)
 signal clicked_on_furniture(furniture)
 signal clicked_on_item(item_data)
-
+signal clicked_on_collection(collection_data)
 signal set_price(object)
 signal object_sold(object)
 signal lootbox_opened(lootbox_data)
-
+signal collection_crafted(collection_data)
 
 signal money_value_changed()
 
