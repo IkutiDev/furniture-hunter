@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=52 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dh7xwd15ho7lk" path="res://non_persons/spawner.tscn" id="9_8qgar"]
 [ext_resource type="PackedScene" uid="uid://bkgqd0cei32ye" path="res://UI/lootbox_ui.tscn" id="10_1l8t1"]
 [ext_resource type="Texture2D" uid="uid://rts31v4bln5h" path="res://UI/WIP_icons/wrecking-ball.png" id="10_8qgar"]
+[ext_resource type="PackedScene" uid="uid://du5pkafdjd268" path="res://UI/crafting_ui.tscn" id="11_4fkm8"]
 [ext_resource type="PackedScene" uid="uid://teevnykaumjf" path="res://UI/set_item_price_ui.tscn" id="12_1t0pb"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_358ef"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="14_4pcic"]
@@ -399,9 +400,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -42.0
-offset_right = 43.0
-offset_bottom = 23.0
+offset_left = -120.0
+offset_right = -27.0
+offset_bottom = 31.0
 grow_horizontal = 2
 theme_override_constants/align_to_largest_stylebox = 285
 theme_override_styles/normal = SubResource("StyleBoxFlat_d0s76")
@@ -423,6 +424,8 @@ grow_vertical = 2
 text = "8:00"
 
 [node name="InventoryUI" parent="." instance=ExtResource("2_2dulj")]
+
+[node name="CraftingUI" parent="." instance=ExtResource("11_4fkm8")]
 
 [node name="LootboxUI" parent="." instance=ExtResource("10_1l8t1")]
 
