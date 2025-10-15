@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://du5pkafdjd268"]
+
+[ext_resource type="Script" uid="uid://botxorv4wnywe" path="res://UI/crafting_ui.gd" id="1_sac6m"]
+[ext_resource type="PackedScene" uid="uid://bypcdpjljnjfc" path="res://UI/crafting_recipe.tscn" id="2_c5m30"]
+[ext_resource type="Resource" uid="uid://b1wt73x234yi7" path="res://data/300_augur_starter_pack.tres" id="3_55cq4"]
+[ext_resource type="Resource" uid="uid://fmp08p6m5wgk" path="res://data/301_advanced_catoptromancy_set.tres" id="4_2i6t4"]
+[ext_resource type="Resource" uid="uid://s0ir3cfxa87l" path="res://data/302_essential_witch_tools.tres" id="5_1n65o"]
+[ext_resource type="Resource" uid="uid://dhoc77wu157a2" path="res://data/303_minimalistic_lich_setup.tres" id="6_swi88"]
+
+[sub_resource type="Animation" id="Animation_2i6t4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_55cq4"]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3333333, 3),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2i6t4"]
+_data = {
+&"RESET": SubResource("Animation_2i6t4"),
+&"fade_out": SubResource("Animation_55cq4")
+}
+
+[node name="CraftingUI" type="Control" node_paths=PackedStringArray("crafting_menu", "open_menu_button", "recipes_go_here")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_sac6m")
+crafting_menu = NodePath("Panel")
+open_menu_button = NodePath("ToggleVisibility")
+recipes_go_here = NodePath("Panel/ScrollContainer/VBoxContainer")
+crafting_recipe_scene = ExtResource("2_c5m30")
+collection_sets = Array[Resource]([null, null, null, ExtResource("3_55cq4"), ExtResource("5_1n65o"), ExtResource("4_2i6t4"), ExtResource("6_swi88")])
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 183.0
+offset_right = 970.0
+offset_bottom = 676.0
+
+[node name="MouseBlocker" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = -522.0
+offset_top = -287.0
+offset_right = 1208.0
+offset_bottom = 658.0
+color = Color(0.40205058, 0.65349877, 0.8920514, 0.20392157)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 719.0
+offset_bottom = 484.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="ErrorMessage" type="Label" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 6.0
+offset_top = -74.0
+offset_right = 722.0
+offset_bottom = -28.0
+theme_override_colors/font_color = Color(1, 1, 0.14901961, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+text = "HELLO THIS IS ERROR MESSAGE YES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anime" type="AnimationPlayer" parent="Panel/ErrorMessage"]
+libraries = {
+&"": SubResource("AnimationLibrary_2i6t4")
+}
+
+[node name="ToggleVisibility" type="Button" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 687.0
+offset_right = 305.0
+offset_bottom = 718.0
+text = "Crafting"

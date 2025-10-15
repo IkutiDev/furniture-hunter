@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://5eeyn2nbl4it"]
+[gd_scene load_steps=7 format=3 uid="uid://5eeyn2nbl4it"]
 
 [ext_resource type="Script" uid="uid://c1ja3t7yps2yn" path="res://UI/inventory_ui.gd" id="1_qfk0h"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_oaa25"]
 [ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_skrcx"]
 [ext_resource type="PackedScene" uid="uid://dg83k0fhcv1t4" path="res://UI/lootbox_icon_button.tscn" id="4_ylc1n"]
+[ext_resource type="PackedScene" uid="uid://d0aosvog7ndme" path="res://UI/collection_icon_button.tscn" id="5_7o5sx"]
 [ext_resource type="PackedScene" uid="uid://b1q3webi276mx" path="res://UI/tool_tip_panel.tscn" id="5_6128g"]
 
-[node name="InventoryUI" type="Control" node_paths=PackedStringArray("main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container", "money_label")]
+[node name="InventoryUI" type="Control" node_paths=PackedStringArray("main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container", "collection_inventory_visual_container", "money_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,9 +20,11 @@ main_inventory_fold_container = NodePath("HSplitContainer/FoldableContainer")
 furniture_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer/VBoxContainer")
 items_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/ItemsContainer/ScrollContainer/VBoxContainer")
 lootboxes_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/LootboxesContainer/ScrollContainer/VBoxContainer")
+collection_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/CollectionContainer/ScrollContainer/VBoxContainer")
 furniture_button_scene = ExtResource("2_oaa25")
 item_button_scene = ExtResource("3_skrcx")
 lootbox_button_scene = ExtResource("4_ylc1n")
+collection_button_scene = ExtResource("5_7o5sx")
 money_label = NodePath("HSplitContainer/VBoxContainer/HBoxContainer/MoneyDynamicLabel")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
@@ -95,6 +98,19 @@ title_position = 1
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/LootboxesContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CollectionContainer" type="FoldableContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+title = "Collections"
+title_position = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/CollectionContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/CollectionContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 

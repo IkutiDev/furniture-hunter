@@ -3,6 +3,7 @@ extends Node
 @export var furniture : Array[FurnitureData]
 @export var items : Array[ItemData]
 @export var lootboxes : Array[LootboxData]
+@export var collections : Array[CollectionData]
 @export var money : int
 
 var renown : int = 0
@@ -54,3 +55,17 @@ func add_object_to_inventory(data) -> void:
 	else:
 		print(data)
 		print("Unknown element for inventory")
+
+func add_collection_to_inventory(collection_data : CollectionData):
+	collections.append(collection_data)
+	EventBus.emit_signal("available_collections_changed")
+	pass
+
+func create_collection(collection_data : CollectionData):
+	for part in collection_data.parts:
+		if part is FurnitureData:
+			remove_furniture_from_inventory(part)
+		if part is ItemData:
+			items.erase(part)
+			EventBus.available_items_changed.emit()
+	add_collection_to_inventory(collection_data)

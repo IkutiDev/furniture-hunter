@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0aosvog7ndme"]
+
+[ext_resource type="Texture2D" uid="uid://b7ctuocvuoegn" path="res://UI/WIP_icons/bar-stool.png" id="1_mbc28"]
+[ext_resource type="Script" uid="uid://bt2j7motcmdvb" path="res://UI/collection_button.gd" id="1_pgppe"]
+
+[node name="CollectionIconButton" type="TextureButton"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
+texture_normal = ExtResource("1_mbc28")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_pgppe")

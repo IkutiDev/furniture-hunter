@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bypcdpjljnjfc"]
+
+[ext_resource type="Script" uid="uid://fwd8qv7v4nbd" path="res://UI/crafting_recipe.gd" id="1_5tfuo"]
+[ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_bkk45"]
+[ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_k0fux"]
+[ext_resource type="PackedScene" uid="uid://d0aosvog7ndme" path="res://UI/collection_icon_button.tscn" id="4_gnrvk"]
+
+[node name="CraftingRecipe" type="ColorRect"]
+custom_minimum_size = Vector2(640, 100)
+offset_right = 640.0
+offset_bottom = 100.0
+color = Color(0.23653147, 0.4275488, 0.78465223, 1)
+script = ExtResource("1_5tfuo")
+furniture_button_scene = ExtResource("2_bkk45")
+item_button_scene = ExtResource("3_k0fux")
+collection_button_scene = ExtResource("4_gnrvk")
+
+[node name="ResultGoesHere" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 122.0
+offset_right = -370.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PartsGoHere" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 269.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="MakeSetButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 23.0
+offset_right = 120.0
+offset_bottom = 77.0
+text = "press to 
+make set"
+
+[connection signal="pressed" from="MakeSetButton" to="." method="_on_make_set_button_pressed"]

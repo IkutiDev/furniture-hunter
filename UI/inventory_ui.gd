@@ -4,9 +4,11 @@ extends Control
 @export var furniture_inventory_visual_container : Control
 @export var items_inventory_visual_container : Control
 @export var lootboxes_inventory_visual_container : Control
+@export var collection_inventory_visual_container : Control
 @export var furniture_button_scene : PackedScene
 @export var item_button_scene : PackedScene
 @export var lootbox_button_scene : PackedScene
+@export var collection_button_scene : PackedScene
 
 @export var money_label : Label
 
@@ -15,6 +17,7 @@ func _ready() -> void:
 	EventBus.available_items_changed.connect(update_items_inventory)
 	EventBus.available_lootboxes_changed.connect(update_lootboxes_inventory)
 	EventBus.money_value_changed.connect(on_money_value_changed)
+	EventBus.available_collections_changed.connect(update_collection_inventory)
 	update_furniture_inventory()
 	on_money_value_changed()
 	
@@ -48,6 +51,15 @@ func update_lootboxes_inventory() -> void:
 		var lootbox_button_instance := lootbox_button_scene.instantiate() as LootboxButton
 		lootbox_button_instance.set_data(l)
 		lootboxes_inventory_visual_container.add_child(lootbox_button_instance)
+
+func update_collection_inventory() -> void:
+	var children = collection_inventory_visual_container.get_children()
+	for c in children:
+		c.queue_free()
+	for col in PlayerInventory.collections:
+		var collection_button_instance := collection_button_scene.instantiate() as CollectionButton
+		collection_button_instance.set_data(col)
+		collection_inventory_visual_container.add_child(collection_button_instance)
 
 func press_furniture_button() -> void:
 	EventBus.set_remove_furniture_mode.emit(false)

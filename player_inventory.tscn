@@ -1,44 +1,26 @@
-[gd_scene load_steps=37 format=3 uid="uid://hv3wyucwiuts"]
+[gd_scene load_steps=19 format=3 uid="uid://hv3wyucwiuts"]
 
 [ext_resource type="Script" uid="uid://cbkm60bxjgr4e" path="res://player_inventory.gd" id="1_mdht6"]
 [ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="2_xv76c"]
-[ext_resource type="Resource" uid="uid://budsynv344b2q" path="res://data/210_pentacle.tres" id="3_wiot8"]
 [ext_resource type="Resource" uid="uid://bal06ojm0p7vp" path="res://data/204_divineing_table.tres" id="3_xv76c"]
-[ext_resource type="Resource" uid="uid://cey2doror8btj" path="res://data/200_reinforced_cauldron.tres" id="4_i8bca"]
-[ext_resource type="Resource" uid="uid://dw643ebaxamo6" path="res://data/202_warded_chest.tres" id="4_w82bi"]
-[ext_resource type="Resource" uid="uid://belhkkheh67jo" path="res://data/208_flying_broom.tres" id="5_j7yy0"]
 [ext_resource type="Resource" uid="uid://bladi2ua4hikg" path="res://data/215_warded_carpet.tres" id="6_nyp4h"]
-[ext_resource type="Resource" uid="uid://cvrfxcygt7r77" path="res://data/211_animated_chair.tres" id="7_segop"]
-[ext_resource type="Resource" uid="uid://by46d3atj7xt4" path="res://data/201_divination_mirror.tres" id="9_c5gc2"]
 [ext_resource type="Resource" uid="uid://c84hpck8pfmt4" path="res://data/203_predicting_armchair.tres" id="12_e8bip"]
-[ext_resource type="Resource" uid="uid://syrcb1r6moee" path="res://data/214_disenchanted_carpet.tres" id="13_54igs"]
-[ext_resource type="Resource" uid="uid://d2w2bcndcvqde" path="res://data/205_illuminator_of_souls.tres" id="14_4ufo7"]
 [ext_resource type="Resource" uid="uid://bfcdesquqeert" path="res://data/206_enchanted_floor_lamp.tres" id="15_eun8e"]
-[ext_resource type="Resource" uid="uid://b6e61gjgbo4ly" path="res://data/213_old_alchemical_table.tres" id="16_7rrij"]
 [ext_resource type="Resource" uid="uid://bbg2vh8h84y8e" path="res://data/216_soul_infused_dresser.tres" id="17_1jsgt"]
 [ext_resource type="Resource" uid="uid://lrqdv4dgupif" path="res://data/209_blessed_preservation_stand.tres" id="20_nfbqt"]
 [ext_resource type="Resource" uid="uid://yya5varkoxgd" path="res://data/212_magically_reinforced_table.tres" id="21_is0ur"]
 [ext_resource type="Resource" uid="uid://clak1m6k3ns3n" path="res://data/207_suitcase_full_of_rare_vials.tres" id="23_sg68g"]
 [ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="24_54igs"]
-[ext_resource type="Resource" uid="uid://ctjoaq01kvd5y" path="res://data/106_golden_neklace.tres" id="25_4ufo7"]
-[ext_resource type="Resource" uid="uid://b0vhyp3lgabpb" path="res://data/100_offering_chalice.tres" id="26_f4ait"]
 [ext_resource type="Resource" uid="uid://cinq18tg3y7m8" path="res://data/115_empty_phylactery.tres" id="27_e2j04"]
-[ext_resource type="Resource" uid="uid://ceriynmxuyan5" path="res://data/102_tarnished_chalice.tres" id="28_4rd4u"]
-[ext_resource type="Resource" uid="uid://5yxa2f2vm8e1" path="res://data/108_enchanted_pendant.tres" id="29_qjun4"]
 [ext_resource type="Resource" uid="uid://cot4jk8g7jfdf" path="res://data/114_set_animal_statue.tres" id="30_a67fq"]
-[ext_resource type="Resource" uid="uid://cfqpiskpo8j4k" path="res://data/110_magic_crystal_ball.tres" id="31_hhhqr"]
-[ext_resource type="Resource" uid="uid://dfpsrnc2k3vrq" path="res://data/111_bewitched_chess_set.tres" id="32_yjt6m"]
 [ext_resource type="Resource" uid="uid://5p5vt5ly82ru" path="res://data/105_genuine_unicorn_horn.tres" id="33_ql7d1"]
-[ext_resource type="Resource" uid="uid://dpqurryjq3yhd" path="res://data/101_goblet_of_forecasting.tres" id="34_k8mdv"]
 [ext_resource type="Resource" uid="uid://cjt16gd7jfny6" path="res://data/107_attuned_merlin_locket.tres" id="35_r2kns"]
-[ext_resource type="Resource" uid="uid://bro4ynygougxu" path="res://data/109_depleted_crystal_ball.tres" id="36_vuiy6"]
-[ext_resource type="Resource" uid="uid://c48uc85ju75vt" path="res://data/104_imitation_unicorn_horn.tres" id="37_qui41"]
 [ext_resource type="Resource" uid="uid://bo65vhkdmuaru" path="res://data/103_reverse_pythagorean_cup.tres" id="38_ht035"]
 [ext_resource type="Resource" uid="uid://cfg48m2glwvim" path="res://data/112_giza_necropolis_diorama.tres" id="39_20232"]
 [ext_resource type="Resource" uid="uid://ckcyj8u5d1sv5" path="res://data/113_counterfeit_book_of_the_dead.tres" id="40_gqkmp"]
 
 [node name="PlayerInventory" type="Node"]
 script = ExtResource("1_mdht6")
-furniture = Array[ExtResource("2_xv76c")]([ExtResource("3_wiot8"), ExtResource("4_w82bi"), ExtResource("5_j7yy0"), ExtResource("6_nyp4h"), ExtResource("7_segop"), ExtResource("3_xv76c"), ExtResource("9_c5gc2"), ExtResource("4_i8bca"), ExtResource("12_e8bip"), ExtResource("13_54igs"), ExtResource("14_4ufo7"), ExtResource("15_eun8e"), ExtResource("16_7rrij"), ExtResource("17_1jsgt"), ExtResource("20_nfbqt"), ExtResource("21_is0ur"), ExtResource("23_sg68g")])
-items = Array[ExtResource("24_54igs")]([ExtResource("25_4ufo7"), ExtResource("26_f4ait"), ExtResource("27_e2j04"), ExtResource("28_4rd4u"), ExtResource("29_qjun4"), ExtResource("30_a67fq"), ExtResource("31_hhhqr"), ExtResource("32_yjt6m"), ExtResource("33_ql7d1"), ExtResource("34_k8mdv"), ExtResource("35_r2kns"), ExtResource("36_vuiy6"), ExtResource("37_qui41"), ExtResource("38_ht035"), ExtResource("39_20232"), ExtResource("40_gqkmp")])
+furniture = Array[ExtResource("2_xv76c")]([ExtResource("6_nyp4h"), ExtResource("3_xv76c"), ExtResource("12_e8bip"), ExtResource("15_eun8e"), ExtResource("17_1jsgt"), ExtResource("20_nfbqt"), ExtResource("21_is0ur"), ExtResource("23_sg68g")])
+items = Array[ExtResource("24_54igs")]([ExtResource("30_a67fq"), ExtResource("33_ql7d1"), ExtResource("35_r2kns"), ExtResource("38_ht035"), ExtResource("39_20232"), ExtResource("40_gqkmp"), ExtResource("27_e2j04"), ExtResource("27_e2j04")])
 money = 1000
