@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bqhiel0ns8mws"]
+
+[ext_resource type="Texture2D" uid="uid://eqy2d1olus6s" path="res://witrynki/chinese_Material_1.png" id="1_7rq1m"]
+
+[resource]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_texture = ExtResource("1_7rq1m")
+metallic = 0.3
+metallic_specular = 0.0

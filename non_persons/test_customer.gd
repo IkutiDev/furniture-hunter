@@ -90,6 +90,8 @@ func _on_think_i_chose_to_walk() -> void:
 	
 	var points_of_interest : PackedVector3Array
 	for thing in objects_set_to_be_sold:
+		if thing == null:
+			continue
 		points_of_interest.push_back(thing.global_position)
 	if points_of_interest.is_empty():
 		energy = 0.0
@@ -120,53 +122,6 @@ func _on_think_i_chose_to_leave() -> void:
 
 
 func _on_think_i_chose_to_buy() -> void:
-	#var objects_seen = what_do_i_see()
-	#
-	#
-	#if objects_seen.size() == 0:
-		#print("I want to buy, but I dont see anything!")
-		#$StateMachine.transition_to("Think",["nothing to buy"])
-		#energy -= 15
-		#return
-	#
-	#var thing_to_buy
-	#var optional_index
-	#var items_price = -1
-	#var object_seen
-#
-	#for o in objects_seen:
-		#object_seen = o.get_parent()
-		#if object_seen is FurnitureInstance or object_seen is ItemInstance:
-			#if object_seen.current_price < 0:
-				#continue
-			#items_price = object_seen.current_price
-			#thing_to_buy = object_seen
-			#break
-		
-		
-	#if object_seen is FurnitureContainerInstance:
-		#var items_in_container = object_seen.item_slots as Array[ItemSlot]
-		#if items_in_container.is_empty():
-#
-			#print("I want to buy an item from ",object_seen ,", but there are no items on it!")
-			#$StateMachine.transition_to("Think",["nothing to buy"])
-			#energy -= 5
-			#return
-		#else:
-			#var selected_item_slot_index = randi()%items_in_container.size() 
-			#var selected_item_slot = items_in_container[selected_item_slot_index] as ItemSlot
-			#items_price = selected_item_slot.current_price
-			#thing_to_buy = selected_item_slot.item_data
-			#optional_index = selected_item_slot_index
-#
-	#elif object_seen is FurnitureInstance:
-		#items_price = object_seen.current_price
-		#thing_to_buy = object_seen
-	#if item_list.is_empty():
-		#print("I want to buy an item from a thing, but the thing has no items!")
-		#energy -= 15
-		#$StateMachine.transition_to("Think",["nothing to buy"])
-		#return
 		
 	if !is_instance_valid(i_want_to_buy_this):
 		print("the thing i wanted to buy does not exist!")
@@ -232,6 +187,11 @@ func _on_think_i_chose_to_browse() -> void:
 	i_want_to_buy_this = valid_things[randi()%valid_things.size()]
 	
 	# use check_offer_quality to asses if its a "great offer" / "weak offer" / "bad offer"
+	
+	if i_want_to_buy_this == null:
+		$StateMachine.transition_to("Think",["nothing to buy"])
+		# thing npc wanted to buy is null, so we exit earlier
+		return
 
 	var offer_quality = check_offer_quality(i_want_to_buy_this.current_price, i_want_to_buy_this.perfect_price) as String
 
@@ -240,29 +200,7 @@ func _on_think_i_chose_to_browse() -> void:
 	energy -= 5
 	$StateMachine.transition_to("Think",[offer_quality])
 	
-	#print("I want to browse ",object_seen ,", but it's not for sale since it's ", items_price)
 
-
-	
-	
-	
-	#if object_seen is FurnitureContainerInstance:
-		#var items_in_container = object_seen.item_slots as Array[ItemSlot]
-		#if items_in_container.is_empty():
-			#items_price = -1
-		#else:
-			#
-			#var random_item = items_in_container[randi()%items_in_container.size()] as ItemSlot
-			#items_price = random_item.current_price
-		
-	
-	#if item_list.is_empty():
-		#print("Silly me! I wanted to browse, but there are no items!")
-		#energy -= 10
-		#$StateMachine.transition_to("Think",["nothing to buy"])
-		#return
-	
-	
 			#
 	pass # Replace with function body.
 
@@ -280,6 +218,9 @@ func _on_think_i_chose_to_haggle() -> void:
 		object_price = i_want_to_buy_this.current_price
 
 	if i_want_to_buy_this is ItemInstance:
+		if i_want_to_buy_this.item_data == null:
+			# can't haggle on item that doesn't exist
+			return
 		object_name = i_want_to_buy_this.item_data.object_name
 		object_price = i_want_to_buy_this.current_price
 
