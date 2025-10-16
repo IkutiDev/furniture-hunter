@@ -22,6 +22,10 @@ func _process(delta: float) -> void:
 	haggle_time_left -= delta
 	$SubViewport/HaggleWorld/VBoxContainer/ProgressBar.value = haggle_time_left
 	
+	if object_being_haggled == null:
+		# object being haggled got bought by someone else. This should be the behaviour or we will change it so the object being haggled by npc 1 is "hogged" and can't be sold until this npc haggle is finished
+		haggle_time_out()
+	
 
 func haggle_time_out():
 	haggle_resolved.emit("time_out")

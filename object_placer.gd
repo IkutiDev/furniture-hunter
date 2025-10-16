@@ -109,8 +109,11 @@ func remove_object(instance : FurnitureInstance) -> void:
 	var furniture_position := occupation_grid_map.local_to_map(instance.position)
 	occupation_grid_map.set_cell_item(furniture_position, 0)
 	for p in instance.extra_size:
-		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(hovered_over_furniture_instance.rotation_degrees.y))
-		occupation_grid_map.set_cell_item(current_mouse_position_on_grid + p, 0)
+		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(instance.rotation_degrees.y))
+		var pi = Vector3i()
+		for i in 3:
+			pi[i] = round(p[i])
+		occupation_grid_map.set_cell_item(Vector3i(instance.position) + pi, 1)
 	instance.remove_this_instance()
 	nav_mesh_region.bake_navigation_mesh()
 

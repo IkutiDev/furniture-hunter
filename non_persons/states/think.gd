@@ -34,7 +34,9 @@ func enter(msg = []) -> void:
 
 func _process(delta: float) -> void:
 	brain_power -= delta
-	assert(brain_power > 0)
+	if(brain_power < 0):
+		make_a_choice()
+	#assert(brain_power > 0)
 	pass
 
 func exit() -> void:
