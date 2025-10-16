@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6bkey5brnxco"]
+
+[ext_resource type="Script" uid="uid://do3ok6s52m5m4" path="res://UI/collection_slot_ui.gd" id="1_ih2v2"]
+[ext_resource type="Texture2D" uid="uid://bf7mqg2nn3b4l" path="res://UI/WIP_icons/empty.png" id="2_ka6ab"]
+
+[node name="CollectionSlotUI" type="HFlowContainer" node_paths=PackedStringArray("icon")]
+custom_minimum_size = Vector2(210, 0)
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("1_ih2v2")
+icon = NodePath("TextureRect")
+empty_icon = ExtResource("2_ka6ab")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 45.22)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_ka6ab")
+expand_mode = 2
+stretch_mode = 4

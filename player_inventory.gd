@@ -19,6 +19,9 @@ func remove_object_from_inventory(data) -> void:
 	elif data is LootboxData:
 		lootboxes.erase(data)
 		EventBus.available_lootboxes_changed.emit()
+	elif data is CollectionData:
+		collections.erase(data)
+		EventBus.available_collections_changed.emit()
 	else:
 		print(data)
 		print("Unknown element for inventory")
@@ -52,6 +55,9 @@ func add_object_to_inventory(data) -> void:
 	elif data is LootboxData:
 		lootboxes.append(data)
 		EventBus.available_lootboxes_changed.emit()
+	elif data is CollectionData:
+		collections.append(data)
+		EventBus.available_collections_changed.emit()
 	else:
 		print(data)
 		print("Unknown element for inventory")

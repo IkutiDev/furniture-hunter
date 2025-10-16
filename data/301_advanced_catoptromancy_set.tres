@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CollectionData" load_steps=7 format=3 uid="uid://fmp08p6m5wgk"]
+[gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://fmp08p6m5wgk"]
 
 [ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="1_1eecs"]
+[ext_resource type="PackedScene" uid="uid://dbtiiwrpcb11f" path="res://collections/scenes/test_collection_scene.tscn" id="1_fhaw0"]
 [ext_resource type="Script" uid="uid://5c0qa32k8lq2" path="res://collections/collection_data.gd" id="2_21csu"]
 [ext_resource type="Resource" uid="uid://ckcyj8u5d1sv5" path="res://data/113_counterfeit_book_of_the_dead.tres" id="2_fqfir"]
 [ext_resource type="Resource" uid="uid://d2w2bcndcvqde" path="res://data/205_illuminator_of_souls.tres" id="3_fhaw0"]
@@ -14,6 +15,7 @@ object_name = "Advanced Catoptromancy Set"
 icon = ExtResource("1_1eecs")
 base_value = 2660
 renown = 2660
+collection_scene = ExtResource("1_fhaw0")
 tags = Array[int]([2])
 parts = Array[Resource]([ExtResource("2_fqfir"), ExtResource("3_fhaw0"), ExtResource("4_rigvt"), ExtResource("5_6y61j")])
 collection_set_type = 5

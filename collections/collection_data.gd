@@ -7,7 +7,7 @@ extends Resource
 @export var icon : Texture2D
 @export var base_value : int
 @export var renown : int
-
+@export var collection_scene : PackedScene
 
 
 @export var tags : Array[Tags.Types]

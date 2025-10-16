@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://hv3wyucwiuts"]
+[gd_scene load_steps=23 format=3 uid="uid://hv3wyucwiuts"]
 
 [ext_resource type="Script" uid="uid://cbkm60bxjgr4e" path="res://player_inventory.gd" id="1_mdht6"]
 [ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="2_xv76c"]
@@ -7,8 +7,12 @@
 [ext_resource type="Resource" uid="uid://c84hpck8pfmt4" path="res://data/203_predicting_armchair.tres" id="12_e8bip"]
 [ext_resource type="Resource" uid="uid://bfcdesquqeert" path="res://data/206_enchanted_floor_lamp.tres" id="15_eun8e"]
 [ext_resource type="Resource" uid="uid://bbg2vh8h84y8e" path="res://data/216_soul_infused_dresser.tres" id="17_1jsgt"]
+[ext_resource type="Script" uid="uid://5c0qa32k8lq2" path="res://collections/collection_data.gd" id="19_3v4l7"]
+[ext_resource type="Resource" uid="uid://b1wt73x234yi7" path="res://data/300_augur_starter_pack.tres" id="20_h6yjm"]
 [ext_resource type="Resource" uid="uid://lrqdv4dgupif" path="res://data/209_blessed_preservation_stand.tres" id="20_nfbqt"]
+[ext_resource type="Resource" uid="uid://fmp08p6m5wgk" path="res://data/301_advanced_catoptromancy_set.tres" id="21_e8bip"]
 [ext_resource type="Resource" uid="uid://yya5varkoxgd" path="res://data/212_magically_reinforced_table.tres" id="21_is0ur"]
+[ext_resource type="Resource" uid="uid://s0ir3cfxa87l" path="res://data/302_essential_witch_tools.tres" id="22_54igs"]
 [ext_resource type="Resource" uid="uid://clak1m6k3ns3n" path="res://data/207_suitcase_full_of_rare_vials.tres" id="23_sg68g"]
 [ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="24_54igs"]
 [ext_resource type="Resource" uid="uid://cinq18tg3y7m8" path="res://data/115_empty_phylactery.tres" id="27_e2j04"]
@@ -23,4 +27,5 @@
 script = ExtResource("1_mdht6")
 furniture = Array[ExtResource("2_xv76c")]([ExtResource("6_nyp4h"), ExtResource("3_xv76c"), ExtResource("12_e8bip"), ExtResource("15_eun8e"), ExtResource("17_1jsgt"), ExtResource("20_nfbqt"), ExtResource("21_is0ur"), ExtResource("23_sg68g")])
 items = Array[ExtResource("24_54igs")]([ExtResource("30_a67fq"), ExtResource("33_ql7d1"), ExtResource("35_r2kns"), ExtResource("38_ht035"), ExtResource("39_20232"), ExtResource("40_gqkmp"), ExtResource("27_e2j04"), ExtResource("27_e2j04")])
+collections = Array[ExtResource("19_3v4l7")]([ExtResource("20_h6yjm"), ExtResource("21_e8bip"), ExtResource("22_54igs")])
 money = 1000

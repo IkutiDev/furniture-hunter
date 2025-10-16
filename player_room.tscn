@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=54 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -19,12 +19,14 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_358ef"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="14_4pcic"]
 [ext_resource type="Script" uid="uid://c8ndgo8lrx3b4" path="res://camera_controller.gd" id="15_pq8mr"]
+[ext_resource type="PackedScene" uid="uid://bv5qt7a4i75ki" path="res://UI/set_collection_ui.tscn" id="16_srxrq"]
 [ext_resource type="PackedScene" uid="uid://byi6oheylurn5" path="res://furniture/pole_2.glb" id="17_1l8t1"]
 [ext_resource type="Material" uid="uid://dr8yxhv1lmpko" path="res://materials/window.tres" id="18_k7ha8"]
 [ext_resource type="Material" uid="uid://i50sqoaybgb1" path="res://materials/lamp.tres" id="19_8150c"]
 [ext_resource type="Texture2D" uid="uid://d3akdai50ie5u" path="res://furniture/gamejam_lamp_Base_color.png" id="20_ns5l8"]
 [ext_resource type="Texture2D" uid="uid://cgepx634q17gi" path="res://furniture/gamejam_stoly_Base_color.png" id="23_t55rb"]
 [ext_resource type="Material" uid="uid://daxj3xntwml1x" path="res://materials/kasa.tres" id="24_4fkm8"]
+[ext_resource type="PackedScene" uid="uid://bks7aueb70qr" path="res://collections/collection_container_instance.tscn" id="26_cjrgx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -461,6 +463,10 @@ mouse_filter = 2
 visible = false
 layout_mode = 1
 
+[node name="SetCollectionUI" parent="ContexSpecificUI" instance=ExtResource("16_srxrq")]
+visible = false
+layout_mode = 1
+
 [node name="SetItemPriceUI" parent="ContexSpecificUI" instance=ExtResource("12_1t0pb")]
 visible = false
 layout_mode = 1
@@ -616,5 +622,8 @@ transform = Transform3D(0.4999996, 0, 7.1054274e-15, 0, 0.5, 0, -1.5987212e-14, 
 material_override = ExtResource("24_4fkm8")
 mesh = SubResource("ArrayMesh_omknk")
 skeleton = NodePath("")
+
+[node name="CollectionContainerInstance" parent="." instance=ExtResource("26_cjrgx")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 7.3780975, 1, 3.5524988)
 
 [editable path="Spawner"]

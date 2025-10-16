@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbtiiwrpcb11f"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qkrwu"]
+top_radius = 0.14
+bottom_radius = 0.2
+height = 1.0
+
+[node name="TestCollectionScene" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+mesh = SubResource("CylinderMesh_qkrwu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
+mesh = SubResource("CylinderMesh_qkrwu")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CylinderMesh_qkrwu")

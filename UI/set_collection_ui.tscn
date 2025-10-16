@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv5qt7a4i75ki"]
+
+[ext_resource type="Script" uid="uid://pu8a1ybtyq0x" path="res://UI/set_collection_ui.gd" id="1_765u6"]
+[ext_resource type="PackedScene" uid="uid://b6bkey5brnxco" path="res://UI/collection_slot_ui.tscn" id="2_m88et"]
+[ext_resource type="PackedScene" uid="uid://d0aosvog7ndme" path="res://UI/collection_icon_button.tscn" id="2_rgxpv"]
+
+[node name="SetCollectionUI" type="Control" node_paths=PackedStringArray("close_ui_button", "collection_list", "collection_slots_list")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_765u6")
+close_ui_button = NodePath("Panel/HFlowContainer/ExitButton")
+collection_list = NodePath("ScrollContainer/VBoxContainer")
+collection_button_scene = ExtResource("2_rgxpv")
+collection_slots_list = NodePath("Panel/HFlowContainer/ItemSlotsList/HBoxContainer")
+collection_slot_ui_scene = ExtResource("2_m88et")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -115.0
+offset_right = 264.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Panel/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Shop collections"
+
+[node name="ExitButton" type="Button" parent="Panel/HFlowContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="Seperator" type="Control" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 20)
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Furniture Long Description Furniture Long Description Furniture Long Description Furniture Long Description"
+autowrap_mode = 2
+
+[node name="Seperator2" type="Control" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 15)
+layout_mode = 2
+
+[node name="ItemSlotsList" type="ScrollContainer" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 174.125)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HFlowContainer/ItemSlotsList"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 254.0
+offset_top = 57.0
+offset_right = 387.0
+offset_bottom = -84.0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
