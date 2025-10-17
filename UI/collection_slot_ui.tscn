@@ -3,18 +3,25 @@
 [ext_resource type="Script" uid="uid://do3ok6s52m5m4" path="res://UI/collection_slot_ui.gd" id="1_ih2v2"]
 [ext_resource type="Texture2D" uid="uid://bf7mqg2nn3b4l" path="res://UI/WIP_icons/empty.png" id="2_ka6ab"]
 
-[node name="CollectionSlotUI" type="HFlowContainer" node_paths=PackedStringArray("icon")]
-custom_minimum_size = Vector2(210, 0)
-size_flags_horizontal = 3
-alignment = 1
+[node name="CollectionSlotUI" type="VFlowContainer" node_paths=PackedStringArray("icon")]
+custom_minimum_size = Vector2(0, 160)
+offset_right = 90.0
+offset_bottom = 160.0
+size_flags_horizontal = 4
 script = ExtResource("1_ih2v2")
 icon = NodePath("TextureRect")
 empty_icon = ExtResource("2_ka6ab")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(0, 45.22)
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_ka6ab")
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 2

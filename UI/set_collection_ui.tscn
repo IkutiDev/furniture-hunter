@@ -43,22 +43,11 @@ grow_vertical = 2
 [node name="TitleLabel" type="Label" parent="Panel/HFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
-text = "Shop collections"
+text = "You can place completed collections here"
 
 [node name="ExitButton" type="Button" parent="Panel/HFlowContainer"]
 layout_mode = 2
 text = "X"
-
-[node name="Seperator" type="Control" parent="Panel/HFlowContainer"]
-custom_minimum_size = Vector2(500, 20)
-layout_mode = 2
-
-[node name="DescriptionLabel" type="Label" parent="Panel/HFlowContainer"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-text = "Furniture Long Description Furniture Long Description Furniture Long Description Furniture Long Description"
-autowrap_mode = 2
 
 [node name="Seperator2" type="Control" parent="Panel/HFlowContainer"]
 custom_minimum_size = Vector2(500, 15)
@@ -71,7 +60,7 @@ size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/HFlowContainer/ItemSlotsList"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
