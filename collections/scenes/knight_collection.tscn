@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://sjwq65gnr8hn"]
+
+[ext_resource type="PackedScene" uid="uid://smrvd5hxydvp" path="res://witrynki/knight.glb" id="1_lgve1"]
+
+[node name="knight2" instance=ExtResource("1_lgve1")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="knight" parent="." index="0"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.7142241, 0, 0)

@@ -22,6 +22,7 @@ func remove_collection_from_collection_slot() -> void:
 	update_collection_slot_ui()
 
 func set_collection_slot(current_collection_instance : CollectionInstance) -> void:
+	
 	collection_instance = current_collection_instance
 	update_collection_slot_ui()
 

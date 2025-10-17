@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg5ml1hvi4cbd"]
+
+[ext_resource type="PackedScene" uid="uid://dut7m8i5k8nyc" path="res://witrynki/chinese.glb" id="1_7woyh"]
+
+[node name="chinese2" instance=ExtResource("1_7woyh")]
+transform = Transform3D(-0.5, 0, 4.371139e-08, 0, 0.5, 0, -4.371139e-08, 0, -0.5, 0, 0, 0)
+
+[node name="chinese" parent="." index="0"]
+transform = Transform3D(1.7395985, -0.019059723, 0.026416298, -0.019059718, 0.54867125, 1.6510187, -0.026416289, -1.6510186, 0.54836637, -4.4803486, -3.457319, 0.42367533)

@@ -15,8 +15,9 @@ var collection_container_instance : CollectionContainerInstance
 
 func _ready() -> void:
 	EventBus.available_collections_changed.connect(update_collections_inventory)
-	EventBus.clicked_on_collection.connect(open_ui)
+
 	EventBus.clicked_on_collection.connect(set_collection_inside_container)
+	EventBus.clicked_on_collection.connect(open_ui)
 	close_ui_button.pressed.connect(close_ui)
 	close_ui()
 
