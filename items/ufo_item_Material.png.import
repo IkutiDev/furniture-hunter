@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eqy2d1olus6s"
-path.s3tc="res://.godot/imported/chinese_Material_1.png-b04c9516a45602a12bf245c4119a8adf.s3tc.ctex"
+uid="uid://crl1fthyuvxta"
+path.s3tc="res://.godot/imported/ufo_item_Material.png-2eefbde56974d8176900e950a9c15696.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2f7ec8bda55983d585c52143ac641253"
+"md5": "c73953f2abd20f973628423fd446b9b7"
 }
 
 [deps]
 
-source_file="res://witrynki/chinese_Material_1.png"
-dest_files=["res://.godot/imported/chinese_Material_1.png-b04c9516a45602a12bf245c4119a8adf.s3tc.ctex"]
+source_file="res://items/ufo_item_Material.png"
+dest_files=["res://.godot/imported/ufo_item_Material.png-2eefbde56974d8176900e950a9c15696.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c78jrgspoe041"
-path.s3tc="res://.godot/imported/egipt_Material.png-5cddb9c269cde8fcb5b05ddc7cfe1c99.s3tc.ctex"
+uid="uid://wt7x0b16ug25"
+path.s3tc="res://.godot/imported/Material.002_Emissive.png-050f63ae4a0259d079742d61bfc33f2d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "2f7ec8bda55983d585c52143ac641253"
-}
 
 [deps]
 
-source_file="res://witrynki/egipt_Material.png"
-dest_files=["res://.godot/imported/egipt_Material.png-5cddb9c269cde8fcb5b05ddc7cfe1c99.s3tc.ctex"]
+source_file="res://witrynki/Material.002_Emissive.png"
+dest_files=["res://.godot/imported/Material.002_Emissive.png-050f63ae4a0259d079742d61bfc33f2d.s3tc.ctex"]
 
 [params]
 
