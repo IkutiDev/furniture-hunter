@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cc6k83dc361fx"
-path="res://.godot/imported/chinese.glb-45dd6aca54e3c7a218fe6b0265205980.scn"
+uid="uid://ikce8uh8n17r"
+path="res://.godot/imported/ufo_item.glb-ebc3001cce3dcceae6ca265f4d76c3dd.scn"
 
 [deps]
 
-source_file="res://witrynki/chinese.glb"
-dest_files=["res://.godot/imported/chinese.glb-45dd6aca54e3c7a218fe6b0265205980.scn"]
+source_file="res://items/ufo_item.glb"
+dest_files=["res://.godot/imported/ufo_item.glb-ebc3001cce3dcceae6ca265f4d76c3dd.scn"]
 
 [params]
 
