@@ -17,6 +17,6 @@ base_value = 2560
 renown = 2560
 collection_scene = ExtResource("1_rgiid")
 parts = Array[Resource]([ExtResource("2_1rkv8"), ExtResource("3_rgiid"), ExtResource("4_pc1aa"), ExtResource("5_4oe8d")])
-collection_set_type = 6
+collection_set_type = 4
 rarity_type = 2
 metadata/_custom_type_script = "uid://5c0qa32k8lq2"

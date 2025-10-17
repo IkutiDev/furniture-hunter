@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://b1wt73x234yi7"]
+
+[ext_resource type="PackedScene" uid="uid://bg5ml1hvi4cbd" path="res://collections/scenes/chinese_collection.tscn" id="1_ukum6"]
+[ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="2_sqopr"]
+[ext_resource type="Resource" uid="uid://dpqurryjq3yhd" path="res://data/101_goblet_of_forecasting.tres" id="3_picx1"]
+[ext_resource type="Resource" uid="uid://cfqpiskpo8j4k" path="res://data/110_magic_crystal_ball.tres" id="4_0ur66"]
+[ext_resource type="Resource" uid="uid://c84hpck8pfmt4" path="res://data/203_predicting_armchair.tres" id="5_q1xva"]
+[ext_resource type="Resource" uid="uid://bal06ojm0p7vp" path="res://data/204_divineing_table.tres" id="6_2q0aw"]
+[ext_resource type="Script" uid="uid://5c0qa32k8lq2" path="res://collections/collection_data.gd" id="7_oylm2"]
+
+[resource]
+script = ExtResource("7_oylm2")
+ID = 300
+object_name = "Augur Starter Pack"
+icon = ExtResource("2_sqopr")
+base_value = 1000
+renown = 1000
+collection_scene = ExtResource("1_ukum6")
+parts = Array[Resource]([ExtResource("3_picx1"), ExtResource("4_0ur66"), ExtResource("5_q1xva"), ExtResource("6_2q0aw")])
+collection_set_type = 1
+rarity_type = 2
+metadata/_custom_type_script = "uid://5c0qa32k8lq2"

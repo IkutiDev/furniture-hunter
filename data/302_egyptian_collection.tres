@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://s0ir3cfxa87l"]
+
+[ext_resource type="PackedScene" uid="uid://ctvsk8b3hv0hr" path="res://collections/scenes/witch_collection.tscn" id="1_dabww"]
+[ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="2_gk77x"]
+[ext_resource type="Resource" uid="uid://b0vhyp3lgabpb" path="res://data/100_offering_chalice.tres" id="3_ybvs7"]
+[ext_resource type="Resource" uid="uid://belhkkheh67jo" path="res://data/208_flying_broom.tres" id="4_d2dg5"]
+[ext_resource type="Resource" uid="uid://budsynv344b2q" path="res://data/210_pentacle.tres" id="5_k644k"]
+[ext_resource type="Resource" uid="uid://cey2doror8btj" path="res://data/200_reinforced_cauldron.tres" id="6_f2yw8"]
+[ext_resource type="Script" uid="uid://5c0qa32k8lq2" path="res://collections/collection_data.gd" id="7_7x87v"]
+
+[resource]
+script = ExtResource("7_7x87v")
+ID = 302
+object_name = "Essential Witch Tools"
+icon = ExtResource("2_gk77x")
+base_value = 1180
+renown = 1180
+collection_scene = ExtResource("1_dabww")
+tags = Array[int]([1])
+parts = Array[Resource]([ExtResource("3_ybvs7"), ExtResource("4_d2dg5"), ExtResource("5_k644k"), ExtResource("6_f2yw8")])
+collection_set_type = 3
+rarity_type = 2
+metadata/_custom_type_script = "uid://5c0qa32k8lq2"

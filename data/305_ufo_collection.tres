@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://ve2sh2t3alfx"]
+
+[ext_resource type="PackedScene" uid="uid://sjwq65gnr8hn" path="res://collections/scenes/knight_collection.tscn" id="1_2p8od"]
+[ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="2_4d705"]
+[ext_resource type="Resource" uid="uid://5p5vt5ly82ru" path="res://data/105_genuine_unicorn_horn.tres" id="3_lq8wx"]
+[ext_resource type="Resource" uid="uid://clak1m6k3ns3n" path="res://data/207_suitcase_full_of_rare_vials.tres" id="4_4yudo"]
+[ext_resource type="Resource" uid="uid://bbg2vh8h84y8e" path="res://data/216_soul_infused_dresser.tres" id="5_rc1rp"]
+[ext_resource type="Resource" uid="uid://cinq18tg3y7m8" path="res://data/115_empty_phylactery.tres" id="6_etvo1"]
+[ext_resource type="Script" uid="uid://5c0qa32k8lq2" path="res://collections/collection_data.gd" id="7_hxjn7"]
+
+[resource]
+script = ExtResource("7_hxjn7")
+ID = 303
+object_name = "Minimalistic Lich Setup"
+icon = ExtResource("2_4d705")
+base_value = 2560
+renown = 2560
+collection_scene = ExtResource("1_2p8od")
+parts = Array[Resource]([ExtResource("3_lq8wx"), ExtResource("4_4yudo"), ExtResource("5_rc1rp"), ExtResource("6_etvo1")])
+collection_set_type = 6
+rarity_type = 2
+metadata/_custom_type_script = "uid://5c0qa32k8lq2"

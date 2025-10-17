@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://fmp08p6m5wgk"]
+
+[ext_resource type="PackedScene" uid="uid://du15vfxl85dtk" path="res://collections/scenes/egypt_collection.tscn" id="1_ap3ds"]
+[ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="2_j4nvs"]
+[ext_resource type="Resource" uid="uid://ckcyj8u5d1sv5" path="res://data/113_counterfeit_book_of_the_dead.tres" id="3_i5jak"]
+[ext_resource type="Resource" uid="uid://d2w2bcndcvqde" path="res://data/205_illuminator_of_souls.tres" id="4_1geko"]
+[ext_resource type="Resource" uid="uid://lrqdv4dgupif" path="res://data/209_blessed_preservation_stand.tres" id="5_202qa"]
+[ext_resource type="Resource" uid="uid://by46d3atj7xt4" path="res://data/201_divination_mirror.tres" id="6_gpsvg"]
+[ext_resource type="Script" uid="uid://5c0qa32k8lq2" path="res://collections/collection_data.gd" id="7_5mrjm"]
+
+[resource]
+script = ExtResource("7_5mrjm")
+ID = 300
+object_name = "Advanced Catoptromancy Set"
+icon = ExtResource("2_j4nvs")
+base_value = 2660
+renown = 2660
+collection_scene = ExtResource("1_ap3ds")
+tags = Array[int]([2])
+parts = Array[Resource]([ExtResource("3_i5jak"), ExtResource("4_1geko"), ExtResource("5_202qa"), ExtResource("6_gpsvg")])
+collection_set_type = 2
+rarity_type = 3
+metadata/_custom_type_script = "uid://5c0qa32k8lq2"
