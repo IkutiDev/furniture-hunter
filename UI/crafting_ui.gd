@@ -16,9 +16,12 @@ func _ready() -> void:
 	completed_collections.push_back(CollectionSet.Types.NONE)
 
 	open_menu_button.pressed.connect(_toggle_auctions_menu)
-	crafting_menu.visible = false
+	
 	EventBus.collection_crafted.connect(Callable(PlayerInventory,"create_collection"))
 	EventBus.collection_crafted.connect(add_collection_to_completed)
+	
+
+	crafting_menu.visible = false
 	
 func _toggle_auctions_menu() -> void:
 	crafting_menu.visible = !crafting_menu.visible
