@@ -1,0 +1,9 @@
+client_name,start_min_money,start_max_money,walk_speed,customer_scene,love_tags,like_tags,dislike_tags,hate_tags
+Ghost,120,240,2,ghost,,,Egypt,Medieval
+Priest,150,300,1.5,priest,Cross,Medieval;Gold,Fake,Enchanted;Witch;Animated
+Magician,200,500,2.1,magician,Divination,Enchanted;Animated,,
+Monk,100,200,1,monk,,Asian,Medieval,Egypt
+Witch,80,200,2,witch,Potion,Witch,,Fake
+Lady,100,200,1.7,lady,Gold;Jewelery,Toy,Fake,Broken
+Strange Man,80,160,2,strange_man,,Enchanted;Animated,Broken,
+Vampire,200,400,2.5,vampire,Coffin,Enchanted;Gold,Egypt,Cross;Broken

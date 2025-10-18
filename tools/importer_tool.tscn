@@ -4,7 +4,9 @@
 
 [node name="ImporterTool" type="Node"]
 script = ExtResource("1_ejije")
-csv_file_path = "res://data/item_data.csv"
+csv_items_file_path = "res://data/item_data.csv"
+csv_clients_file_path = "res://data/clients_data.csv"
 icons_file_path = "res://UI/WIP_icons/"
 furniture_mesh_scenes_path = "res://furniture/scenes/"
 items_mesh_scenes_path = "res://items/scenes/"
+customers_scenes_path = "res://non_persons/customers/"

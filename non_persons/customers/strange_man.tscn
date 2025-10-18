@@ -1,18 +1,16 @@
-[gd_scene load_steps=20 format=4 uid="uid://eyncoqtnwsi"]
+[gd_scene load_steps=8 format=4 uid="uid://bkaft7a8f4yf2"]
 
-[ext_resource type="Script" uid="uid://b3usttdhhexhq" path="res://non_persons/test_customer.gd" id="1_qrjrq"]
-[ext_resource type="Script" uid="uid://7yxpa5q1midc" path="res://non_persons/state_machine.gd" id="1_y15eb"]
-[ext_resource type="Script" uid="uid://jgjiwy0iwrqu" path="res://non_persons/states/henlo_world.gd" id="3_ns5w7"]
-[ext_resource type="Script" uid="uid://dsivn84btguvx" path="res://non_persons/states/walk.gd" id="4_ns5w7"]
-[ext_resource type="Script" uid="uid://ca42y8672fagb" path="res://non_persons/states/idle.gd" id="5_3ekre"]
-[ext_resource type="Script" uid="uid://dv3tdcfa13qr1" path="res://non_persons/states/think.gd" id="6_3oqfh"]
-[ext_resource type="Texture2D" uid="uid://2e1qky7w1am" path="res://test_mimic/oczy.png" id="6_twq3s"]
-[ext_resource type="Script" uid="uid://dsvs1ii0ur6tw" path="res://non_persons/states/haggle.gd" id="7_rinmi"]
-[ext_resource type="Material" uid="uid://cvkee21aejphv" path="res://materials/characters.tres" id="8_q2p6i"]
+[ext_resource type="PackedScene" uid="uid://eyncoqtnwsi" path="res://non_persons/customers/test_customer.tscn" id="1_7blbg"]
+[ext_resource type="Material" uid="uid://cvkee21aejphv" path="res://materials/characters.tres" id="2_eglbp"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_qrjrq"]
-height = 1.0
-radius = 0.3
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ee6x"]
+resource_local_to_scene = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jkreh"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_0ee6x")
+radius = 0.28
+height = 1.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yuib"]
 resource_name = "Material"
@@ -32,7 +30,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lfsgs"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ar7y3"]
 resource_name = "characters_v1_Cube_002"
 _surfaces = [{
 "aabb": AABB(-0.33427382, 0.0028547645, -0.3569688, 0.723282, 1.7165124, 0.7139376),
@@ -50,96 +48,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j0opa")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3oqfh"]
-resource_local_to_scene = true
+[node name="strange_man" instance=ExtResource("1_7blbg")]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_3oqfh"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_3oqfh")
-radius = 0.28
-height = 1.6
+[node name="MeshInstance3D" parent="." index="2"]
+mesh = SubResource("CapsuleMesh_jkreh")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_twq3s"]
-height = 4.19084
-radius = 2.285
-
-[sub_resource type="Gradient" id="Gradient_twq3s"]
-offsets = PackedFloat32Array(0, 0.016713092)
-colors = PackedColorArray(0, 0, 0, 1, 1.7567725e-06, 0.61674327, 0.18504336, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_rinmi"]
-frequency = 0.0277
-offset = Vector3(0, -944, 0)
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q2p6i"]
-width = 160
-height = 20
-noise = SubResource("FastNoiseLite_rinmi")
-color_ramp = SubResource("Gradient_twq3s")
-
-[node name="test_customer" type="Area3D" groups=["Customer"]]
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("1_qrjrq")
-
-[node name="StateMachine" type="Node" parent="."]
-script = ExtResource("1_y15eb")
-initial_state = NodePath("HenloWorld")
-
-[node name="HenloWorld" type="Node" parent="StateMachine"]
-script = ExtResource("3_ns5w7")
-
-[node name="Walk" type="Node" parent="StateMachine"]
-script = ExtResource("4_ns5w7")
-
-[node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("5_3ekre")
-
-[node name="Think" type="Node" parent="StateMachine" node_paths=PackedStringArray("customer_body")]
-script = ExtResource("6_3oqfh")
-customer_body = NodePath("../..")
-
-[node name="Haggle" type="Node" parent="StateMachine"]
-script = ExtResource("7_rinmi")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("CylinderShape3D_qrjrq")
-
-[node name="strange_man" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 0, 0)
-material_override = ExtResource("8_q2p6i")
-mesh = SubResource("ArrayMesh_lfsgs")
+[node name="strange_man" type="MeshInstance3D" parent="." index="7"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+material_override = ExtResource("2_eglbp")
+mesh = SubResource("ArrayMesh_ar7y3")
 skeleton = NodePath("")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8424703, 0)
-visible = false
-mesh = SubResource("CapsuleMesh_3oqfh")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, 0, 1.5434108, -0.08831394)
-pixel_size = 0.0013
-texture = ExtResource("6_twq3s")
-
-[node name="LookingEyes" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.16331768)
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LookingEyes"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.8104199)
-shape = SubResource("CylinderShape3D_twq3s")
-
-[node name="EnergyBar" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8959954, 0)
-billboard = 1
-texture = SubResource("NoiseTexture2D_q2p6i")
-
-[connection signal="i_chose_to_browse" from="StateMachine/Think" to="." method="_on_think_i_chose_to_browse"]
-[connection signal="i_chose_to_buy" from="StateMachine/Think" to="." method="_on_think_i_chose_to_buy"]
-[connection signal="i_chose_to_haggle" from="StateMachine/Think" to="." method="_on_think_i_chose_to_haggle"]
-[connection signal="i_chose_to_leave" from="StateMachine/Think" to="." method="_on_think_i_chose_to_leave"]
-[connection signal="i_chose_to_walk" from="StateMachine/Think" to="." method="_on_think_i_chose_to_walk"]
