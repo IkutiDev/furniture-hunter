@@ -1,5 +1,5 @@
 class_name CollectionSlotUI
-extends HFlowContainer
+extends VFlowContainer
 
 @export var icon : TextureRect
 @export var empty_icon : Texture2D
@@ -22,6 +22,7 @@ func remove_collection_from_collection_slot() -> void:
 	update_collection_slot_ui()
 
 func set_collection_slot(current_collection_instance : CollectionInstance) -> void:
+	
 	collection_instance = current_collection_instance
 	update_collection_slot_ui()
 
@@ -30,10 +31,14 @@ func update_collection_slot_ui() -> void:
 		#recommeneded_price_label.text = "0$"
 		#price_spin_box.value = 0
 		icon.texture = empty_icon
+		$Name.text = ""
+		$Description.text = ""
 	else:
 		#recommeneded_price_label.text = str(item_instance.item_data.base_value) +"$"
 		#price_spin_box.value = item_instance.current_price if item_instance.current_price >= 0 else 0
 		icon.texture = collection_instance.collection_data.icon
+		$Name.text = collection_instance.collection_data.object_name
+		$Description.text = collection_instance.collection_data.description
 
 #func set_the_price() -> void:
 	#if item_instance == null:

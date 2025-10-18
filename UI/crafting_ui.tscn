@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://du5pkafdjd268"]
+[gd_scene load_steps=12 format=3 uid="uid://du5pkafdjd268"]
 
 [ext_resource type="Script" uid="uid://botxorv4wnywe" path="res://UI/crafting_ui.gd" id="1_sac6m"]
 [ext_resource type="PackedScene" uid="uid://bypcdpjljnjfc" path="res://UI/crafting_recipe.tscn" id="2_c5m30"]
-[ext_resource type="Resource" uid="uid://b1wt73x234yi7" path="res://data/300_augur_starter_pack.tres" id="3_55cq4"]
-[ext_resource type="Resource" uid="uid://fmp08p6m5wgk" path="res://data/301_advanced_catoptromancy_set.tres" id="4_2i6t4"]
-[ext_resource type="Resource" uid="uid://s0ir3cfxa87l" path="res://data/302_essential_witch_tools.tres" id="5_1n65o"]
-[ext_resource type="Resource" uid="uid://dhoc77wu157a2" path="res://data/303_minimalistic_lich_setup.tres" id="6_swi88"]
+[ext_resource type="Resource" uid="uid://b1wt73x234yi7" path="res://data/300_chinese_collection.tres" id="3_55cq4"]
+[ext_resource type="Resource" uid="uid://fmp08p6m5wgk" path="res://data/301_witch_collection.tres" id="4_2i6t4"]
+[ext_resource type="Resource" uid="uid://s0ir3cfxa87l" path="res://data/302_egyptian_collection.tres" id="5_1n65o"]
+[ext_resource type="Resource" uid="uid://dhoc77wu157a2" path="res://data/303_knight_collection.tres" id="6_swi88"]
+[ext_resource type="Resource" uid="uid://c5aagagtn0wjh" path="res://data/304_greek_collection.tres" id="7_1n65o"]
+[ext_resource type="Resource" uid="uid://ve2sh2t3alfx" path="res://data/305_ufo_collection.tres" id="8_swi88"]
 
 [sub_resource type="Animation" id="Animation_2i6t4"]
 length = 0.001
@@ -57,12 +59,12 @@ crafting_menu = NodePath("Panel")
 open_menu_button = NodePath("ToggleVisibility")
 recipes_go_here = NodePath("Panel/ScrollContainer/VBoxContainer")
 crafting_recipe_scene = ExtResource("2_c5m30")
-collection_sets = Array[Resource]([null, null, null, ExtResource("3_55cq4"), ExtResource("5_1n65o"), ExtResource("4_2i6t4"), ExtResource("6_swi88")])
+collection_sets = Array[Resource]([null, ExtResource("3_55cq4"), ExtResource("4_2i6t4"), ExtResource("5_1n65o"), ExtResource("6_swi88"), ExtResource("7_1n65o"), ExtResource("8_swi88")])
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 235.0
-offset_top = 183.0
+offset_top = 127.0
 offset_right = 970.0
 offset_bottom = 676.0
 
@@ -79,7 +81,7 @@ layout_mode = 0
 offset_left = 11.0
 offset_top = 12.0
 offset_right = 719.0
-offset_bottom = 484.0
+offset_bottom = 536.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
 layout_mode = 2
@@ -110,3 +112,47 @@ offset_top = 687.0
 offset_right = 305.0
 offset_bottom = 718.0
 text = "Crafting"
+
+[node name="VictoryScreen" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 244.0
+offset_top = 138.0
+offset_right = 958.0
+offset_bottom = 664.0
+color = Color(0.2, 0.05490196, 0.40784314, 0.9098039)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VictoryScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VictoryScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center]
+YOU HAVE BECOME THE
+[font_size==60]
+[wave amp=60.0 freq=6.0 connected=1]ULTIMATE COLLECTOR[/wave]
+[font_size==30]
+
+SINCE YOU COMPLETED EVERY COLLECTIBLE SET IN THE GAME
+[font_size==20]
+THUS EXHAUSTING ALL OF THE CONTENT WE HAVE PREPARED
+[font_size==12]
+THANKS FOR PLAYING!"
+
+[node name="Ok" type="Button" parent="VictoryScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ok"
+
+[node name="Control" type="Control" parent="VictoryScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[connection signal="pressed" from="VictoryScreen/VBoxContainer/Ok" to="." method="_on_ok_pressed"]

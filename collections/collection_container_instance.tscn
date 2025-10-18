@@ -4,35 +4,32 @@
 [ext_resource type="PackedScene" uid="uid://bc6w8i33yiu75" path="res://collections/collection_slot.tscn" id="2_niib2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_niib2"]
-size = Vector3(8, 0.2, 1)
+size = Vector3(3.2, 0.2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3xpd"]
 albedo_color = Color(0.4013587, 0.013041388, 0.32082638, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_p3xpd"]
 material = SubResource("StandardMaterial3D_p3xpd")
-size = Vector3(8, 0.2, 1)
+size = Vector3(3.2, 0.2, 1)
 
 [node name="CollectionContainerInstance" type="Node3D" node_paths=PackedStringArray("collection_slots", "static_body")]
 script = ExtResource("1_p3xpd")
-collection_slots = [NodePath("CollectionSlot"), NodePath("CollectionSlot2"), NodePath("CollectionSlot3")]
+collection_slots = [NodePath("StaticBody3D/CollisionShape3D/CollectionSlot1")]
 static_body = NodePath("StaticBody3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 shape = SubResource("BoxShape3D_niib2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("BoxMesh_p3xpd")
+skeleton = NodePath("../../..")
 
-[node name="CollectionSlot" parent="." instance=ExtResource("2_niib2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.2, 0)
-
-[node name="CollectionSlot2" parent="." instance=ExtResource("2_niib2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.2, 0)
-
-[node name="CollectionSlot3" parent="." instance=ExtResource("2_niib2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.2, 0)
+[node name="CollectionSlot1" parent="StaticBody3D/CollisionShape3D" instance=ExtResource("2_niib2")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, -0.13897082, 0.099999994, 0)
 
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]

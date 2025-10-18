@@ -16,14 +16,17 @@ func _ready() -> void:
 	completed_collections.push_back(CollectionSet.Types.NONE)
 
 	open_menu_button.pressed.connect(_toggle_auctions_menu)
-	crafting_menu.visible = false
+	
 	EventBus.collection_crafted.connect(Callable(PlayerInventory,"create_collection"))
 	EventBus.collection_crafted.connect(add_collection_to_completed)
+	create_recepies()
+
+	crafting_menu.visible = false
 	
 func _toggle_auctions_menu() -> void:
 	crafting_menu.visible = !crafting_menu.visible
-	if crafting_menu.visible:
-		create_recepies()
+	#if crafting_menu.visible:
+		#create_recepies()
 
 
 func create_recepies():
@@ -31,33 +34,37 @@ func create_recepies():
 		old.queue_free()
 	# go through every item and furniture in inventory to get every collection type that needs to get loaded
 	var collections_to_load = Dictionary()
-	
+
+	for type in CollectionSet.Types.values():
+		collections_to_load[type] = []
+	collections_to_load.erase(CollectionSet.Types.NONE)
+	print(collections_to_load)
 	for furniture in PlayerInventory.furniture:
 		var inspected_collection_type = furniture.collection_set_type
 		if inspected_collection_type != CollectionSet.Types.NONE:
-			if !collections_to_load.keys().has(inspected_collection_type):
-				collections_to_load[inspected_collection_type] = [furniture]
-				
-			else:
-				collections_to_load[inspected_collection_type].push_back(furniture)
+			#if !collections_to_load.keys().has(inspected_collection_type):
+				#collections_to_load[inspected_collection_type] = [furniture]
+				#
+			#else:
+			collections_to_load[inspected_collection_type].push_back(furniture)
 
 			
 
 	for item in PlayerInventory.items:
 		var inspected_collection_type = item.collection_set_type
 		if inspected_collection_type != CollectionSet.Types.NONE:
-			if !collections_to_load.keys().has(inspected_collection_type):
-				collections_to_load[inspected_collection_type] = [item]
-			else:
-				collections_to_load[inspected_collection_type].push_back(item)
+			#if !collections_to_load.keys().has(inspected_collection_type):
+				#collections_to_load[inspected_collection_type] = [item]
+			#else:
+			collections_to_load[inspected_collection_type].push_back(item)
 	
 	# remove loaded and completed colletions from list
 	
 	#for l in loaded_recepies:
 		#collections_to_load.erase(l)
 
-	for c in completed_collections:
-		collections_to_load.erase(c)
+	#for c in completed_collections:
+		#collections_to_load.erase(c)
 	for K in collections_to_load:
 		print(K," ")
 		for H in collections_to_load[K]:
@@ -81,4 +88,16 @@ func throw_error(message : String):
 
 func add_collection_to_completed(collection_data : CollectionData):
 	completed_collections.append(collection_data.collection_set_type)
+	var game_compelted = true
+	for type in CollectionSet.Types.values():
+		print(CollectionSet.Types.keys()[type]," ",!completed_collections.has(type))
+		if !completed_collections.has(type):
+			game_compelted = false
+
+	$VictoryScreen.visible = game_compelted
 	pass
+
+
+func _on_ok_pressed() -> void:
+	$VictoryScreen.visible = false
+	pass # Replace with function body.

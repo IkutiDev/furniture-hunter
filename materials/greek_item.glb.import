@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cc6k83dc361fx"
-path="res://.godot/imported/chinese.glb-45dd6aca54e3c7a218fe6b0265205980.scn"
+uid="uid://3tfae04vttnv"
+path="res://.godot/imported/greek_item.glb-f41745c6202afeefda0557c108cc42c0.scn"
 
 [deps]
 
-source_file="res://witrynki/chinese.glb"
-dest_files=["res://.godot/imported/chinese.glb-45dd6aca54e3c7a218fe6b0265205980.scn"]
+source_file="res://materials/greek_item.glb"
+dest_files=["res://.godot/imported/greek_item.glb-f41745c6202afeefda0557c108cc42c0.scn"]
 
 [params]
 
