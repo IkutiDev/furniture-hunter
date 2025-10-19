@@ -6,6 +6,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_q5iy0"]
 
 [node name="ToolTipPanel" type="Panel" node_paths=PackedStringArray("title_label", "cost_label", "collection_type_label", "object_preview")]
+z_index = 1
 custom_minimum_size = Vector2(128, 200)
 anchors_preset = -1
 anchor_left = 0.65046877
