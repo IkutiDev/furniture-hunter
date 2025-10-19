@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://xvoul5oon3dn"]
+
+[ext_resource type="PackedScene" uid="uid://bl04upmg8knup" path="res://furniture/scenes/sarcophagus.tscn" id="1_5m24t"]
+[ext_resource type="Texture2D" uid="uid://q6jgyyfp5wyr" path="res://UI/WIP_icons/sarcophagus.png" id="2_bqte4"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_hjt7j"]
+
+[resource]
+script = ExtResource("3_hjt7j")
+ID = 218
+object_name = "Sarcophagus"
+description = "Sarcophagus. Possibly still with a mummy that will curse it's customer"
+icon = ExtResource("2_bqte4")
+base_value = 250
+renown = 200
+collection_set_type = 3
+furniture_scene = ExtResource("1_5m24t")
+tags = Array[int]([2, 7, 21])
+rarity_type = 2
+rarity_weight = 80.0

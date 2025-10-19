@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://b8e62ju56s7lv"]
+
+[ext_resource type="Texture2D" uid="uid://ycjxriitmags" path="res://UI/WIP_icons/relic-blade.png" id="1_c56j7"]
+[ext_resource type="PackedScene" uid="uid://drsqnrso7eu2j" path="res://items/scenes/two_sword.tscn" id="2_fu05g"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_822kx"]
+
+[resource]
+script = ExtResource("3_822kx")
+ID = 117
+object_name = "Pair of dueling swords"
+icon = ExtResource("1_c56j7")
+base_value = 200
+renown = 180
+collection_set_type = 4
+item_scene = ExtResource("2_fu05g")
+tags = Array[int]([5, 7, 20])
+rarity_type = 1
+rarity_weight = 280.0

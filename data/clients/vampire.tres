@@ -6,10 +6,11 @@
 [resource]
 script = ExtResource("2_nemie")
 client_name = "Vampire"
-starting_money = 313
+starting_money_min = 200
+starting_money_max = 400
 client_scene = ExtResource("1_a8pt3")
 walk_speed = 2.5
 love_tags = Array[int]([-1])
-liked_tags = Array[int]([-1, -1])
+liked_tags = Array[int]([8, -1])
 disliked_tags = Array[int]([2])
-hated_tags = Array[int]([-1, -1])
+hated_tags = Array[int]([-1, 12])

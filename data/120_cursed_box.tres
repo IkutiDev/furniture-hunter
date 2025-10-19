@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://b8mvpqe05ukne"]
+
+[ext_resource type="Texture2D" uid="uid://dy3ukadk6h3g6" path="res://UI/WIP_icons/locked-box.png" id="1_6eyka"]
+[ext_resource type="PackedScene" uid="uid://8b0mcytwy53o" path="res://items/scenes/pandora_box.tscn" id="2_ff2u5"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_g8oys"]
+
+[resource]
+script = ExtResource("3_g8oys")
+ID = 120
+object_name = "Cursed Box"
+icon = ExtResource("1_6eyka")
+base_value = 480
+renown = 520
+collection_set_type = 5
+item_scene = ExtResource("2_ff2u5")
+tags = Array[int]([4, 11, 13])
+rarity_type = 3
+rarity_weight = 45.0

@@ -6,10 +6,11 @@
 [resource]
 script = ExtResource("2_duejt")
 client_name = "Witch"
-starting_money = 198
+starting_money_min = 80
+starting_money_max = 200
 client_scene = ExtResource("1_f0fag")
 walk_speed = 2.0
 love_tags = Array[int]([-1])
 liked_tags = Array[int]([1])
 disliked_tags = Array[int]([-1])
-hated_tags = Array[int]([-1])
+hated_tags = Array[int]([14])
