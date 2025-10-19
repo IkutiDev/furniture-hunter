@@ -9,3 +9,4 @@ func _ready() -> void:
 			occupation_grid_map.set_cell_item(t, 0)
 	EventBus.available_items_changed.emit()
 	EventBus.available_furniture_changed.emit()
+	EventBus.available_collections_changed.emit()

@@ -2,6 +2,7 @@ class_name CancelManager
 extends Node
 
 @export var object_placer : ObjectPlacer
+@export var main_menu_scene : PackedScene
 
 var control_menus_queue : Array[Control]
 var lootbox_cutscene_active := false
@@ -33,5 +34,8 @@ func _input(event: InputEvent) -> void:
 		if menu == null:
 			if object_placer.selected_furniture != null:
 				object_placer.deselect_furniture()
+			else:
+				var new_main_menu = main_menu_scene.instantiate()
+				get_tree().current_scene.add_child(new_main_menu)
 			return
 		menu.close_menu()

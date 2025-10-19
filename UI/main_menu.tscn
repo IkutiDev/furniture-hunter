@@ -1,6 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://23fqk2jp67kp"]
+[gd_scene load_steps=13 format=3 uid="uid://23fqk2jp67kp"]
 
 [ext_resource type="Script" uid="uid://d2iyis2l7026u" path="res://UI/main_menu.gd" id="1_p8ccj"]
+[ext_resource type="Texture2D" uid="uid://b1tkgf3qlkwcd" path="res://UI/tutorial/completing_collection.png" id="2_f40uw"]
+[ext_resource type="Texture2D" uid="uid://dtv0078xqf3h4" path="res://UI/tutorial/money_inventory.png" id="3_8ctay"]
+[ext_resource type="Texture2D" uid="uid://ce6owbpmffgp7" path="res://UI/tutorial/placing_furniture.png" id="4_2mudq"]
+[ext_resource type="Texture2D" uid="uid://b0ax0bxv3h1nr" path="res://UI/tutorial/open_shop.png" id="4_ev3b6"]
+[ext_resource type="Texture2D" uid="uid://bs5ahpk4i73i3" path="res://UI/tutorial/buying.png" id="5_k0a0m"]
+[ext_resource type="Texture2D" uid="uid://dwwgohbnvviiq" path="res://UI/tutorial/selling_furniture.png" id="6_cafmx"]
+[ext_resource type="Texture2D" uid="uid://dg1kwwllsmb5o" path="res://UI/tutorial/selling_items.png" id="7_tcix6"]
+[ext_resource type="Texture2D" uid="uid://d0f35hitchxuf" path="res://UI/tutorial/display_collection.png" id="9_mmlvu"]
+
+[sub_resource type="Animation" id="Animation_p8ccj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_5yyqw"]
 resource_name = "new_animation"
@@ -31,33 +66,6 @@ tracks/1/keys = {
 "values": [Vector2(1, 1), Vector2(0.535, 1), Vector2(1, 1), Vector2(0.562, 1), Vector2(1, 1), Vector2(0.663, 1), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_p8ccj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tk8dj"]
 _data = {
 &"RESET": SubResource("Animation_p8ccj"),
@@ -65,6 +73,7 @@ _data = {
 }
 
 [node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_p8ccj")
 
 [node name="Fade" type="ColorRect" parent="."]
@@ -104,7 +113,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
-custom_minimum_size = Vector2(220, 0)
+custom_minimum_size = Vector2(220, 200)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
@@ -114,6 +123,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
@@ -121,14 +131,236 @@ text = "MAIN MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "NAME"
+text = "CREDITS"
 
-[node name="Button2" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="TutorialButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "TUTORIAL"
 
-[node name="Button3" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "NAME"
+text = "RESUME"
+
+[node name="Credits" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4471417, 0.48003107, 0.97094625, 1)
+
+[node name="HideCredits" type="Button" parent="Credits"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1125.0
+offset_top = 668.0
+offset_right = 1251.0
+offset_bottom = 699.0
+text = "CLOSE CREDITS"
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 182.0
+offset_right = 682.0
+offset_bottom = 257.0
+text = "Coding by Ktosox and Ikuti
+
+Art by Lutra"
+
+[node name="Tutorial" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8255417, 0.7147665, 0.30122614, 1)
+
+[node name="HowToBuy" type="ColorRect" parent="Tutorial"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898277, 0.5896256, 0.6720228, 1)
+
+[node name="MoneyInventory" type="Sprite2D" parent="Tutorial/HowToBuy"]
+position = Vector2(105, 202)
+texture = ExtResource("3_8ctay")
+
+[node name="Buying" type="Sprite2D" parent="Tutorial/HowToBuy"]
+position = Vector2(494, 304)
+texture = ExtResource("5_k0a0m")
+
+[node name="Label" type="Label" parent="Tutorial/HowToBuy"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 30.0
+offset_right = 627.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "keys are bought with money and appear in yout inventory"
+
+[node name="Label2" type="Label" parent="Tutorial/HowToBuy"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 83.0
+offset_right = 680.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "to buy a key open the actions menu and press buy next to the key"
+
+[node name="HowToSell" type="ColorRect" parent="Tutorial"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.65495646, 0.98321325, 0.48707873, 1)
+
+[node name="Label3" type="Label" parent="Tutorial/HowToSell"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 487.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "to sell furniture, 
+you need to select it in you inventory 
+and place it in your shop"
+
+[node name="Label4" type="Label" parent="Tutorial/HowToSell"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 158.0
+offset_right = 617.0
+offset_bottom = 259.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "once placed you need to click on your
+furniture, and set a non zero price
+you can also put it back in your inventory
+if you changed your mind"
+
+[node name="Label5" type="Label" parent="Tutorial/HowToSell"]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 37.0
+offset_right = 964.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "items are sold by placing them on
+special furniture
+select an item from the list
+and set it's price"
+
+[node name="Label6" type="Label" parent="Tutorial/HowToSell"]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 212.0
+offset_right = 1277.0
+offset_bottom = 313.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "once you are done placing furniture
+and setting prices you can let cusomters 
+in by pressing the \"Open Shop\" button"
+
+[node name="OpenShop" type="Sprite2D" parent="Tutorial/HowToSell"]
+position = Vector2(1110, 383)
+texture = ExtResource("4_ev3b6")
+
+[node name="SellingFurniture" type="Sprite2D" parent="Tutorial/HowToSell"]
+position = Vector2(446, 361)
+texture = ExtResource("6_cafmx")
+
+[node name="SellingItems" type="Sprite2D" parent="Tutorial/HowToSell"]
+position = Vector2(777, 275)
+texture = ExtResource("7_tcix6")
+
+[node name="PlacingFurniture" type="Sprite2D" parent="Tutorial/HowToSell"]
+position = Vector2(141, 206)
+texture = ExtResource("4_2mudq")
+
+[node name="HowToCraft" type="ColorRect" parent="Tutorial"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9999998, 0.42168805, 0.9916963, 1)
+
+[node name="CompletingCollection" type="Sprite2D" parent="Tutorial/HowToCraft"]
+position = Vector2(401, 283)
+texture = ExtResource("2_f40uw")
+
+[node name="DisplayCollection" type="Sprite2D" parent="Tutorial/HowToCraft"]
+position = Vector2(943, 325)
+texture = ExtResource("9_mmlvu")
+
+[node name="Label2" type="Label" parent="Tutorial/HowToCraft"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 70.0
+offset_right = 718.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "to complete a collection open the Crafting menu and select a collection to craft
+items marekd green are the ones you already have"
+
+[node name="Label3" type="Label" parent="Tutorial/HowToCraft"]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 162.0
+offset_right = 1264.0
+offset_bottom = 211.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "once you complete a collection you can display it in your shop by clicking
+on a pedestal and picking a collection from the list"
+
+[node name="HideTutorial" type="Button" parent="Tutorial"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 667.0
+offset_right = 1261.0
+offset_bottom = 698.0
+text = "CLOSE TUTORIAL"
+
+[node name="NextTutorial" type="Button" parent="Tutorial"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 672.0
+offset_right = 1096.0
+offset_bottom = 703.0
+text = "NEXT PAGE"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 87.0
+offset_top = 502.0
+offset_right = 1239.0
+offset_bottom = 1054.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "You dream of completing a grand collection of curios, but all you are starting out with is an empty shop and a small lone of a thousand bucks.
+
+Your business plan - buy abandoned storage units, sell whatever you don't need, assemble the best pieces into collections.
+
+Display you collections to gain renown among collectors, and to attract more patrons with deeper pockets."
+
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Credits/HideCredits" to="." method="_on_hide_credits_pressed"]
+[connection signal="pressed" from="Tutorial/HideTutorial" to="." method="_on_hide_tutorial_pressed"]
+[connection signal="pressed" from="Tutorial/NextTutorial" to="." method="_on_next_tutorial_pressed"]
