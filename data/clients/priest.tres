@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CustomerData" load_steps=3 format=3 uid="uid://cpl7l1i8bli68"]
+
+[ext_resource type="PackedScene" uid="uid://cismf042kildw" path="res://non_persons/customers/priest.tscn" id="1_8rg55"]
+[ext_resource type="Script" uid="uid://c3mdfubk0l88w" path="res://non_persons/customer_data.gd" id="2_b2bou"]
+
+[resource]
+script = ExtResource("2_b2bou")
+client_name = "Priest"
+starting_money = 283
+client_scene = ExtResource("1_8rg55")
+walk_speed = 1.5
+love_tags = Array[int]([-1])
+liked_tags = Array[int]([-1, -1])
+disliked_tags = Array[int]([-1])
+hated_tags = Array[int]([-1, 1, -1])

@@ -11,7 +11,6 @@ object_name = "Magic Crystal Ball"
 icon = ExtResource("1_bpq3s")
 base_value = 160
 renown = 160
-collection_set_type = 3
 item_scene = ExtResource("2_lvyn4")
 tags = Array[int]([-1])
 rarity_type = 1

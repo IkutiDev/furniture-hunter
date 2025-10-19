@@ -12,7 +12,6 @@ description = "has decent reception, but only when slightly tilted backwards"
 icon = ExtResource("2_wp5u8")
 base_value = 320
 renown = 320
-collection_set_type = 5
 furniture_scene = ExtResource("1_iifpy")
 tags = Array[int]([-1])
 rarity_type = 2

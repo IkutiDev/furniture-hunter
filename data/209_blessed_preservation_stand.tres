@@ -12,7 +12,6 @@ description = "smells like embalming chemicals"
 icon = ExtResource("2_i0txt")
 base_value = 140
 renown = 140
-collection_set_type = 5
 furniture_scene = ExtResource("1_yvn0q")
 tags = Array[int]([-1])
 rarity_type = 1

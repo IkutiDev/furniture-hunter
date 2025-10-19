@@ -53,10 +53,12 @@ text = "9999$"
 [node name="FoldableContainer" type="FoldableContainer" parent="HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+folded = true
 title = "Inventory"
 title_position = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/FoldableContainer"]
+visible = false
 layout_mode = 2
 
 [node name="FurnitureContainer" type="FoldableContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer"]

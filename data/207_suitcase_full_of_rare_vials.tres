@@ -12,7 +12,6 @@ description = "a collection of bloods and venoms from various magical beasts"
 icon = ExtResource("1_e4ros")
 base_value = 340
 renown = 340
-collection_set_type = 6
 furniture_scene = ExtResource("1_r6ikd")
 tags = Array[int]([-1])
 rarity_type = 2

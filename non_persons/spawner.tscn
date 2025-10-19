@@ -15,6 +15,7 @@ material = SubResource("StandardMaterial3D_ep3nv")
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_ep3nv")
+customers_data_path = "res://data/clients"
 
 [node name="SpawnPoint" type="Marker3D" parent="."]
 

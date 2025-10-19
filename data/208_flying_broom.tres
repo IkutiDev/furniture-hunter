@@ -12,7 +12,6 @@ description = "also works as a poor man's rumba"
 icon = ExtResource("2_3nb3y")
 base_value = 190
 renown = 190
-collection_set_type = 4
 furniture_scene = ExtResource("1_5d2ci")
 tags = Array[int]([1])
 rarity_type = 1

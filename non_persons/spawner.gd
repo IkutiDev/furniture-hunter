@@ -1,6 +1,6 @@
 extends Node3D
 
-var customer_scene = preload("res://non_persons/test_customer.tscn")
+#var customer_scene = preload("res://non_persons/test_customer.tscn")
 
 ## defaults to "get_tree().current_scene" if non provided
 @export var where_to_plonk_customers : Node3D
@@ -9,7 +9,7 @@ var desired_customer_count = 0
 
 @export var max_customer_count = 5
 
-
+@export var customers_data_path : String
 
 var objects_set_to_be_sold : Array[Node3D]
 
@@ -18,10 +18,17 @@ var _customer_count = 0
 var is_day = false
 
 
-
+var customers_data : Array[CustomerData]
 
 
 func _ready() -> void:
+	
+	var resources = ResourceLoader.list_directory(customers_data_path)
+	
+	for r in resources:
+		if (r as String).contains(".tres"):
+			print(r)
+			customers_data.append(ResourceLoader.load(customers_data_path + "/" + r))
 	
 	if where_to_plonk_customers == null:
 		where_to_plonk_customers = get_tree().current_scene
@@ -55,7 +62,7 @@ func end_day():
 	pass
 
 func spawn_customer(data : CustomerData) -> void:
-	var new_customer = customer_scene.instantiate() as Node3D
+	var new_customer = data.client_scene.instantiate() as Node3D
 	data.entrance_location = $ShopEntrance.global_position
 	data.exit_location = $TheAreaThatEatsPeople.global_position
 	new_customer.global_position = $SpawnPoint.global_position
@@ -90,11 +97,7 @@ func _on_spawn_timer_timeout() -> void:
 	if _customer_count >= desired_customer_count:
 		return
 	if randf() > 0.62:
-		var new_data = CustomerData.new()
-		new_data.starting_money = randi_range(80,160) + int(PlayerInventory.renown * 2)
-		new_data.walk_speed = 2.0
-		
-		spawn_customer(new_data)
+		spawn_customer(customers_data.pick_random())
 
 	pass # Replace with function body.
 

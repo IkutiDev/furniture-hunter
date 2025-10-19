@@ -14,8 +14,6 @@ var i_want_to_buy_this
 
 @export var objects_set_to_be_sold : Array[Node3D]
 
-@export var preferences : Dictionary
-
 @export var walk_speed = 2.0
 
 @export var money = 100
@@ -23,6 +21,13 @@ var i_want_to_buy_this
 @export var energy = 100.0
 
 @export var customer_data : CustomerData
+
+@export var disliked_offer_min_rand_value : int
+@export var disliked_offer_max_rand_value : int
+
+
+@export var liked_offer_min_rand_value : int
+@export var liked_offer_max_rand_value : int
 
 func _ready() -> void:
 
@@ -32,8 +37,7 @@ func _ready() -> void:
 
 
 func load_customer(data : CustomerData):
-	money = data.starting_money
-	preferences = data.purchase_preferences.duplicate()
+	money = randi_range(data.starting_money_min, data.starting_money_max) + int(PlayerInventory.renown * 2)
 	exit_location = data.exit_location
 	entrance_location = data.entrance_location
 	walk_speed = data.walk_speed
@@ -73,12 +77,26 @@ func what_do_i_see() -> Array[Variant]:
 		return []
 	return objects_seen
 
-func check_offer_quality(item_price : int, perfect_price: int) -> String: 
+func check_offer_quality(item_price : int, perfect_price: int, tags: Array[Tags.Types]) -> String: 
+	for t in customer_data.hated_tags:
+		if tags.find(t) != -1:
+			return "bad offer"
+		
 	if item_price > 2 * money:
 		return "bad offer"
 	
-	var desire_to_buy = randi_range(-40,80) # this will need to be expanded later
-	
+	for t in customer_data.love_tags:
+		if tags.find(t) != -1:
+			return "great offer"
+	var desire_to_buy = 0
+	for t in customer_data.liked_tags:
+		if tags.find(t) != -1:
+			desire_to_buy = randi_range(liked_offer_min_rand_value, liked_offer_max_rand_value)
+			break
+	for t in customer_data.disliked_tags:
+		if tags.find(t) != -1:
+			desire_to_buy = randi_range(disliked_offer_min_rand_value, disliked_offer_max_rand_value)
+			break
 	if item_price > desire_to_buy + perfect_price * 2:
 		return "bad offer"
 	elif item_price > desire_to_buy + perfect_price:
@@ -193,7 +211,7 @@ func _on_think_i_chose_to_browse() -> void:
 		# thing npc wanted to buy is null, so we exit earlier
 		return
 
-	var offer_quality = check_offer_quality(i_want_to_buy_this.current_price, i_want_to_buy_this.perfect_price) as String
+	var offer_quality = check_offer_quality(i_want_to_buy_this.current_price, i_want_to_buy_this.perfect_price, i_want_to_buy_this.tags) as String
 
 
 	# go back to Think with result

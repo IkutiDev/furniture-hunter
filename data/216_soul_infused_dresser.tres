@@ -11,7 +11,6 @@ object_name = "Soul Infused Dresser"
 icon = ExtResource("2_ivhtc")
 base_value = 120
 renown = 120
-collection_set_type = 6
 furniture_scene = ExtResource("1_tkmo6")
 tags = Array[int]([-1])
 rarity_type = 1

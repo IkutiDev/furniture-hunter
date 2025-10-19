@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=51 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -53,46 +53,12 @@ fog_light_energy = 0.09
 fog_sun_scatter = 7.85
 fog_density = 0.008
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rcskc"]
-_surfaces = [{
-"aabb": AABB(-3.022049, -1.4502271, -1.2482834, 6.044098, 2.3523393, 2.496564),
-"format": 34896613377,
-"index_count": 132,
-"index_data": PackedByteArray("AwAQAAcABwARAAMAAwASABAAEQASAAMABwAQAAYABwATABEABwAGABMAFAARABMAEQAAABIACgAUABMACgATAAYAFAAVABEAAAARABUAFAAMABUAFAAJAAwADAAIABUAAAAVAAgACQAWAAwADAAWAAgAFAAXAAkACQAXABYAFAAKABcABgAAAAgABgAIAAoACAAWAA0AFwAKAAsACgAIAA8ACAANAA8ACgAPAAsAFgAOAA0AFgAXAA4ADgAPAA0AFwALAA4ADgALAA8AAAAGAAEABgAFAAEABgAQAAUAAAABAAIAEgAAAAIAAQAFAAQAEAAEAAUAAQAEAAIAEAASAAQAEgACAAQA"),
-"lods": [0.001348391, PackedByteArray("AAABAAIAAwAAAAIAAQAEAAIAAwACAAQAAQAFAAQAAAAGAAEABgAFAAEABwAEAAUABgAHAAUABwADAAQABgAAAAgAAAADAAgABwAGAAkABwAJAAMACgAJAAYABgAIAAoACQAKAAsADAAIAAMACQAMAAMACAAMAA0ADAAJAA4ACQALAA4ADAAOAA0ACgAPAAsACgAIAA8ADgALAA8ACAANAA8ADgAPAA0A")],
-"name": "stoly",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("exB42f//AAB7EAAAAAAAAHsQAAD//wAAAAD/////AAAAAAAA//8AAAAAAAAAAAAAexB42QAAAAAAAP//AAAAAIPveNn//wAA/////wAAAACD73jZAAAAAIPvAAAAAAAA////////AAD//wAA//8AAP//AAAAAAAAg+8AAP//AAAAAHjZAAAAAHsQ/////wAAAAB42f//AAB7EP//AAAAAIPv//8AAAAAg+//////AAD//3jZ//8AAP//eNkAAAAA")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_c5hbr"]
-resource_name = "gamejam_Cube_027"
-_surfaces = [{
-"aabb": AABB(-3.022049, -1.4502271, -1.2482834, 6.044098, 2.3523393, 2.496564),
-"attribute_data": PackedByteArray("8cNEqSXmAdQl5kSp8cMB1KTjLXVN6nFKpONxSk3qLXVWk+HU4Cvh1FaTnf/gK53/GJSd/yia9PgYlCeYXbyd/1289PgomtGeXbzRnl28J5jCtc42fuCaFMK1mhR+4M42hFrAVmEABCxhAMBWhFoELK2MzLFWk72riTLMsa2MAdRWkwHU4Cu9q+ArAdSJMgHUCF6PkEwz5olMM4+QCF7mifLD4dQ17J3/Nezh1PLDnf9HW4otioNGWIqDii1HW0ZYVmGKLVZhRlgByuHUAcqd/62Mnf+tjOHUiTLh1Ikynf8YlPT4KJqd/xiU0Z4omieYrYy9q1aTzLGJMr2r4CvMsQ=="),
-"format": 34896613399,
-"index_count": 132,
-"index_data": PackedByteArray("LwAwACwALwAxADAAMAAxAC0AMAAtAC4AAAABAAIAAAADAAEAKwAyACgAKwAzADIAMgAzACkAMgApACoABAAFAAYABAAHAAUACAA0AAoACAA1ADQANgA0ADUANgA3ADQANgALADcANgAJAAsADAANADgADAA5AA0ADQA5AA8ADQAPABAAEQA4AA0AEQA6ADgAOgARADsAOgA7AA4AOwARABIAOwASABMAFAAVABYAFAAXABUAPAA9AB0APAAcAD0AHAA8AD4APQAcAB8APQAfACAAHAA+AB4AIQAeAD4AIQA/AB4AHgA/ACIAHgAiACMAGAAZABoAGAAbABkAJAAlACYAJAAnACUA"),
-"lods": [0.001348391, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACQALAAoADAANAA4ADQAMAA8ADQAPABAAEQAOAA0ADgARABIADgASABMAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHQAcAB8AHQAfACAAIQAeAB0AHgAhACIAHgAiACMAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A")],
-"material": ExtResource("4_p2x2x"),
-"name": "stoly",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 64,
-"vertex_data": PackedByteArray("exB42f//qip7EAAAAACqKnsQAAD//6oqexB42QAAqir//wAAAAAAAIPvAAD//wAA//8AAP//AACD7wAAAAAAAAAA//8AAAAA/////wAAAAAAAP////8AAP///////wAA/////////z+D73jZ////PwAA//////8///8AAP///z+D7wAA////P3sQeNn///8/exAAAP///z8AAAAA////P4PveNkAAP8/g+8AAP///z+D7wAAAAD/P4PveNn///8/exB42QAAAACD73jZ//8AAIPveNkAAAAAexB42f//AACD73jZAAAAAP////8AAAAAexB42QAAAACD7wAAAAAAAP//AAAAAAAAAAD//wAAAAAAAAAAAAAAAHsQAAAAAAAAexAAAAAAqioAAAAA//+qKnsQAAD//6oqAAAAAAAAqir///////+qKv//AAAAAKoq//8AAP//qir/////AACqKgAA//8AAKoqAAAAAP//qioAAAAAAACqKgAA/////6oqAAB42QAAqioAAHjZ//+qKv//eNn//6oq//942QAAqip7EP////8AAHsQ//8AAAAAg+///wAAAACD7/////8AAIPv//////8///942f///z97EP//////PwAAeNn///8/g+///wAAAAD//3jZAAAAAHsQ//8AAAAAAAB42QAAAACpqlRVqapUVaqqVFWpqlRV/3//P/9//z//f/8//3//P/9//7//f/+//3//v/9//7//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9/////f////3////9/////f/8//3//P/9//z//f/8/////f////3////9/////f////3////9//v//f/7//39UVVRVVFVUVVRVVFVUVVRVqqpUVamqVFWpqlRVqqpUVVVVqqpUVaqqVFWqqlVVqqpVVaqqVFWqqqqqVFWqqlRV/3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//3////9/////f/7//3////9/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_rcskc")
-
 [sub_resource type="NavigationMesh" id="NavigationMesh_wo40j"]
-vertices = PackedVector3Array(-5.855, 0.77, -1.75, -5.855, 0.77, 1.75, -2.105, 0.77, 1.75, -1.855, 0.77, 2.75, 5.645, 0.77, 2.75, 5.645, 0.77, -1.75, 10.645, 0.77, 3.75, 10.645, 0.77, 3.25, 5.895, 0.77, 3.25, 5.645, 0.77, 4, -2.105, 0.77, 3.25, -2.855, 0.77, 3.25, -2.855, 0.77, 8.75, 5.645, 0.77, 8.75)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 2), PackedInt32Array(0, 5, 2), PackedInt32Array(2, 5, 4), PackedInt32Array(8, 7, 6), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 4, 8), PackedInt32Array(12, 11, 10), PackedInt32Array(12, 10, 3), PackedInt32Array(3, 4, 9), PackedInt32Array(13, 12, 3), PackedInt32Array(9, 13, 3)]
+vertices = PackedVector3Array(-5.855, 1.02, -1.75, -5.855, 1.02, 1.75, -2.105, 1.02, 1.75, -1.855, 1.02, 2.75, 5.645, 1.02, 2.75, 5.645, 1.02, -1.75, -2.855, 1.02, 7, -3.855, 1.02, 7.25, -3.855, 1.02, 7.75, -2.855, 1.02, 8, -2.105, 1.02, 3.25, -2.855, 1.02, 3.25, 10.645, 1.02, 3.75, 10.645, 1.02, 3.25, 5.895, 1.02, 3.25, 5.645, 1.02, 4, -2.855, 1.02, 8.75, 5.645, 1.02, 8.75)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 2), PackedInt32Array(0, 5, 2), PackedInt32Array(2, 5, 4), PackedInt32Array(8, 7, 6), PackedInt32Array(9, 8, 6), PackedInt32Array(6, 11, 10), PackedInt32Array(6, 10, 3), PackedInt32Array(14, 13, 12), PackedInt32Array(14, 12, 15), PackedInt32Array(15, 4, 14), PackedInt32Array(9, 6, 3), PackedInt32Array(16, 9, 3), PackedInt32Array(3, 4, 15), PackedInt32Array(17, 16, 3), PackedInt32Array(15, 17, 3)]
 geometry_parsed_geometry_type = 1
 cell_height = 0.01
-agent_radius = 0.2
+agent_radius = 0.25
 region_min_size = 1.0
 vertices_per_polygon = 3.0
 
@@ -288,12 +254,6 @@ occupation_grid_map = NodePath("OccupationMap")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wo40j")
 
-[node name="table_3" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(4, 0, 0, 0, 3.21, 0, 0, 0, 3.62, 100.22172, 0.4160843, -19.951263)
-material_override = ExtResource("4_p2x2x")
-mesh = SubResource("ArrayMesh_c5hbr")
-skeleton = NodePath("")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
@@ -311,7 +271,7 @@ cell_size = Vector3(1, 1, 1)
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65533, 8, 1, 65533, 7, 1, 65533, 6, 1, 65533, 5, 1, 65533, 4, 1, 65533, 3, 1, 65534, 3, 1, 65534, 4, 1, 65534, 5, 1, 65534, 6, 1, 65534, 7, 1, 65534, 8, 1, 65535, 8, 1, 65535, 7, 1, 65535, 6, 1, 65535, 5, 1, 65535, 4, 1, 65535, 3, 1, 65535, 2, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 1, 8, 1, 2, 8, 1, 2, 7, 1, 1, 7, 1, 3, 7, 1, 4, 7, 1, 4, 8, 1, 3, 8, 1, 5, 8, 1, 5, 7, 1, 5, 6, 1, 4, 6, 1, 3, 6, 1, 4, 5, 1, 5, 5, 1, 5, 4, 1, 4, 4, 1, 5, 0, 1, 5, 65535, 1, 4, 65535, 1, 3, 65534, 1, 1, 0, 1, 1, 65535, 1, 0, 0, 1, 65535, 0, 1, 65532, 1, 1, 65531, 1, 1, 65532, 65534, 1, 65533, 65534, 1, 65534, 65534, 1, 65535, 65534, 1, 0, 65534, 1, 1, 65534, 1, 0, 65535, 1, 65535, 65535, 1, 7, 3, 1, 8, 3, 1, 5, 65534, 1, 4, 65534, 1, 2, 65534, 1, 65534, 0, 1, 65534, 65535, 1, 65533, 65535, 1, 65532, 65535, 1, 65530, 1, 1, 9, 3, 1, 10, 3, 1, 5, 3, 1, 6, 3, 1, 5, 2, 1, 5, 1, 1, 4, 0, 1, 4, 1, 1, 4, 2, 1, 4, 3, 1, 2, 6, 1, 1, 6, 1, 2, 4, 1, 2, 5, 1, 3, 5, 1, 3, 4, 1, 3, 3, 1, 3, 2, 1, 2, 3, 1, 3, 65535, 1, 3, 0, 1, 3, 1, 1, 65535, 1, 1, 0, 1, 1, 0, 3, 1, 1, 5, 1, 1, 4, 1, 1, 3, 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 2, 1, 1, 2, 0, 1, 2, 65535, 1, 0, 2, 1, 65532, 7, 1, 65530, 65534, 1, 65534, 2, 1, 65534, 1, 1, 65533, 1, 1, 65533, 0, 1, 65532, 0, 1, 65531, 65535, 1, 65531, 65534, 1, 65530, 65535, 1, 65531, 0, 1, 65530, 0, 1)
+"cells": PackedInt32Array(65533, 8, 1, 65533, 7, 1, 65533, 6, 1, 65533, 5, 1, 65533, 4, 1, 65533, 3, 1, 65534, 3, 1, 65534, 4, 1, 65534, 5, 1, 65534, 6, 1, 65534, 7, 1, 65534, 8, 1, 65535, 8, 1, 65535, 7, 1, 65535, 6, 1, 65535, 5, 1, 65535, 4, 1, 65535, 3, 1, 65535, 2, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 1, 8, 1, 2, 8, 1, 2, 7, 1, 1, 7, 1, 3, 7, 1, 4, 7, 1, 4, 8, 1, 3, 8, 1, 5, 8, 1, 5, 7, 1, 5, 6, 1, 4, 6, 1, 3, 6, 1, 4, 5, 1, 5, 5, 1, 5, 4, 1, 4, 4, 1, 5, 0, 1, 5, 65535, 1, 4, 65535, 1, 3, 65534, 1, 1, 0, 1, 1, 65535, 1, 0, 0, 1, 65535, 0, 1, 65532, 1, 1, 65531, 1, 1, 65532, 65534, 1, 65533, 65534, 1, 65534, 65534, 1, 65535, 65534, 1, 0, 65534, 1, 1, 65534, 1, 0, 65535, 1, 65535, 65535, 1, 7, 3, 1, 8, 3, 1, 5, 65534, 1, 4, 65534, 1, 2, 65534, 1, 65534, 0, 1, 65534, 65535, 1, 65533, 65535, 1, 65532, 65535, 1, 65530, 1, 1, 9, 3, 1, 10, 3, 1, 5, 3, 1, 6, 3, 1, 5, 2, 1, 5, 1, 1, 4, 0, 1, 4, 1, 1, 4, 2, 1, 4, 3, 1, 2, 6, 1, 1, 6, 1, 2, 4, 1, 2, 5, 1, 3, 5, 1, 3, 4, 1, 3, 3, 1, 3, 2, 1, 2, 3, 1, 3, 65535, 1, 3, 0, 1, 3, 1, 1, 65535, 1, 1, 0, 1, 1, 0, 3, 1, 1, 5, 1, 1, 4, 1, 1, 3, 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 2, 1, 1, 2, 0, 1, 2, 65535, 1, 0, 2, 1, 65530, 65534, 1, 65534, 2, 1, 65534, 1, 1, 65533, 1, 1, 65533, 0, 1, 65532, 0, 1, 65531, 65535, 1, 65531, 65534, 1, 65530, 65535, 1, 65531, 0, 1, 65530, 0, 1)
 }
 
 [node name="WallsMap" type="GridMap" parent="."]
@@ -327,6 +287,9 @@ data = {
 mesh_library = ExtResource("4_3q6a7")
 cell_size = Vector3(1, 1, 1)
 collision_mask = 0
+data = {
+"cells": PackedInt32Array(65530, 1, 1, 65530, 0, 1, 65530, 65535, 1, 65530, 65534, 1, 65531, 65534, 1, 65531, 65535, 1, 65531, 0, 1, 65531, 1, 1, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 65535, 2, 0, 65534, 2, 0, 65534, 3, 0, 65533, 3, 0, 65533, 4, 0, 65533, 5, 0, 65533, 6, 0, 65533, 7, 0, 65533, 8, 0, 65534, 8, 0, 65535, 8, 0, 0, 8, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 5, 7, 0, 5, 6, 0, 2, 7, 0, 1, 7, 0, 0, 7, 0, 65535, 7, 0, 65535, 6, 0, 65535, 5, 0, 65535, 4, 0, 65534, 7, 1, 65534, 6, 1, 65534, 5, 1, 65534, 4, 1, 65535, 3, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 5, 3, 0, 4, 3, 0, 3, 4, 0, 2, 4, 0, 2, 5, 0, 2, 6, 0, 1, 6, 0, 1, 5, 0, 3, 5, 0, 3, 6, 0, 1, 4, 0, 4, 6, 0, 4, 7, 0, 3, 7, 0, 4, 5, 0, 4, 4, 0, 5, 4, 0, 5, 5, 0, 6, 3, 1, 7, 3, 1, 8, 3, 1, 9, 3, 1, 10, 3, 1, 2, 2, 0, 1, 2, 0, 0, 2, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 5, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 65535, 0, 0, 65534, 0, 0, 65533, 0, 0, 65532, 0, 0, 65532, 65535, 0, 65532, 65534, 0, 65533, 65535, 0, 65533, 65534, 0, 65534, 65535, 1, 65534, 65534, 1, 65535, 65534, 1, 0, 65534, 1, 1, 65534, 1, 2, 65534, 1, 3, 65534, 1, 4, 65534, 1, 5, 65534, 1, 5, 65535, 1, 4, 65535, 1, 3, 65535, 1, 2, 65535, 1, 1, 65535, 1, 0, 65535, 1, 65535, 65535, 1)
+}
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.86427045, -0.40119925, 0.30342412, 0, 0.603206, 0.79757994, -0.50301737, -0.6893294, 0.5213348, 4.955, 7.685, 7.253605)

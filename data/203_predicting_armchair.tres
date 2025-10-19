@@ -12,7 +12,6 @@ description = "predicts how you'll sit and adjusts itself accordingly"
 icon = ExtResource("2_px1aa")
 base_value = 160
 renown = 160
-collection_set_type = 3
 furniture_scene = ExtResource("1_klj64")
 tags = Array[int]([-1])
 rarity_type = 1

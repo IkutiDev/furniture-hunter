@@ -11,7 +11,6 @@ object_name = "Divineing Table"
 icon = ExtResource("1_4bvhx")
 base_value = 100
 renown = 100
-collection_set_type = 3
 furniture_scene = ExtResource("1_jsj4k")
 tags = Array[int]([-1])
 rarity_type = 1

@@ -9,7 +9,12 @@ var perfect_price : int:
 			return item_data.perfect_price
 		else:
 			return -1
-
+var tags : Array[Tags.Types]:
+	get:
+		if item_data != null:
+			return item_data.tags
+		else:
+			return []
 @onready var for_sale_sign = preload("res://furniture/for_sale_sign.tscn").instantiate()
 
 func _ready() -> void:

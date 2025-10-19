@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CustomerData" load_steps=3 format=3 uid="uid://cwnsiypncpywy"]
+
+[ext_resource type="PackedScene" uid="uid://bkaft7a8f4yf2" path="res://non_persons/customers/strange_man.tscn" id="1_gsnhd"]
+[ext_resource type="Script" uid="uid://c3mdfubk0l88w" path="res://non_persons/customer_data.gd" id="2_i5mdh"]
+
+[resource]
+script = ExtResource("2_i5mdh")
+client_name = "Strange Man"
+starting_money = 86
+client_scene = ExtResource("1_gsnhd")
+walk_speed = 2.0
+love_tags = Array[int]([-1])
+liked_tags = Array[int]([-1, -1])
+disliked_tags = Array[int]([-1])
+hated_tags = Array[int]([-1])

@@ -12,7 +12,6 @@ description = "prized by hags and hipsters alike"
 icon = ExtResource("2_2coun")
 base_value = 120
 renown = 120
-collection_set_type = 4
 furniture_scene = ExtResource("1_ecnlj")
 tags = Array[int]([1])
 rarity_type = 1

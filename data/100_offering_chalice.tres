@@ -12,7 +12,6 @@ description = "covered in stains from past offerings"
 icon = ExtResource("1_ktc2r")
 base_value = 220
 renown = 300
-collection_set_type = 4
 item_scene = ExtResource("2_tulmp")
 tags = Array[int]([-1])
 rarity_type = 1

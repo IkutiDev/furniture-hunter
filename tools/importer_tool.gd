@@ -64,7 +64,8 @@ func import_from_csv() -> void:
 		var file_path =  "res://data/clients/"+object_name+".tres"
 		var data : CustomerData = CustomerData.new()
 		data.client_name = content[0]
-		data.starting_money = randi_range((content[1] as String).to_int(), (content[2] as String).to_int())
+		data.starting_money_min = (content[1] as String).to_int()
+		data.starting_money_max = (content[2] as String).to_int()
 		data.walk_speed = (content[3] as String).to_float()
 		data.client_scene = load(customers_scenes_path + content[4] +".tscn")
 		var tags = (content[5] as String).split(";")

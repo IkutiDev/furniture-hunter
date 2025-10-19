@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CustomerData" load_steps=3 format=3 uid="uid://cs0nmhqjq41op"]
+
+[ext_resource type="PackedScene" uid="uid://ddsomp18q3k7e" path="res://non_persons/customers/ghost.tscn" id="1_5fq0d"]
+[ext_resource type="Script" uid="uid://c3mdfubk0l88w" path="res://non_persons/customer_data.gd" id="2_i4vre"]
+
+[resource]
+script = ExtResource("2_i4vre")
+client_name = "Ghost"
+starting_money = 181
+client_scene = ExtResource("1_5fq0d")
+walk_speed = 2.0
+love_tags = Array[int]([-1])
+liked_tags = Array[int]([-1])
+disliked_tags = Array[int]([2])
+hated_tags = Array[int]([-1])
