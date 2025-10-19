@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bel8y3m2oh7xh" path="res://UI/set_furniture_price_ui.gd" id="1_yva15"]
 
-[node name="SetFurniturePriceUI" type="Control" node_paths=PackedStringArray("furniture_title_label", "furniture_description_label", "recommended_price_label", "price_box", "set_price_button", "close_ui_button")]
+[node name="SetFurniturePriceUI" type="Control" node_paths=PackedStringArray("furniture_title_label", "furniture_description_label", "recommended_price_label", "current_price_label", "price_box", "set_price_button", "close_ui_button", "remove_furniture_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,9 +13,11 @@ script = ExtResource("1_yva15")
 furniture_title_label = NodePath("Panel/HFlowContainer/TitleLabel")
 furniture_description_label = NodePath("Panel/HFlowContainer/DescriptionLabel")
 recommended_price_label = NodePath("Panel/HFlowContainer/RecomendPriceLabelValue")
+current_price_label = NodePath("Panel/HFlowContainer/CurrentPriceLabelValue")
 price_box = NodePath("Panel/HFlowContainer/SetPriceSpinBox")
 set_price_button = NodePath("Panel/HFlowContainer/SetPriceButton")
 close_ui_button = NodePath("Panel/HFlowContainer/ExitButton")
+remove_furniture_button = NodePath("Panel/HFlowContainer/RemoveFurnitureButton")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -27,7 +29,7 @@ anchor_bottom = 0.5
 offset_left = -244.0
 offset_top = -115.0
 offset_right = 264.0
-offset_bottom = 133.0
+offset_bottom = 234.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -71,6 +73,14 @@ text = "Recomended Price:"
 layout_mode = 2
 text = "999$"
 
+[node name="CurrentPriceLabel" type="Label" parent="Panel/HFlowContainer"]
+layout_mode = 2
+text = "Current Price:"
+
+[node name="CurrentPriceLabelValue" type="Label" parent="Panel/HFlowContainer"]
+layout_mode = 2
+text = "999$"
+
 [node name="Seperator3" type="Control" parent="Panel/HFlowContainer"]
 custom_minimum_size = Vector2(500, 10)
 layout_mode = 2
@@ -92,3 +102,21 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 6
 text = "Set the price"
+
+[node name="Seperator5" type="Control" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="TitleLabel2" type="Label" parent="Panel/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Other Actions"
+
+[node name="Seperator6" type="Control" parent="Panel/HFlowContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="RemoveFurnitureButton" type="Button" parent="Panel/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Move furniture to inventory"

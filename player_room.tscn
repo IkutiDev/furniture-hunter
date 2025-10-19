@@ -317,7 +317,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
 skeleton = NodePath("../..")
 
-[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("remove_furnitue_button", "change_shop_state_button", "hour_label")]
+[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("change_shop_state_button", "hour_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -326,7 +326,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("6_d0s76")
-remove_furnitue_button = NodePath("RemoveFurnitureButton")
 change_shop_state_button = NodePath("ChangeShopStateButton")
 button_color_during_day = SubResource("Theme_358ef")
 button_text_during_day = "Close Shop"

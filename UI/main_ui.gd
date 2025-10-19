@@ -1,6 +1,5 @@
 class_name MainUI
 extends Control
-@export var remove_furnitue_button : BaseButton
 @export var change_shop_state_button : Button
 @export var button_color_during_day : Theme
 @export var button_text_during_day : String
@@ -10,7 +9,6 @@ extends Control
 @export var hour_label : Label
 
 func _ready() -> void:
-	remove_furnitue_button.pressed.connect(destroy_furniture_button_pressed)
 	change_shop_state_button.pressed.connect(change_current_state)
 	EventBus.game_state_changed.connect(on_game_state_changed)
 	EventBus.update_game_time.connect(update_current_time)
@@ -42,7 +40,3 @@ func on_game_state_changed() -> void:
 
 func enable_button_during_day() -> void:
 	change_shop_state_button.disabled = false
-
-func destroy_furniture_button_pressed() -> void:
-	EventBus.deselect_current_furniture.emit()
-	EventBus.set_remove_furniture_mode.emit(true)

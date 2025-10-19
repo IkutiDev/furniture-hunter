@@ -4,6 +4,7 @@ extends HFlowContainer
 @export var icon : TextureRect
 @export var empty_icon : Texture2D
 @export var recommeneded_price_label : Label
+@export var current_price_label : Label
 @export var price_spin_box : SpinBox
 @export var set_price_button : Button
 
@@ -44,3 +45,4 @@ func set_the_price() -> void:
 		return
 	@warning_ignore("narrowing_conversion")
 	item_instance.set_price(price_spin_box.value)
+	current_price_label.text = str(item_instance.current_price if item_instance.current_price >= 0 else 0) + "$"

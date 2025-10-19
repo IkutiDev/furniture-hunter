@@ -8,6 +8,7 @@ extends Control
 @export var item_button_scene : PackedScene
 @export var item_slots_list : Control
 @export var item_slot_ui_scene : PackedScene
+@export var remove_furniture_button : BaseButton
 
 var furniture_instance : FurnitureContainerInstance
 
@@ -16,6 +17,7 @@ func _ready() -> void:
 	EventBus.clicked_on_furniture.connect(open_ui)
 	EventBus.clicked_on_item.connect(set_item_inside_container)
 	close_ui_button.pressed.connect(close_menu)
+	remove_furniture_button.pressed.connect(remove_furniture)
 	close_menu()
 
 
@@ -67,3 +69,11 @@ func set_item_inside_container(data : ItemData) -> void:
 			(item_slots_list.get_child(i) as ItemSlotUI).set_item_slot(furniture_instance.item_slots[i])
 			PlayerInventory.remove_object_from_inventory(data)
 			return
+			
+func remove_furniture() -> void:
+	for i in furniture_instance.item_slots:
+		if i == null:
+			continue
+		PlayerInventory.add_object_to_inventory(i.item_data)
+	EventBus.furniture_removed.emit(furniture_instance)
+	close_menu()

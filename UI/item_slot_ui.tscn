@@ -3,14 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bf7mqg2nn3b4l" path="res://UI/WIP_icons/empty.png" id="1_rxip1"]
 [ext_resource type="Script" uid="uid://cujky50ca88rj" path="res://UI/item_slot_ui.gd" id="1_sapmr"]
 
-[node name="ItemSlotUI" type="HFlowContainer" node_paths=PackedStringArray("icon", "recommeneded_price_label", "price_spin_box", "set_price_button")]
-custom_minimum_size = Vector2(210, 0)
+[node name="ItemSlotUI" type="HFlowContainer" node_paths=PackedStringArray("icon", "recommeneded_price_label", "current_price_label", "price_spin_box", "set_price_button")]
+custom_minimum_size = Vector2(240, 0)
 size_flags_horizontal = 3
 alignment = 1
 script = ExtResource("1_sapmr")
 icon = NodePath("TextureRect")
 empty_icon = ExtResource("1_rxip1")
 recommeneded_price_label = NodePath("Label2")
+current_price_label = NodePath("Label5")
 price_spin_box = NodePath("SpinBox")
 set_price_button = NodePath("Button")
 
@@ -22,13 +23,25 @@ texture = ExtResource("1_rxip1")
 expand_mode = 2
 stretch_mode = 4
 
+[node name="Control3" type="Control" parent="."]
+custom_minimum_size = Vector2(203.855, 0)
+layout_mode = 2
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
 text = "Recommended price:"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 2
-text = "999$"
+text = "9999$"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 2
+text = "Current price:"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 2
+text = "9999$"
 
 [node name="Control" type="Control" parent="."]
 custom_minimum_size = Vector2(163.96, 0)

@@ -73,5 +73,4 @@ func update_collection_inventory() -> void:
 		collection_inventory_visual_container.add_child(collection_button_instance)
 
 func press_furniture_button() -> void:
-	EventBus.set_remove_furniture_mode.emit(false)
 	main_inventory_fold_container.fold()

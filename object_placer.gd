@@ -20,11 +20,11 @@ func _ready() -> void:
 	selected_furniture = null
 	EventBus.deselect_current_furniture.connect(deselect_furniture)
 	EventBus.selected_furniture_to_place.connect(select_furniture)
-	EventBus.set_remove_furniture_mode.connect(toggled_delete_mode)
 	EventBus.mouse_over_furniture.connect(hover_over_furniture)
 	EventBus.mouse_exits_furniture.connect(exit_hover_over_furniture)
 	EventBus.object_sold.connect(furniture_sold)
 	EventBus.start_day.connect(_on_day_started)
+	EventBus.furniture_removed.connect(remove_object)
 	
 func _on_day_started() -> void:
 	deselect_furniture()
