@@ -34,7 +34,8 @@ func set_data(data : ItemData) -> void:
 		if item_data != null:
 			PlayerInventory.change_renown_amount(-item_data.renown)
 	else:
-		var item_instance := data.item_scene.instantiate()
+		var item_instance := data.item_scene.instantiate() as Node3D
+		item_instance.scale = Vector3(0.5,0.5,0.5)		
 		add_child(item_instance)
 		PlayerInventory.change_renown_amount(data.renown)
 	item_data = data
