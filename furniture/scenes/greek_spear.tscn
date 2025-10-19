@@ -46,7 +46,7 @@ size = Vector3(1.9, 1, 0.6)
 
 [node name="GreekSpear" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
 script = ExtResource("1_rgpia")
-visual_mesh = NodePath("")
+visual_mesh = NodePath("greek_item_003")
 static_body = NodePath("StaticBody3D")
 
 [node name="greek_item_003" type="MeshInstance3D" parent="."]

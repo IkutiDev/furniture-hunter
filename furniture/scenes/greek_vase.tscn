@@ -48,7 +48,7 @@ size = Vector3(1, 1.2, 1)
 
 [node name="GreekVase" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
 script = ExtResource("1_qjd38")
-visual_mesh = NodePath("")
+visual_mesh = NodePath("greek_item_002")
 static_body = NodePath("StaticBody3D")
 
 [node name="greek_item_002" type="MeshInstance3D" parent="."]

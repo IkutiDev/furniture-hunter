@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://du5pkafdjd268"]
+[gd_scene load_steps=13 format=3 uid="uid://du5pkafdjd268"]
 
 [ext_resource type="Script" uid="uid://botxorv4wnywe" path="res://UI/crafting_ui.gd" id="1_sac6m"]
 [ext_resource type="PackedScene" uid="uid://bypcdpjljnjfc" path="res://UI/crafting_recipe.tscn" id="2_c5m30"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dhoc77wu157a2" path="res://data/303_knight_collection.tres" id="6_swi88"]
 [ext_resource type="Resource" uid="uid://c5aagagtn0wjh" path="res://data/304_greek_collection.tres" id="7_1n65o"]
 [ext_resource type="Resource" uid="uid://ve2sh2t3alfx" path="res://data/305_ufo_collection.tres" id="8_swi88"]
+[ext_resource type="PackedScene" uid="uid://b1q3webi276mx" path="res://UI/tool_tip_panel.tscn" id="9_swi88"]
 
 [sub_resource type="Animation" id="Animation_2i6t4"]
 length = 0.001
@@ -153,6 +154,16 @@ text = "ok"
 
 [node name="Control" type="Control" parent="VictoryScreen/VBoxContainer"]
 custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 199.0
+offset_right = 218.0
+offset_bottom = 570.0
+
+[node name="ToolTipPanel" parent="CenterContainer" instance=ExtResource("9_swi88")]
 layout_mode = 2
 
 [connection signal="pressed" from="VictoryScreen/VBoxContainer/Ok" to="." method="_on_ok_pressed"]
