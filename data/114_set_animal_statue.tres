@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bjgxyb3wgmo00"]
 
-[ext_resource type="Texture2D" uid="uid://fqve8x6cjwy7" path="res://UI/WIP_icons/anubis.png" id="1_uxdxe"]
+[ext_resource type="Texture2D" uid="uid://ctf2kp440my56" path="res://UI/3D_object_preview/scr/statuette of a god.png" id="1_uxdxe"]
 [ext_resource type="PackedScene" uid="uid://bqiwhyob2ndks" path="res://items/scenes/set.tscn" id="2_8jkh3"]
 [ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_6p6g1"]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://da34ba7vs4bfa"]
 
 [ext_resource type="PackedScene" uid="uid://buiimfmwxx1s8" path="res://furniture/scenes/mirror.tscn" id="1_iifpy"]
-[ext_resource type="Texture2D" uid="uid://dw7xtwkmjw60c" path="res://UI/WIP_icons/mirror-mirror.png" id="2_wp5u8"]
+[ext_resource type="Texture2D" uid="uid://cns51qp43kg2b" path="res://UI/3D_object_preview/scr/mirror.png" id="2_wp5u8"]
 [ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_jufjn"]
 
 [resource]

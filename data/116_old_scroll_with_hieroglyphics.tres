@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://chsejjfih7kl7"]
 
-[ext_resource type="Texture2D" uid="uid://cv2nj8g11e3uj" path="res://UI/WIP_icons/scroll-unfurled.png" id="1_i80f0"]
+[ext_resource type="Texture2D" uid="uid://c4o5isscku0hj" path="res://UI/3D_object_preview/scr/papirus.png" id="1_i80f0"]
 [ext_resource type="PackedScene" uid="uid://dkglvkdwoi77" path="res://items/scenes/papirus.tscn" id="2_bu0o5"]
 [ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_gohre"]
 

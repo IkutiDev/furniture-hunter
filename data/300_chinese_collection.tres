@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://b1wt73x234yi7"]
 
 [ext_resource type="PackedScene" uid="uid://bg5ml1hvi4cbd" path="res://collections/scenes/chinese_collection.tscn" id="1_ukum6"]
-[ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="2_sqopr"]
+[ext_resource type="Texture2D" uid="uid://bkx3iu0qn0bri" path="res://UI/3D_object_preview/scr/chinese_set.png" id="2_ukum6"]
 [ext_resource type="Resource" uid="uid://cmh8nt6c0afrg" path="res://data/121_chinese_calligraphy_set.tres" id="3_ukum6"]
 [ext_resource type="Resource" uid="uid://d32bbdrpq214a" path="res://data/224_master_of_winds.tres" id="4_sqopr"]
 [ext_resource type="Resource" uid="uid://b51sbyrydraa8" path="res://data/123_ming_tea_pot.tres" id="5_picx1"]
@@ -12,7 +12,7 @@
 script = ExtResource("7_oylm2")
 ID = 300
 object_name = "Chinese Collection"
-icon = ExtResource("2_sqopr")
+icon = ExtResource("2_ukum6")
 base_value = 1000
 renown = 1000
 collection_scene = ExtResource("1_ukum6")

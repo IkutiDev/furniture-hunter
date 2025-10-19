@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://j4koqq1aquhu"]
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://syrcb1r6moee"]
 
 [ext_resource type="PackedScene" uid="uid://bmnvgojpnee88" path="res://furniture/scenes/carpet_3.tscn" id="1_lcya1"]
-[ext_resource type="Texture2D" uid="uid://0pum6256ybbb" path="res://UI/WIP_icons/rolled-cloth.png" id="2_qi01d"]
+[ext_resource type="Texture2D" uid="uid://3neavaxbh1x7" path="res://UI/3D_object_preview/scr/carpet_3.png" id="2_qi01d"]
 [ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_avcwe"]
 
 [resource]

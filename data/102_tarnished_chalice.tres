@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://caj6uqcr0u3u2"]
 
-[ext_resource type="Texture2D" uid="uid://c6nhiy23jwcg" path="res://UI/WIP_icons/jeweled-chalice.png" id="1_2benn"]
-[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_jap1u"]
-[ext_resource type="PackedScene" uid="uid://chhb31dswcwvf" path="res://items/scenes/cup_3.tscn" id="2_lo470"]
+[ext_resource type="Texture2D" uid="uid://do24jt2wxts6x" path="res://UI/3D_object_preview/scr/cup_3.png" id="1_lo470"]
+[ext_resource type="PackedScene" uid="uid://chhb31dswcwvf" path="res://items/scenes/cup_3.tscn" id="2_437bx"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_i74l4"]
 
 [resource]
-script = ExtResource("1_jap1u")
+script = ExtResource("3_i74l4")
 ID = 102
 object_name = "Tarnished chalice"
 description = "most likely maiden less"
-icon = ExtResource("1_2benn")
+icon = ExtResource("1_lo470")
 base_value = 30
 renown = 30
-item_scene = ExtResource("2_lo470")
+item_scene = ExtResource("2_437bx")
 tags = Array[int]([7, 12])
 rarity_weight = 500.0

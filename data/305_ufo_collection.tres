@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://ve2sh2t3alfx"]
 
 [ext_resource type="PackedScene" uid="uid://sjwq65gnr8hn" path="res://collections/scenes/knight_collection.tscn" id="1_2p8od"]
-[ext_resource type="Texture2D" uid="uid://d3ab8qp5h2jrv" path="res://UI/WIP_icons/barricade.png" id="2_4d705"]
+[ext_resource type="Texture2D" uid="uid://c461n5ep4l7g0" path="res://UI/3D_object_preview/scr/ufo_set.png" id="2_2p8od"]
 [ext_resource type="Resource" uid="uid://dkisym3rdkqfs" path="res://data/127_soul_infused_stars.tres" id="3_2p8od"]
 [ext_resource type="Resource" uid="uid://b3srwlhikobuf" path="res://data/128_glowing_power_crystal.tres" id="4_4d705"]
 [ext_resource type="Resource" uid="uid://8jdt0qpjac4s" path="res://data/225_enchanted_telescope.tres" id="5_lq8wx"]
@@ -12,7 +12,7 @@
 script = ExtResource("7_hxjn7")
 ID = 305
 object_name = "Ufo Collection"
-icon = ExtResource("2_4d705")
+icon = ExtResource("2_2p8od")
 base_value = 2560
 renown = 2560
 collection_scene = ExtResource("1_2p8od")

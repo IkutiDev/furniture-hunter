@@ -1,57 +1,57 @@
 ID,object_name,description,icon,base_value,renown,collection_set_type,Mesh,rarity_type,tag1,tag2,tag3,Item czy Mebel,rarity_weight,can_be_sold
-100,Offering chalice,covered in stains from past offerings,jeweled-chalice.png,220,300,None,cup_1,Uncommon,Knight,Mundane,Valuable,Item,200,yes
-101,Goblet of Forecasting,"predicts the weather, sometimes correctly",jeweled-chalice.png,80,80,None,cup_2,Rare,None,Enchanted,Valuable,Item,80,yes
-102,Tarnished chalice,most likely maiden less,jeweled-chalice.png,30,30,None,cup_3,Common,None,Mundane,Broken,Item,500,yes
-103,Reverse Pythagorean Cup,very generous,jeweled-chalice.png,500,500,Greek Collection,cup_2,Legendary,Greece,Enchanted,Powerful,Item,50,yes
-104,Imitation Unicorn Horn,I Can't Believe It's Not Unicorn!,unicorn.png,40,40,None,unicorn_horn,Common,Witch,Mundane,Fake,Item,480,yes
-105,Genuine Unicorn Horn,,unicorn.png,400,400,Witch Collection,unicorn_horn,Rare,Witch,Enchanted,Powerful,Item,100,yes
-106,Golden Neklace,,emerald-necklace.png,140,140,None,necklace,Common,None,Mundane,None,Item,480,yes
-107,Attuned Merlin Locket,"allegedly blessed by Merlin himself, limited edition",emerald-necklace.png,600,600,Knight Collection,necklace,Legendary,Knight,Enchanted,Valuable,Item,40,yes
-108,Enchanted pendant,emanates arcane energy,emerald-necklace.png,240,240,None,necklace,Uncommon,None,Enchanted,None,Item,260,yes
-109,Depleted Crystal Ball,foretold obsolesence,crystal-ball.png,40,40,None,magic_ball,Common,Witch,Disenchanted,Broken,Item,550,yes
-110,Magic Crystal Ball,,crystal-ball.png,160,160,Witch Collection,magic_ball,Uncommon,Witch,Enchanted,Tool,Item,200,yes
-111,Bewitched Chess Set,"voice controlled, works with most accents",empty-chessboard.png,250,250,Knight Collection,chess,Rare,Knight,Enchanted,Toy,Item,80,yes
-200,Reinforced Cauldron,prized by hags and hipsters alike,cauldron.png,120,120,Witch Collection,cauldron,Uncommon,Witch,Mundane,Tool,Furniture,210,yes
-201,Divination Mirror,"has decent reception, but only when slightly tilted backwards",mirror-mirror.png,320,320,None,mirror,Rare,None,Mundane,Decorative,Furniture,100,yes
-202,Warded chest,"Magically reinforced durability, key not included",chest.png,90,90,None,box_3,Uncommon,None,Enchanted,Storage,Furniture,280,yes
-203,Flowing Armchair,,rocking-chair.png,160,160,None,chair_1,Uncommon,None,Animated,None,Furniture,230,yes
-204,Divineing Table,,table.png,100,100,None,table_1,Uncommon,None,Mundane,None,Furniture,260,yes
-112,Giza Necropolis Diorama,,great-pyramid.png,50,50,None,pyramids,Common,Egypt,Mundane,Toy,Item,600,yes
-113,Counterfeit Book of the Dead,a forgery so good it's almost better than the original,scroll-unfurled.png,320,120,Egyptian Collection,papirus,Rare,Egypt,Mundane,Fake,Item,120,yes
-205,Illuminator of Souls,guides souls of the deceased to the light,bed-lamp.png,550,550,None,lamp_1,Legendary,None,Cursed,Powerful,Furniture,80,yes
-206,Enchanted Floor Lamp,,bed-lamp.png,120,120,None,lamp_1,Uncommon,None,Enchanted,None,Furniture,290,yes
-114,Set Animal Statue,,anubis.png,150,150,Egyptian Collection,set,Uncommon,Egypt,Enchanted,Decorative,Item,100,yes
-207,Suitcase full of rare vials,a collection of bloods and venoms from various magical beasts,suitcase.png,340,340,None,box_1,Rare,None,Animated,Storage,Furniture,90,yes
-208,Flying Broom,also works as a poor man's rumba,magic-broom.png,190,190,Witch Collection,broom,Uncommon,Witch,Animated,Tool,Furniture,310,yes
-209,Blessed Preservation Stand,smells like embalming chemicals,bar-stool.png,140,140,None,chair_3,Uncommon,None,Enchanted,None,Furniture,260,yes
-211,Animated Chair,infused with the power of God and Anime,rocking-chair.png,290,290,None,chair_2,Rare,None,Animated,None,Furniture,75,yes
+100,Offering chalice,covered in stains from past offerings,cup_1.png,220,300,None,cup_1,Uncommon,Knight,Mundane,Valuable,Item,200,yes
+101,Goblet of Forecasting,"predicts the weather, sometimes correctly",cup_2.png,80,80,None,cup_2,Rare,None,Enchanted,Valuable,Item,80,yes
+102,Tarnished chalice,most likely maiden less,cup_3.png,30,30,None,cup_3,Common,None,Mundane,Broken,Item,500,yes
+103,Reverse Pythagorean Cup,very generous,cup_2.png,500,500,Greek Collection,cup_2,Legendary,Greece,Enchanted,Powerful,Item,50,yes
+104,Imitation Unicorn Horn,I Can't Believe It's Not Unicorn!,unicorn_corn.png,40,40,None,unicorn_horn,Common,Witch,Mundane,Fake,Item,480,yes
+105,Genuine Unicorn Horn,,unicorn_corn.png,400,400,Witch Collection,unicorn_horn,Rare,Witch,Enchanted,Powerful,Item,100,yes
+106,Golden Neklace,,neckles.png,140,140,None,necklace,Common,None,Mundane,None,Item,480,yes
+107,Attuned Merlin Locket,"allegedly blessed by Merlin himself, limited edition",neckles.png,600,600,Knight Collection,necklace,Legendary,Knight,Enchanted,Valuable,Item,40,yes
+108,Enchanted pendant,emanates arcane energy,neckles.png,240,240,None,necklace,Uncommon,None,Enchanted,None,Item,260,yes
+109,Depleted Crystal Ball,foretold obsolesence,magic_ball.png,40,40,None,magic_ball,Common,Witch,Disenchanted,Broken,Item,550,yes
+110,Magic Crystal Ball,,magic_ball.png,160,160,Witch Collection,magic_ball,Uncommon,Witch,Enchanted,Tool,Item,200,yes
+111,Bewitched Chess Set,"voice controlled, works with most accents",chess.png,250,250,Knight Collection,chess,Rare,Knight,Enchanted,Toy,Item,80,yes
+200,Reinforced Cauldron,prized by hags and hipsters alike,kettle.png,120,120,Witch Collection,cauldron,Uncommon,Witch,Mundane,Tool,Furniture,210,yes
+201,Divination Mirror,"has decent reception, but only when slightly tilted backwards",mirror.png,320,320,None,mirror,Rare,None,Mundane,Decorative,Furniture,100,yes
+202,Warded chest,"Magically reinforced durability, key not included",box3.png,90,90,None,box_3,Uncommon,None,Enchanted,Storage,Furniture,280,yes
+203,Flowing Armchair,,chair_1.png,160,160,None,chair_1,Uncommon,None,Animated,None,Furniture,230,yes
+204,Divineing Table,,table_1.png,100,100,None,table_1,Uncommon,None,Mundane,None,Furniture,260,yes
+112,Giza Necropolis Diorama,,pyramid figurines.png,50,50,None,pyramids,Common,Egypt,Mundane,Toy,Item,600,yes
+113,Counterfeit Book of the Dead,a forgery so good it's almost better than the original,papirus.png,320,120,Egyptian Collection,papirus,Rare,Egypt,Mundane,Fake,Item,120,yes
+205,Illuminator of Souls,guides souls of the deceased to the light,lamp_1.png,550,550,None,lamp_1,Legendary,None,Cursed,Powerful,Furniture,80,yes
+206,Enchanted Floor Lamp,,lamp_1.png,120,120,None,lamp_1,Uncommon,None,Enchanted,None,Furniture,290,yes
+114,Set Animal Statue,,statuette of a god.png,150,150,Egyptian Collection,set,Uncommon,Egypt,Enchanted,Decorative,Item,100,yes
+207,Suitcase full of rare vials,a collection of bloods and venoms from various magical beasts,box1.png,340,340,None,box_1,Rare,None,Animated,Storage,Furniture,90,yes
+208,Flying Broom,also works as a poor man's rumba,broom.png,190,190,Witch Collection,broom,Uncommon,Witch,Animated,Tool,Furniture,310,yes
+209,Blessed Preservation Stand,smells like embalming chemicals,chair_3.png,140,140,None,chair_3,Uncommon,None,Enchanted,None,Furniture,260,yes
+211,Animated Chair,infused with the power of God and Anime,chair_2.png,290,290,None,chair_2,Rare,None,Animated,None,Furniture,75,yes
 212,Magically reinforced table,Strong enough to serve as a makeshift bunker,table.png,390,390,None,table_3,Rare,None,Enchanted,None,Furniture,80,yes
 213,Old alchemical table,covered in residue from countless reactions,table.png,40,40,None,table_3,Common,None,Mundane,Broken,Furniture,460,yes
-214,Disenchanted Carpet,has a barely noticeable magical aura,rolled-cloth.png,80,80,None,carpet_3,Common,None,Disenchanted,None,Furniture,510,yes
-215,Warded Carpet,nullifies most entry level curses,rolled-cloth.png,190,190,None,carpet_1,Uncommon,None,Enchanted,None,Furniture,240,yes
-216,Soul Infused Dresser,,desk.png,120,120,None,box_2,Uncommon,None,Cursed,None,Furniture,270,yes
-115,Empty Phylactery,,crystal-shine.png,420,420,None,crystal_2,Rare,None,Cursed,Valuable,Item,80,yes
-217,Old Creaky Chair,,rocking-chair.png,30,30,None,chair_1,Common,None,Mundane,Broken,Furniture,540,yes
+214,Disenchanted Carpet,has a barely noticeable magical aura,carpet_3.png,80,80,None,carpet_3,Common,None,Disenchanted,None,Furniture,510,yes
+215,Warded Carpet,nullifies most entry level curses,carpet_1.png,190,190,None,carpet_1,Uncommon,None,Enchanted,None,Furniture,240,yes
+216,Soul Infused Dresser,,box2.png,120,120,None,box_2,Uncommon,None,Cursed,None,Furniture,270,yes
+115,Empty Phylactery,,crystal_2.png,420,420,None,crystal_2,Rare,None,Cursed,Valuable,Item,80,yes
+217,Old Creaky Chair,,chair_1.png,30,30,None,chair_1,Common,None,Mundane,Broken,Furniture,540,yes
 218,Sarcophagus,Sarcophagus. Possibly still with a mummy that will curse it's customer,sarcophagus.png,250,200,Egyptian Collection,sarcophagus,Rare,Egypt,Mundane,Spooky,Furniture,80,yes
-116,Old Scroll with Hieroglyphics,It's either a very important treaty or just a grocery list,scroll-unfurled.png,60,20,None,papirus,Common,Egypt,Mundane,None,Item,500,yes
-219,Miniaturized Pyramids,A few pyramids stolen by someone acting like a comic book vilain,great-pyramid.png,600,500,Egyptian Collection,pyramids,Legendary,Egypt,Enchanted,Valuable,Item,30,yes
-117,Pair of dueling swords,,relic-blade.png,200,180,Knight Collection,two_sword,Uncommon,Knight,Mundane,Weapon,Item,280,yes
-118,Dancing Sword,,relic-blade.png,300,380,None,sword,Rare,Knight,Cursed,Weapon,Item,100,yes
+116,Old Scroll with Hieroglyphics,It's either a very important treaty or just a grocery list,papirus.png,60,20,None,papirus,Common,Egypt,Mundane,None,Item,500,yes
+219,Miniaturized Pyramids,A few pyramids stolen by someone acting like a comic book vilain,pyramid figurines.png,600,500,Egyptian Collection,pyramids,Legendary,Egypt,Enchanted,Valuable,Item,30,yes
+117,Pair of dueling swords,,swords.png,200,180,Knight Collection,two_sword,Uncommon,Knight,Mundane,Weapon,Item,280,yes
+118,Dancing Sword,,sword.png,300,380,None,sword,Rare,Knight,Cursed,Weapon,Item,100,yes
 119,exhausted spell shield,,shield.png,120,80,Knight Collection,shield,Uncommon,Knight,Disenchanted,Broken,Item,300,yes
-120,Cursed Box,,locked-box.png,480,520,Greek Collection,pandora_box,Legendary,Greece,Cursed,Storage,Item,45,yes
-220,Greek Style Spear,,relic-blade.png,80,60,None,greek_spear,Uncommon,Greece,Mundane,Weapon,Furniture,280,yes
-221,Phalanx Slayer,,relic-blade.png,550,500,Greek Collection,greek_spear,Legendary,Greece,Cursed,Weapon,Furniture,60,yes
-222,Blessed Amphora,,amphora.png,160,240,Greek Collection,greek_vase,Uncommon,Greece,Enchanted,Storage,Furniture,280,yes
-223,Greek Vase Replica,,amphora.png,40,50,None,greek_vase,Uncommon,Greece,Mundane,Fake,Furniture,220,yes
-121,Chinese Calligraphy Set,,broken-tablet.png,90,70,Chinese Collection,asian_paper,Uncommon,China,Mundane,Tool,Item,230,yes
-122,Fancy Tea Pot,,teapot.png,70,70,None,asian_teapot,Uncommon,China,Mundane,None,Item,290,yes
-224,Master Of Winds,,handheld-fan.png,650,600,Chinese Collection,asian_fan,Legendary,China,Enchanted,Powerful,Furniture,60,yes
-123,Ming Tea Pot,,teapot.png,210,180,Chinese Collection,asian_teapot,Rare,China,Mundane,Valuable,Item,110,yes
-124,Chipped Serving Tray,,paper-tray.png,30,40,None,asian_teatray,Common,China,Mundane,Broken,Item,580,yes
-125,Pristine Tea Tray,,paper-tray.png,80,70,Chinese Collection,asian_teatray,Uncommon,China,Mundane,Decorative,Item,220,yes
+120,Cursed Box,,pandora_box.png,480,520,Greek Collection,pandora_box,Legendary,Greece,Cursed,Storage,Item,45,yes
+220,Greek Style Spear,,Athena's Spear.png,80,60,None,greek_spear,Uncommon,Greece,Mundane,Weapon,Furniture,280,yes
+221,Phalanx Slayer,,Athena's Spear.png,550,500,Greek Collection,greek_spear,Legendary,Greece,Cursed,Weapon,Furniture,60,yes
+222,Blessed Amphora,,vase.png,160,240,Greek Collection,greek_vase,Uncommon,Greece,Enchanted,Storage,Furniture,280,yes
+223,Greek Vase Replica,,vase.png,40,50,None,greek_vase,Uncommon,Greece,Mundane,Fake,Furniture,220,yes
+121,Chinese Calligraphy Set,,chinese_manuscript.png,90,70,Chinese Collection,asian_paper,Uncommon,China,Mundane,Tool,Item,230,yes
+122,Fancy Tea Pot,,tea pot.png,70,70,None,asian_teapot,Uncommon,China,Mundane,None,Item,290,yes
+224,Master Of Winds,,range.png,650,600,Chinese Collection,asian_fan,Legendary,China,Enchanted,Powerful,Furniture,60,yes
+123,Ming Tea Pot,,tea pot.png,210,180,Chinese Collection,asian_teapot,Rare,China,Mundane,Valuable,Item,110,yes
+124,Chipped Serving Tray,,tray.png,30,40,None,asian_teatray,Common,China,Mundane,Broken,Item,580,yes
+125,Pristine Tea Tray,,tray.png,80,70,Chinese Collection,asian_teatray,Uncommon,China,Mundane,Decorative,Item,220,yes
 225,Enchanted Telescope,,telescope.png,240,200,Ufo Collection,telescope,Rare,Ufo,Enchanted,Tool,Furniture,120,yes
 226,Cardboard Flying Saucer,,ufo.png,60,70,None,ufo,Uncommon,Ufo,Mundane,Fake,Furniture,280,yes
 227,Alien Spacecraft,,ufo.png,400,480,Ufo Collection,ufo,Legendary,Ufo,Enchanted,Powerful,Furniture,50,yes
-126,Toy Cow,,cow.png,50,40,None,cow,Common,Ufo,Mundane,Toy,Item,500,yes
-127,Soul Infused Stars,,stars-stack.png,120,160,Ufo Collection,stars,Uncommon,Ufo,Cursed,Decorative,Item,260,yes
-128,Glowing Power Crystal,,crystal-shine.png,320,270,Ufo Collection,crystal_3,Rare,Ufo,Enchanted,Powerful,Item,120,yes
+126,Toy Cow,,cow_statue.png,50,40,None,cow,Common,Ufo,Mundane,Toy,Item,500,yes
+127,Soul Infused Stars,,stars_wall_decoration.png,120,160,Ufo Collection,stars,Uncommon,Ufo,Cursed,Decorative,Item,260,yes
+128,Glowing Power Crystal,,crystal.png,320,270,Ufo Collection,crystal_3,Rare,Ufo,Enchanted,Powerful,Item,120,yes

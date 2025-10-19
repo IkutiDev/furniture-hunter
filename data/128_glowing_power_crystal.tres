@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://b3srwlhikobuf"]
 
-[ext_resource type="Texture2D" uid="uid://d4bho42dfbw86" path="res://UI/WIP_icons/crystal-shine.png" id="1_dpebn"]
+[ext_resource type="Texture2D" uid="uid://co1dfhh7t3oas" path="res://UI/3D_object_preview/scr/crystal.png" id="1_dpebn"]
 [ext_resource type="PackedScene" uid="uid://c36gobq4w6ob" path="res://items/scenes/crystal_3.tscn" id="2_ycvca"]
 [ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_lnpfj"]
 

@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://f1fptwk7yhx"]
 
+[ext_resource type="Texture2D" uid="uid://da6phln4nk4sp" path="res://UI/3D_object_preview/scr/unicorn_corn.png" id="1_82uy4"]
 [ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="1_e4m21"]
-[ext_resource type="Texture2D" uid="uid://bakd0cwc08pm0" path="res://UI/WIP_icons/unicorn.png" id="1_rbjey"]
 [ext_resource type="PackedScene" uid="uid://tyhnu045xph3" path="res://items/scenes/unicorn_horn.tscn" id="2_82uy4"]
 
 [resource]
 script = ExtResource("1_e4m21")
 ID = 105
 object_name = "Genuine Unicorn Horn"
-icon = ExtResource("1_rbjey")
+icon = ExtResource("1_82uy4")
 base_value = 400
 renown = 400
 collection_set_type = 2

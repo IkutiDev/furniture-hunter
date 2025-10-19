@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://br7g6yccala8w"]
 
 [ext_resource type="PackedScene" uid="uid://cx72w36okxus" path="res://furniture/scenes/greek_vase.tscn" id="1_hw6l6"]
-[ext_resource type="Texture2D" uid="uid://bb8om2bin7vgy" path="res://UI/WIP_icons/amphora.png" id="2_7u0jv"]
+[ext_resource type="Texture2D" uid="uid://dl14fx07l7upf" path="res://UI/3D_object_preview/scr/vase.png" id="2_hw6l6"]
 [ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_dogit"]
 
 [resource]
 script = ExtResource("3_dogit")
 ID = 222
 object_name = "Blessed Amphora"
-icon = ExtResource("2_7u0jv")
+icon = ExtResource("2_hw6l6")
 base_value = 160
 renown = 240
 collection_set_type = 5

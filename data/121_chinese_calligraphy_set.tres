@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cmh8nt6c0afrg"]
 
-[ext_resource type="Texture2D" uid="uid://cx1msm3qysq3" path="res://UI/WIP_icons/broken-tablet.png" id="1_o7r50"]
+[ext_resource type="Texture2D" uid="uid://b0yj2c7u6bm3j" path="res://UI/3D_object_preview/scr/chinese_manuscript.png" id="1_o7r50"]
 [ext_resource type="PackedScene" uid="uid://div5l0iimpn7" path="res://items/scenes/asian_paper.tscn" id="2_244tq"]
 [ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_iyftv"]
 
