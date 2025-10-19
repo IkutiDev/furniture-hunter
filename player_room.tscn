@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=52 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cgepx634q17gi" path="res://furniture/gamejam_stoly_Base_color.png" id="23_t55rb"]
 [ext_resource type="Material" uid="uid://daxj3xntwml1x" path="res://materials/kasa.tres" id="24_4fkm8"]
 [ext_resource type="PackedScene" uid="uid://bks7aueb70qr" path="res://collections/collection_container_instance.tscn" id="26_cjrgx"]
+[ext_resource type="Script" uid="uid://dbrwrlrhnc3yq" path="res://cancel_manager.gd" id="28_omknk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -563,5 +564,9 @@ transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0.6471851,
 
 [node name="CollectionContainerInstance3" parent="." instance=ExtResource("26_cjrgx")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 4, 0.6471851, -1)
+
+[node name="CancelManager" type="Node" parent="." node_paths=PackedStringArray("object_placer")]
+script = ExtResource("28_omknk")
+object_placer = NodePath("../ObjectPlacer")
 
 [editable path="Spawner"]

@@ -15,8 +15,8 @@ func _ready() -> void:
 	EventBus.available_items_changed.connect(update_items_inventory)
 	EventBus.clicked_on_furniture.connect(open_ui)
 	EventBus.clicked_on_item.connect(set_item_inside_container)
-	close_ui_button.pressed.connect(close_ui)
-	close_ui()
+	close_ui_button.pressed.connect(close_menu)
+	close_menu()
 
 
 func open_ui(instance: FurnitureContainerInstance) -> void:
@@ -28,11 +28,14 @@ func open_ui(instance: FurnitureContainerInstance) -> void:
 	furniture_title_label.text = furniture_instance.furniture_data.object_name
 	furniture_description_label.text = furniture_instance.furniture_data.description
 	update_item_slots()
+	
+	EventBus.menu_open.emit(self)
 	show()
 	
-func close_ui() -> void:
+func close_menu() -> void:
 	furniture_instance = null
 	hide()
+	EventBus.menu_close.emit(self)
 
 
 func update_item_slots() -> void:

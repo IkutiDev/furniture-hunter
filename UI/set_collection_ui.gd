@@ -18,8 +18,8 @@ func _ready() -> void:
 
 	EventBus.clicked_on_collection.connect(set_collection_inside_container)
 	EventBus.clicked_on_collection.connect(open_ui)
-	close_ui_button.pressed.connect(close_ui)
-	close_ui()
+	close_ui_button.pressed.connect(close_menu)
+	close_menu()
 
 
 func open_ui(instance: CollectionContainerInstance) -> void:
@@ -31,10 +31,12 @@ func open_ui(instance: CollectionContainerInstance) -> void:
 
 	update_collection_slots()
 	show()
+	EventBus.menu_open.emit(self)
 	
-func close_ui() -> void:
+func close_menu() -> void:
 	collection_container_instance = null
 	hide()
+	EventBus.menu_close.emit(self)
 
 
 func update_collection_slots() -> void:

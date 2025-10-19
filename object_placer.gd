@@ -1,3 +1,4 @@
+class_name ObjectPlacer
 extends Node
 
 const MAGICAL_Z_NUMBER = 0.2 # Without this raycasting position where the furnitue should go is fucked. I dont know why

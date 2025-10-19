@@ -12,9 +12,9 @@ var furniture_instance : FurnitureInstance
 
 func _ready() -> void:
 	EventBus.clicked_on_furniture.connect(open_ui)
-	close_ui_button.pressed.connect(close_ui)
+	close_ui_button.pressed.connect(close_menu)
 	set_price_button.pressed.connect(set_price)
-	close_ui()
+	close_menu()
 
 func open_ui(instance: FurnitureInstance) -> void:
 	if instance == null:
@@ -29,10 +29,13 @@ func open_ui(instance: FurnitureInstance) -> void:
 	recommended_price_label.text = str(furniture_instance.furniture_data.base_value) +"$"
 	price_box.value = furniture_instance.current_price if furniture_instance.current_price >= 0 else 0
 	
+	EventBus.menu_open.emit(self)
+	
 	show()
 	
-func close_ui() -> void:
+func close_menu() -> void:
 	hide()
+	EventBus.menu_close.emit(self)
 
 func set_price() -> void:
 	@warning_ignore("narrowing_conversion")

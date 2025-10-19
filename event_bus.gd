@@ -25,6 +25,12 @@ signal update_game_time(hour)
 
 signal update_auctions_ui()
 
+signal menu_open(control)
+signal menu_close(control)
+signal play_lootbox_cutscene()
+signal lootbox_cutscene_ended()
+signal skip_lootbox_cutscene()
+
 signal start_day()
 signal end_day()
 signal start_night()

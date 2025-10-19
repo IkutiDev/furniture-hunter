@@ -20,6 +20,17 @@ func _ready() -> void:
 	EventBus.available_collections_changed.connect(update_collection_inventory)
 	update_furniture_inventory()
 	on_money_value_changed()
+	main_inventory_fold_container.folding_changed.connect(on_fold_change)
+	
+func on_fold_change(is_folded : bool) -> void:
+	if is_folded:
+		EventBus.menu_close.emit(self)
+	else:
+		EventBus.menu_open.emit(self)
+	
+func close_menu() -> void:
+	main_inventory_fold_container.fold()
+	EventBus.menu_close.emit(self)
 	
 func on_money_value_changed() -> void:
 	money_label.text = str(PlayerInventory.money) + "$"

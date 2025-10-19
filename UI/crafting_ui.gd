@@ -24,9 +24,20 @@ func _ready() -> void:
 	crafting_menu.visible = false
 	
 func _toggle_auctions_menu() -> void:
-	crafting_menu.visible = !crafting_menu.visible
+	if crafting_menu.visible:
+		close_menu()
+	else:
+		open_menu()
 	#if crafting_menu.visible:
 		#create_recepies()
+		
+func open_menu() -> void:
+	crafting_menu.show()
+	EventBus.menu_open.emit(self)
+
+func close_menu() -> void:
+	crafting_menu.hide()
+	EventBus.menu_close.emit(self)
 
 
 func create_recepies():

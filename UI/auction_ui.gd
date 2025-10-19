@@ -15,11 +15,21 @@ func _ready() -> void:
 	EventBus.update_auctions_ui.connect(_update_auctions_menu)
 	
 func _toggle_auctions_menu() -> void:
-	auctions_menu.visible = !auctions_menu.visible
+	if auctions_menu.visible:
+		close_menu()
+	else:
+		open_menu()
 	if auctions_menu.visible:
 		_update_auctions_menu()
 
-	
+func open_menu() -> void:
+	auctions_menu.show()
+	EventBus.menu_open.emit(self)
+
+func close_menu() -> void:
+	auctions_menu.hide()
+	EventBus.menu_close.emit(self)
+
 
 func _update_auctions_menu() -> void:
 	var children = lootbox_buttons_container.get_children()
