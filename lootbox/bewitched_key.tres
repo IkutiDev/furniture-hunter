@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://bk33y4cvcguov"]
+
+[ext_resource type="Texture2D" uid="uid://dbt27wptocc6f" path="res://UI/WIP_icons/key.png" id="1_bkt0p"]
+[ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_fbovf"]
+
+[resource]
+script = ExtResource("2_fbovf")
+icon = ExtResource("1_bkt0p")
+lootbox_title = "Bewitch Key"
+lootbox_description = "Unlocks rooms filled cauldrons and brooms and other witch tools of trade. Mostly procured via some witches bad at their craft not being able to magic their way out of unpaid taxes."
+lootbox_price = 100
+random_elements_per_box = 5
+tags = Array[int]([1])
+metadata/_custom_type_script = "uid://dm25m6de7wwfq"

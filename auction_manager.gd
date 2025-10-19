@@ -26,12 +26,13 @@ func _process(delta: float) -> void:
 	
 	current_cooldown += delta
 	current_entities_bidding_cooldown += delta
-	if new_deal_cooldown <= current_cooldown:
-		current_cooldown = 0.0
-		try_spawn_special_deal()
-	if entities_bidding_cooldown <= current_entities_bidding_cooldown:
-		current_entities_bidding_cooldown = 0.0
-		try_to_bid()
+	if GameManager.game_state == GameManager.GameState.DAY:
+		if new_deal_cooldown <= current_cooldown:
+			current_cooldown = 0.0
+			try_spawn_special_deal()
+		if entities_bidding_cooldown <= current_entities_bidding_cooldown:
+			current_entities_bidding_cooldown = 0.0
+			try_to_bid()
 	
 func try_spawn_special_deal() -> void:
 	for l in AuctionManager.special_lootboxes:

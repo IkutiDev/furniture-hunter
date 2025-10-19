@@ -47,8 +47,9 @@ func get_mesh_scale() -> Vector3:
 func get_mesh_rotation() -> Vector3:
 	return visual_mesh.rotation_degrees
 
-func remove_this_instance() -> void:
-	PlayerInventory.add_object_to_inventory(furniture_data)
+func remove_this_instance(sold : bool) -> void:
+	if not sold:
+		PlayerInventory.add_object_to_inventory(furniture_data)
 	queue_free()
 func price_set(price : int) -> void:
 	current_price = price

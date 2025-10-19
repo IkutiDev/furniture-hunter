@@ -36,7 +36,7 @@ func update_navmesh() -> void:
 func furniture_sold(instance : FurnitureInstance) -> void:
 	if instance == null:
 		return
-	remove_object(instance)
+	remove_object(instance, true)
 	
 func deselect_furniture() -> void:
 	selected_furniture = null
@@ -105,7 +105,7 @@ func place_object() -> void:
 	PlayerInventory.remove_object_from_inventory(selected_furniture)
 	deselect_furniture()
 
-func remove_object(instance : FurnitureInstance) -> void:
+func remove_object(instance : FurnitureInstance, sold : bool = false) -> void:
 	var furniture_position := occupation_grid_map.local_to_map(instance.position)
 	occupation_grid_map.set_cell_item(furniture_position, 0)
 	for p in instance.extra_size:
@@ -114,7 +114,7 @@ func remove_object(instance : FurnitureInstance) -> void:
 		for i in 3:
 			pi[i] = round(p[i])
 		occupation_grid_map.set_cell_item(Vector3i(instance.position) + pi, 0)
-	instance.remove_this_instance()
+	instance.remove_this_instance(sold)
 	update_navmesh()
 
 func raycast_and_check_if_position_is_occupied() -> bool:

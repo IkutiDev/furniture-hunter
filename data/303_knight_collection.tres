@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://5c0qa32k8lq2" path="res://collections/collection_data.gd" id="1_ju1yf"]
 [ext_resource type="PackedScene" uid="uid://sjwq65gnr8hn" path="res://collections/scenes/knight_collection.tscn" id="1_rgiid"]
 [ext_resource type="Resource" uid="uid://cu36sw6eb37wk" path="res://data/107_attuned_merlin_locket.tres" id="3_t1vhy"]
-[ext_resource type="Resource" uid="uid://d1a5gqbchjoep" path="res://data/111_bewitched_chess_set.tres" id="4_i8bld"]
+[ext_resource type="Resource" uid="uid://dfpsrnc2k3vrq" path="res://data/111_bewitched_chess_set.tres" id="4_i8bld"]
 [ext_resource type="Resource" uid="uid://b8e62ju56s7lv" path="res://data/117_pair_of_dueling_swords.tres" id="5_1x3lh"]
 [ext_resource type="Resource" uid="uid://xab53r6wjgvo" path="res://data/119_exhausted_spell_shield.tres" id="6_d035c"]
 

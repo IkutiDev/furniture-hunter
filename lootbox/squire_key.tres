@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://de6mkdkckqe6a"]
+
+[ext_resource type="Texture2D" uid="uid://dbt27wptocc6f" path="res://UI/WIP_icons/key.png" id="1_hq3nw"]
+[ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_f7t45"]
+
+[resource]
+script = ExtResource("2_f7t45")
+icon = ExtResource("1_hq3nw")
+lootbox_title = "Squire Key"
+lootbox_description = "Unlocks rooms weapons and other items from the eras of blinding faith and magical mythos."
+lootbox_price = 100
+random_elements_per_box = 5
+tags = Array[int]([5])
+metadata/_custom_type_script = "uid://dm25m6de7wwfq"

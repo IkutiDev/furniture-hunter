@@ -1,8 +1,6 @@
 class_name LootboxData
 extends Resource
 
-enum SpawnMethod {ONE_OF_EACH, RANDOM}
-
 @export var icon : Texture2D
 @export var lootbox_title : String
 @export_multiline var lootbox_description : String
@@ -12,33 +10,32 @@ enum SpawnMethod {ONE_OF_EACH, RANDOM}
 @export var special_deal_time_min : float
 @export var special_deal_time_max : float
 
-@export var spawn_method : SpawnMethod
 @export var random_elements_per_box: int
-@export var furniture : Array[FurnitureData]
-@export var items : Array[ItemData]
+@export var tags : Array[Tags.Types]
 
 func spawn_objects() -> Array:
 	var objects_spawned = []
-	match spawn_method:
-		SpawnMethod.ONE_OF_EACH:
-			for f in furniture:
-				PlayerInventory.add_object_to_inventory(f)
-				objects_spawned.push_back(f)
-			for i in items:
-				PlayerInventory.add_object_to_inventory(i)
-				objects_spawned.push_back(i)
-		SpawnMethod.RANDOM:
-			var rnd = RandomNumberGenerator.new()
-			var random_elements_array : Array = []
-			var random_elements_weight : Array = []
-			for f in furniture:
-				random_elements_array.append(f)
-				random_elements_weight.append(f.rarity_weight)
-			for i in items:
-				random_elements_array.append(i)
-				random_elements_weight.append(i.rarity_weight)
-			for r in random_elements_per_box:
-				var random_element = random_elements_array[rnd.rand_weighted(random_elements_weight)]
-				PlayerInventory.add_object_to_inventory(random_element)
-				objects_spawned.push_back(random_element)
+	var eligble_data = []
+	var rnd = RandomNumberGenerator.new()
+	var random_elements_array : Array = []
+	var random_elements_weight : Array = []
+	var resources = ResourceLoader.list_directory("res://data")
+	
+	for r in resources:
+		if (r as String).contains(".tres"):
+			print(r)
+			var resource = ResourceLoader.load("res://data/" + r)
+			if resource is CollectionData:
+				continue
+			for t in tags:
+				if resource.tags.find(t) != -1:
+					eligble_data.append(resource)
+			
+	for d in eligble_data:
+		random_elements_array.append(d)
+		random_elements_weight.append(d.rarity_weight)
+	for r in random_elements_per_box:
+		var random_element = random_elements_array[rnd.rand_weighted(random_elements_weight)]
+		PlayerInventory.add_object_to_inventory(random_element)
+		objects_spawned.push_back(random_element)
 	return objects_spawned

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://cxqjoeqnb8ybd"]
+
+[ext_resource type="Texture2D" uid="uid://dbt27wptocc6f" path="res://UI/WIP_icons/key.png" id="1_onynr"]
+[ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_tm8la"]
+
+[resource]
+script = ExtResource("2_tm8la")
+icon = ExtResource("1_onynr")
+lootbox_title = "Ufo Key"
+lootbox_description = "Unlocks rooms filled with items out of this world or maybe even out of this galaxy
+"
+lootbox_price = 300
+renown_required = 1500
+random_elements_per_box = 3
+tags = Array[int]([6])
+metadata/_custom_type_script = "uid://dm25m6de7wwfq"
