@@ -43,11 +43,18 @@ func import_from_csv() -> void:
 		data.collection_set_type = collection_set_id
 		
 		data.rarity_type = RarityType.keys().find((content[8] as String).to_upper())
-		var tags = (content[9] as String).split(";")
-		for t in tags:
-			data.tags.append(parse_tag(t))
-		data.rarity_weight = (content[10] as String).to_int()
-		var can_be_sold = content[11] as String
+		#var tags = (content[9] as String).split(";")
+		#for t in tags:
+			#data.tags.append(parse_tag(t))
+		if !(content[9] as String).containsn("None"):
+			data.tags.append(parse_tag(content[9]))
+		if !(content[10] as String).containsn("None"):
+			data.tags.append(parse_tag(content[10]))
+		if !(content[11] as String).containsn("None"):
+			data.tags.append(parse_tag(content[11]))
+		
+		data.rarity_weight = (content[13] as String).to_int()
+		var can_be_sold = content[14] as String
 		if can_be_sold == "yes":
 			data.can_be_sold = true
 		else:

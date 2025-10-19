@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://hoqq2fa8apsb"]
+[gd_scene load_steps=7 format=4 uid="uid://hoqq2fa8apsb"]
 
 [ext_resource type="Texture2D" uid="uid://d2wk4opf0bah4" path="res://items/new_items/items_Material.png" id="1_awcsm"]
+[ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="1_ja8v7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8x4g"]
 resource_name = "items"
@@ -42,9 +43,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jlywm")
 
-[node name="AsianFan" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ja8v7"]
+size = Vector3(2, 1.4, 0.6)
+
+[node name="AsianFan" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
+script = ExtResource("1_ja8v7")
+visual_mesh = NodePath("Plane")
+static_body = NodePath("StaticBody3D")
 
 [node name="Plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.0679016, -0.05867743, -0.11944862, 0.130699, 0.28041553, 1.0307325, -0.02507569, -1.0373276, 0.28538942, 0, 0.10409796, 0)
+transform = Transform3D(1.0121648, -0.36479893, -0.023857713, -0.34127262, -0.9680368, 0.32336205, -0.13107437, -0.29656655, -1.0261545, 0, 0.53131866, 0)
 mesh = SubResource("ArrayMesh_awcsm")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("BoxShape3D_ja8v7")

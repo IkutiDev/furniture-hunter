@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dkisym3rdkqfs"]
+
+[ext_resource type="Texture2D" uid="uid://dmcyk0shftx28" path="res://UI/WIP_icons/stars-stack.png" id="1_6mj2h"]
+[ext_resource type="PackedScene" uid="uid://crj5c8ugw6dnn" path="res://items/scenes/stars.tscn" id="2_osj4q"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_onp6u"]
+
+[resource]
+script = ExtResource("3_onp6u")
+ID = 127
+object_name = "Soul Infused Stars"
+icon = ExtResource("1_6mj2h")
+base_value = 120
+renown = 160
+collection_set_type = 6
+item_scene = ExtResource("2_osj4q")
+tags = Array[int]([6, 11, 17])
+rarity_type = 1
+rarity_weight = 260.0

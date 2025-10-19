@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://yax6n1os7qwi"]
+
+[ext_resource type="PackedScene" uid="uid://cx72w36okxus" path="res://furniture/scenes/greek_vase.tscn" id="1_rrlem"]
+[ext_resource type="Texture2D" uid="uid://bb8om2bin7vgy" path="res://UI/WIP_icons/amphora.png" id="2_y1fg5"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_1kchk"]
+
+[resource]
+script = ExtResource("3_1kchk")
+ID = 223
+object_name = "Greek Vase Replica"
+icon = ExtResource("2_y1fg5")
+base_value = 40
+renown = 50
+furniture_scene = ExtResource("1_rrlem")
+tags = Array[int]([4, 7, 14])
+rarity_type = 1
+rarity_weight = 220.0

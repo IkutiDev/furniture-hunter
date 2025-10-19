@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FurnitureData" load_steps=4 format=3 uid="uid://ckm5k7x5lv754"]
+
+[ext_resource type="PackedScene" uid="uid://b68ytdackq3gf" path="res://furniture/scenes/ufo.tscn" id="1_x6suu"]
+[ext_resource type="Texture2D" uid="uid://qkqbh817ovri" path="res://UI/WIP_icons/ufo.png" id="2_v7244"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="3_7gdwn"]
+
+[resource]
+script = ExtResource("3_7gdwn")
+ID = 227
+object_name = "Alien Spacecraft"
+icon = ExtResource("2_v7244")
+base_value = 400
+renown = 480
+collection_set_type = 6
+furniture_scene = ExtResource("1_x6suu")
+tags = Array[int]([6, 8, 15])
+rarity_type = 3
+rarity_weight = 50.0

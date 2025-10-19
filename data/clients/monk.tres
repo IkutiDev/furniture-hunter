@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("2_gs86y")
 client_name = "Monk"
-starting_money = 130
+starting_money_min = 100
+starting_money_max = 200
 client_scene = ExtResource("1_r8rps")
 walk_speed = 1.0
 love_tags = Array[int]([-1])

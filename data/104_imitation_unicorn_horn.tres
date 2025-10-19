@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://c48uc85ju75vt"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://b4hscvh6pwrjg"]
 
 [ext_resource type="Texture2D" uid="uid://bakd0cwc08pm0" path="res://UI/WIP_icons/unicorn.png" id="1_coqfa"]
 [ext_resource type="PackedScene" uid="uid://tyhnu045xph3" path="res://items/scenes/unicorn_horn.tscn" id="2_oyvou"]
@@ -13,5 +13,5 @@ icon = ExtResource("1_coqfa")
 base_value = 40
 renown = 40
 item_scene = ExtResource("2_oyvou")
-tags = Array[int]([-1])
+tags = Array[int]([1, 7, 14])
 rarity_weight = 480.0
