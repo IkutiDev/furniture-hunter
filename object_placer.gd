@@ -37,7 +37,6 @@ func furniture_sold(instance : FurnitureInstance) -> void:
 	if instance == null:
 		return
 	remove_object(instance)
-	update_navmesh()
 	
 func deselect_furniture() -> void:
 	selected_furniture = null
@@ -114,9 +113,9 @@ func remove_object(instance : FurnitureInstance) -> void:
 		var pi = Vector3i()
 		for i in 3:
 			pi[i] = round(p[i])
-		occupation_grid_map.set_cell_item(Vector3i(instance.position) + pi, 1)
+		occupation_grid_map.set_cell_item(Vector3i(instance.position) + pi, 0)
 	instance.remove_this_instance()
-	nav_mesh_region.bake_navigation_mesh()
+	update_navmesh()
 
 func raycast_and_check_if_position_is_occupied() -> bool:
 	if selected_furniture == null:
