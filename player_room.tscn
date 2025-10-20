@@ -293,7 +293,7 @@ data = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.8642748, -0.40120065, 0.30342567, 0, 0.60320795, 0.797584, -0.50302, -0.6893317, 0.5213374, 4.955, 7.685, 7.253605)
+transform = Transform3D(0.86427045, -0.40119925, 0.30342412, 0, 0.603206, 0.79757994, -0.50301737, -0.6893294, 0.5213348, 4.955, 7.685, 7.253605)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
