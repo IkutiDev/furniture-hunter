@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://fmp08p6m5wgk"]
 
-[ext_resource type="PackedScene" uid="uid://du15vfxl85dtk" path="res://collections/scenes/egypt_collection.tscn" id="1_ap3ds"]
-[ext_resource type="Texture2D" uid="uid://bv6ljjfjfgsum" path="res://UI/3D_object_preview/scr/witch_set.png" id="2_ap3ds"]
+[ext_resource type="PackedScene" uid="uid://ctvsk8b3hv0hr" path="res://collections/scenes/witch_collection.tscn" id="1_ap3ds"]
+[ext_resource type="Texture2D" uid="uid://dbglmbi2ci3rq" path="res://UI/3D_object_preview/scr/witch_set.png" id="2_ap3ds"]
 [ext_resource type="Resource" uid="uid://f1fptwk7yhx" path="res://data/105_genuine_unicorn_horn.tres" id="3_ap3ds"]
 [ext_resource type="Resource" uid="uid://byy7y8cdkctp1" path="res://data/110_magic_crystal_ball.tres" id="4_j4nvs"]
 [ext_resource type="Resource" uid="uid://fh3iehg5lbjb" path="res://data/200_reinforced_cauldron.tres" id="5_i5jak"]
