@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://tde8kp0l4qq0"]
+
+[ext_resource type="PackedScene" uid="uid://rvdqg4v3uc3i" path="res://keys/key.glb" id="1_up4cr"]
+
+[node name="key" instance=ExtResource("1_up4cr")]
+
+[node name="key_chinese" parent="." index="0"]
+transform = Transform3D(-1.7399035, 2.604939e-07, -3.411434e-08, 0, 0.22592908, 1.725173, 2.6271812e-07, 1.7251731, -0.22592907, -3.5989985, -0.19614357, 0.082301594)
+
+[node name="key_knight" parent="." index="1"]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -2.992282, -0.00611639, -0.00040888786)
+
+[node name="key_ufo" parent="." index="2"]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.0077180862, -0.00611639, -0.00040888786)
+
+[node name="key_witch" parent="." index="3"]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -1.9922819, -0.00611639, -0.00040888786)
+
+[node name="key_greek" parent="." index="4"]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 1.0077181, -0.00611639, -0.00040888786)
+
+[node name="key_egipt" parent="." index="5"]
+transform = Transform3D(-0.23207945, 0, -0.3958073, 0, 0.4588292, 0, 0.3958073, 0, -0.23207945, -0.9097367, -0.00611639, 0.4246055)
