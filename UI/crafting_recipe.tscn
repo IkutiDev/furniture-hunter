@@ -1,15 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://bypcdpjljnjfc"]
+[gd_scene load_steps=11 format=3 uid="uid://bypcdpjljnjfc"]
 
 [ext_resource type="Script" uid="uid://fwd8qv7v4nbd" path="res://UI/crafting_recipe.gd" id="1_5tfuo"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_bkk45"]
 [ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_k0fux"]
 [ext_resource type="PackedScene" uid="uid://d0aosvog7ndme" path="res://UI/collection_icon_button.tscn" id="4_gnrvk"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="5_gnrvk"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="6_x7frn"]
+[ext_resource type="Texture2D" uid="uid://b8acovndp8wlw" path="res://UI/UI_kasia/collections_menu/ufo_collection_icon.png" id="7_x7frn"]
 
-[node name="CraftingRecipe" type="ColorRect"]
-custom_minimum_size = Vector2(640, 92)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjfry"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_inxau"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijbav"]
+
+[node name="CraftingRecipe" type="Control"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 3
+anchors_preset = 0
 offset_right = 640.0
-offset_bottom = 92.0
-color = Color(0.23653147, 0.4275488, 0.78465223, 1)
+offset_bottom = 80.0
+size_flags_horizontal = 3
 script = ExtResource("1_5tfuo")
 furniture_button_scene = ExtResource("2_bkk45")
 item_button_scene = ExtResource("3_k0fux")
@@ -23,16 +34,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MakeSetButton" type="Button" parent="Layout"]
-unique_name_in_owner = true
+[node name="Control" type="Control" parent="Layout"]
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-text = "press to 
-make set"
+
+[node name="TextureButton" type="TextureButton" parent="Layout"]
+layout_mode = 2
+texture_normal = ExtResource("5_gnrvk")
+texture_pressed = ExtResource("6_x7frn")
+texture_hover = ExtResource("6_x7frn")
+stretch_mode = 3
+
+[node name="MakeSetButton" type="Button" parent="Layout/TextureButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_pressed_color = Color(1, 0.61960787, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tjfry")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_inxau")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ijbav")
+text = "MAKE SET"
+
+[node name="ColorRect2" type="ColorRect" parent="Layout"]
+visible = false
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
 
 [node name="ResultGoesHere" type="CenterContainer" parent="Layout"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(140, 0)
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Layout"]
+visible = false
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
 
 [node name="CollectionComplete" type="Label" parent="Layout"]
 unique_name_in_owner = true
@@ -49,4 +92,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[connection signal="pressed" from="Layout/MakeSetButton" to="." method="_on_make_set_button_pressed"]
+[node name="ItemIconButton" parent="Layout/PartsGoHere" instance=ExtResource("3_k0fux")]
+visible = false
+layout_mode = 2
+
+[node name="ItemIconButton2" parent="Layout/PartsGoHere" instance=ExtResource("3_k0fux")]
+visible = false
+layout_mode = 2
+
+[node name="ItemIconButton3" parent="Layout/PartsGoHere" instance=ExtResource("3_k0fux")]
+visible = false
+layout_mode = 2
+
+[node name="ItemIconButton4" parent="Layout/PartsGoHere" instance=ExtResource("3_k0fux")]
+visible = false
+layout_mode = 2
+
+[node name="CollectionIcon" type="Sprite2D" parent="."]
+position = Vector2(33, 41)
+texture = ExtResource("7_x7frn")
+
+[connection signal="pressed" from="Layout/TextureButton/MakeSetButton" to="." method="_on_make_set_button_pressed"]

@@ -13,6 +13,23 @@ enum Types {
 	UFO_COLLECTION,
 }
 
+static func get_set_icon(type : Types) -> Texture:
+	match type:
+		Types.CHINESE_COLLECTION:
+			return load("res://UI/UI_kasia/collections_menu/ancient_china_collection_icon.png")
+		Types.WITCH_COLLECTION:
+			return load("res://UI/UI_kasia/collections_menu/witch_collection_icon.png")
+		Types.EGYPTIAN_COLLECTION:
+			return load("res://UI/UI_kasia/collections_menu/ancient_egypt_collection_icon.png")
+		#Types.KNIGHT_COLLECTION:
+			#return load()
+		Types.UFO_COLLECTION:
+			return load("res://UI/UI_kasia/collections_menu/ufo_collection_icon.png")
+		Types.GREEK_COLLECTION:
+			return load("res://UI/UI_kasia/collections_menu/ancient_greece_collection_icon.png")
+		_:
+			return load("res://UI/UI_kasia/collections_menu/slot_grey.png")
+
 static func get_set_name(type : Types) -> String:
 	match type:
 		#Types.ALCHEMIST_PRIDE:
