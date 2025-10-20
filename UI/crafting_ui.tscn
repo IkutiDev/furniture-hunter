@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://du5pkafdjd268"]
+[gd_scene load_steps=21 format=3 uid="uid://du5pkafdjd268"]
 
 [ext_resource type="Script" uid="uid://botxorv4wnywe" path="res://UI/crafting_ui.gd" id="1_sac6m"]
 [ext_resource type="Texture2D" uid="uid://pc8tb6jhy086" path="res://UI/UI_kasia/collections_menu/slider.png" id="1_swi88"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://c5aagagtn0wjh" path="res://data/304_greek_collection.tres" id="7_1n65o"]
 [ext_resource type="Resource" uid="uid://ve2sh2t3alfx" path="res://data/305_ufo_collection.tres" id="8_swi88"]
 [ext_resource type="Texture2D" uid="uid://dk1yltpvj5vux" path="res://UI/UI_kasia/collections_menu/wooden_decor.png" id="11_76vc0"]
+[ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="11_f23vx"]
 [ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="12_f23vx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_njj7l"]
@@ -135,10 +136,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Center"]
+[node name="ColorRect" type="NinePatchRect" parent="Center"]
 custom_minimum_size = Vector2(720, 540)
 layout_mode = 2
-color = Color(1, 1, 0.78039217, 1)
+texture = ExtResource("11_f23vx")
+region_rect = Rect2(-1, 0, 107, 107)
+patch_margin_left = 10
+patch_margin_top = 8
+patch_margin_right = 10
+patch_margin_bottom = 8
 
 [node name="TextureRect3" type="NinePatchRect" parent="Center/ColorRect"]
 custom_minimum_size = Vector2(266, 57)
@@ -159,8 +165,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 11.0
-offset_bottom = -12.0
+offset_top = 14.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 draw_focus_border = true
@@ -177,6 +183,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 10.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
