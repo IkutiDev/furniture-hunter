@@ -18,6 +18,7 @@ signal lootbox_opened(lootbox_data)
 signal collection_crafted(collection_data)
 
 signal money_value_changed()
+signal renown_value_changed()
 
 signal on_icon_hovered(control, data)
 

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0aosvog7ndme" path="res://UI/collection_icon_button.tscn" id="5_7o5sx"]
 [ext_resource type="PackedScene" uid="uid://b1q3webi276mx" path="res://UI/tool_tip_panel.tscn" id="5_6128g"]
 
-[node name="InventoryUI" type="Control" node_paths=PackedStringArray("main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container", "collection_inventory_visual_container", "money_label")]
+[node name="InventoryUI" type="Control" node_paths=PackedStringArray("main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container", "collection_inventory_visual_container", "money_label", "renown_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,6 +26,7 @@ item_button_scene = ExtResource("3_skrcx")
 lootbox_button_scene = ExtResource("4_ylc1n")
 collection_button_scene = ExtResource("5_7o5sx")
 money_label = NodePath("HSplitContainer/VBoxContainer/HBoxContainer/MoneyDynamicLabel")
+renown_label = NodePath("HSplitContainer/VBoxContainer/HBoxContainer2/RenownDynamicLabel")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 1
@@ -38,6 +39,17 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RenownStaticLabel" type="Label" parent="HSplitContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Renown:"
+
+[node name="RenownDynamicLabel" type="Label" parent="HSplitContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "9999$"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/VBoxContainer"]
 layout_mode = 2

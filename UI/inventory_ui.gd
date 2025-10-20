@@ -11,12 +11,14 @@ extends Control
 @export var collection_button_scene : PackedScene
 
 @export var money_label : Label
+@export var renown_label : Label
 
 func _ready() -> void:
 	EventBus.available_furniture_changed.connect(update_furniture_inventory)
 	EventBus.available_items_changed.connect(update_items_inventory)
 	EventBus.available_lootboxes_changed.connect(update_lootboxes_inventory)
 	EventBus.money_value_changed.connect(on_money_value_changed)
+	EventBus.renown_value_changed.connect(on_renown_value_changed)
 	EventBus.available_collections_changed.connect(update_collection_inventory)
 	update_furniture_inventory()
 	on_money_value_changed()
@@ -35,6 +37,9 @@ func close_menu() -> void:
 func on_money_value_changed() -> void:
 	money_label.text = str(PlayerInventory.money) + "$"
 
+func on_renown_value_changed() -> void:
+	renown_label.text = str(PlayerInventory.renown) + "R"
+	
 func update_furniture_inventory() -> void:
 	var children = furniture_inventory_visual_container.get_children()
 	for c in children:

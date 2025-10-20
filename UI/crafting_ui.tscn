@@ -112,7 +112,7 @@ offset_left = 233.0
 offset_top = 687.0
 offset_right = 305.0
 offset_bottom = 718.0
-text = "Crafting"
+text = "Collections"
 
 [node name="VictoryScreen" type="ColorRect" parent="."]
 visible = false

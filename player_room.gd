@@ -10,3 +10,4 @@ func _ready() -> void:
 	EventBus.available_items_changed.emit()
 	EventBus.available_furniture_changed.emit()
 	EventBus.available_collections_changed.emit()
+	EventBus.renown_value_changed.emit()
