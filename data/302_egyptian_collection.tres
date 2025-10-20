@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://s0ir3cfxa87l"]
 
-[ext_resource type="PackedScene" uid="uid://ctvsk8b3hv0hr" path="res://collections/scenes/witch_collection.tscn" id="1_dabww"]
-[ext_resource type="Texture2D" uid="uid://euyj8uwhcpib" path="res://UI/3D_object_preview/scr/egipt_set.png" id="2_dabww"]
+[ext_resource type="PackedScene" uid="uid://du15vfxl85dtk" path="res://collections/scenes/egypt_collection.tscn" id="1_dabww"]
+[ext_resource type="Texture2D" uid="uid://by5jicuiyq8fu" path="res://UI/3D_object_preview/scr/egipt_set.png" id="2_dabww"]
 [ext_resource type="Resource" uid="uid://0grqpok38w6i" path="res://data/113_counterfeit_book_of_the_dead.tres" id="3_dabww"]
 [ext_resource type="Resource" uid="uid://bjgxyb3wgmo00" path="res://data/114_set_animal_statue.tres" id="4_gk77x"]
 [ext_resource type="Resource" uid="uid://xvoul5oon3dn" path="res://data/218_sarcophagus.tres" id="5_ybvs7"]

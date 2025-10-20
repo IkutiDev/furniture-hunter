@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dyd0l3chlkhg" path="res://witrynki/witch_Material_2.png" id="3_ksxnc"]
 [ext_resource type="Texture2D" uid="uid://bt4dgaf72tpl1" path="res://witrynki/witch_fiolki_Base_color.png" id="4_psjqy"]
 [ext_resource type="Texture2D" uid="uid://bfqpighkmrd31" path="res://witrynki/witch_fiolki_Emissive.png" id="5_0bkff"]
-[ext_resource type="Texture2D" uid="uid://b6vrlkgcuqxh1" path="res://witrynki/witch_fiolki_Metallic-fiolki_Roughness.png" id="6_jx7kr"]
-[ext_resource type="Texture2D" uid="uid://de34wtysuvl3j" path="res://witrynki/witch_fiolki_Normal_OpenGL.png" id="7_2y60f"]
+[ext_resource type="Texture2D" uid="uid://beur1dngbvqrv" path="res://furniture/gamejam_fiolki_Metallic-fiolki_Roughness.png" id="6_l3sr6"]
+[ext_resource type="Texture2D" uid="uid://d1w05lvq75bws" path="res://furniture/gamejam_fiolki_Normal_OpenGL.png" id="7_l3sr6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iv2ee"]
 resource_name = "Material.009"
@@ -31,14 +31,14 @@ resource_name = "fiolki"
 cull_mode = 2
 albedo_texture = ExtResource("4_psjqy")
 metallic = 1.0
-metallic_texture = ExtResource("6_jx7kr")
+metallic_texture = ExtResource("6_l3sr6")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("6_jx7kr")
+roughness_texture = ExtResource("6_l3sr6")
 roughness_texture_channel = 1
 emission_enabled = true
 emission_texture = ExtResource("5_0bkff")
 normal_enabled = true
-normal_texture = ExtResource("7_2y60f")
+normal_texture = ExtResource("7_l3sr6")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6aei6"]
 _surfaces = [{
