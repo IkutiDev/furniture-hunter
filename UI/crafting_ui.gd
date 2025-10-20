@@ -41,7 +41,7 @@ func close_menu() -> void:
 
 
 func create_recepies():
-	for old in $Panel/ScrollContainer/VBoxContainer.get_children():
+	for old in recipes_go_here.get_children():
 		old.queue_free()
 	# go through every item and furniture in inventory to get every collection type that needs to get loaded
 	var collections_to_load = Dictionary()
@@ -87,13 +87,13 @@ func create_recepies():
 		new_recpie.collection_data = collection_sets[collection]
 		new_recpie.connect("failed_to_craft",throw_error)
 		new_recpie.load_recipe(collections_to_load[collection])
-		$Panel/ScrollContainer/VBoxContainer.add_child(new_recpie)
+		recipes_go_here.add_child(new_recpie)
 		#loaded_recepies.push_back(collection)
 	pass
 
 func throw_error(message : String):
-	$Panel/ErrorMessage.text = message
-	$Panel/ErrorMessage/Anime.play("fade_out")
+	%ErrorMessage.text = message
+	%ErrorMessage/Anime.play("fade_out")
 	pass
 
 

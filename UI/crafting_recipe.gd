@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 
 # needs to listen to inventory changes to update itslef accordingly
 signal failed_to_craft(message)
@@ -19,6 +19,8 @@ func load_recipe(available_objects : Array):
 	var result = collection_button_scene.instantiate() as CollectionButton
 	result.set_data(collection_data)
 	%ResultGoesHere.add_child(result)
+	$CollectionIcon.texture = CollectionSet.get_set_icon(collection_data.collection_set_type)
+	
 	for thing_data in collection_data.parts:
 		var next_part
 		if thing_data is ItemData:
@@ -42,12 +44,12 @@ func check_availability():
 			if PlayerInventory.items.has(data):
 				button.modulate = Color("Dark Green")
 			else:
-				button.modulate = Color("White")
+				button.modulate = Color("Gray")
 		if data is FurnitureData:
 			if PlayerInventory.furniture.has(data):
 				button.modulate = Color("Dark Green")
 			else:
-				button.modulate = Color("White")
+				button.modulate = Color("Gray")
 
 func _on_make_set_button_pressed() -> void: # crafts set on press
 	# if collection cant be craffter -> return
