@@ -1,6 +1,5 @@
 class_name InventoryUI
 extends Control
-@export var main_inventory_fold_container : FoldableContainer
 @export var furniture_inventory_visual_container : Control
 @export var items_inventory_visual_container : Control
 @export var lootboxes_inventory_visual_container : Control
@@ -10,35 +9,23 @@ extends Control
 @export var lootbox_button_scene : PackedScene
 @export var collection_button_scene : PackedScene
 
-@export var money_label : Label
-@export var renown_label : Label
-
 func _ready() -> void:
 	EventBus.available_furniture_changed.connect(update_furniture_inventory)
 	EventBus.available_items_changed.connect(update_items_inventory)
 	EventBus.available_lootboxes_changed.connect(update_lootboxes_inventory)
-	EventBus.money_value_changed.connect(on_money_value_changed)
-	EventBus.renown_value_changed.connect(on_renown_value_changed)
+
 	EventBus.available_collections_changed.connect(update_collection_inventory)
 	update_furniture_inventory()
-	on_money_value_changed()
-	main_inventory_fold_container.folding_changed.connect(on_fold_change)
 	
-func on_fold_change(is_folded : bool) -> void:
-	if is_folded:
-		EventBus.menu_close.emit(self)
-	else:
-		EventBus.menu_open.emit(self)
-	
-func close_menu() -> void:
-	main_inventory_fold_container.fold()
-	EventBus.menu_close.emit(self)
-	
-func on_money_value_changed() -> void:
-	money_label.text = str(PlayerInventory.money) + "$"
 
-func on_renown_value_changed() -> void:
-	renown_label.text = str(PlayerInventory.renown) + "R"
+func open_menu() -> void:
+	show()
+	EventBus.menu_open.emit(self)
+
+func close_menu() -> void:
+	hide()
+	EventBus.menu_close.emit(self)
+
 	
 func update_furniture_inventory() -> void:
 	var children = furniture_inventory_visual_container.get_children()
@@ -78,4 +65,4 @@ func update_collection_inventory() -> void:
 		collection_inventory_visual_container.add_child(collection_button_instance)
 
 func press_furniture_button() -> void:
-	main_inventory_fold_container.fold()
+	close_menu()

@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b2pfryrp1o2ds"]
+
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="1_mlfo6"]
+[ext_resource type="FontFile" uid="uid://duda2230y5isf" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Bd.otf" id="1_tbey1"]
+
+[resource]
+default_font = ExtResource("1_tbey1")
+default_font_size = 30
+Label/constants/outline_size = 10
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_mlfo6")
