@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bypcdpjljnjfc"]
+[gd_scene load_steps=12 format=3 uid="uid://bypcdpjljnjfc"]
 
 [ext_resource type="Script" uid="uid://fwd8qv7v4nbd" path="res://UI/crafting_recipe.gd" id="1_5tfuo"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_bkk45"]
@@ -13,6 +13,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_inxau"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijbav"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7frn"]
 
 [node name="CraftingRecipe" type="Control"]
 custom_minimum_size = Vector2(0, 80)
@@ -53,11 +55,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/font_pressed_color = Color(1, 0.61960787, 0, 1)
 theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tjfry")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_inxau")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ijbav")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x7frn")
 text = "MAKE SET"
 
 [node name="ColorRect2" type="ColorRect" parent="Layout"]

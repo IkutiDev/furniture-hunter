@@ -21,8 +21,8 @@ static func get_set_icon(type : Types) -> Texture:
 			return load("res://UI/UI_kasia/collections_menu/witch_collection_icon.png")
 		Types.EGYPTIAN_COLLECTION:
 			return load("res://UI/UI_kasia/collections_menu/ancient_egypt_collection_icon.png")
-		#Types.KNIGHT_COLLECTION:
-			#return load()
+		Types.KNIGHT_COLLECTION:
+			return load("res://UI/UI_kasia/collections_menu/knight_collection_icon.png")
 		Types.UFO_COLLECTION:
 			return load("res://UI/UI_kasia/collections_menu/ufo_collection_icon.png")
 		Types.GREEK_COLLECTION:
