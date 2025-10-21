@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://c5aagagtn0wjh"]
 
-[ext_resource type="PackedScene" uid="uid://sjwq65gnr8hn" path="res://collections/scenes/knight_collection.tscn" id="1_sl7hk"]
-[ext_resource type="Texture2D" uid="uid://cx4o6mbp7csnw" path="res://UI/3D_object_preview/scr/greek_set.png" id="2_sl7hk"]
+[ext_resource type="PackedScene" uid="uid://m1s0kdp5k8c2" path="res://collections/scenes/greek_collection.tscn" id="1_sl7hk"]
+[ext_resource type="Texture2D" uid="uid://kc2tckprq78j" path="res://UI/3D_object_preview/scr/greek_set.png" id="2_sl7hk"]
 [ext_resource type="Resource" uid="uid://b6rbuq83o1fgh" path="res://data/103_reverse_pythagorean_cup.tres" id="3_sl7hk"]
 [ext_resource type="Resource" uid="uid://b8mvpqe05ukne" path="res://data/120_cursed_box.tres" id="4_a02tc"]
 [ext_resource type="Resource" uid="uid://csccp7d0c7437" path="res://data/221_phalanx_slayer.tres" id="5_hcqny"]

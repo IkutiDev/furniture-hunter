@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6vrlkgcuqxh1"
-path.s3tc="res://.godot/imported/witch_fiolki_Metallic-fiolki_Roughness.png-1a8dff90015ec47ef37fb399093e2dcb.s3tc.ctex"
+uid="uid://cqa1l0b25c7k1"
+path.s3tc="res://.godot/imported/key_Material_2.png-33200ab56f6f3fda475fb77c8e631579.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f35308fd10d25d5cad5ef5fe318ecf84"
+"md5": "2f7ec8bda55983d585c52143ac641253"
 }
 
 [deps]
 
-source_file="res://witrynki/witch_fiolki_Metallic-fiolki_Roughness.png"
-dest_files=["res://.godot/imported/witch_fiolki_Metallic-fiolki_Roughness.png-1a8dff90015ec47ef37fb399093e2dcb.s3tc.ctex"]
+source_file="res://keys/key_Material_2.png"
+dest_files=["res://.godot/imported/key_Material_2.png-33200ab56f6f3fda475fb77c8e631579.s3tc.ctex"]
 
 [params]
 

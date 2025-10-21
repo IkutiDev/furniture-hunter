@@ -1,14 +1,51 @@
-[gd_scene load_steps=13 format=3 uid="uid://du5pkafdjd268"]
+[gd_scene load_steps=22 format=3 uid="uid://du5pkafdjd268"]
 
 [ext_resource type="Script" uid="uid://botxorv4wnywe" path="res://UI/crafting_ui.gd" id="1_sac6m"]
+[ext_resource type="Texture2D" uid="uid://pc8tb6jhy086" path="res://UI/UI_kasia/collections_menu/slider.png" id="1_swi88"]
 [ext_resource type="PackedScene" uid="uid://bypcdpjljnjfc" path="res://UI/crafting_recipe.tscn" id="2_c5m30"]
+[ext_resource type="Texture2D" uid="uid://bewgqcf8jefjl" path="res://UI/UI_kasia/collections_menu/slider_background.png" id="2_njj7l"]
 [ext_resource type="Resource" uid="uid://b1wt73x234yi7" path="res://data/300_chinese_collection.tres" id="3_55cq4"]
 [ext_resource type="Resource" uid="uid://fmp08p6m5wgk" path="res://data/301_witch_collection.tres" id="4_2i6t4"]
 [ext_resource type="Resource" uid="uid://s0ir3cfxa87l" path="res://data/302_egyptian_collection.tres" id="5_1n65o"]
 [ext_resource type="Resource" uid="uid://dhoc77wu157a2" path="res://data/303_knight_collection.tres" id="6_swi88"]
 [ext_resource type="Resource" uid="uid://c5aagagtn0wjh" path="res://data/304_greek_collection.tres" id="7_1n65o"]
 [ext_resource type="Resource" uid="uid://ve2sh2t3alfx" path="res://data/305_ufo_collection.tres" id="8_swi88"]
-[ext_resource type="PackedScene" uid="uid://b1q3webi276mx" path="res://UI/tool_tip_panel.tscn" id="9_swi88"]
+[ext_resource type="Texture2D" uid="uid://dk1yltpvj5vux" path="res://UI/UI_kasia/collections_menu/wooden_decor.png" id="11_76vc0"]
+[ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="11_f23vx"]
+[ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="12_f23vx"]
+[ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="14_m71dq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_njj7l"]
+texture = ExtResource("1_swi88")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+expand_margin_left = 2.0
+expand_margin_top = 10.0
+expand_margin_right = 2.0
+expand_margin_bottom = 10.0
+modulate_color = Color(0.69135684, 0.6913568, 0.69135684, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_swi88"]
+texture = ExtResource("1_swi88")
+texture_margin_top = 8.0
+texture_margin_bottom = 8.0
+expand_margin_left = 2.0
+expand_margin_top = 10.0
+expand_margin_right = 2.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_76vc0"]
+content_margin_left = 12.0
+texture = ExtResource("2_njj7l")
+texture_margin_top = 6.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(0, 0, 7, 53)
+
+[sub_resource type="Theme" id="Theme_fqo5i"]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_njj7l")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_swi88")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_swi88")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_76vc0")
 
 [sub_resource type="Animation" id="Animation_2i6t4"]
 length = 0.001
@@ -55,45 +92,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = SubResource("Theme_fqo5i")
 script = ExtResource("1_sac6m")
-crafting_menu = NodePath("Panel")
+crafting_menu = NodePath("Center")
 open_menu_button = NodePath("ToggleVisibility")
-recipes_go_here = NodePath("Panel/ScrollContainer/VBoxContainer")
+recipes_go_here = NodePath("Center/ColorRect/ScrollContainer/VBoxContainer")
 crafting_recipe_scene = ExtResource("2_c5m30")
 collection_sets = Array[Resource]([null, ExtResource("3_55cq4"), ExtResource("4_2i6t4"), ExtResource("5_1n65o"), ExtResource("6_swi88"), ExtResource("7_1n65o"), ExtResource("8_swi88")])
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 235.0
-offset_top = 127.0
-offset_right = 970.0
-offset_bottom = 676.0
-
-[node name="MouseBlocker" type="ColorRect" parent="Panel"]
-layout_mode = 0
-offset_left = -522.0
-offset_top = -287.0
-offset_right = 1208.0
-offset_bottom = 658.0
+[node name="MouseBlocker" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.40205058, 0.65349877, 0.8920514, 0.20392157)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 12.0
-offset_right = 719.0
-offset_bottom = 536.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
-layout_mode = 2
-
-[node name="ErrorMessage" type="Label" parent="Panel"]
+[node name="ErrorMessage" type="Label" parent="MouseBlocker"]
+unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 6.0
-offset_top = -74.0
-offset_right = 722.0
-offset_bottom = -28.0
+offset_left = 316.0
+offset_top = 633.0
+offset_right = 963.0
+offset_bottom = 656.0
 theme_override_colors/font_color = Color(1, 1, 0.14901961, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
@@ -101,16 +124,105 @@ text = "HELLO THIS IS ERROR MESSAGE YES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Anime" type="AnimationPlayer" parent="Panel/ErrorMessage"]
+[node name="Anime" type="AnimationPlayer" parent="MouseBlocker/ErrorMessage"]
 libraries = {
 &"": SubResource("AnimationLibrary_2i6t4")
 }
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="NinePatchRect" parent="Center"]
+custom_minimum_size = Vector2(720, 540)
+layout_mode = 2
+texture = ExtResource("11_f23vx")
+region_rect = Rect2(-1, 0, 107, 107)
+patch_margin_left = 10
+patch_margin_top = 8
+patch_margin_right = 10
+patch_margin_bottom = 8
+
+[node name="TextureRect3" type="NinePatchRect" parent="Center/ColorRect"]
+custom_minimum_size = Vector2(266, 57)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = -57.0
+offset_right = 133.0
+grow_horizontal = 2
+texture = ExtResource("11_76vc0")
+patch_margin_left = 80
+patch_margin_right = 80
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Center/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 80.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+draw_focus_border = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center/ColorRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center/ColorRect"]
+custom_minimum_size = Vector2(740, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 10.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Center/ColorRect/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("12_f23vx")
+
+[node name="Label" type="Label" parent="Center/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Collections"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Center/ColorRect/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("14_m71dq")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="Center/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Center/ColorRect/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("12_f23vx")
 
 [node name="ToggleVisibility" type="Button" parent="."]
 layout_mode = 0
 offset_left = 233.0
 offset_top = 687.0
-offset_right = 305.0
+offset_right = 326.0
 offset_bottom = 718.0
 text = "Collections"
 
@@ -154,16 +266,6 @@ text = "ok"
 
 [node name="Control" type="Control" parent="VictoryScreen/VBoxContainer"]
 custom_minimum_size = Vector2(0, 8)
-layout_mode = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 199.0
-offset_right = 218.0
-offset_bottom = 570.0
-
-[node name="ToolTipPanel" parent="CenterContainer" instance=ExtResource("9_swi88")]
 layout_mode = 2
 
 [connection signal="pressed" from="VictoryScreen/VBoxContainer/Ok" to="." method="_on_ok_pressed"]
