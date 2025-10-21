@@ -81,19 +81,15 @@ albedo_color = Color(0.23339033, 0.4372358, 0.23134169, 0.85882354)
 transparency = 1
 albedo_color = Color(0.72300655, 0.022634376, 2.5894344e-05, 0.85882354)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1t0pb"]
-bg_color = Color(0.61574835, 0.12566853, 0.2409707, 1)
-
-[sub_resource type="Theme" id="Theme_358ef"]
-Button/styles/normal = SubResource("StyleBoxFlat_1t0pb")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gq20"]
-bg_color = Color(0.16916928, 0.40496358, 0.21367723, 1)
-
-[sub_resource type="Theme" id="Theme_1t0pb"]
-Button/styles/normal = SubResource("StyleBoxFlat_3gq20")
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0kml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5wro"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5hbr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mijrv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5uani"]
 
 [sub_resource type="Resource" id="Resource_1l8t1"]
 script = ExtResource("13_358ef")
@@ -326,7 +322,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
 skeleton = NodePath("../..")
 
-[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("change_shop_state_button", "money_label", "renown_label", "hour_label", "inventory_menu", "inventory_button")]
+[node name="InventoryUI" parent="." instance=ExtResource("2_2dulj")]
+visible = false
+
+[node name="CraftingUI" parent="." instance=ExtResource("11_4fkm8")]
+visible = false
+
+[node name="LootboxUI" parent="." instance=ExtResource("10_1l8t1")]
+visible = false
+
+[node name="AuctionUI" parent="." instance=ExtResource("7_2dulj")]
+visible = false
+
+[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("change_shop_state_button", "money_label", "renown_label", "hour_label", "inventory_menu", "crafting_menu", "auctions_menu", "inventory_button", "collections_button", "keys_button", "pause_menu_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -338,17 +346,21 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("6_d0s76")
 change_shop_state_button = NodePath("ChangeShopStateButton")
-button_color_during_day = SubResource("Theme_358ef")
-button_text_during_day = "Close Shop"
-button_color_during_night = SubResource("Theme_1t0pb")
-button_text_during_night = "Open Shop"
+button_text_during_day = "Close"
+button_text_during_night = "Open"
 money_label = NodePath("MoneyDynamicLabel")
 renown_label = NodePath("RenownDynamicLabel")
 hour_label = NodePath("Label")
 inventory_menu = NodePath("../InventoryUI")
+crafting_menu = NodePath("../CraftingUI")
+auctions_menu = NodePath("../AuctionUI")
+main_menu_scene = ExtResource("28_md580")
 active_button_texture = ExtResource("14_c5hbr")
 disactive_button_texture = ExtResource("13_3y86n")
 inventory_button = NodePath("HUDButtons/InventoryButton")
+collections_button = NodePath("HUDButtons/CollectionsButton")
+keys_button = NodePath("HUDButtons/KeysButton")
+pause_menu_button = NodePath("HUDButtons/PauseMenuButton")
 
 [node name="ChangeShopStateButton" type="Button" parent="MainUI"]
 layout_mode = 1
@@ -358,12 +370,17 @@ anchor_right = 0.5
 offset_left = -524.0
 offset_top = 22.0
 offset_right = -424.0
-offset_bottom = 74.0
+offset_bottom = 70.0
 grow_horizontal = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(0.21176471, 0.23921569, 0.2901961, 1)
 theme_override_fonts/font = ExtResource("8_naeib")
 theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxEmpty_v0kml")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a5wro")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c5hbr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mijrv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5uani")
 text = "OPEN"
 
 [node name="MoneyDynamicLabel" type="Label" parent="MainUI"]
@@ -470,8 +487,8 @@ texture = ExtResource("14_3y86n")
 [node name="CollectionsButton" type="TextureButton" parent="MainUI/HUDButtons"]
 texture_filter = 1
 layout_mode = 2
+focus_mode = 0
 texture_normal = ExtResource("13_3y86n")
-texture_focused = ExtResource("14_c5hbr")
 stretch_mode = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/CollectionsButton"]
@@ -490,8 +507,8 @@ texture = ExtResource("15_a5wro")
 [node name="KeysButton" type="TextureButton" parent="MainUI/HUDButtons"]
 texture_filter = 1
 layout_mode = 2
+focus_mode = 0
 texture_normal = ExtResource("13_3y86n")
-texture_focused = ExtResource("14_c5hbr")
 stretch_mode = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/KeysButton"]
@@ -510,8 +527,8 @@ texture = ExtResource("16_c5hbr")
 [node name="PauseMenuButton" type="TextureButton" parent="MainUI/HUDButtons"]
 texture_filter = 1
 layout_mode = 2
+focus_mode = 0
 texture_normal = ExtResource("13_3y86n")
-texture_focused = ExtResource("14_c5hbr")
 stretch_mode = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/PauseMenuButton"]
@@ -526,18 +543,6 @@ grow_vertical = 2
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("17_mijrv")
-
-[node name="InventoryUI" parent="." instance=ExtResource("2_2dulj")]
-visible = false
-
-[node name="CraftingUI" parent="." instance=ExtResource("11_4fkm8")]
-visible = false
-
-[node name="LootboxUI" parent="." instance=ExtResource("10_1l8t1")]
-visible = false
-
-[node name="AuctionUI" parent="." instance=ExtResource("7_2dulj")]
-visible = false
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("where_to_plonk_customers") instance=ExtResource("9_8qgar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.060858, 0, 3.5197692)

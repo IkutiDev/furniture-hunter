@@ -1,3 +1,4 @@
+class_name MainMenuUI
 extends CanvasLayer
 
 
@@ -27,6 +28,7 @@ func _on_tutorial_button_pressed() -> void:
 
 
 func _on_resume_button_pressed() -> void:
+	EventBus.menu_close.emit(self)
 	queue_free()
 	pass # Replace with function body.
 

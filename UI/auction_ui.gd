@@ -23,11 +23,11 @@ func _toggle_auctions_menu() -> void:
 		_update_auctions_menu()
 
 func open_menu() -> void:
-	auctions_menu.show()
+	show()
 	EventBus.menu_open.emit(self)
 
 func close_menu() -> void:
-	auctions_menu.hide()
+	hide()
 	EventBus.menu_close.emit(self)
 
 

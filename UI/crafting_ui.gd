@@ -1,3 +1,4 @@
+class_name CraftingUI
 extends Control
 
 
@@ -21,7 +22,7 @@ func _ready() -> void:
 	EventBus.collection_crafted.connect(add_collection_to_completed)
 	create_recepies()
 
-	crafting_menu.visible = false
+	#crafting_menu.visible = false
 	
 func _toggle_auctions_menu() -> void:
 	if crafting_menu.visible:
@@ -32,11 +33,11 @@ func _toggle_auctions_menu() -> void:
 		#create_recepies()
 		
 func open_menu() -> void:
-	crafting_menu.show()
+	show()
 	EventBus.menu_open.emit(self)
 
 func close_menu() -> void:
-	crafting_menu.hide()
+	hide()
 	EventBus.menu_close.emit(self)
 
 
