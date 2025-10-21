@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ipgjfihuabin"
+path="res://.godot/imported/paper rough handling 3.wav-5bb01ec32f9c1e92ec3a32e83b7163b1.sample"
+
+[deps]
+
+source_file="res://sound_effects/paper rough handling 3.wav"
+dest_files=["res://.godot/imported/paper rough handling 3.wav-5bb01ec32f9c1e92ec3a32e83b7163b1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

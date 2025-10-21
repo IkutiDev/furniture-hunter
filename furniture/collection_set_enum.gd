@@ -28,7 +28,7 @@ static func get_set_icon(type : Types) -> Texture:
 		Types.GREEK_COLLECTION:
 			return load("res://UI/UI_kasia/collections_menu/ancient_greece_collection_icon.png")
 		_:
-			return load("res://UI/UI_kasia/collections_menu/slot_grey.png")
+			return null
 
 static func get_set_name(type : Types) -> String:
 	match type:

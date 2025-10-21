@@ -1,6 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dh7xwd15ho7lk"]
+[gd_scene load_steps=13 format=3 uid="uid://dh7xwd15ho7lk"]
 
 [ext_resource type="Script" uid="uid://ci82qsb7i7ppg" path="res://non_persons/spawner.gd" id="1_ep3nv"]
+[ext_resource type="AudioStream" uid="uid://1a8vgk25ogpc" path="res://sound_effects/door open 9.wav" id="2_2u58w"]
+[ext_resource type="AudioStream" uid="uid://cpmo774gt6bsm" path="res://sound_effects/door open 4.wav" id="2_tmjdh"]
+[ext_resource type="AudioStream" uid="uid://dwtdgjr2osbcy" path="res://sound_effects/door open 10.wav" id="3_60oj3"]
+[ext_resource type="AudioStream" uid="uid://bvaswg1vs6dw0" path="res://sound_effects/door close 2.wav" id="4_gtrgb"]
+[ext_resource type="AudioStream" uid="uid://d2ncjxd2isvy2" path="res://sound_effects/door close 3.wav" id="5_0c165"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7xnmv"]
+streams_count = 2
+stream_0/stream = ExtResource("2_tmjdh")
+stream_1/stream = ExtResource("3_60oj3")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6o1og"]
+streams_count = 3
+stream_0/stream = ExtResource("4_gtrgb")
+stream_1/stream = ExtResource("5_0c165")
+stream_2/stream = ExtResource("2_2u58w")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ep3nv"]
 size = Vector3(2, 2, 2)
@@ -19,10 +35,22 @@ customers_data_path = "res://data/clients"
 
 [node name="SpawnPoint" type="Marker3D" parent="."]
 
+[node name="EnterSound" type="AudioStreamPlayer3D" parent="SpawnPoint"]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_7xnmv")
+unit_size = 8.0
+
 [node name="TheAreaThatEatsPeople" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 collision_layer = 0
 collision_mask = 4
+
+[node name="ExitSound" type="AudioStreamPlayer3D" parent="TheAreaThatEatsPeople"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+stream = SubResource("AudioStreamRandomizer_6o1og")
+unit_size = 8.0
+bus = &"Effects"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TheAreaThatEatsPeople"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

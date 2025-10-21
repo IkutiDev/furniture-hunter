@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bvaswg1vs6dw0"
+path="res://.godot/imported/door close 2.wav-132bf9de36539ad446996c5483849646.sample"
+
+[deps]
+
+source_file="res://sound_effects/door close 2.wav"
+dest_files=["res://.godot/imported/door close 2.wav-132bf9de36539ad446996c5483849646.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

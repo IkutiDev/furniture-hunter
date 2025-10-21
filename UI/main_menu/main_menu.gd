@@ -62,4 +62,10 @@ func _on_next_tutorial_pressed() -> void:
 
 
 func _on_settings_button_pressed() -> void:
+	$Settings.visible = true
+	pass # Replace with function body.
+
+
+func _on_hide_settings_pressed() -> void:
+	$Settings.visible = false
 	pass # Replace with function body.

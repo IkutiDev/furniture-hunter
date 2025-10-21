@@ -70,12 +70,17 @@ func spawn_customer(data : CustomerData) -> void:
 	new_customer.load_customer(data)
 	where_to_plonk_customers.add_child(new_customer)
 	_customer_count += 1
+
+	if randf() > 0.3 and !%EnterSound.playing: # most times play enter sound
+		%EnterSound.play()
 	pass
 	
 
 func de_spawn_customer(customer : Node3D) -> void:
 	_customer_count -= 1
 	customer.queue_free()
+	if randf() > 0.6 and !%ExitSound.playing: # sometimes play exit sound
+		%ExitSound.play()
 	if is_instance_valid(customer):
 		await customer.tree_exited
 	if _customer_count == 0 and GameManager.game_state == GameManager.GameState.ENDING_DAY:
@@ -87,6 +92,7 @@ func de_spawn_customer(customer : Node3D) -> void:
 
 func _on_the_area_that_eats_people_area_entered(area: Area3D) -> void:
 	if area.is_in_group("Customer"):
+
 		de_spawn_customer(area)
 	pass # Replace with function body.
 

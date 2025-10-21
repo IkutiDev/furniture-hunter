@@ -100,16 +100,20 @@ recipes_go_here = NodePath("Center/ColorRect/ScrollContainer/VBoxContainer")
 crafting_recipe_scene = ExtResource("2_c5m30")
 collection_sets = Array[Resource]([null, ExtResource("3_55cq4"), ExtResource("4_2i6t4"), ExtResource("5_1n65o"), ExtResource("6_swi88"), ExtResource("7_1n65o"), ExtResource("8_swi88")])
 
-[node name="MouseBlocker" type="ColorRect" parent="."]
+[node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MouseBlocker" type="ColorRect" parent="Center"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
 color = Color(0.40205058, 0.65349877, 0.8920514, 0.20392157)
 
-[node name="ErrorMessage" type="Label" parent="MouseBlocker"]
+[node name="ErrorMessage" type="Label" parent="Center/MouseBlocker"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -124,18 +128,10 @@ text = "HELLO THIS IS ERROR MESSAGE YES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Anime" type="AnimationPlayer" parent="MouseBlocker/ErrorMessage"]
+[node name="Anime" type="AnimationPlayer" parent="Center/MouseBlocker/ErrorMessage"]
 libraries = {
 &"": SubResource("AnimationLibrary_2i6t4")
 }
-
-[node name="Center" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="ColorRect" type="NinePatchRect" parent="Center"]
 custom_minimum_size = Vector2(720, 540)

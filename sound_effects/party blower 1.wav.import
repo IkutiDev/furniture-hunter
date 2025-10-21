@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://iitdfmyflsom"
+path="res://.godot/imported/party blower 1.wav-a7aced4c1301b666b94c8db8d62b086e.sample"
+
+[deps]
+
+source_file="res://sound_effects/party blower 1.wav"
+dest_files=["res://.godot/imported/party blower 1.wav-a7aced4c1301b666b94c8db8d62b086e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
