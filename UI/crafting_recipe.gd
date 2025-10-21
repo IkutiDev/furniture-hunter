@@ -19,8 +19,8 @@ func load_recipe(available_objects : Array):
 	var result = collection_button_scene.instantiate() as CollectionButton
 	result.set_data(collection_data)
 	%ResultGoesHere.add_child(result)
-	$CollectionIcon.texture = CollectionSet.get_set_icon(collection_data.collection_set_type)
-	
+	%CollectionIcon.texture = CollectionSet.get_set_icon(collection_data.collection_set_type)
+	%CollectionName.text = CollectionSet.get_set_name(collection_data.collection_set_type).rstrip("Collection") + "\n" + "Collection"
 	for thing_data in collection_data.parts:
 		var next_part
 		if thing_data is ItemData:

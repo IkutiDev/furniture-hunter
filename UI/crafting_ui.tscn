@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://du5pkafdjd268"]
+[gd_scene load_steps=22 format=3 uid="uid://du5pkafdjd268"]
 
 [ext_resource type="Script" uid="uid://botxorv4wnywe" path="res://UI/crafting_ui.gd" id="1_sac6m"]
 [ext_resource type="Texture2D" uid="uid://pc8tb6jhy086" path="res://UI/UI_kasia/collections_menu/slider.png" id="1_swi88"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dk1yltpvj5vux" path="res://UI/UI_kasia/collections_menu/wooden_decor.png" id="11_76vc0"]
 [ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="11_f23vx"]
 [ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="12_f23vx"]
+[ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="14_m71dq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_njj7l"]
 texture = ExtResource("1_swi88")
@@ -165,7 +166,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 14.0
+offset_top = 80.0
 offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -195,6 +196,18 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="Center/ColorRect/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("12_f23vx")
+
+[node name="Label" type="Label" parent="Center/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Collections"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Center/ColorRect/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("14_m71dq")
+stretch_mode = 3
 
 [node name="Control" type="Control" parent="Center/ColorRect/VBoxContainer"]
 layout_mode = 2

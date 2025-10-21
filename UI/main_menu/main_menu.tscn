@@ -180,24 +180,28 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
+[node name="CreditsButton" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("4_vdx01")
+texture_hover = ExtResource("4_vdx01")
 stretch_mode = 3
 
-[node name="TextureButton2" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
+[node name="TutorialButton" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("4_vdx01")
+texture_hover = ExtResource("4_vdx01")
 stretch_mode = 3
 
-[node name="TextureButton3" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
+[node name="SettingsButton" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("4_vdx01")
+texture_hover = ExtResource("4_vdx01")
 stretch_mode = 3
 
-[node name="TextureButton4" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
+[node name="ResumeButton" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("4_vdx01")
+texture_hover = ExtResource("4_vdx01")
 stretch_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control"]
@@ -207,31 +211,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = SubResource("Theme_vdx01")
 alignment = 1
 
 [node name="CreditsButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(241, 80)
 layout_mode = 2
+mouse_filter = 2
 text = "CREDITS"
 
 [node name="TutorialButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(241, 80)
 layout_mode = 2
+mouse_filter = 2
 text = "TUTORIAL"
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(241, 80)
 layout_mode = 2
+mouse_filter = 2
 text = "SETTINGS"
 
 [node name="ResumeButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(241, 80)
 layout_mode = 2
+mouse_filter = 2
 text = "PLAY"
 
 [node name="Credits" type="ColorRect" parent="."]
@@ -447,9 +452,10 @@ Your business plan - buy abandoned storage units, sell whatever you don't need, 
 
 Display you collections to gain renown among collectors, and to attract more patrons with deeper pockets."
 
-[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
-[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Credits/HideCredits" to="." method="_on_hide_credits_pressed"]
 [connection signal="pressed" from="Tutorial/HideTutorial" to="." method="_on_hide_tutorial_pressed"]
 [connection signal="pressed" from="Tutorial/NextTutorial" to="." method="_on_next_tutorial_pressed"]
