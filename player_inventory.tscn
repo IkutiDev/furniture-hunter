@@ -1,7 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://hv3wyucwiuts"]
+[gd_scene load_steps=22 format=3 uid="uid://hv3wyucwiuts"]
 
 [ext_resource type="Script" uid="uid://cbkm60bxjgr4e" path="res://player_inventory.gd" id="1_mdht6"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="2_i8bca"]
+[ext_resource type="Resource" uid="uid://xvoul5oon3dn" path="res://data/218_sarcophagus.tres" id="3_3amdi"]
+[ext_resource type="Resource" uid="uid://dw643ebaxamo6" path="res://data/202_warded_chest.tres" id="4_kdcpo"]
+[ext_resource type="Resource" uid="uid://csccp7d0c7437" path="res://data/221_phalanx_slayer.tres" id="5_ml455"]
+[ext_resource type="Resource" uid="uid://osactfu16ey2" path="res://data/217_old_creaky_chair.tres" id="6_w82bi"]
+[ext_resource type="Resource" uid="uid://fh3iehg5lbjb" path="res://data/200_reinforced_cauldron.tres" id="7_j7yy0"]
+[ext_resource type="Resource" uid="uid://b6e61gjgbo4ly" path="res://data/213_old_alchemical_table.tres" id="8_nyp4h"]
+[ext_resource type="Resource" uid="uid://cjt1m4v3xwhe1" path="res://data/208_flying_broom.tres" id="9_segop"]
+[ext_resource type="Resource" uid="uid://pyjvqrgleieo" path="res://data/207_suitcase_full_of_rare_vials.tres" id="10_c5gc2"]
+[ext_resource type="Resource" uid="uid://b8v750o4swqu8" path="res://data/215_warded_carpet.tres" id="10_se2yt"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="10_xndjf"]
+[ext_resource type="Resource" uid="uid://cf3q75dtx5o20" path="res://data/206_enchanted_floor_lamp.tres" id="11_3v4l7"]
+[ext_resource type="Resource" uid="uid://cet1mhg7tpyik" path="res://data/126_toy_cow.tres" id="11_252qi"]
+[ext_resource type="Resource" uid="uid://d2a08il2xqnll" path="res://data/212_magically_reinforced_table.tres" id="12_h6yjm"]
+[ext_resource type="Resource" uid="uid://ktek1j1xm6og" path="res://data/122_fancy_tea_pot.tres" id="12_wsw7f"]
+[ext_resource type="Resource" uid="uid://caj6uqcr0u3u2" path="res://data/102_tarnished_chalice.tres" id="13_kfpwh"]
+[ext_resource type="Resource" uid="uid://yax6n1os7qwi" path="res://data/223_greek_vase_replica.tres" id="14_e8bip"]
+[ext_resource type="Resource" uid="uid://bk63kq1401myl" path="res://data/100_offering_chalice.tres" id="14_thmre"]
+[ext_resource type="Resource" uid="uid://b6ofnc3oj78xd" path="res://data/101_goblet_of_forecasting.tres" id="15_se2yt"]
+[ext_resource type="Resource" uid="uid://dkisym3rdkqfs" path="res://data/127_soul_infused_stars.tres" id="16_3v4l7"]
 
 [node name="PlayerInventory" type="Node"]
 script = ExtResource("1_mdht6")
+furniture = Array[ExtResource("2_i8bca")]([ExtResource("3_3amdi"), ExtResource("4_kdcpo"), ExtResource("5_ml455"), ExtResource("6_w82bi"), ExtResource("7_j7yy0"), ExtResource("8_nyp4h"), ExtResource("9_segop"), ExtResource("9_segop"), ExtResource("10_se2yt"), ExtResource("11_3v4l7"), ExtResource("12_h6yjm"), ExtResource("10_c5gc2"), ExtResource("14_e8bip")])
+items = Array[ExtResource("10_xndjf")]([ExtResource("11_252qi"), ExtResource("12_wsw7f"), ExtResource("13_kfpwh"), ExtResource("14_thmre"), ExtResource("15_se2yt"), ExtResource("11_252qi"), ExtResource("14_thmre"), ExtResource("16_3v4l7")])
 money = 1000

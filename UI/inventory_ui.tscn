@@ -19,7 +19,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eu057"]
 texture = ExtResource("6_nygdy")
 
-[node name="InventoryUI" type="Control" node_paths=PackedStringArray("main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container", "collection_inventory_visual_container")]
+[node name="InventoryUI" type="Control" node_paths=PackedStringArray("inventory_visual_container", "furniture_button", "items_button", "arrow_up_button", "arrow_down_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,15 +28,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_qfk0h")
-main_inventory_fold_container = NodePath("HSplitContainer/FoldableContainer")
-furniture_inventory_visual_container = NodePath("VBoxContainer")
-items_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/ItemsContainer/ScrollContainer/VBoxContainer")
-lootboxes_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/LootboxesContainer/ScrollContainer/VBoxContainer")
-collection_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/CollectionContainer/ScrollContainer/VBoxContainer")
+inventory_visual_container = NodePath("VBoxContainer")
 furniture_button_scene = ExtResource("2_oaa25")
 item_button_scene = ExtResource("3_skrcx")
 lootbox_button_scene = ExtResource("4_ylc1n")
 collection_button_scene = ExtResource("5_7o5sx")
+furniture_button = NodePath("Panel/Button")
+items_button = NodePath("Panel/Button2")
+button_active_texture = ExtResource("11_ywkq4")
+button_inactive_texture = ExtResource("11_q4wdp")
+arrow_up_button = NodePath("Panel/GoUp")
+arrow_down_button = NodePath("Panel/GoDown")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -47,6 +49,7 @@ anchor_bottom = 1.0
 offset_top = -145.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_eu057")
 
 [node name="WoodenBar" type="TextureRect" parent="Panel"]
@@ -56,6 +59,7 @@ anchor_right = 1.0
 offset_top = -14.0
 offset_bottom = -2.0
 grow_horizontal = 2
+mouse_filter = 2
 texture = ExtResource("7_hcig3")
 
 [node name="WoodenDecoration" type="TextureRect" parent="Panel/WoodenBar"]
@@ -68,6 +72,7 @@ offset_top = -35.0
 offset_right = 154.0
 offset_bottom = 6.0
 grow_horizontal = 2
+mouse_filter = 2
 texture = ExtResource("8_dgd3g")
 expand_mode = 1
 stretch_mode = 4
@@ -105,7 +110,6 @@ offset_top = 8.0
 offset_right = 208.0
 offset_bottom = 68.0
 texture_normal = ExtResource("11_q4wdp")
-texture_focused = ExtResource("11_ywkq4")
 
 [node name="Label" type="Label" parent="Panel/Button"]
 layout_mode = 1
@@ -131,7 +135,6 @@ offset_top = 75.0
 offset_right = 208.0
 offset_bottom = 135.0
 texture_normal = ExtResource("11_q4wdp")
-texture_focused = ExtResource("11_ywkq4")
 
 [node name="Label" type="Label" parent="Panel/Button2"]
 layout_mode = 1
@@ -156,14 +159,14 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 266.0
+offset_left = 261.0
 offset_top = -124.0
-offset_right = -94.0
-offset_bottom = -16.0
+offset_right = -101.0
+offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
-theme_override_constants/separation = 38
+theme_override_constants/separation = 10
 
 [node name="FurnitureIconButton" parent="VBoxContainer" instance=ExtResource("2_oaa25")]
 layout_mode = 2
@@ -278,6 +281,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 514.0
+offset_top = -276.0
+offset_right = 514.0
+offset_bottom = -276.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_e1gr2")

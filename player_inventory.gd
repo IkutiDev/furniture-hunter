@@ -1,5 +1,7 @@
 extends Node
 
+enum ObjectType {FURNITURE, ITEM, KEY}
+
 @export var furniture : Array[FurnitureData]
 @export var items : Array[ItemData]
 @export var lootboxes : Array[LootboxData]
@@ -76,3 +78,30 @@ func create_collection(collection_data : CollectionData):
 			items.erase(part)
 			EventBus.available_items_changed.emit()
 	add_collection_to_inventory(collection_data)
+
+func get_items_as_dictionary(type : ObjectType) -> Dictionary:
+	var dictonary : Dictionary
+	match type:
+		ObjectType.FURNITURE:
+			for f in furniture:
+				if dictonary.has(f):
+					dictonary[f] += 1
+				else:
+					dictonary[f] = 1
+			return dictonary
+		ObjectType.ITEM:
+			for i in items:
+				if dictonary.has(i):
+					dictonary[i] += 1
+				else:
+					dictonary[i] = 1
+			return dictonary
+		ObjectType.KEY:
+			for l in lootboxes:
+				if dictonary.has(l):
+					dictonary[l] += 1
+				else:
+					dictonary[l] = 1
+			return dictonary
+		_:
+			return {}
