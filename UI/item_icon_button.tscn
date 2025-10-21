@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://co6h4573ya6fr"]
+[gd_scene load_steps=5 format=3 uid="uid://co6h4573ya6fr"]
 
 [ext_resource type="Texture2D" uid="uid://b7ctuocvuoegn" path="res://UI/WIP_icons/bar-stool.png" id="1_ihgmp"]
 [ext_resource type="Script" uid="uid://bd76h0slh5owf" path="res://UI/item_button.gd" id="2_ihgmp"]
+[ext_resource type="PackedScene" uid="uid://c0nn5n5jfm4xb" path="res://UI/set_icon.tscn" id="3_eu1sb"]
+[ext_resource type="PackedScene" uid="uid://bbdnqunvlb8m5" path="res://UI/slot_icon.tscn" id="3_pkwow"]
 
-[node name="ItemIconButton" type="TextureButton"]
+[node name="ItemIconButton" type="TextureButton" node_paths=PackedStringArray("amount_counter", "set_icon", "slot_icon")]
 custom_minimum_size = Vector2(80, 80)
 offset_right = 40.0
 offset_bottom = 40.0
@@ -11,3 +13,34 @@ texture_normal = ExtResource("1_ihgmp")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("2_ihgmp")
+amount_counter = NodePath("Amount")
+set_icon = NodePath("SetIcon")
+slot_icon = NodePath("SlotIcon")
+
+[node name="Amount" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 59.0
+offset_right = 42.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "99"
+
+[node name="SlotIcon" parent="." instance=ExtResource("3_pkwow")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SetIcon" parent="." instance=ExtResource("3_eu1sb")]
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = 0.0
+type = 1

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0nn5n5jfm4xb"]
+
+[ext_resource type="Script" uid="uid://c5bskeu7hqg8h" path="res://UI/set_icon.gd" id="1_80bpd"]
+[ext_resource type="Texture2D" uid="uid://b0i068axm1tiw" path="res://UI/UI_kasia/collections_menu/ancient_china_collection_icon.png" id="2_1uexq"]
+
+[node name="SetIcon" type="Control" node_paths=PackedStringArray("icon")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1200.0
+offset_bottom = -640.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_80bpd")
+type = 3
+icon = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = -4.0
+offset_right = 97.0
+offset_bottom = 42.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_1uexq")

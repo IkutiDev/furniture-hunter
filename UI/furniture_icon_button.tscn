@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwb6lpaeqxch"]
+[gd_scene load_steps=5 format=3 uid="uid://cwb6lpaeqxch"]
 
 [ext_resource type="Texture2D" uid="uid://b7ctuocvuoegn" path="res://UI/WIP_icons/bar-stool.png" id="1_0pi4f"]
 [ext_resource type="Script" uid="uid://tt1lhyq0vk3x" path="res://UI/furniture_button.gd" id="1_tl2re"]
+[ext_resource type="PackedScene" uid="uid://bbdnqunvlb8m5" path="res://UI/slot_icon.tscn" id="3_pis0d"]
+[ext_resource type="PackedScene" uid="uid://c0nn5n5jfm4xb" path="res://UI/set_icon.tscn" id="4_5tk0s"]
 
-[node name="FurnitureIconButton" type="TextureButton"]
+[node name="FurnitureIconButton" type="TextureButton" node_paths=PackedStringArray("slot_icon", "set_icon")]
 custom_minimum_size = Vector2(80, 80)
 offset_right = 40.0
 offset_bottom = 40.0
@@ -11,3 +13,21 @@ texture_normal = ExtResource("1_0pi4f")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("1_tl2re")
+slot_icon = NodePath("SlotIcon")
+set_icon = NodePath("SetIcon")
+
+[node name="SlotIcon" parent="." instance=ExtResource("3_pis0d")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SetIcon" parent="." instance=ExtResource("4_5tk0s")]
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = 0.0
+type = 1
