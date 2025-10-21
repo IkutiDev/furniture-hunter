@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwb6lpaeqxch"]
+[gd_scene load_steps=6 format=3 uid="uid://cwb6lpaeqxch"]
 
 [ext_resource type="Texture2D" uid="uid://b7ctuocvuoegn" path="res://UI/WIP_icons/bar-stool.png" id="1_0pi4f"]
 [ext_resource type="Script" uid="uid://tt1lhyq0vk3x" path="res://UI/furniture_button.gd" id="1_tl2re"]
 [ext_resource type="PackedScene" uid="uid://bbdnqunvlb8m5" path="res://UI/slot_icon.tscn" id="3_pis0d"]
 [ext_resource type="PackedScene" uid="uid://c0nn5n5jfm4xb" path="res://UI/set_icon.tscn" id="4_5tk0s"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="5_5tk0s"]
 
-[node name="FurnitureIconButton" type="TextureButton" node_paths=PackedStringArray("slot_icon", "set_icon")]
-custom_minimum_size = Vector2(80, 80)
+[node name="FurnitureIconButton" type="TextureButton" node_paths=PackedStringArray("slot_icon", "set_icon", "amount_label")]
+custom_minimum_size = Vector2(106, 107)
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_0pi4f")
@@ -15,6 +16,7 @@ stretch_mode = 5
 script = ExtResource("1_tl2re")
 slot_icon = NodePath("SlotIcon")
 set_icon = NodePath("SetIcon")
+amount_label = NodePath("AmountLabel")
 
 [node name="SlotIcon" parent="." instance=ExtResource("3_pis0d")]
 layout_mode = 1
@@ -28,6 +30,19 @@ grow_vertical = 2
 
 [node name="SetIcon" parent="." instance=ExtResource("4_5tk0s")]
 layout_mode = 1
-offset_right = 0.0
+offset_left = 29.0
+offset_right = 29.0
 offset_bottom = 0.0
 type = 1
+
+[node name="AmountLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 65.0
+offset_right = 41.0
+offset_bottom = 113.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("5_5tk0s")
+theme_override_font_sizes/font_size = 30
+text = "2"

@@ -215,6 +215,7 @@ layout_mode = 2
 texture = ExtResource("12_f23vx")
 
 [node name="ToggleVisibility" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 233.0
 offset_top = 687.0

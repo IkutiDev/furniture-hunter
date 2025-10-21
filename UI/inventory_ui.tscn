@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://5eeyn2nbl4it"]
+[gd_scene load_steps=17 format=3 uid="uid://5eeyn2nbl4it"]
 
 [ext_resource type="Script" uid="uid://c1ja3t7yps2yn" path="res://UI/inventory_ui.gd" id="1_qfk0h"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_oaa25"]
@@ -6,8 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://dg83k0fhcv1t4" path="res://UI/lootbox_icon_button.tscn" id="4_ylc1n"]
 [ext_resource type="PackedScene" uid="uid://d0aosvog7ndme" path="res://UI/collection_icon_button.tscn" id="5_7o5sx"]
 [ext_resource type="PackedScene" uid="uid://b1q3webi276mx" path="res://UI/tool_tip_panel.tscn" id="5_6128g"]
+[ext_resource type="Texture2D" uid="uid://dbty0f61svkru" path="res://UI/UI_kasia/collections_menu/background_down_menu.png" id="6_nygdy"]
+[ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="7_hcig3"]
+[ext_resource type="Texture2D" uid="uid://dk1yltpvj5vux" path="res://UI/UI_kasia/collections_menu/wooden_decor.png" id="8_dgd3g"]
+[ext_resource type="Texture2D" uid="uid://bn0amsq5vd1si" path="res://UI/UI_kasia/mockup_gameplay_items_menu.png" id="8_e1gr2"]
+[ext_resource type="Texture2D" uid="uid://ov7j4fybj0ob" path="res://UI/UI_kasia/collections_menu/trangle_button_active_right.png" id="9_ywkq4"]
+[ext_resource type="Texture2D" uid="uid://c6ohs2q05h222" path="res://UI/UI_kasia/collections_menu/trangle_button_inactive_right.png" id="10_dgd3g"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="11_a273u"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="11_q4wdp"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="11_ywkq4"]
 
-[node name="InventoryUI" type="Control" node_paths=PackedStringArray("main_inventory_fold_container", "furniture_inventory_visual_container", "items_inventory_visual_container", "lootboxes_inventory_visual_container", "collection_inventory_visual_container", "money_label", "renown_label")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eu057"]
+texture = ExtResource("6_nygdy")
+
+[node name="InventoryUI" type="Control" node_paths=PackedStringArray("inventory_visual_container", "furniture_button", "items_button", "arrow_up_button", "arrow_down_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,19 +28,172 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_qfk0h")
-main_inventory_fold_container = NodePath("HSplitContainer/FoldableContainer")
-furniture_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer/VBoxContainer")
-items_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/ItemsContainer/ScrollContainer/VBoxContainer")
-lootboxes_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/LootboxesContainer/ScrollContainer/VBoxContainer")
-collection_inventory_visual_container = NodePath("HSplitContainer/FoldableContainer/HBoxContainer/CollectionContainer/ScrollContainer/VBoxContainer")
+inventory_visual_container = NodePath("VBoxContainer")
 furniture_button_scene = ExtResource("2_oaa25")
 item_button_scene = ExtResource("3_skrcx")
 lootbox_button_scene = ExtResource("4_ylc1n")
 collection_button_scene = ExtResource("5_7o5sx")
-money_label = NodePath("HSplitContainer/VBoxContainer/HBoxContainer/MoneyDynamicLabel")
-renown_label = NodePath("HSplitContainer/VBoxContainer/HBoxContainer2/RenownDynamicLabel")
+furniture_button = NodePath("Panel/Button")
+items_button = NodePath("Panel/Button2")
+button_active_texture = ExtResource("11_ywkq4")
+button_inactive_texture = ExtResource("11_q4wdp")
+arrow_up_button = NodePath("Panel/GoUp")
+arrow_down_button = NodePath("Panel/GoDown")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -145.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_eu057")
+
+[node name="WoodenBar" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -14.0
+offset_bottom = -2.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("7_hcig3")
+
+[node name="WoodenDecoration" type="TextureRect" parent="Panel/WoodenBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = -35.0
+offset_right = 154.0
+offset_bottom = 6.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("8_dgd3g")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GoDown" type="TextureButton" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1249.0
+offset_top = 84.0
+offset_right = 1289.1172
+offset_bottom = 125.35156
+rotation = 1.5707964
+texture_normal = ExtResource("9_ywkq4")
+texture_disabled = ExtResource("10_dgd3g")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="GoUp" type="TextureButton" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1207.0
+offset_top = 70.0
+offset_right = 1247.1172
+offset_bottom = 111.35156
+rotation = 4.712389
+texture_normal = ExtResource("9_ywkq4")
+texture_disabled = ExtResource("10_dgd3g")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Button" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 8.0
+offset_right = 208.0
+offset_bottom = 68.0
+texture_normal = ExtResource("11_q4wdp")
+
+[node name="Label" type="Label" parent="Panel/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_a273u")
+theme_override_font_sizes/font_size = 30
+text = "Furniture"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 75.0
+offset_right = 208.0
+offset_bottom = 135.0
+texture_normal = ExtResource("11_q4wdp")
+
+[node name="Label" type="Label" parent="Panel/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_a273u")
+theme_override_font_sizes/font_size = 30
+text = "Items"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 261.0
+offset_top = -124.0
+offset_right = -101.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="FurnitureIconButton" parent="VBoxContainer" instance=ExtResource("2_oaa25")]
+layout_mode = 2
+
+[node name="FurnitureIconButton2" parent="VBoxContainer" instance=ExtResource("2_oaa25")]
+layout_mode = 2
+
+[node name="FurnitureIconButton3" parent="VBoxContainer" instance=ExtResource("2_oaa25")]
+layout_mode = 2
+
+[node name="FurnitureIconButton4" parent="VBoxContainer" instance=ExtResource("2_oaa25")]
+layout_mode = 2
+
+[node name="FurnitureIconButton5" parent="VBoxContainer" instance=ExtResource("2_oaa25")]
+layout_mode = 2
+
+[node name="FurnitureIconButton6" parent="VBoxContainer" instance=ExtResource("2_oaa25")]
+layout_mode = 2
+
+[node name="FurnitureIconButton7" parent="VBoxContainer" instance=ExtResource("2_oaa25")]
+layout_mode = 2
+
+[node name="FurnitureIconButton8" parent="VBoxContainer" instance=ExtResource("2_oaa25")]
+layout_mode = 2
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -37,40 +202,13 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="RenownStaticLabel" type="Label" parent="HSplitContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Renown:"
-
-[node name="RenownDynamicLabel" type="Label" parent="HSplitContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "9999$"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="MoneyStaticLabel" type="Label" parent="HSplitContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Money:"
-
-[node name="MoneyDynamicLabel" type="Label" parent="HSplitContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "9999$"
-
 [node name="FoldableContainer" type="FoldableContainer" parent="HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-folded = true
 title = "Inventory"
 title_position = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/FoldableContainer"]
-visible = false
 layout_mode = 2
 
 [node name="FurnitureContainer" type="FoldableContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer"]
@@ -80,13 +218,6 @@ title = "Furniture"
 title_position = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="FurnitureIconButton" parent="HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_oaa25")]
 layout_mode = 2
 
 [node name="ItemsContainer" type="FoldableContainer" parent="HSplitContainer/FoldableContainer/HBoxContainer"]
@@ -143,4 +274,26 @@ grow_horizontal = 1
 grow_vertical = 1
 offset = Vector2(-110, 0)
 
-[editable path="HSplitContainer/FoldableContainer/HBoxContainer/FurnitureContainer/ScrollContainer/VBoxContainer/FurnitureIconButton"]
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.29411766)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 514.0
+offset_top = -276.0
+offset_right = 514.0
+offset_bottom = -276.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_e1gr2")
+
+[editable path="VBoxContainer/FurnitureIconButton"]
+[editable path="VBoxContainer/FurnitureIconButton2"]
+[editable path="VBoxContainer/FurnitureIconButton3"]
+[editable path="VBoxContainer/FurnitureIconButton4"]
+[editable path="VBoxContainer/FurnitureIconButton5"]
+[editable path="VBoxContainer/FurnitureIconButton6"]
+[editable path="VBoxContainer/FurnitureIconButton7"]
+[editable path="VBoxContainer/FurnitureIconButton8"]

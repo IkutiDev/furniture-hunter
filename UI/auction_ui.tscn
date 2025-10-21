@@ -23,7 +23,6 @@ lootbox_buy_button_scene = ExtResource("2_g0ads")
 lootbox_special_deal_button_scene = ExtResource("3_dgi2x")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -72,6 +71,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Button" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
