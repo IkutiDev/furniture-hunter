@@ -1,0 +1,55 @@
+[gd_scene load_steps=18 format=3 uid="uid://c5oy8g06il0ru"]
+
+[ext_resource type="Script" uid="uid://bt3mpcjcas1lg" path="res://sound_effects/audio_machine.gd" id="1_lutyo"]
+[ext_resource type="AudioStream" uid="uid://dnd3gipu7x5mx" path="res://sound_effects/glass placed on shelf 6.wav" id="2_cbc5r"]
+[ext_resource type="AudioStream" uid="uid://bxitd7fqau3qp" path="res://sound_effects/book handled 9.wav" id="2_iojhr"]
+[ext_resource type="AudioStream" uid="uid://dn5tcfbiudw5s" path="res://sound_effects/book pick up 4.wav" id="3_cbc5r"]
+[ext_resource type="AudioStream" uid="uid://di201renkqha1" path="res://sound_effects/banana throw 1.wav" id="3_iojhr"]
+[ext_resource type="AudioStream" uid="uid://ipgjfihuabin" path="res://sound_effects/paper rough handling 3.wav" id="4_ea3gk"]
+[ext_resource type="AudioStream" uid="uid://d0js8j1einwsx" path="res://sound_effects/novelty noise maker 6.wav" id="5_2ewf8"]
+[ext_resource type="AudioStream" uid="uid://c64mg4t7yfx8b" path="res://sound_effects/gun hit 6.wav" id="5_21fmk"]
+[ext_resource type="AudioStream" uid="uid://1pq8n4wpmpy1" path="res://sound_effects/gun hit 7.wav" id="6_8gbsg"]
+[ext_resource type="AudioStream" uid="uid://iitdfmyflsom" path="res://sound_effects/party blower 1.wav" id="8_ykwdf"]
+[ext_resource type="AudioStream" uid="uid://16oj86r07rip" path="res://sound_effects/party blower 8.wav" id="9_ea3gk"]
+[ext_resource type="AudioStream" uid="uid://y4mwl820ykbi" path="res://sound_effects/glass placed on shelf 3.wav" id="11_kxros"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iojhr"]
+playback_mode = 1
+random_pitch = 1.15
+streams_count = 3
+stream_0/stream = ExtResource("2_iojhr")
+stream_1/stream = ExtResource("3_cbc5r")
+stream_2/stream = ExtResource("4_ea3gk")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xci0y"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ykwdf"]
+streams_count = 2
+stream_0/stream = ExtResource("5_21fmk")
+stream_1/stream = ExtResource("6_8gbsg")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_663vu"]
+random_pitch = 1.1
+streams_count = 2
+stream_0/stream = ExtResource("8_ykwdf")
+stream_1/stream = ExtResource("9_ea3gk")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jkqnx"]
+streams_count = 2
+stream_0/stream = ExtResource("11_kxros")
+stream_1/stream = ExtResource("2_cbc5r")
+
+[node name="AudioMachine" type="AudioListener3D"]
+current = true
+script = ExtResource("1_lutyo")
+signal_to_stream_map = {
+&"collection_crafted": SubResource("AudioStreamRandomizer_663vu"),
+&"end_day": ExtResource("5_2ewf8"),
+&"furniture_removed": SubResource("AudioStreamRandomizer_jkqnx"),
+&"menu_close": ExtResource("3_iojhr"),
+&"menu_open": SubResource("AudioStreamRandomizer_iojhr"),
+&"start_day": SubResource("AudioStreamRandomizer_xci0y"),
+&"start_night": SubResource("AudioStreamRandomizer_ykwdf")
+}
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]

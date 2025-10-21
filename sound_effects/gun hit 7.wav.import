@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1pq8n4wpmpy1"
+path="res://.godot/imported/gun hit 7.wav-a1f0780e5385c4a5088767dc6187c585.sample"
+
+[deps]
+
+source_file="res://sound_effects/gun hit 7.wav"
+dest_files=["res://.godot/imported/gun hit 7.wav-a1f0780e5385c4a5088767dc6187c585.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

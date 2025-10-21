@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=45 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bx5l051p6ecdf" path="res://object_placer.gd" id="5_3q6a7"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_358ef"]
 [ext_resource type="Script" uid="uid://brjslag6tqsvp" path="res://UI/main_ui.gd" id="6_d0s76"]
+[ext_resource type="PackedScene" uid="uid://c5oy8g06il0ru" path="res://sound_effects/audio_machine.tscn" id="6_srxrq"]
 [ext_resource type="PackedScene" uid="uid://b8myxwy4rg0ac" path="res://UI/auction_ui.tscn" id="7_2dulj"]
 [ext_resource type="PackedScene" uid="uid://bh0yjjoyposcl" path="res://UI/set_furniture_price_ui.tscn" id="8_o6f6g"]
 [ext_resource type="PackedScene" uid="uid://dh7xwd15ho7lk" path="res://non_persons/spawner.tscn" id="9_8qgar"]
@@ -24,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://d3akdai50ie5u" path="res://furniture/gamejam_lamp_Base_color.png" id="20_ns5l8"]
 [ext_resource type="PackedScene" uid="uid://dn57f0d46sxa7" path="res://cash_table.tscn" id="23_cjrgx"]
 [ext_resource type="PackedScene" uid="uid://bks7aueb70qr" path="res://collections/collection_container_instance.tscn" id="26_cjrgx"]
-[ext_resource type="PackedScene" uid="uid://23fqk2jp67kp" path="res://UI/main_menu.tscn" id="28_md580"]
+[ext_resource type="PackedScene" uid="uid://23fqk2jp67kp" path="res://UI/main_menu/main_menu.tscn" id="28_md580"]
 [ext_resource type="Script" uid="uid://dbrwrlrhnc3yq" path="res://cancel_manager.gd" id="28_omknk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
@@ -216,8 +217,7 @@ process_physics_priority = 300
 script = ExtResource("5_358ef")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D"]
-current = true
+[node name="AudioMachine" parent="Camera3D" instance=ExtResource("6_srxrq")]
 
 [node name="ObjectPlacer" type="Node" parent="." node_paths=PackedStringArray("occupation_grid_map", "visual_mesh_parent", "visual_mesh", "nav_mesh_region")]
 script = ExtResource("5_3q6a7")
@@ -305,6 +305,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8547406, 0, -0.5226226)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4850283, 1.72174, 0)
 
 [node name="ContexSpecificUI" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
