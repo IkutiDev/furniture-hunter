@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dn57f0d46sxa7"]
+[gd_scene load_steps=13 format=4 uid="uid://dn57f0d46sxa7"]
 
 [ext_resource type="Material" uid="uid://btbvef6o2ufoq" path="res://materials/tables.tres" id="1_v061g"]
 [ext_resource type="Texture2D" uid="uid://cgepx634q17gi" path="res://furniture/gamejam_stoly_Base_color.png" id="2_lm8j1"]
@@ -89,6 +89,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rq8mf")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3nhdt"]
+random_pitch = 1.02
+streams_count = 1
+stream_0/stream = ExtResource("5_cfo32")
+
 [node name="CashTable" type="MeshInstance3D" node_paths=PackedStringArray("player")]
 transform = Transform3D(-1.5298985e-08, 0, 0.317, 0, 0.281, 0, -0.35, 0, -1.385651e-08, 0, 0, 0)
 material_override = ExtResource("1_v061g")
@@ -104,5 +109,5 @@ mesh = SubResource("ArrayMesh_omknk")
 skeleton = NodePath("")
 
 [node name="KaChing" type="AudioStreamPlayer3D" parent="kasa_1"]
-stream = ExtResource("5_cfo32")
+stream = SubResource("AudioStreamRandomizer_3nhdt")
 volume_db = -5.0

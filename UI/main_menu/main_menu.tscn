@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://23fqk2jp67kp"]
+[gd_scene load_steps=23 format=3 uid="uid://23fqk2jp67kp"]
 
 [ext_resource type="Script" uid="uid://d2iyis2l7026u" path="res://UI/main_menu/main_menu.gd" id="1_p8ccj"]
 [ext_resource type="Texture2D" uid="uid://bof1fxoqmh7b7" path="res://UI/main_menu/main_emu_background.png" id="2_1p4x4"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dwwgohbnvviiq" path="res://UI/tutorial/selling_furniture.png" id="6_cafmx"]
 [ext_resource type="Texture2D" uid="uid://dg1kwwllsmb5o" path="res://UI/tutorial/selling_items.png" id="7_tcix6"]
 [ext_resource type="Texture2D" uid="uid://d0f35hitchxuf" path="res://UI/tutorial/display_collection.png" id="9_mmlvu"]
+[ext_resource type="PackedScene" uid="uid://cwa2cv6lsgki6" path="res://UI/main_menu/settings_system/sound_setter.tscn" id="14_5771y"]
 
 [sub_resource type="Animation" id="Animation_p8ccj"]
 length = 0.001
@@ -439,6 +440,46 @@ offset_right = 1096.0
 offset_bottom = 703.0
 text = "NEXT PAGE"
 
+[node name="Settings" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.9032794, 0.90930253, 1)
+
+[node name="Sound" type="VBoxContainer" parent="Settings"]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 421.0
+offset_right = 1233.0
+offset_bottom = 697.0
+alignment = 1
+
+[node name="SoundSetter" parent="Settings/Sound" instance=ExtResource("14_5771y")]
+layout_mode = 2
+color = Color(0.795964, 2.5028e-06, 0.50109, 1)
+title_overwrite = "Main"
+
+[node name="SoundSetter2" parent="Settings/Sound" instance=ExtResource("14_5771y")]
+layout_mode = 2
+bus_name = "Effects"
+
+[node name="SoundSetter3" parent="Settings/Sound" instance=ExtResource("14_5771y")]
+layout_mode = 2
+color = Color(0.249596, 0.519648, 0.243376, 1)
+bus_name = "Music"
+
+[node name="HideSettings" type="Button" parent="Settings"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 602.0
+offset_top = 673.0
+offset_right = 652.0
+offset_bottom = 704.0
+text = "BACK"
+
 [node name="Label" type="Label" parent="."]
 visible = false
 offset_left = 87.0
@@ -459,3 +500,4 @@ Display you collections to gain renown among collectors, and to attract more pat
 [connection signal="pressed" from="Credits/HideCredits" to="." method="_on_hide_credits_pressed"]
 [connection signal="pressed" from="Tutorial/HideTutorial" to="." method="_on_hide_tutorial_pressed"]
 [connection signal="pressed" from="Tutorial/NextTutorial" to="." method="_on_next_tutorial_pressed"]
+[connection signal="pressed" from="Settings/HideSettings" to="." method="_on_hide_settings_pressed"]
