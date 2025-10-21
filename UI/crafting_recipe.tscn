@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bypcdpjljnjfc"]
+[gd_scene load_steps=13 format=3 uid="uid://bypcdpjljnjfc"]
 
 [ext_resource type="Script" uid="uid://fwd8qv7v4nbd" path="res://UI/crafting_recipe.gd" id="1_5tfuo"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_bkk45"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="5_gnrvk"]
 [ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="6_x7frn"]
 [ext_resource type="Texture2D" uid="uid://b8acovndp8wlw" path="res://UI/UI_kasia/collections_menu/ufo_collection_icon.png" id="7_x7frn"]
+[ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="8_tjfry"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjfry"]
 
@@ -16,12 +17,10 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7frn"]
 
-[node name="CraftingRecipe" type="Control"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 80.0
+[node name="CraftingRecipe" type="VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+offset_right = 687.0
+offset_bottom = 124.0
 size_flags_horizontal = 3
 script = ExtResource("1_5tfuo")
 furniture_button_scene = ExtResource("2_bkk45")
@@ -29,57 +28,34 @@ item_button_scene = ExtResource("3_k0fux")
 collection_button_scene = ExtResource("4_gnrvk")
 
 [node name="Layout" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 
 [node name="Control" type="Control" parent="Layout"]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="Layout"]
+[node name="CollectionIcon" type="TextureRect" parent="Layout"]
+unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("5_gnrvk")
-texture_pressed = ExtResource("6_x7frn")
-texture_hover = ExtResource("6_x7frn")
+texture = ExtResource("7_x7frn")
+expand_mode = 2
 stretch_mode = 3
 
-[node name="MakeSetButton" type="Button" parent="Layout/TextureButton"]
+[node name="CollectionName" type="Label" parent="Layout"]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_colors/font_pressed_color = Color(1, 0.61960787, 0, 1)
-theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tjfry")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_inxau")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ijbav")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_x7frn")
-text = "MAKE SET"
-
-[node name="ColorRect2" type="ColorRect" parent="Layout"]
-visible = false
-custom_minimum_size = Vector2(2, 0)
 layout_mode = 2
-color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "collection 
+name"
+horizontal_alignment = 3
+vertical_alignment = 1
 
 [node name="ResultGoesHere" type="CenterContainer" parent="Layout"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="Layout"]
-visible = false
-custom_minimum_size = Vector2(2, 0)
-layout_mode = 2
-color = Color(0, 0, 0, 1)
 
 [node name="CollectionComplete" type="Label" parent="Layout"]
 unique_name_in_owner = true
@@ -112,8 +88,48 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
-[node name="CollectionIcon" type="Sprite2D" parent="."]
-position = Vector2(33, 41)
-texture = ExtResource("7_x7frn")
+[node name="TextureButton" type="TextureButton" parent="Layout"]
+custom_minimum_size = Vector2(120, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_gnrvk")
+texture_pressed = ExtResource("6_x7frn")
+texture_hover = ExtResource("6_x7frn")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MakeSetButton" type="Button" parent="Layout/TextureButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_pressed_color = Color(1, 0.61960787, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tjfry")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_inxau")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ijbav")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x7frn")
+text = "MAKE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(342, 0)
+layout_mode = 2
+texture = ExtResource("8_tjfry")
+expand_mode = 1
+
+[node name="Control2" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
 
 [connection signal="pressed" from="Layout/TextureButton/MakeSetButton" to="." method="_on_make_set_button_pressed"]
