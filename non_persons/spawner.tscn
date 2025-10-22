@@ -74,6 +74,11 @@ disabled = true
 [node name="DayIndicator" type="MeshInstance3D" parent="DayToggle"]
 mesh = SubResource("SphereMesh_2u58w")
 
+[node name="EmergencyEndDayKill" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
 [connection signal="area_entered" from="TheAreaThatEatsPeople" to="." method="_on_the_area_that_eats_people_area_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="input_event" from="DayToggle" to="." method="_on_day_toggle_input_event"]
+[connection signal="timeout" from="EmergencyEndDayKill" to="." method="_on_emergency_end_day_kill_timeout"]

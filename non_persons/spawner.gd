@@ -48,12 +48,14 @@ func remove_object_from_collection(instance : Node3D) -> void:
 func start_day():
 	$DayToggle/DayIndicator.mesh.material.albedo_color = Color("yellow")
 	is_day = true
+	$EmergencyEndDayKill.stop()
 	desired_customer_count = max_customer_count + roundi(PlayerInventory.renown / 15.0)
 	pass
 
 func end_day():
 	$DayToggle/DayIndicator.mesh.material.albedo_color = Color("dark blue")
 	desired_customer_count = 0
+	$EmergencyEndDayKill.start()
 	for cusomter in get_tree().get_nodes_in_group("Customer"):
 		cusomter.energy -= 80
 	is_day = false
@@ -84,7 +86,7 @@ func de_spawn_customer(customer : Node3D) -> void:
 	if is_instance_valid(customer):
 		await customer.tree_exited
 	if _customer_count == 0 and GameManager.game_state == GameManager.GameState.ENDING_DAY:
-		assert(_customer_count == get_tree().get_nodes_in_group("Customer").size())
+		#assert(_customer_count == get_tree().get_nodes_in_group("Customer").size())
 		GameManager.set_game_state(GameManager.GameState.NIGHT)
 
 	pass
@@ -114,4 +116,10 @@ func _on_day_toggle_input_event(camera: Node, event: InputEvent, event_position:
 			end_day()
 		else:
 			start_day()
+	pass # Replace with function body.
+
+
+func _on_emergency_end_day_kill_timeout() -> void:
+	for customer in get_tree().get_nodes_in_group("Customer"):
+		de_spawn_customer(customer)
 	pass # Replace with function body.

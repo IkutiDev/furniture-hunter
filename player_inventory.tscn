@@ -12,6 +12,6 @@
 
 [node name="PlayerInventory" type="Node"]
 script = ExtResource("1_mdht6")
-furniture = Array[ExtResource("2_wiot8")]([ExtResource("3_w82bi"), ExtResource("4_j7yy0"), ExtResource("5_nyp4h")])
+furniture = Array[ExtResource("2_wiot8")]([ExtResource("3_w82bi"), ExtResource("4_j7yy0"), ExtResource("5_nyp4h"), ExtResource("5_nyp4h"), ExtResource("5_nyp4h"), ExtResource("5_nyp4h"), ExtResource("5_nyp4h")])
 items = Array[ExtResource("6_segop")]([ExtResource("7_c5gc2"), ExtResource("8_17s2w"), ExtResource("9_xndjf")])
 money = 1000

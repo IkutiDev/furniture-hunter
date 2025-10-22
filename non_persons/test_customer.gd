@@ -48,6 +48,7 @@ func load_customer(data : CustomerData):
 func _physics_process(delta):
 	$EnergyBar.scale.x = energy/100.0
 	if $NavigationAgent3D.is_navigation_finished():
+		look_at(global_position + Vector3(5,0,0), Vector3.UP)
 		return
 	var next_position = $NavigationAgent3D.get_next_path_position()
 	var offset = next_position - global_position
