@@ -229,12 +229,13 @@ func _on_think_i_chose_to_haggle() -> void:
 	var object_name : String # name of thing bought
 	var object_price : int # starting price
 	var offers : Array # a 1+ Array of offers
-	
+	var object_data
 
 	
 	if i_want_to_buy_this is FurnitureInstance:
 		object_name = i_want_to_buy_this.furniture_data.object_name
 		object_price = i_want_to_buy_this.current_price
+		object_data = i_want_to_buy_this.furniture_data
 
 	if i_want_to_buy_this is ItemInstance:
 		if i_want_to_buy_this.item_data == null:
@@ -242,7 +243,7 @@ func _on_think_i_chose_to_haggle() -> void:
 			return
 		object_name = i_want_to_buy_this.item_data.object_name
 		object_price = i_want_to_buy_this.current_price
-
+		object_data = i_want_to_buy_this.item_data
 
 	var offer_range = randi_range(1,5)
 	var bottom = (object_price/2) + randi_range(5,15) # lowest offer
@@ -254,7 +255,7 @@ func _on_think_i_chose_to_haggle() -> void:
 
 	var haggle_node = haggle_scene.instantiate() as Node3D
 	haggle_node.global_position = global_position
-	haggle_node.load_haggle_data(i_want_to_buy_this,object_name,object_price,offers)
+	haggle_node.load_haggle_data(i_want_to_buy_this,object_name,object_price,offers,object_data)
 	get_parent().add_child(haggle_node)
 	$StateMachine.transition_to("Haggle",[haggle_node])
 	
