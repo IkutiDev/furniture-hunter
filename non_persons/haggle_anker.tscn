@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://85q6sneor42y"]
+[gd_scene load_steps=11 format=3 uid="uid://85q6sneor42y"]
 
 [ext_resource type="Script" uid="uid://ceajqfmp546n1" path="res://non_persons/haggle_anker.gd" id="1_5ngml"]
 [ext_resource type="PackedScene" uid="uid://lv3pxnk12yvr" path="res://non_persons/haggle_world.tscn" id="1_wsoj2"]
+[ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="2_suggg"]
+[ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="3_dt8sc"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5ngml"]
 viewport_path = NodePath("SubViewport")
@@ -13,19 +15,28 @@ albedo_texture = SubResource("ViewportTexture_5ngml")
 [sub_resource type="PlaneMesh" id="PlaneMesh_k7ha8"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_dntw4")
-size = Vector2(1, 2)
+size = Vector2(1.6, 2.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uimp3"]
 size = Vector3(1, 0.05, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ngml"]
-size = Vector3(1, 0.375, 0.3)
+size = Vector3(0.47509766, 0.375, 0.52255857)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vlqrr"]
 viewport_path = NodePath("SubViewport")
 
-[node name="HaggleAnker" type="Node3D"]
+[node name="HaggleAnker" type="Node3D" node_paths=PackedStringArray("object_name_label", "counter_offer_label", "progess_bar", "starting_price_label", "deal_button", "no_deal_button", "object_button_goes_here")]
 script = ExtResource("1_5ngml")
+object_name_label = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/Control/ObjectButtonGoesHere/ObjectName")
+counter_offer_label = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere/VBoxContainer/CounterOffer")
+progess_bar = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/ProgressBar")
+starting_price_label = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere/VBoxContainer2/StartingPrice")
+deal_button = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere/TextureButton/Deal")
+no_deal_button = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere/TextureButton2/NoDeal")
+object_button_goes_here = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/Control/ObjectButtonGoesHere")
+item_button_scene = ExtResource("2_suggg")
+furniture_button_scene = ExtResource("3_dt8sc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.87519664, 0.39828703, 0.2745872, -0.0017321955, 0.57017815, -0.82151914, -0.48376417, 0.71851504, 0.49970803, 0, 2.4360628, 0)
@@ -37,15 +48,16 @@ mesh = SubResource("PlaneMesh_k7ha8")
 shape = SubResource("BoxShape3D_uimp3")
 
 [node name="NoDeal" type="StaticBody3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, 0.0067003253, 0.0033010244, 0.49743986)
+transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, 0.22247127, -0.024048686, 0.7456516)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/NoDeal"]
 shape = SubResource("BoxShape3D_5ngml")
 
 [node name="Deal" type="StaticBody3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, -0.009059947, -0.04555881, 0.87657773)
+transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, -0.047144588, -0.036525607, 0.82672)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Deal"]
+transform = Transform3D(1.0000014, 0, 4.4703484e-08, 4.1127205e-06, 1, -8.940697e-08, -2.2649765e-06, 0, 1, -0.26245117, 0, -0.11127925)
 shape = SubResource("BoxShape3D_5ngml")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -55,7 +67,7 @@ billboard = 1
 texture = SubResource("ViewportTexture_vlqrr")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(120, 240)
+size = Vector2i(265, 428)
 
 [node name="HaggleWorld" parent="SubViewport" instance=ExtResource("1_wsoj2")]
 

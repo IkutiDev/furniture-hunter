@@ -1,12 +1,219 @@
-[gd_scene load_steps=0 format=3 uid="uid://lv3pxnk12yvr"]
+[gd_scene load_steps=10 format=3 uid="uid://lv3pxnk12yvr"]
+
+[ext_resource type="Texture2D" uid="uid://bh5ti1hr27gnm" path="res://haggle_reference.png" id="1_xmrk1"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="2_t8443"]
+[ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_24ovs"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="3_r3dcd"]
+[ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="4_24ovs"]
+[ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="5_t8443"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3dcd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_24ovs"]
+
+[sub_resource type="Theme" id="Theme_c26t8"]
+Button/colors/font_focus_color = Color(0.9490196, 0.9490196, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_r3dcd")
+Button/styles/normal = SubResource("StyleBoxEmpty_24ovs")
 
 [node name="HaggleWorld" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 120.0
 offset_bottom = 240.0
+theme = SubResource("Theme_c26t8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color(0.8541423, 0.7871274, 0.9890167, 1)
+layout_mode = 1
+offset_right = 265.0
+offset_bottom = 428.0
+texture = ExtResource("4_24ovs")
+region_rect = Rect2(-1, 0, 107, 107)
+patch_margin_left = 10
+patch_margin_top = 8
+patch_margin_right = 10
+patch_margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_t8443")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="TradeOffer" type="Label" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Trade Offer"
+horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.54334474, 0.39914414, 0.94512624, 1)
+
+[node name="Control" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control3" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Customer"
+
+[node name="ItemIconButton" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control/VBoxContainer" instance=ExtResource("3_24ovs")]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ObjectButtonGoesHere" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control"]
+layout_mode = 2
+
+[node name="ObjectName" type="Label" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control/ObjectButtonGoesHere"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Item name"
+
+[node name="Control2" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect3" type="ColorRect" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.54334474, 0.39914414, 0.94512624, 1)
+
+[node name="OffersGoHere" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere"]
+layout_mode = 2
+
+[node name="CounterOffer" type="Label" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "$ 999"
+
+[node name="Control3" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere"]
+layout_mode = 2
+
+[node name="StartingPrice" type="Label" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "$ 999"
+
+[node name="Control4" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(0.020862466, 0, 0.69188833, 1)
+layout_mode = 2
+size_flags_vertical = 1
+value = 100.0
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.54334474, 0.39914414, 0.94512624, 1)
+
+[node name="ButtonsGoHere" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control2" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere"]
+custom_minimum_size = Vector2(120, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_r3dcd")
+texture_pressed = ExtResource("2_t8443")
+texture_hover = ExtResource("2_t8443")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Deal" type="Button" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere/TextureButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Deal"
+
+[node name="Control3" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton2" type="TextureButton" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere"]
+custom_minimum_size = Vector2(120, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_r3dcd")
+texture_pressed = ExtResource("2_t8443")
+texture_hover = ExtResource("2_t8443")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="NoDeal" type="Button" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere/TextureButton2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Decline"
+
+[node name="Control" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_t8443")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,17 +223,13 @@ grow_vertical = 2
 color = Color(0.09154721, 0, 0.7066006, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ObjectName" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Object name"
-horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 2)
@@ -58,3 +261,8 @@ text = "NO DEAL"
 [node name="Deal" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "DEAL"
+
+[node name="HaggleReference" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(808, 103)
+texture = ExtResource("1_xmrk1")
