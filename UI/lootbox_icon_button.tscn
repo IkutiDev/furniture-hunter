@@ -1,13 +1,91 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg83k0fhcv1t4"]
+[gd_scene load_steps=7 format=3 uid="uid://dg83k0fhcv1t4"]
 
-[ext_resource type="Texture2D" uid="uid://b7ctuocvuoegn" path="res://UI/WIP_icons/bar-stool.png" id="1_ocn1h"]
+[ext_resource type="Texture2D" uid="uid://b5rwl4pqwnfym" path="res://UI/UI_kasia/key menu/dividing_line.png" id="2_lmifx"]
 [ext_resource type="Script" uid="uid://bogs0emt5fhl3" path="res://UI/lootbox_button.gd" id="2_ocn1h"]
+[ext_resource type="Texture2D" uid="uid://b4jau8b5fl7do" path="res://UI/UI_kasia/key menu/key6_golden.png" id="3_ddgw3"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="4_00muf"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="5_xv83w"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="6_15u11"]
 
-[node name="LootboxIconButton" type="TextureButton"]
-custom_minimum_size = Vector2(80, 80)
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("1_ocn1h")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="KeyButton" type="Control" node_paths=PackedStringArray("use_button", "name_label", "icon_texture")]
+custom_minimum_size = Vector2(575, 58)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 80.0
+offset_bottom = 80.0
 script = ExtResource("2_ocn1h")
+use_button = NodePath("LootboxEntry/MarginContainer2/Button2")
+name_label = NodePath("LootboxEntry/MarginContainer/Label")
+icon_texture = NodePath("LootboxEntry/TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(5.304, 0)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 576.11505
+offset_top = 1.7533299e-05
+offset_right = 6.4190674
+offset_bottom = 576.1151
+grow_horizontal = 2
+rotation = 1.5707964
+texture = ExtResource("2_lmifx")
+expand_mode = 1
+
+[node name="LootboxEntry" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 567.0
+offset_bottom = 36.0
+
+[node name="TextureRect" type="TextureRect" parent="LootboxEntry"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_ddgw3")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="LootboxEntry"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="LootboxEntry/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.5934156, 0.30666357, 0.17826912, 1)
+theme_override_fonts/font = ExtResource("4_00muf")
+theme_override_font_sizes/font_size = 14
+text = "super long key name 1"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="LootboxEntry"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="MarginContainer2" type="VBoxContainer" parent="LootboxEntry"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button2" type="TextureButton" parent="LootboxEntry/MarginContainer2"]
+custom_minimum_size = Vector2(85, 27)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+texture_normal = ExtResource("5_xv83w")
+texture_pressed = ExtResource("6_15u11")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="LootboxEntry/MarginContainer2/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5461635, 0.35935703, 0.2531927, 1)
+theme_override_fonts/font = ExtResource("4_00muf")
+theme_override_font_sizes/font_size = 14
+text = "Use"
+horizontal_alignment = 1

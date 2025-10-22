@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://duajv1ywffbcd"]
 
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="1_03efm"]
-[ext_resource type="Texture2D" uid="uid://dbt27wptocc6f" path="res://UI/WIP_icons/key.png" id="1_wff8v"]
+[ext_resource type="Texture2D" uid="uid://dcdpbku5375qs" path="res://UI/UI_kasia/key menu/key3_bronze.png" id="1_ek86o"]
 
 [resource]
 script = ExtResource("1_03efm")
-icon = ExtResource("1_wff8v")
+icon = ExtResource("1_ek86o")
 lootbox_title = "Old Rusty Key"
 lootbox_description = "Unlocks rooms filled with broken goods, ones which any collector would want to get rid off as quickly as possible."
 random_elements_per_box = 3
