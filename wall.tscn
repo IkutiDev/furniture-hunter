@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://drwr323bjra7n"]
+[gd_scene load_steps=8 format=3 uid="uid://drwr323bjra7n"]
 
 [ext_resource type="PackedScene" uid="uid://ybt7ids2thcm" path="res://floor_and_walls/wall_g_1.glb" id="1_dy4dl"]
 [ext_resource type="PackedScene" uid="uid://cohjpainpc7w0" path="res://floor_and_walls/wall_g_2.glb" id="2_0m056"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nmvytxwpxcss" path="res://floor_and_walls/wall_p_2.glb" id="4_w36hb"]
 [ext_resource type="PackedScene" uid="uid://6aslqagx4oiq" path="res://floor_and_walls/wall_t_1.glb" id="5_h2xgo"]
 [ext_resource type="PackedScene" uid="uid://dghwcxablknbt" path="res://floor_and_walls/wall_t_2.glb" id="6_vbm8d"]
+[ext_resource type="PackedScene" uid="uid://c2a0gogt4331l" path="res://floor_and_walls/waal.outside.glb" id="7_0m056"]
 
 [node name="wall" type="Node3D"]
 
@@ -20,3 +21,6 @@
 [node name="wall_t_12" parent="." instance=ExtResource("5_h2xgo")]
 
 [node name="wall_t_22" parent="." instance=ExtResource("6_vbm8d")]
+
+[node name="waal_outside" parent="." instance=ExtResource("7_0m056")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005249083, 0, -0.021799684)
