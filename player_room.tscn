@@ -280,7 +280,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
 skeleton = NodePath("../..")
 
 [node name="InventoryUI" parent="." instance=ExtResource("2_2dulj")]
-visible = false
 
 [node name="CraftingUI" parent="." instance=ExtResource("11_4fkm8")]
 visible = false
@@ -519,7 +518,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5773549, 0.78274584, -3.394
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4850283, 1.72174, 0)
 
 [node name="ContexSpecificUI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -530,15 +528,12 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="SetFurniturePriceUI" parent="ContexSpecificUI" instance=ExtResource("8_o6f6g")]
-visible = false
 layout_mode = 1
 
 [node name="SetCollectionUI" parent="ContexSpecificUI" instance=ExtResource("16_srxrq")]
-visible = false
 layout_mode = 1
 
 [node name="SetItemPriceUI" parent="ContexSpecificUI" instance=ExtResource("12_1t0pb")]
-visible = false
 layout_mode = 1
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
