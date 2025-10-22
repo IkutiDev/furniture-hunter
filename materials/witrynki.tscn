@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=4 uid="uid://r531hru3af6g"]
+[gd_scene load_steps=33 format=4 uid="uid://r531hru3af6g"]
 
 [ext_resource type="PackedScene" uid="uid://cc6k83dc361fx" path="res://witrynki/chinese.glb" id="1_b58ey"]
 [ext_resource type="Material" uid="uid://ipelc8vbyqho" path="res://materials/items.tres" id="2_ipmhl"]
 [ext_resource type="Material" uid="uid://bqhiel0ns8mws" path="res://materials/podest.tres" id="5_2q1hh"]
+[ext_resource type="PackedScene" uid="uid://bcnfluidk7xdf" path="res://platform/platform.glb" id="6_k3flx"]
 [ext_resource type="Texture2D" uid="uid://bt4dgaf72tpl1" path="res://witrynki/witch_fiolki_Base_color.png" id="8_4ivj7"]
 [ext_resource type="Texture2D" uid="uid://wt7x0b16ug25" path="res://witrynki/Material.002_Emissive.png" id="8_x4uy6"]
 
@@ -477,3 +478,6 @@ skeleton = NodePath("")
 transform = Transform3D(1.7395985, -0.019059723, 0.026416298, -0.019059718, 0.54867125, 1.6510187, -0.026416289, -1.6510186, 0.54836637, -12.920994, -3.3691003, 0.5459441)
 mesh = SubResource("ArrayMesh_k3flx")
 skeleton = NodePath("")
+
+[node name="platform2" parent="." index="7" instance=ExtResource("6_k3flx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.351177, 0, -0.6269741)
