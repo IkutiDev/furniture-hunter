@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://pybgm8veghsk"]
+
+[ext_resource type="Script" uid="uid://okkwfejuni2m" path="res://UI/lootbox_entry.gd" id="1_000ef"]
+[ext_resource type="Texture2D" uid="uid://b5rwl4pqwnfym" path="res://UI/UI_kasia/key menu/dividing_line.png" id="1_d0qs0"]
+[ext_resource type="Texture2D" uid="uid://b4jau8b5fl7do" path="res://UI/UI_kasia/key menu/key6_golden.png" id="2_d0qs0"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="3_jlys0"]
+[ext_resource type="Texture2D" uid="uid://q5c82l3a7ysv" path="res://UI/UI_kasia/upper_menu/coin_icon.png" id="4_rwm4g"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="5_eh3ha"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="6_8lw5m"]
+
+[node name="LootboxEntryCorrect" type="Control" node_paths=PackedStringArray("icon", "lootbox_title", "lootbox_price", "buy_button")]
+custom_minimum_size = Vector2(575, 58)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_000ef")
+icon = NodePath("LootboxEntry/TextureRect")
+lootbox_title = NodePath("LootboxEntry/MarginContainer/Label")
+lootbox_price = NodePath("LootboxEntry/MarginContainer3/Label")
+buy_button = NodePath("LootboxEntry/MarginContainer2/Button2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(5.304, 0)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 576.1151
+offset_top = 1.7533299e-05
+offset_right = 6.4189453
+offset_bottom = 576.1151
+grow_horizontal = 2
+rotation = 1.5707964
+texture = ExtResource("1_d0qs0")
+expand_mode = 1
+
+[node name="LootboxEntry" type="HBoxContainer" parent="." node_paths=PackedStringArray("icon", "lootbox_title", "lootbox_price", "buy_button")]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 575.0
+offset_bottom = 32.0
+script = ExtResource("1_000ef")
+icon = NodePath("TextureRect")
+lootbox_title = NodePath("MarginContainer/Label")
+lootbox_price = NodePath("MarginContainer3/Label")
+buy_button = NodePath("MarginContainer2/Button2")
+
+[node name="TextureRect" type="TextureRect" parent="LootboxEntry"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_d0qs0")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="LootboxEntry"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="LootboxEntry/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.5934156, 0.30666357, 0.17826912, 1)
+theme_override_fonts/font = ExtResource("3_jlys0")
+theme_override_font_sizes/font_size = 14
+text = "super long key name 1"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="LootboxEntry"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="MarginContainer3" type="HBoxContainer" parent="LootboxEntry"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LootboxEntry/MarginContainer3"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_rwm4g")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="LootboxEntry/MarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.18120003, 0.18120006, 0.18120003, 1)
+theme_override_fonts/font = ExtResource("3_jlys0")
+theme_override_font_sizes/font_size = 14
+text = "1100"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control2" type="Control" parent="LootboxEntry"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="MarginContainer2" type="VBoxContainer" parent="LootboxEntry"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button2" type="TextureButton" parent="LootboxEntry/MarginContainer2"]
+custom_minimum_size = Vector2(85, 27)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+texture_normal = ExtResource("5_eh3ha")
+texture_pressed = ExtResource("6_8lw5m")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="LootboxEntry/MarginContainer2/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5461635, 0.35935703, 0.2531927, 1)
+theme_override_fonts/font = ExtResource("3_jlys0")
+theme_override_font_sizes/font_size = 14
+text = "Buy"
+horizontal_alignment = 1

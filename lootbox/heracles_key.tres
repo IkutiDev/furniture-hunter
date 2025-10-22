@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://dbktitmjb6jxe"]
 
-[ext_resource type="Texture2D" uid="uid://dbt27wptocc6f" path="res://UI/WIP_icons/key.png" id="1_52l15"]
+[ext_resource type="Texture2D" uid="uid://b0gxvafpi7gtt" path="res://UI/UI_kasia/key menu/key2_bronze.png" id="1_52l15"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_0jcl2"]
 
 [resource]

@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8myxwy4rg0ac"]
+[gd_scene load_steps=22 format=3 uid="uid://b8myxwy4rg0ac"]
 
 [ext_resource type="Script" uid="uid://dvc8a68nt4mhp" path="res://UI/auction_ui.gd" id="1_3q04y"]
-[ext_resource type="PackedScene" uid="uid://b5ntk4q1744f7" path="res://UI/lootbox_entry.tscn" id="2_g0ads"]
 [ext_resource type="PackedScene" uid="uid://pr4loltppqer" path="res://UI/lootbox_entry_special_deal.tscn" id="3_dgi2x"]
+[ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="4_71e5b"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="5_kwudh"]
+[ext_resource type="Texture2D" uid="uid://dk1yltpvj5vux" path="res://UI/UI_kasia/collections_menu/wooden_decor.png" id="5_ntvce"]
+[ext_resource type="Texture2D" uid="uid://ivpuhim1dkif" path="res://UI/UI_kasia/side_menu/key_icon.png" id="6_4du6r"]
+[ext_resource type="Texture2D" uid="uid://pc8tb6jhy086" path="res://UI/UI_kasia/collections_menu/slider.png" id="6_8tlju"]
+[ext_resource type="PackedScene" uid="uid://pybgm8veghsk" path="res://UI/lootbox_entry_correct.tscn" id="6_nlboy"]
+[ext_resource type="Texture2D" uid="uid://bewgqcf8jefjl" path="res://UI/UI_kasia/collections_menu/slider_background.png" id="7_7f6vm"]
+[ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="7_p6y0j"]
+[ext_resource type="Texture2D" uid="uid://ciaex7oufp5xr" path="res://UI/UI_kasia/key menu/shop.png" id="8_dngry"]
+[ext_resource type="Texture2D" uid="uid://b5rwl4pqwnfym" path="res://UI/UI_kasia/key menu/dividing_line.png" id="8_p6y0j"]
+[ext_resource type="PackedScene" uid="uid://dg83k0fhcv1t4" path="res://UI/lootbox_icon_button.tscn" id="8_t037y"]
+[ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="9_4du6r"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="9_hxtsj"]
+[ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="9_nlboy"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="10_ly1ca"]
+[ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="10_p6y0j"]
 
-[node name="AuctionUI" type="Control" node_paths=PackedStringArray("auctions_menu", "open_menu_button", "lootbox_buttons_container", "default_stock_label", "special_deal_label", "empty_special_deals")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t037y"]
+texture = ExtResource("6_8tlju")
+expand_margin_left = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ab3oi"]
+texture = ExtResource("7_7f6vm")
+expand_margin_left = 12.0
+
+[sub_resource type="Theme" id="Theme_i2td6"]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_t037y")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_ab3oi")
+
+[node name="AuctionUI" type="Control" node_paths=PackedStringArray("close_button", "owned_button", "shop_button", "auctions_button", "owned_section", "owned_list", "shop_section", "shop_list", "auctions_section", "auctions_list")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,70 +40,336 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_3q04y")
-auctions_menu = NodePath("Panel")
-open_menu_button = NodePath("Button")
-lootbox_buttons_container = NodePath("Panel/ScrollContainer/VBoxContainer")
-default_stock_label = NodePath("Panel/ScrollContainer/VBoxContainer/DefaultStockLabel")
-special_deal_label = NodePath("Panel/ScrollContainer/VBoxContainer/SpecialDealsLabel")
-empty_special_deals = NodePath("Panel/ScrollContainer/VBoxContainer/EmptyLabel")
-lootbox_buy_button_scene = ExtResource("2_g0ads")
+key_button_scene = ExtResource("8_t037y")
+lootbox_buy_button_scene = ExtResource("6_nlboy")
 lootbox_special_deal_button_scene = ExtResource("3_dgi2x")
+close_button = NodePath("CloseButton")
+owned_button = NodePath("Button2")
+shop_button = NodePath("Button3")
+auctions_button = NodePath("Button4")
+owned_section = NodePath("Panel/Owned")
+owned_list = NodePath("Panel/Owned/ScrollContainer/VBoxContainer")
+shop_section = NodePath("Panel/Shop")
+shop_list = NodePath("Panel/Shop/ScrollContainer/VBoxContainer")
+auctions_section = NodePath("Panel/Auctions")
+auctions_list = NodePath("Panel/Auctions/ScrollContainer/VBoxContainer")
+active_button_texture = ExtResource("10_ly1ca")
+inactive_button_texture = ExtResource("9_hxtsj")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 1000.0
+offset_left = 296.0
+offset_top = 149.0
+offset_right = 988.0
+offset_bottom = -196.0
 grow_vertical = 2
+texture = ExtResource("4_71e5b")
+region_rect = Rect2(-1, 0, 107, 107)
+patch_margin_left = 10
+patch_margin_top = 8
+patch_margin_right = 10
+patch_margin_bottom = 8
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 11.0
+offset_right = 397.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.5497736, 0.26197085, 0.21139836, 1)
+theme_override_fonts/font = ExtResource("5_kwudh")
+theme_override_font_sizes/font_size = 32
+text = "Keys"
+
+[node name="Owned" type="Control" parent="Panel"]
+visible = false
+anchors_preset = 0
+offset_left = 42.0
+offset_top = 67.0
+offset_right = 665.0
+offset_bottom = 304.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Owned"]
+texture_filter = 1
+custom_minimum_size = Vector2(623, 174)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.92200005
-offset_bottom = 0.15997314
+offset_left = 7.0
+offset_top = 52.0
+offset_right = 7.0
+offset_bottom = 7.4859924
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_i2td6")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Owned/ScrollContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
+theme_override_constants/separation = -15
 
-[node name="SpecialDealsLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Special Deals"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LootboxEntrySpecialDeal" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("3_dgi2x")]
-layout_mode = 2
-
-[node name="EmptyLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Empty"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="DefaultStockLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Default Stock"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LootboxEntry" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("2_g0ads")]
-layout_mode = 2
-
-[node name="LootboxEntry2" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("2_g0ads")]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="."]
+[node name="Shop" type="Control" parent="Panel"]
 visible = false
+anchors_preset = 0
+offset_left = 42.0
+offset_top = 67.0
+offset_right = 665.0
+offset_bottom = 304.0
+
+[node name="Label2" type="Label" parent="Panel/Shop"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 17.0
+offset_right = 486.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.76439434, 0.50752574, 0.3099223, 1)
+theme_override_fonts/font = ExtResource("5_kwudh")
+theme_override_font_sizes/font_size = 14
+text = "Key Price"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Shop"]
+texture_filter = 1
+custom_minimum_size = Vector2(623, 174)
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.92200005
+offset_left = 7.0
+offset_top = 52.0
+offset_right = 7.0
+offset_bottom = 7.4859924
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_i2td6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Shop/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = -15
+
+[node name="TextureRect5" type="TextureRect" parent="Panel/Shop"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 389.0
+offset_top = 16.0
+offset_right = 392.0
+offset_bottom = 213.0
+texture = ExtResource("8_p6y0j")
+
+[node name="Auctions" type="Control" parent="Panel"]
+visible = false
+anchors_preset = 0
+offset_left = 42.0
+offset_top = 67.0
+offset_right = 665.0
+offset_bottom = 304.0
+
+[node name="Label2" type="Label" parent="Panel/Auctions"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 17.0
+offset_right = 486.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.76439434, 0.50752574, 0.3099223, 1)
+theme_override_fonts/font = ExtResource("5_kwudh")
+theme_override_font_sizes/font_size = 14
+text = "Key Price"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Auctions"]
+texture_filter = 1
+custom_minimum_size = Vector2(623, 174)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.92200005
+offset_left = 7.0
+offset_top = 52.0
+offset_right = 7.0
+offset_bottom = 7.4859924
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_i2td6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Auctions/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = -15
+
+[node name="TextureRect5" type="TextureRect" parent="Panel/Auctions"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 389.0
+offset_top = 16.0
+offset_right = 392.0
+offset_bottom = 213.0
+texture = ExtResource("8_p6y0j")
+
+[node name="TextureRect3" type="TextureRect" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 211.0
+offset_top = -56.0
+offset_right = 479.0
+offset_bottom = 1.0
+texture = ExtResource("5_ntvce")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 328.0
+offset_top = -40.0
+offset_right = 379.0
+offset_bottom = 1.0
+texture = ExtResource("6_4du6r")
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -9.0
+offset_right = 696.0
+offset_bottom = 12.0
+texture = ExtResource("7_p6y0j")
+
+[node name="TextureRect6" type="TextureRect" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 115.0
+offset_top = 54.0
+offset_right = 583.0
+offset_bottom = 83.0
+texture = ExtResource("9_nlboy")
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 115.0
+offset_top = 279.0
+offset_right = 583.0
+offset_bottom = 308.0
+texture = ExtResource("9_nlboy")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -9.0
+offset_top = 364.0
+offset_right = 696.0
+offset_bottom = 376.0
+texture = ExtResource("7_p6y0j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.5568628)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -8.0
-offset_right = 8.0
-grow_vertical = 0
+offset_top = -38.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_dngry")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 933.0
+offset_top = 169.0
+offset_right = 977.0
+offset_bottom = 213.0
+focus_mode = 0
+texture_normal = ExtResource("9_4du6r")
+texture_pressed = ExtResource("10_p6y0j")
+
+[node name="Button2" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(85, 27)
+layout_mode = 0
+offset_left = 412.0
+offset_top = 462.0
+offset_right = 550.0
+offset_bottom = 505.0
+size_flags_horizontal = 3
+focus_mode = 0
+texture_normal = ExtResource("9_hxtsj")
+texture_pressed = ExtResource("10_ly1ca")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5461635, 0.35935703, 0.2531927, 1)
+theme_override_fonts/font = ExtResource("5_kwudh")
+theme_override_font_sizes/font_size = 24
+text = "Owned"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Button3" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(85, 27)
+layout_mode = 0
+offset_left = 572.0
+offset_top = 462.0
+offset_right = 710.0
+offset_bottom = 505.0
+size_flags_horizontal = 3
+focus_mode = 0
+texture_normal = ExtResource("9_hxtsj")
+texture_pressed = ExtResource("10_ly1ca")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5461635, 0.35935703, 0.2531927, 1)
+theme_override_fonts/font = ExtResource("5_kwudh")
+theme_override_font_sizes/font_size = 24
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Button4" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(85, 27)
+layout_mode = 0
+offset_left = 731.0
+offset_top = 461.0
+offset_right = 869.0
+offset_bottom = 504.0
+size_flags_horizontal = 3
+focus_mode = 0
+texture_normal = ExtResource("9_hxtsj")
+texture_pressed = ExtResource("10_ly1ca")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5461635, 0.35935703, 0.2531927, 1)
+theme_override_fonts/font = ExtResource("5_kwudh")
+theme_override_font_sizes/font_size = 24
 text = "Auctions"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
