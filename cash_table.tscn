@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dn57f0d46sxa7"]
+[gd_scene load_steps=14 format=4 uid="uid://dn57f0d46sxa7"]
 
 [ext_resource type="Material" uid="uid://btbvef6o2ufoq" path="res://materials/tables.tres" id="1_v061g"]
 [ext_resource type="Texture2D" uid="uid://cgepx634q17gi" path="res://furniture/gamejam_stoly_Base_color.png" id="2_lm8j1"]
@@ -94,6 +94,9 @@ random_pitch = 1.02
 streams_count = 1
 stream_0/stream = ExtResource("5_cfo32")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nhdt"]
+size = Vector3(7, 4, 3)
+
 [node name="CashTable" type="MeshInstance3D" node_paths=PackedStringArray("player")]
 transform = Transform3D(-1.5298985e-08, 0, 0.317, 0, 0.281, 0, -0.35, 0, -1.385651e-08, 0, 0, 0)
 material_override = ExtResource("1_v061g")
@@ -112,3 +115,13 @@ skeleton = NodePath("")
 stream = SubResource("AudioStreamRandomizer_3nhdt")
 volume_db = -5.0
 unit_size = 8.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 5.6489026e-13, 0, 1, 0, -5.6489026e-13, 0, 1, -5.2792643e-06, 0.5, -2.547866e-13)
+shape = SubResource("BoxShape3D_3nhdt")
+
+[connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]

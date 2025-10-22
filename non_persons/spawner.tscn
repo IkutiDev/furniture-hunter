@@ -64,6 +64,7 @@ autostart = true
 
 [node name="DayToggle" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72174, 0)
+visible = false
 gravity_scale = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DayToggle"]
