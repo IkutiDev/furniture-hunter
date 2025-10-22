@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://hv3wyucwiuts"]
+[gd_scene load_steps=10 format=3 uid="uid://hv3wyucwiuts"]
 
 [ext_resource type="Script" uid="uid://cbkm60bxjgr4e" path="res://player_inventory.gd" id="1_mdht6"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="2_wiot8"]
+[ext_resource type="Resource" uid="uid://8jdt0qpjac4s" path="res://data/225_enchanted_telescope.tres" id="3_w82bi"]
+[ext_resource type="Resource" uid="uid://br7g6yccala8w" path="res://data/222_blessed_amphora.tres" id="4_j7yy0"]
+[ext_resource type="Resource" uid="uid://bv8sibobaxfm1" path="res://data/204_divineing_table.tres" id="5_nyp4h"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="6_segop"]
+[ext_resource type="Resource" uid="uid://bjgxyb3wgmo00" path="res://data/114_set_animal_statue.tres" id="7_c5gc2"]
+[ext_resource type="Resource" uid="uid://caj6uqcr0u3u2" path="res://data/102_tarnished_chalice.tres" id="8_17s2w"]
+[ext_resource type="Resource" uid="uid://f1fptwk7yhx" path="res://data/105_genuine_unicorn_horn.tres" id="9_xndjf"]
 
 [node name="PlayerInventory" type="Node"]
 script = ExtResource("1_mdht6")
+furniture = Array[ExtResource("2_wiot8")]([ExtResource("3_w82bi"), ExtResource("4_j7yy0"), ExtResource("5_nyp4h"), ExtResource("5_nyp4h"), ExtResource("5_nyp4h"), ExtResource("5_nyp4h"), ExtResource("5_nyp4h")])
+items = Array[ExtResource("6_segop")]([ExtResource("7_c5gc2"), ExtResource("8_17s2w"), ExtResource("9_xndjf")])
 money = 1000

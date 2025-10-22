@@ -75,6 +75,8 @@ visible = false
 mesh = SubResource("CapsuleMesh_3oqfh")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.6
+target_desired_distance = 2.0
 avoidance_enabled = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
