@@ -6,6 +6,8 @@ extends Control
 @export var furniture_button_scene : PackedScene
 @export var item_button_scene : PackedScene
 
+@export var exit_button : BaseButton
+
 @export var video_player : VideoStreamPlayer
 
 var cutscene_playing : bool = false
@@ -16,6 +18,7 @@ func _ready() -> void:
 	lootbox_menu.visible = false
 	video_player.hide()
 	video_player.finished.connect(on_cutscene_finished)
+	exit_button.pressed.connect(close_menu)
 	
 func _toggle_auctions_menu() -> void:
 	if lootbox_menu.visible:

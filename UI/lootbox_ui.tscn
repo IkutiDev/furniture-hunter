@@ -1,13 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkgqd0cei32ye"]
+[gd_scene load_steps=12 format=3 uid="uid://bkgqd0cei32ye"]
 
-[ext_resource type="PackedScene" uid="uid://bi2qjpbwkn8mu" path="res://lootbox/animation/lootbox_world.tscn" id="1_5edwe"]
 [ext_resource type="Script" uid="uid://d3c8hqd6dysyr" path="res://UI/lootbox_ui.gd" id="1_lbq0n"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_ihxcr"]
 [ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_apek5"]
 [ext_resource type="PackedScene" uid="uid://b1q3webi276mx" path="res://UI/tool_tip_panel.tscn" id="3_r8gls"]
 [ext_resource type="VideoStream" uid="uid://d0w7yg7upmico" path="res://filmiki/door_ufo.ogv" id="4_apek5"]
+[ext_resource type="Texture2D" uid="uid://hi5m0knpuhyu" path="res://UI/UI_kasia/key menu/pop_up_background.png" id="4_d36t1"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="6_ho6ij"]
+[ext_resource type="Texture2D" uid="uid://dpqbaalgfmf8d" path="res://UI/UI_kasia/key menu/decor_pop_up.png" id="7_ca2xr"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="8_kcmj3"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="9_fviw8"]
 
-[node name="LootboxUI" type="Control" node_paths=PackedStringArray("lootbox_menu", "video_player")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ho6ij"]
+texture = ExtResource("4_d36t1")
+texture_margin_left = 27.0
+texture_margin_top = 36.0
+texture_margin_right = 27.0
+region_rect = Rect2(0, 0, 256, 256)
+
+[node name="LootboxUI" type="Control" node_paths=PackedStringArray("lootbox_menu", "exit_button", "video_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,39 +30,25 @@ script = ExtResource("1_lbq0n")
 lootbox_menu = NodePath("Panel")
 furniture_button_scene = ExtResource("2_ihxcr")
 item_button_scene = ExtResource("3_apek5")
+exit_button = NodePath("Panel/TextureButton")
 video_player = NodePath("VideoStreamPlayer")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 294.0
-offset_top = 31.0
-offset_right = 934.0
-offset_bottom = 671.0
+offset_left = 286.0
+offset_top = 148.0
+offset_right = 995.0
+offset_bottom = 519.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ho6ij")
 
 [node name="MouseBlocker" type="ColorRect" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = -432.0
 offset_top = -158.0
 offset_right = 1298.0
 offset_bottom = 787.0
 color = Color(0.8648356, 0.5444204, 0.29672363, 0.20392157)
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="Panel/SubViewportContainer"]
-own_world_3d = true
-handle_input_locally = false
-size = Vector2i(640, 640)
-render_target_update_mode = 0
-
-[node name="LootboxWorld" parent="Panel/SubViewportContainer/SubViewport" instance=ExtResource("1_5edwe")]
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel"]
 layout_mode = 0
@@ -67,11 +64,78 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 0
-offset_left = 1.0
-offset_top = 429.0
-offset_right = 641.0
-offset_bottom = 509.0
+offset_left = 32.0
+offset_top = 141.0
+offset_right = 672.0
+offset_bottom = 248.0
 alignment = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.5
+offset_top = 24.0
+offset_right = 156.5
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.6961457, 0.71675944, 0.93438244, 1)
+theme_override_fonts/font = ExtResource("6_ho6ij")
+theme_override_font_sizes/font_size = 26
+text = "Congratulations! You found:"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Label"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = 10.0
+offset_right = 63.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_ca2xr")
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.5
+offset_top = -79.0
+offset_right = 100.5
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+texture_normal = ExtResource("8_kcmj3")
+texture_pressed = ExtResource("9_fviw8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -4.0
+offset_right = -14.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.51271856, 0.36313576, 0.24197686, 1)
+theme_override_fonts/font = ExtResource("6_ho6ij")
+theme_override_font_sizes/font_size = 30
+text = "Claim"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
