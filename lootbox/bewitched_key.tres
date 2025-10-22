@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://bk33y4cvcguov"]
+[gd_resource type="Resource" script_class="LootboxData" load_steps=4 format=3 uid="uid://bk33y4cvcguov"]
 
 [ext_resource type="Texture2D" uid="uid://bhhoq5j07myvy" path="res://UI/UI_kasia/key menu/key11_bronze.png" id="1_bkt0p"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_fbovf"]
+[ext_resource type="VideoStream" uid="uid://c85bsixigc52q" path="res://filmiki/door_witch.ogv" id="2_htfyp"]
 
 [resource]
 script = ExtResource("2_fbovf")
 icon = ExtResource("1_bkt0p")
 lootbox_title = "Bewitch Key"
-lootbox_description = "Unlocks rooms filled cauldrons and brooms and other witch tools of trade. Mostly procured via some witches bad at their craft not being able to magic their way out of unpaid taxes."
+lootbox_video = ExtResource("2_htfyp")
 lootbox_price = 100
 random_elements_per_box = 5
 tags = Array[int]([1])

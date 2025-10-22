@@ -284,9 +284,6 @@ skeleton = NodePath("../..")
 [node name="CraftingUI" parent="." instance=ExtResource("11_4fkm8")]
 visible = false
 
-[node name="LootboxUI" parent="." instance=ExtResource("10_1l8t1")]
-visible = false
-
 [node name="AuctionUI" parent="." instance=ExtResource("7_2dulj")]
 visible = false
 
@@ -535,6 +532,8 @@ layout_mode = 1
 
 [node name="SetItemPriceUI" parent="ContexSpecificUI" instance=ExtResource("12_1t0pb")]
 layout_mode = 1
+
+[node name="LootboxUI" parent="." instance=ExtResource("10_1l8t1")]
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 transform = Transform3D(0.86427045, -0.40119925, 0.30342412, 0, 0.603206, 0.79757994, -0.50301737, -0.6893294, 0.5213348, 4.955, 7.685, 7.253605)

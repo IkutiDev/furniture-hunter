@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://dr72rtatnkreh"]
+[gd_resource type="Resource" script_class="LootboxData" load_steps=4 format=3 uid="uid://dr72rtatnkreh"]
 
 [ext_resource type="Texture2D" uid="uid://di55bpor6fnjb" path="res://UI/UI_kasia/key menu/key9_silver.png" id="1_if3o7"]
+[ext_resource type="VideoStream" uid="uid://c1i1jx4cgfmor" path="res://filmiki/door_greek.ogv" id="2_c1via"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_hr7y7"]
 
 [resource]
 script = ExtResource("2_hr7y7")
 icon = ExtResource("1_if3o7")
 lootbox_title = "Cursed Key"
-lootbox_description = "Unlocks rooms filled with items that are believed to be full of curse energy
-"
+lootbox_video = ExtResource("2_c1via")
 lootbox_price = 300
 renown_required = 750
 special_deal_spawn_chance = 60

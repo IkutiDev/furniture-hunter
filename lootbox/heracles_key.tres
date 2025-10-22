@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://dbktitmjb6jxe"]
+[gd_resource type="Resource" script_class="LootboxData" load_steps=4 format=3 uid="uid://dbktitmjb6jxe"]
 
 [ext_resource type="Texture2D" uid="uid://b0gxvafpi7gtt" path="res://UI/UI_kasia/key menu/key2_bronze.png" id="1_52l15"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_0jcl2"]
+[ext_resource type="VideoStream" uid="uid://c1i1jx4cgfmor" path="res://filmiki/door_greek.ogv" id="2_4ysnn"]
 
 [resource]
 script = ExtResource("2_0jcl2")
 icon = ExtResource("1_52l15")
 lootbox_title = "Heracles Key"
-lootbox_description = "Unlocks rooms filled with ancient greek items of legends. "
+lootbox_video = ExtResource("2_4ysnn")
 lootbox_price = 200
 random_elements_per_box = 5
 tags = Array[int]([4])

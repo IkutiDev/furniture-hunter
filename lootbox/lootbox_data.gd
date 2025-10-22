@@ -3,7 +3,7 @@ extends Resource
 
 @export var icon : Texture2D
 @export var lootbox_title : String
-@export_multiline var lootbox_description : String
+@export var lootbox_video : VideoStreamTheora
 @export var lootbox_price : int
 @export var renown_required : int
 @export var special_deal_spawn_chance : int

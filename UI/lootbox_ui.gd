@@ -2,16 +2,20 @@ extends Control
 
 
 @export var lootbox_menu : Control
-@export var open_menu_button : BaseButton
 
 @export var furniture_button_scene : PackedScene
 @export var item_button_scene : PackedScene
 
+@export var video_player : VideoStreamPlayer
+
+var cutscene_playing : bool = false
+
 func _ready() -> void:
-	open_menu_button.pressed.connect(_toggle_auctions_menu)
 	EventBus.lootbox_opened.connect(_open_lootbox)
 	EventBus.skip_lootbox_cutscene.connect(skip_cutscene)
 	lootbox_menu.visible = false
+	video_player.hide()
+	video_player.finished.connect(on_cutscene_finished)
 	
 func _toggle_auctions_menu() -> void:
 	if lootbox_menu.visible:
@@ -29,19 +33,27 @@ func close_menu() -> void:
 
 
 func skip_cutscene() -> void:
-	$Panel/SubViewportContainer/SubViewport/LootboxWorld.early_end()
+	video_player.stop()
+	cutscene_playing = false
 
-
+func on_cutscene_finished() -> void:
+	cutscene_playing = false
 
 func _open_lootbox(data : LootboxData):
 	
 	for c in %ButtonsShowingObjectsGoHere.get_children(): # clean up before next opening
 		c.queue_free()
 	open_menu()
-	$Panel/SubViewportContainer/SubViewport/LootboxWorld.play()
+	video_player.stream = data.lootbox_video
+	video_player.show()
+	cutscene_playing  = true
+	video_player.play()
+	#$Panel/SubViewportContainer/SubViewport/LootboxWorld.play()
 	EventBus.play_lootbox_cutscene.emit()
-	await $Panel/SubViewportContainer/SubViewport/LootboxWorld.animation_complete # wait for the animation to finish
+	while cutscene_playing:
+		await get_tree().process_frame
 	EventBus.lootbox_cutscene_ended.emit()
+	video_player.hide()
 	var spawned_objects = data.spawn_objects() as Array # actual spawn the objects
 
 	for object in spawned_objects:

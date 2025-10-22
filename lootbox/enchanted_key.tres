@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://prxrvsy0k1sw"]
+[gd_resource type="Resource" script_class="LootboxData" load_steps=4 format=3 uid="uid://prxrvsy0k1sw"]
 
 [ext_resource type="Texture2D" uid="uid://ci0ayvrsaqqft" path="res://UI/UI_kasia/key menu/key2_golden.png" id="1_o308e"]
+[ext_resource type="VideoStream" uid="uid://c85bsixigc52q" path="res://filmiki/door_witch.ogv" id="2_lti0t"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_ts3lh"]
 
 [resource]
 script = ExtResource("2_ts3lh")
 icon = ExtResource("1_o308e")
 lootbox_title = "Enchanted Key"
-lootbox_description = "Unlocks rooms filled with myriad of enchanted items of all kinds
-"
+lootbox_video = ExtResource("2_lti0t")
 lootbox_price = 250
 renown_required = 500
 special_deal_spawn_chance = 70

@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://bqltb2bcciomm"]
+[gd_resource type="Resource" script_class="LootboxData" load_steps=4 format=3 uid="uid://bqltb2bcciomm"]
 
 [ext_resource type="Texture2D" uid="uid://bbihtsc0nasii" path="res://UI/UI_kasia/key menu/key1_bronze.png" id="1_lpny0"]
+[ext_resource type="VideoStream" uid="uid://b8y40320wov8s" path="res://filmiki/door_egipt.ogv" id="2_5bjqm"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_d2ord"]
 
 [resource]
 script = ExtResource("2_d2ord")
 icon = ExtResource("1_lpny0")
 lootbox_title = "Pyramid Key"
-lootbox_description = "Unlocks rooms with ancient egyptian artifacts. Best not to think how they were procured or how many of them consists of curses of some kind"
+lootbox_video = ExtResource("2_5bjqm")
 lootbox_price = 100
 random_elements_per_box = 5
 tags = Array[int]([2])

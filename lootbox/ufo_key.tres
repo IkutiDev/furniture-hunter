@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://cxqjoeqnb8ybd"]
+[gd_resource type="Resource" script_class="LootboxData" load_steps=4 format=3 uid="uid://cxqjoeqnb8ybd"]
 
 [ext_resource type="Texture2D" uid="uid://0rqw0ec6dgmy" path="res://UI/UI_kasia/key menu/key4_platinum.png" id="1_onynr"]
+[ext_resource type="VideoStream" uid="uid://d0w7yg7upmico" path="res://filmiki/door_ufo.ogv" id="2_j1jsg"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_tm8la"]
 
 [resource]
 script = ExtResource("2_tm8la")
 icon = ExtResource("1_onynr")
 lootbox_title = "Ufo Key"
-lootbox_description = "Unlocks rooms filled with items out of this world or maybe even out of this galaxy
-"
+lootbox_video = ExtResource("2_j1jsg")
 lootbox_price = 300
 renown_required = 1500
 random_elements_per_box = 3

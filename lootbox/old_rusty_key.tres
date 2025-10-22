@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="LootboxData" load_steps=3 format=3 uid="uid://duajv1ywffbcd"]
+[gd_resource type="Resource" script_class="LootboxData" load_steps=4 format=3 uid="uid://duajv1ywffbcd"]
 
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="1_03efm"]
 [ext_resource type="Texture2D" uid="uid://dcdpbku5375qs" path="res://UI/UI_kasia/key menu/key3_bronze.png" id="1_ek86o"]
+[ext_resource type="VideoStream" uid="uid://dcng5tb1ro27m" path="res://filmiki/door_knight.ogv" id="2_qdej8"]
 
 [resource]
 script = ExtResource("1_03efm")
 icon = ExtResource("1_ek86o")
 lootbox_title = "Old Rusty Key"
-lootbox_description = "Unlocks rooms filled with broken goods, ones which any collector would want to get rid off as quickly as possible."
+lootbox_video = ExtResource("2_qdej8")
 random_elements_per_box = 3
 tags = Array[int]([12])
 metadata/_custom_type_script = "uid://dm25m6de7wwfq"
