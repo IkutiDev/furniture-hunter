@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	
 	current_cooldown += delta
 	current_entities_bidding_cooldown += delta
-	if GameManager.game_state == GameManager.GameState.NIGHT:
+	if GameManager.game_state == GameManager.GameState.DAY:
 		if new_deal_cooldown <= current_cooldown:
 			current_cooldown = 0.0
 			try_spawn_special_deal()
