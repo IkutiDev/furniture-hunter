@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh0yjjoyposcl"]
+[gd_scene load_steps=15 format=3 uid="uid://bh0yjjoyposcl"]
 
 [ext_resource type="Script" uid="uid://bel8y3m2oh7xh" path="res://UI/set_furniture_price_ui.gd" id="1_yva15"]
+[ext_resource type="Texture2D" uid="uid://bp05ujmraxs3f" path="res://UI/UI_kasia/Trading/seting_price_set.png" id="2_0dkj7"]
+[ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="3_8cb6l"]
+[ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="4_t72ha"]
+[ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="5_5yk5w"]
+[ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="5_g6eal"]
+[ext_resource type="Texture2D" uid="uid://q5c82l3a7ysv" path="res://UI/UI_kasia/upper_menu/coin_icon.png" id="6_1kubi"]
+[ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="6_g6eal"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="6_xi8mu"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="7_1kubi"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="8_tg65e"]
 
-[node name="SetFurniturePriceUI" type="Control" node_paths=PackedStringArray("furniture_title_label", "furniture_description_label", "recommended_price_label", "current_price_label", "price_box", "set_price_button", "close_ui_button", "remove_furniture_button")]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1kubi"]
+size = Vector2(0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tg65e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_va4cs"]
+
+[node name="SetFurniturePriceUI" type="Control" node_paths=PackedStringArray("furniture_title_label", "furniture_description_label", "furnniture_icon_button", "recommended_price_label", "current_price_label", "price_box", "set_price_button", "close_ui_button", "remove_furniture_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,16 +27,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yva15")
-furniture_title_label = NodePath("Panel/HFlowContainer/TitleLabel")
-furniture_description_label = NodePath("Panel/HFlowContainer/DescriptionLabel")
-recommended_price_label = NodePath("Panel/HFlowContainer/RecomendPriceLabelValue")
-current_price_label = NodePath("Panel/HFlowContainer/CurrentPriceLabelValue")
-price_box = NodePath("Panel/HFlowContainer/SetPriceSpinBox")
-set_price_button = NodePath("Panel/HFlowContainer/SetPriceButton")
-close_ui_button = NodePath("Panel/HFlowContainer/ExitButton")
-remove_furniture_button = NodePath("Panel/HFlowContainer/RemoveFurnitureButton")
+furniture_title_label = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/TitleLabel")
+furniture_description_label = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer/DescriptionLabel")
+furnniture_icon_button = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer/FurnitureIconButton")
+recommended_price_label = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox/VBoxContainer3/RecomendPriceLabel")
+current_price_label = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox/VBoxContainer2/CurrentPriceLabel")
+price_box = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/LeftBox/PriceBox")
+set_price_button = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox/CenterContainer/SetPriceButton")
+close_ui_button = NodePath("CloseButton")
+remove_furniture_button = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/RemoveFurnitureButton")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -120,3 +139,271 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 6
 text = "Move furniture to inventory"
+
+[node name="Refernce" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1475.0
+offset_top = 88.0
+offset_right = 1890.0
+offset_bottom = 629.0
+texture = ExtResource("2_0dkj7")
+region_rect = Rect2(885, 114, 336, 391)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 81.0
+offset_right = 1184.0
+offset_bottom = 621.0
+mouse_filter = 0
+texture = ExtResource("3_8cb6l")
+region_rect = Rect2(-1, 0, 107, 107)
+patch_margin_left = 10
+patch_margin_top = 8
+patch_margin_right = 10
+patch_margin_bottom = 8
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_right = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("4_t72ha")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="NinePatchRect/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(240, 108)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Co pof m ispum ipsum ipmusm pofff  m ispgggggg"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="FurnitureIconButton" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer" instance=ExtResource("5_g6eal")]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "m ispum ipsum ipmusm pofff  m ispum ipsum ipmusm pofff "
+vertical_alignment = 3
+autowrap_mode = 3
+
+[node name="ColorRect2" type="ColorRect" parent="NinePatchRect/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="NinePatchRect/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="LeftBox" type="VBoxContainer" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/LeftBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Current Price:"
+
+[node name="Label2" type="Label" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/LeftBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Recomended Price:"
+
+[node name="PriceBox" type="SpinBox" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/LeftBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_icons/updown = SubResource("PlaceholderTexture2D_1kubi")
+theme_override_icons/up = SubResource("PlaceholderTexture2D_1kubi")
+theme_override_icons/up_hover = SubResource("PlaceholderTexture2D_1kubi")
+theme_override_icons/up_pressed = SubResource("PlaceholderTexture2D_1kubi")
+theme_override_icons/up_disabled = SubResource("PlaceholderTexture2D_1kubi")
+theme_override_icons/down = SubResource("PlaceholderTexture2D_1kubi")
+theme_override_icons/down_hover = SubResource("PlaceholderTexture2D_1kubi")
+theme_override_icons/down_pressed = SubResource("PlaceholderTexture2D_1kubi")
+theme_override_icons/down_disabled = SubResource("PlaceholderTexture2D_1kubi")
+theme_override_styles/up_background_hovered = SubResource("StyleBoxEmpty_tg65e")
+theme_override_styles/up_background_pressed = SubResource("StyleBoxEmpty_va4cs")
+theme_override_styles/down_background_hovered = SubResource("StyleBoxEmpty_va4cs")
+theme_override_styles/down_background_pressed = SubResource("StyleBoxEmpty_va4cs")
+max_value = 9999.0
+update_on_text_changed = true
+
+[node name="Control" type="Control" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+
+[node name="RightBox" type="VBoxContainer" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_1kubi")
+expand_mode = 2
+
+[node name="CurrentPriceLabel" type="Label" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_1kubi")
+expand_mode = 2
+
+[node name="RecomendPriceLabel" type="Label" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SetPriceButton" type="TextureButton" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox/CenterContainer"]
+custom_minimum_size = Vector2(113.36, 34.065)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+texture_normal = ExtResource("6_xi8mu")
+texture_pressed = ExtResource("7_1kubi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox/CenterContainer/SetPriceButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5461635, 0.35935703, 0.2531927, 1)
+theme_override_fonts/font = ExtResource("8_tg65e")
+theme_override_font_sizes/font_size = 16
+text = "Set the price"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="NinePatchRect/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control2" type="Control" parent="NinePatchRect/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="RemoveFurnitureButton" type="TextureButton" parent="NinePatchRect/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(195.455, 44.43)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = ExtResource("6_xi8mu")
+texture_pressed = ExtResource("7_1kubi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer2/VBoxContainer/RemoveFurnitureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5461635, 0.35935703, 0.2531927, 1)
+theme_override_fonts/font = ExtResource("8_tg65e")
+theme_override_font_sizes/font_size = 20
+text = "Move to inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="NinePatchRect/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("4_t72ha")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1127.0
+offset_top = 112.0
+offset_right = 1171.0
+offset_bottom = 156.0
+focus_mode = 0
+texture_normal = ExtResource("5_5yk5w")
+texture_pressed = ExtResource("6_g6eal")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

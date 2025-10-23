@@ -57,7 +57,6 @@ mesh = SubResource("CapsuleMesh_egfix")
 
 [node name="NavigationAgent3D" parent="." index="3"]
 radius = 2.0
-debug_enabled = true
 
 [node name="witch" type="MeshInstance3D" parent="." index="7"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
