@@ -387,6 +387,11 @@ mesh = SubResource("ArrayMesh_fm5tk")
 transform = Transform3D(0.5, 0, 0, 0, 0.401, 0, 0, 0, 0.453, -4.53779, 0, -3.8288527)
 material_override = ExtResource("7_5ga08")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Window_1" index="0"]
+transform = Transform3D(0.22009008, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0.5603404)
+light_color = Color(0.44313726, 0.8117647, 1, 1)
+light_energy = 2.0
+
 [node name="box_3" parent="." index="35"]
 transform = Transform3D(0.5, 0, 0, 0, 0.401, 0, 0, 0, 0.453, 1.7774777, 0, 2.1302516)
 material_override = ExtResource("7_5ga08")
