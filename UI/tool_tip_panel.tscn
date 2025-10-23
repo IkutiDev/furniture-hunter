@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1q3webi276mx"]
+[gd_scene load_steps=3 format=3 uid="uid://b1q3webi276mx"]
 
 [ext_resource type="Script" uid="uid://bm0ug0e0mx601" path="res://UI/tool_tip_panel.gd" id="1_56p6n"]
+[ext_resource type="Texture2D" uid="uid://q5c82l3a7ysv" path="res://UI/UI_kasia/upper_menu/coin_icon.png" id="2_q5iy0"]
 
-[node name="ToolTipPanel" type="Control" node_paths=PackedStringArray("title_label", "cost_label", "description_label")]
+[node name="ToolTipPanel" type="Control" node_paths=PackedStringArray("title_label", "cost_label", "description_label", "bottom_line", "content_layout")]
 z_index = 1
 custom_minimum_size = Vector2(200, 90)
 layout_mode = 3
@@ -12,61 +13,98 @@ offset_right = 200.0
 offset_bottom = -18.0
 mouse_filter = 2
 script = ExtResource("1_56p6n")
-title_label = NodePath("ColorRect/VBoxContainer/VBoxContainer/TitleLabel")
-cost_label = NodePath("ColorRect/VBoxContainer/VBoxContainer2/PriceLabel")
-description_label = NodePath("ColorRect/VBoxContainer/DescriptionLabel")
+title_label = NodePath("ColorRect/CenterContainer/ContentLayout/TitleLabel")
+cost_label = NodePath("ColorRect/CenterContainer/ContentLayout/VBoxContainer2/PriceLabel")
+description_label = NodePath("ColorRect/CenterContainer/ContentLayout/DescriptionLabel")
+bottom_line = NodePath("ColorRect/CenterContainer/ContentLayout/BottomLine")
+content_layout = NodePath("ColorRect/CenterContainer/ContentLayout")
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 163.0
+offset_top = -68.0
+offset_right = 203.0
+offset_bottom = -28.0
+rotation = 0.7853982
+color = Color(0.54509807, 0.11764706, 0.9529412, 0.78431374)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 1
-custom_minimum_size = Vector2(240, 90)
 layout_mode = 0
-offset_top = -108.0
-offset_right = 200.0
-offset_bottom = -18.0
+offset_left = 100.0
+offset_top = -130.0
+offset_right = 325.0
+offset_bottom = -40.0
 mouse_filter = 2
 color = Color(0.545647, 0.11853371, 0.95272976, 0.78431374)
-metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -37.0
+offset_right = 106.5
+offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ContentLayout" type="VBoxContainer" parent="ColorRect/CenterContainer"]
+clip_contents = true
+layout_mode = 2
 mouse_filter = 2
+alignment = 1
 
-[node name="VBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+[node name="Control" type="Control" parent="ColorRect/CenterContainer/ContentLayout"]
+custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(52, 0)
+[node name="TitleLabel" type="Label" parent="ColorRect/CenterContainer/ContentLayout"]
 layout_mode = 2
-text = "Name:"
-
-[node name="TitleLabel" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Name"
-horizontal_alignment = 1
+text = "Asset Name"
 vertical_alignment = 1
 
-[node name="VBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="ColorRect/CenterContainer/ContentLayout"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0, 0, 0, 0.75686276)
+
+[node name="DescriptionLabel" type="Label" parent="ColorRect/CenterContainer/ContentLayout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+autowrap_mode = 2
+
+[node name="BottomLine" type="ColorRect" parent="ColorRect/CenterContainer/ContentLayout"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0, 0, 0, 0.75686276)
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="ColorRect/CenterContainer/ContentLayout"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer2"]
+[node name="Label2" type="Label" parent="ColorRect/CenterContainer/ContentLayout/VBoxContainer2"]
 custom_minimum_size = Vector2(52, 0)
 layout_mode = 2
 text = "Recommened Price:"
 
-[node name="PriceLabel" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="ColorRect/CenterContainer/ContentLayout/VBoxContainer2"]
 layout_mode = 2
-text = "999$"
+texture = ExtResource("2_q5iy0")
+expand_mode = 2
+
+[node name="PriceLabel" type="Label" parent="ColorRect/CenterContainer/ContentLayout/VBoxContainer2"]
+layout_mode = 2
+text = "999"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DescriptionLabel" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="Control2" type="Control" parent="ColorRect/CenterContainer/ContentLayout"]
+custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10

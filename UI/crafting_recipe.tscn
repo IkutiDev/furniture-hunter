@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bypcdpjljnjfc"]
+[gd_scene load_steps=14 format=3 uid="uid://bypcdpjljnjfc"]
 
 [ext_resource type="Script" uid="uid://fwd8qv7v4nbd" path="res://UI/crafting_recipe.gd" id="1_5tfuo"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_bkk45"]
@@ -15,12 +15,14 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijbav"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cogrx"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7frn"]
 
 [node name="CraftingRecipe" type="VBoxContainer"]
 custom_minimum_size = Vector2(0, 90)
-offset_right = 687.0
-offset_bottom = 124.0
+offset_right = 754.0
+offset_bottom = 141.0
 size_flags_horizontal = 3
 script = ExtResource("1_5tfuo")
 furniture_button_scene = ExtResource("2_bkk45")
@@ -31,16 +33,17 @@ collection_button_scene = ExtResource("4_gnrvk")
 layout_mode = 2
 
 [node name="Control" type="Control" parent="Layout"]
-visible = false
-custom_minimum_size = Vector2(30, 0)
+custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
 
 [node name="CollectionIcon" type="TextureRect" parent="Layout"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("7_x7frn")
-expand_mode = 2
-stretch_mode = 3
+expand_mode = 4
 
 [node name="CollectionName" type="Label" parent="Layout"]
 unique_name_in_owner = true
@@ -62,6 +65,7 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "COLLECTION COMPLETE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -114,17 +118,27 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tjfry")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_inxau")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ijbav")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cogrx")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x7frn")
 text = "MAKE"
+
+[node name="Control2" type="Control" parent="Layout"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-custom_minimum_size = Vector2(342, 0)
+[node name="Control3" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(436, 0)
+layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("8_tjfry")
 expand_mode = 1
 
