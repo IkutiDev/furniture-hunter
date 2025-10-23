@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkgqd0cei32ye"]
+[gd_scene load_steps=11 format=3 uid="uid://bkgqd0cei32ye"]
 
 [ext_resource type="Script" uid="uid://d3c8hqd6dysyr" path="res://UI/lootbox_ui.gd" id="1_lbq0n"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_ihxcr"]
 [ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_apek5"]
-[ext_resource type="PackedScene" uid="uid://b1q3webi276mx" path="res://UI/tool_tip_panel.tscn" id="3_r8gls"]
 [ext_resource type="VideoStream" uid="uid://d0w7yg7upmico" path="res://filmiki/door_ufo.ogv" id="4_apek5"]
 [ext_resource type="Texture2D" uid="uid://hi5m0knpuhyu" path="res://UI/UI_kasia/key menu/pop_up_background.png" id="4_d36t1"]
 [ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="6_ho6ij"]
@@ -49,16 +48,6 @@ offset_top = -158.0
 offset_right = 1298.0
 offset_bottom = 787.0
 color = Color(0.8648356, 0.5444204, 0.29672363, 0.20392157)
-
-[node name="CenterContainer" type="CenterContainer" parent="Panel"]
-layout_mode = 0
-offset_left = 131.0
-offset_top = 86.0
-offset_right = 526.0
-offset_bottom = 342.0
-
-[node name="ToolTipPanel" parent="Panel/CenterContainer" instance=ExtResource("3_r8gls")]
-layout_mode = 2
 
 [node name="ButtonsShowingObjectsGoHere" type="HBoxContainer" parent="Panel"]
 unique_name_in_owner = true
