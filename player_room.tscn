@@ -550,8 +550,8 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="CameraController" type="Node3D" parent="."]
 transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071067, 0, 0, 2.553605)
 script = ExtResource("15_pq8mr")
-limit_x = Vector2(5, -5)
-limit_z = Vector2(5, -5)
+limit_x = Vector2(2, -7)
+limit_z = Vector2(5, -2)
 speed = 10.0
 
 [node name="CashTable" parent="." instance=ExtResource("23_cjrgx")]
