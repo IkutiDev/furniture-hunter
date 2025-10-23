@@ -1,0 +1,121 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6mp43du1otxj"]
+
+[ext_resource type="PackedScene" uid="uid://pybgm8veghsk" path="res://UI/lootbox_entry_correct.tscn" id="1_v2cqk"]
+[ext_resource type="Texture2D" uid="uid://q5c82l3a7ysv" path="res://UI/UI_kasia/upper_menu/coin_icon.png" id="2_cmy3j"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="3_yx161"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="4_xovcd"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="5_atilg"]
+
+[node name="LootboxEntryCorrect" node_paths=PackedStringArray("highest_bid_amount_label", "player_bid_amount_label", "time_label", "claim_button", "bid_button_section", "claim_button_section") instance=ExtResource("1_v2cqk")]
+highest_bid_amount_label = NodePath("LootboxEntry/MarginContainer3/Label")
+player_bid_amount_label = NodePath("LootboxEntry/MarginContainer5/Label")
+time_label = NodePath("LootboxEntry/MarginContainer4/Label")
+claim_button = NodePath("LootboxEntry/MarginContainer6/Button2")
+bid_button_section = NodePath("LootboxEntry/MarginContainer2")
+claim_button_section = NodePath("LootboxEntry/MarginContainer6")
+
+[node name="LootboxEntry" parent="." index="1"]
+offset_top = 7.0
+offset_bottom = 34.0
+
+[node name="MarginContainer" parent="LootboxEntry" index="1"]
+custom_minimum_size = Vector2(170, 0)
+
+[node name="MarginContainer4" type="HBoxContainer" parent="LootboxEntry" index="2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LootboxEntry/MarginContainer4" index="0"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_cmy3j")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="LootboxEntry/MarginContainer4" index="1"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.18120003, 0.18120006, 0.18120003, 1)
+theme_override_fonts/font = ExtResource("3_yx161")
+theme_override_font_sizes/font_size = 14
+text = "34 s"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer5" type="HBoxContainer" parent="LootboxEntry" index="3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LootboxEntry/MarginContainer5" index="0"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_cmy3j")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="LootboxEntry/MarginContainer5" index="1"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.18120003, 0.18120006, 0.18120003, 1)
+theme_override_fonts/font = ExtResource("3_yx161")
+theme_override_font_sizes/font_size = 14
+text = "110000"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" parent="LootboxEntry" index="4"]
+custom_minimum_size = Vector2(0, 0)
+
+[node name="TextureRect" parent="LootboxEntry/MarginContainer3" index="0"]
+visible = false
+
+[node name="Label" parent="LootboxEntry/MarginContainer3" index="1"]
+text = "110000"
+
+[node name="Label" parent="LootboxEntry/MarginContainer2/Button2" index="0"]
+text = "Bid 50 "
+
+[node name="TextureRect" type="TextureRect" parent="LootboxEntry/MarginContainer2/Button2" index="1"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5.0
+offset_right = 79.0
+offset_bottom = 45.0
+texture = ExtResource("2_cmy3j")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MarginContainer6" type="VBoxContainer" parent="LootboxEntry" index="8"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Button2" type="TextureButton" parent="LootboxEntry/MarginContainer6" index="0"]
+custom_minimum_size = Vector2(85, 27)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+texture_normal = ExtResource("4_xovcd")
+texture_pressed = ExtResource("5_atilg")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="LootboxEntry/MarginContainer6/Button2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5461635, 0.35935703, 0.2531927, 1)
+theme_override_fonts/font = ExtResource("3_yx161")
+theme_override_font_sizes/font_size = 14
+text = "Claim"
+horizontal_alignment = 1

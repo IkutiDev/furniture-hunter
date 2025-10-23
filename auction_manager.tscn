@@ -1,11 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://ckf2d83lccpx1"]
+[gd_scene load_steps=14 format=3 uid="uid://ckf2d83lccpx1"]
 
 [ext_resource type="Script" uid="uid://b8ihflysbnm47" path="res://auction_manager.gd" id="1_5rqs3"]
 [ext_resource type="Script" uid="uid://dm25m6de7wwfq" path="res://lootbox/lootbox_data.gd" id="2_mdoh6"]
 [ext_resource type="Resource" uid="uid://duajv1ywffbcd" path="res://lootbox/old_rusty_key.tres" id="3_68x55"]
 [ext_resource type="Resource" uid="uid://bk33y4cvcguov" path="res://lootbox/bewitched_key.tres" id="4_0jgph"]
 [ext_resource type="Resource" uid="uid://372jy68agvio" path="res://lootbox/dragon_key.tres" id="5_w4vqp"]
-[ext_resource type="Script" uid="uid://hpll4o6wcend" path="res://lootbox/bidder_entity.gd" id="5_x71aw"]
 [ext_resource type="Resource" uid="uid://bqltb2bcciomm" path="res://lootbox/pyramid_key.tres" id="6_yt85p"]
 [ext_resource type="Resource" uid="uid://cxqjoeqnb8ybd" path="res://lootbox/ufo_key.tres" id="7_w5dcc"]
 [ext_resource type="Resource" uid="uid://dbktitmjb6jxe" path="res://lootbox/heracles_key.tres" id="8_ey2rc"]
@@ -15,46 +14,9 @@
 [ext_resource type="Resource" uid="uid://nfy71nm34kyx" path="res://lootbox/powerful_key.tres" id="12_t4vhu"]
 [ext_resource type="Resource" uid="uid://d3miu3h2cvkpu" path="res://lootbox/random_key.tres" id="13_72f1g"]
 
-[sub_resource type="Resource" id="Resource_qp8ad"]
-script = ExtResource("5_x71aw")
-name = "You"
-metadata/_custom_type_script = "uid://hpll4o6wcend"
-
-[sub_resource type="Resource" id="Resource_g7ww3"]
-script = ExtResource("5_x71aw")
-name = "Dracula"
-max_bid = 500
-metadata/_custom_type_script = "uid://hpll4o6wcend"
-
-[sub_resource type="Resource" id="Resource_xvycd"]
-script = ExtResource("5_x71aw")
-name = "Alucard"
-max_bid = 700
-metadata/_custom_type_script = "uid://hpll4o6wcend"
-
-[sub_resource type="Resource" id="Resource_limxv"]
-script = ExtResource("5_x71aw")
-name = "The Void"
-max_bid = 1000
-metadata/_custom_type_script = "uid://hpll4o6wcend"
-
-[sub_resource type="Resource" id="Resource_ewi0p"]
-script = ExtResource("5_x71aw")
-name = "Ye Olde Lich"
-max_bid = 300
-metadata/_custom_type_script = "uid://hpll4o6wcend"
-
-[sub_resource type="Resource" id="Resource_immhd"]
-script = ExtResource("5_x71aw")
-name = "Primal Darkness"
-max_bid = 3000
-metadata/_custom_type_script = "uid://hpll4o6wcend"
-
 [node name="AuctionManager" type="Node"]
 script = ExtResource("1_5rqs3")
 lootboxes = Array[ExtResource("2_mdoh6")]([ExtResource("3_68x55"), ExtResource("4_0jgph"), ExtResource("5_w4vqp"), ExtResource("6_yt85p"), ExtResource("7_w5dcc"), ExtResource("8_ey2rc"), ExtResource("9_rc641")])
 special_lootboxes = Array[ExtResource("2_mdoh6")]([ExtResource("10_ookxc"), ExtResource("11_f76s7"), ExtResource("12_t4vhu"), ExtResource("13_72f1g")])
 new_deal_cooldown = 20.0
 entities_bidding_cooldown = 5.0
-player_bidder_entity = SubResource("Resource_qp8ad")
-other_bidder_entities = Array[ExtResource("5_x71aw")]([SubResource("Resource_g7ww3"), SubResource("Resource_xvycd"), SubResource("Resource_limxv"), SubResource("Resource_ewi0p"), SubResource("Resource_immhd")])

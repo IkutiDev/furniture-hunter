@@ -99,6 +99,10 @@ func open_menu() -> void:
 	show()
 	EventBus.menu_open.emit(self)
 	update_buttons_visuals()
+	if showing_furniture:
+		show_furniture()
+	else:
+		show_items()
 
 func close_menu() -> void:
 	hide()

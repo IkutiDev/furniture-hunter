@@ -59,7 +59,7 @@ func update_current_window_type() -> void:
 			owned_section.show()
 		ActiveWindowType.SHOP:
 			shop_section.show()
-		ActiveWindowType.OWNED:
+		ActiveWindowType.AUCTIONS:
 			auctions_section.show()
 			
 	_update_auctions_menu()

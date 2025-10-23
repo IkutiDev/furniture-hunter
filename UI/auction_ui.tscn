@@ -1,8 +1,8 @@
 [gd_scene load_steps=22 format=3 uid="uid://b8myxwy4rg0ac"]
 
 [ext_resource type="Script" uid="uid://dvc8a68nt4mhp" path="res://UI/auction_ui.gd" id="1_3q04y"]
-[ext_resource type="PackedScene" uid="uid://pr4loltppqer" path="res://UI/lootbox_entry_special_deal.tscn" id="3_dgi2x"]
 [ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="4_71e5b"]
+[ext_resource type="PackedScene" uid="uid://b6mp43du1otxj" path="res://lootbox_entry_correct_auction.tscn" id="4_t037y"]
 [ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="5_kwudh"]
 [ext_resource type="Texture2D" uid="uid://dk1yltpvj5vux" path="res://UI/UI_kasia/collections_menu/wooden_decor.png" id="5_ntvce"]
 [ext_resource type="Texture2D" uid="uid://ivpuhim1dkif" path="res://UI/UI_kasia/side_menu/key_icon.png" id="6_4du6r"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://pybgm8veghsk" path="res://UI/lootbox_entry_correct.tscn" id="6_nlboy"]
 [ext_resource type="Texture2D" uid="uid://bewgqcf8jefjl" path="res://UI/UI_kasia/collections_menu/slider_background.png" id="7_7f6vm"]
 [ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="7_p6y0j"]
-[ext_resource type="Texture2D" uid="uid://ciaex7oufp5xr" path="res://UI/UI_kasia/key menu/shop.png" id="8_dngry"]
 [ext_resource type="Texture2D" uid="uid://b5rwl4pqwnfym" path="res://UI/UI_kasia/key menu/dividing_line.png" id="8_p6y0j"]
 [ext_resource type="PackedScene" uid="uid://dg83k0fhcv1t4" path="res://UI/lootbox_icon_button.tscn" id="8_t037y"]
 [ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="9_4du6r"]
@@ -18,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="9_nlboy"]
 [ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="10_ly1ca"]
 [ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="10_p6y0j"]
+[ext_resource type="Texture2D" uid="uid://bbo7gwmxkqqdt" path="res://UI/UI_kasia/key menu/auctions.png" id="16_t037y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t037y"]
 texture = ExtResource("6_8tlju")
@@ -42,7 +42,7 @@ mouse_filter = 2
 script = ExtResource("1_3q04y")
 key_button_scene = ExtResource("8_t037y")
 lootbox_buy_button_scene = ExtResource("6_nlboy")
-lootbox_special_deal_button_scene = ExtResource("3_dgi2x")
+lootbox_special_deal_button_scene = ExtResource("4_t037y")
 close_button = NodePath("CloseButton")
 owned_button = NodePath("Button2")
 shop_button = NodePath("Button3")
@@ -167,14 +167,47 @@ offset_bottom = 304.0
 
 [node name="Label2" type="Label" parent="Panel/Auctions"]
 layout_mode = 0
-offset_left = 404.0
+offset_left = 236.0
+offset_top = 16.0
+offset_right = 318.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.76439434, 0.50752574, 0.3099223, 1)
+theme_override_fonts/font = ExtResource("5_kwudh")
+theme_override_font_sizes/font_size = 14
+text = "Time left"
+
+[node name="Label3" type="Label" parent="Panel/Auctions"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 16.0
+offset_right = 394.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.76439434, 0.50752574, 0.3099223, 1)
+theme_override_fonts/font = ExtResource("5_kwudh")
+theme_override_font_sizes/font_size = 14
+text = "Your Price"
+
+[node name="Label4" type="Label" parent="Panel/Auctions"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 16.0
+offset_right = 485.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.76439434, 0.50752574, 0.3099223, 1)
+theme_override_fonts/font = ExtResource("5_kwudh")
+theme_override_font_sizes/font_size = 14
+text = "Highest Price"
+
+[node name="Label5" type="Label" parent="Panel/Auctions"]
+layout_mode = 0
+offset_left = 529.0
 offset_top = 17.0
-offset_right = 486.0
+offset_right = 612.0
 offset_bottom = 73.0
 theme_override_colors/font_color = Color(0.76439434, 0.50752574, 0.3099223, 1)
 theme_override_fonts/font = ExtResource("5_kwudh")
 theme_override_font_sizes/font_size = 14
-text = "Key Price"
+text = "Bid"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/Auctions"]
 texture_filter = 1
@@ -198,10 +231,37 @@ theme_override_constants/separation = -15
 [node name="TextureRect5" type="TextureRect" parent="Panel/Auctions"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 389.0
-offset_top = 16.0
-offset_right = 392.0
-offset_bottom = 213.0
+offset_left = 390.0
+offset_top = 19.0
+offset_right = 393.0
+offset_bottom = 216.0
+texture = ExtResource("8_p6y0j")
+
+[node name="TextureRect6" type="TextureRect" parent="Panel/Auctions"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 293.0
+offset_top = 19.0
+offset_right = 296.0
+offset_bottom = 216.0
+texture = ExtResource("8_p6y0j")
+
+[node name="TextureRect7" type="TextureRect" parent="Panel/Auctions"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 231.0
+offset_top = 19.0
+offset_right = 234.0
+offset_bottom = 216.0
+texture = ExtResource("8_p6y0j")
+
+[node name="TextureRect8" type="TextureRect" parent="Panel/Auctions"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 488.0
+offset_top = 19.0
+offset_right = 491.0
+offset_bottom = 216.0
 texture = ExtResource("8_p6y0j")
 
 [node name="TextureRect3" type="TextureRect" parent="Panel"]
@@ -268,11 +328,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -38.0
-offset_bottom = -38.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_dngry")
+texture = ExtResource("16_t037y")
 
 [node name="CloseButton" type="TextureButton" parent="."]
 layout_mode = 0

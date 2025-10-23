@@ -280,6 +280,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
 skeleton = NodePath("../..")
 
 [node name="InventoryUI" parent="." instance=ExtResource("2_2dulj")]
+visible = false
 
 [node name="CraftingUI" parent="." instance=ExtResource("11_4fkm8")]
 visible = false

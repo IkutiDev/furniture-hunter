@@ -1,7 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://hv3wyucwiuts"]
+[gd_scene load_steps=22 format=3 uid="uid://hv3wyucwiuts"]
 
 [ext_resource type="Script" uid="uid://cbkm60bxjgr4e" path="res://player_inventory.gd" id="1_mdht6"]
+[ext_resource type="Script" uid="uid://cjx3ofmytnupc" path="res://furniture/furniture_data.gd" id="2_wiot8"]
+[ext_resource type="Resource" uid="uid://xvoul5oon3dn" path="res://data/218_sarcophagus.tres" id="3_se2yt"]
+[ext_resource type="Resource" uid="uid://dw643ebaxamo6" path="res://data/202_warded_chest.tres" id="4_3v4l7"]
+[ext_resource type="Resource" uid="uid://cvrfxcygt7r77" path="res://data/211_animated_chair.tres" id="5_h6yjm"]
+[ext_resource type="Resource" uid="uid://bv8sibobaxfm1" path="res://data/204_divineing_table.tres" id="5_nyp4h"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="6_segop"]
+[ext_resource type="Resource" uid="uid://d32bbdrpq214a" path="res://data/224_master_of_winds.tres" id="7_e8bip"]
+[ext_resource type="Resource" uid="uid://osactfu16ey2" path="res://data/217_old_creaky_chair.tres" id="8_54igs"]
+[ext_resource type="Resource" uid="uid://yax6n1os7qwi" path="res://data/223_greek_vase_replica.tres" id="9_4ufo7"]
+[ext_resource type="Resource" uid="uid://f1fptwk7yhx" path="res://data/105_genuine_unicorn_horn.tres" id="9_xndjf"]
+[ext_resource type="Resource" uid="uid://fh3iehg5lbjb" path="res://data/200_reinforced_cauldron.tres" id="10_eun8e"]
+[ext_resource type="Resource" uid="uid://cf3q75dtx5o20" path="res://data/206_enchanted_floor_lamp.tres" id="11_7rrij"]
+[ext_resource type="Resource" uid="uid://cet1mhg7tpyik" path="res://data/126_toy_cow.tres" id="13_1jsgt"]
+[ext_resource type="Resource" uid="uid://b8mvpqe05ukne" path="res://data/120_cursed_box.tres" id="14_04f01"]
+[ext_resource type="Resource" uid="uid://b2lym88xph2kk" path="res://data/115_empty_phylactery.tres" id="15_hjhah"]
+[ext_resource type="Resource" uid="uid://5yxa2f2vm8e1" path="res://data/108_enchanted_pendant.tres" id="16_nfbqt"]
+[ext_resource type="Resource" uid="uid://dstnnbefp77lw" path="res://data/124_chipped_serving_tray.tres" id="18_is0ur"]
+[ext_resource type="Resource" uid="uid://dfpsrnc2k3vrq" path="res://data/111_bewitched_chess_set.tres" id="19_kfxxc"]
+[ext_resource type="Resource" uid="uid://b6ofnc3oj78xd" path="res://data/101_goblet_of_forecasting.tres" id="20_sg68g"]
+[ext_resource type="Resource" uid="uid://chsejjfih7kl7" path="res://data/116_old_scroll_with_hieroglyphics.tres" id="21_hrsoo"]
 
 [node name="PlayerInventory" type="Node"]
 script = ExtResource("1_mdht6")
+furniture = Array[ExtResource("2_wiot8")]([ExtResource("3_se2yt"), ExtResource("3_se2yt"), ExtResource("4_3v4l7"), ExtResource("5_h6yjm"), ExtResource("5_nyp4h"), ExtResource("7_e8bip"), ExtResource("8_54igs"), ExtResource("9_4ufo7"), ExtResource("10_eun8e"), ExtResource("11_7rrij")])
+items = Array[ExtResource("6_segop")]([ExtResource("13_1jsgt"), ExtResource("13_1jsgt"), ExtResource("14_04f01"), ExtResource("15_hjhah"), ExtResource("16_nfbqt"), ExtResource("9_xndjf"), ExtResource("18_is0ur"), ExtResource("19_kfxxc"), ExtResource("20_sg68g"), ExtResource("21_hrsoo")])
 money = 1000
