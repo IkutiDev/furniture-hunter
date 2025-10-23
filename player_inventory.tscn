@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://hv3wyucwiuts"]
+[gd_scene load_steps=5 format=3 uid="uid://hv3wyucwiuts"]
 
 [ext_resource type="Script" uid="uid://cbkm60bxjgr4e" path="res://player_inventory.gd" id="1_mdht6"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="2_sbjmm"]
+[ext_resource type="Resource" uid="uid://b4hscvh6pwrjg" path="res://data/104_imitation_unicorn_horn.tres" id="3_xv76c"]
+[ext_resource type="Resource" uid="uid://dfpsrnc2k3vrq" path="res://data/111_bewitched_chess_set.tres" id="4_xv76c"]
 
 [node name="PlayerInventory" type="Node"]
 script = ExtResource("1_mdht6")
+items = Array[ExtResource("2_sbjmm")]([ExtResource("3_xv76c"), ExtResource("4_xv76c")])
 money = 1000
