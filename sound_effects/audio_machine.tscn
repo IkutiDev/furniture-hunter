@@ -13,6 +13,17 @@
 [ext_resource type="AudioStream" uid="uid://16oj86r07rip" path="res://sound_effects/party blower 8.wav" id="9_ea3gk"]
 [ext_resource type="AudioStream" uid="uid://y4mwl820ykbi" path="res://sound_effects/glass placed on shelf 3.wav" id="11_kxros"]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_663vu"]
+random_pitch = 1.1
+streams_count = 2
+stream_0/stream = ExtResource("8_ykwdf")
+stream_1/stream = ExtResource("9_ea3gk")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jkqnx"]
+streams_count = 2
+stream_0/stream = ExtResource("11_kxros")
+stream_1/stream = ExtResource("2_cbc5r")
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iojhr"]
 playback_mode = 1
 random_pitch = 1.15
@@ -27,17 +38,6 @@ stream_2/stream = ExtResource("4_ea3gk")
 streams_count = 2
 stream_0/stream = ExtResource("5_21fmk")
 stream_1/stream = ExtResource("6_8gbsg")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_663vu"]
-random_pitch = 1.1
-streams_count = 2
-stream_0/stream = ExtResource("8_ykwdf")
-stream_1/stream = ExtResource("9_ea3gk")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jkqnx"]
-streams_count = 2
-stream_0/stream = ExtResource("11_kxros")
-stream_1/stream = ExtResource("2_cbc5r")
 
 [node name="AudioMachine" type="AudioListener3D"]
 current = true
