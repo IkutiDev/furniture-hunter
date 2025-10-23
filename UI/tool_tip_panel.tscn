@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1q3webi276mx"]
+[gd_scene load_steps=6 format=3 uid="uid://b1q3webi276mx"]
 
 [ext_resource type="Script" uid="uid://bm0ug0e0mx601" path="res://UI/tool_tip_panel.gd" id="1_56p6n"]
+[ext_resource type="Texture2D" uid="uid://b1eb0e4ormwmt" path="res://UI/UI_kasia/details_pop_up/details_pop_up_traingle.png" id="2_6hyb5"]
 [ext_resource type="Texture2D" uid="uid://q5c82l3a7ysv" path="res://UI/UI_kasia/upper_menu/coin_icon.png" id="2_q5iy0"]
+[ext_resource type="Texture2D" uid="uid://do8t5p6k0yd6b" path="res://UI/UI_kasia/details_pop_up/details_pop_up_background.png" id="3_s1i5e"]
+
+[sub_resource type="Theme" id="Theme_6hyb5"]
+Label/colors/font_color = Color(0.7058824, 0.4117647, 0.29803923, 1)
 
 [node name="ToolTipPanel" type="Control" node_paths=PackedStringArray("title_label", "cost_label", "description_label", "bottom_line", "content_layout")]
 z_index = 1
@@ -12,6 +17,7 @@ offset_top = -108.0
 offset_right = 200.0
 offset_bottom = -18.0
 mouse_filter = 2
+theme = SubResource("Theme_6hyb5")
 script = ExtResource("1_56p6n")
 title_label = NodePath("ColorRect/CenterContainer/ContentLayout/TitleLabel")
 cost_label = NodePath("ColorRect/CenterContainer/ContentLayout/VBoxContainer2/PriceLabel")
@@ -20,25 +26,27 @@ bottom_line = NodePath("ColorRect/CenterContainer/ContentLayout/BottomLine")
 content_layout = NodePath("ColorRect/CenterContainer/ContentLayout")
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="Pointy" type="TextureRect" parent="."]
 show_behind_parent = true
 layout_mode = 0
-offset_left = 163.0
-offset_top = -68.0
-offset_right = 203.0
-offset_bottom = -28.0
-rotation = 0.7853982
-color = Color(0.54509807, 0.11764706, 0.9529412, 0.78431374)
+offset_left = 138.0
+offset_top = -46.0
+offset_right = 191.0
+offset_bottom = -6.0
+texture = ExtResource("2_6hyb5")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="NinePatchRect" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 100.0
-offset_top = -130.0
-offset_right = 325.0
-offset_bottom = -40.0
-mouse_filter = 2
-color = Color(0.545647, 0.11853371, 0.95272976, 0.78431374)
+offset_left = 99.0
+offset_top = -152.42
+offset_right = 324.0
+offset_bottom = -42.35
+texture = ExtResource("3_s1i5e")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
 layout_mode = 1
@@ -76,6 +84,7 @@ color = Color(0, 0, 0, 0.75686276)
 
 [node name="DescriptionLabel" type="Label" parent="ColorRect/CenterContainer/ContentLayout"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.83137256, 0.6313726, 0.38039216, 1)
 theme_override_font_sizes/font_size = 10
 text = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
 autowrap_mode = 2
@@ -92,6 +101,7 @@ size_flags_horizontal = 3
 [node name="Label2" type="Label" parent="ColorRect/CenterContainer/ContentLayout/VBoxContainer2"]
 custom_minimum_size = Vector2(52, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.39215687, 0.19215687, 0.07058824, 1)
 text = "Recommened Price:"
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect/CenterContainer/ContentLayout/VBoxContainer2"]

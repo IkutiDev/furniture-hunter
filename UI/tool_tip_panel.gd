@@ -34,7 +34,7 @@ func _on_hover(control : Control, data) -> void:
 			description_label.visible = true
 		await get_tree().create_timer(0.05).timeout
 		$ColorRect.size.y = content_layout.size.y
-		
+		$ColorRect.position.y = ($ColorRect.size.y + 40) * -1
 		modulate = Color(1,1,1,1)
 		#collection_type_label.text  = CollectionSet.get_set_name(data.collection_set_type)
 		#if data is FurnitureData:
