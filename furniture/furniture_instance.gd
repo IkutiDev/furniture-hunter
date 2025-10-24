@@ -64,8 +64,8 @@ func sold(offer) -> void:
 	PlayerInventory.earn_money(offer)
 	
 	EventBus.object_sold.emit(self)
-	PlayerInventory.change_renown_amount(-furniture_data.renown)
-	queue_free()
+	#PlayerInventory.change_renown_amount(-furniture_data.renown)
+	#queue_free()
 
 
 func _on_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:

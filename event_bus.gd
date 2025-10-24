@@ -17,6 +17,7 @@ signal object_sold(object)
 signal lootbox_opened(lootbox_data)
 signal collection_crafted(collection_data)
 
+
 signal money_value_changed()
 signal renown_value_changed()
 
@@ -36,4 +37,6 @@ signal start_day()
 signal end_day()
 signal start_night()
 signal game_state_changed()
+
+signal game_completed()
 @warning_ignore_restore("UNUSED_SIGNAL")

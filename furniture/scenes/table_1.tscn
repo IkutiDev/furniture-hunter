@@ -54,7 +54,7 @@ size = Vector3(2.2, 1, 1)
 
 [node name="Table1" type="Node3D" node_paths=PackedStringArray("item_slots", "visual_mesh", "static_body")]
 script = ExtResource("1_x5dth")
-item_slots = [NodePath("ItemSlot"), NodePath("ItemSlot2"), NodePath("ItemSlot3")]
+item_slots = [NodePath("ItemSlot"), NodePath("ItemSlot2"), NodePath("")]
 extra_size = PackedVector3Array(1, 0, 0, -1, 0, 0)
 visual_mesh = NodePath("table_1")
 static_body = NodePath("StaticBody3D")
@@ -74,10 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_ksljv")
 
 [node name="ItemSlot" parent="." instance=ExtResource("4_hpie0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7362995, 0.674512, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.675, 0)
 
 [node name="ItemSlot2" parent="." instance=ExtResource("4_hpie0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003774643, 0.674512, 0)
-
-[node name="ItemSlot3" parent="." instance=ExtResource("4_hpie0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7296854, 0.674512, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.675, 0)

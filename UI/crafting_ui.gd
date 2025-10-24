@@ -107,6 +107,8 @@ func add_collection_to_completed(collection_data : CollectionData):
 			game_compelted = false
 
 	$VictoryScreen.visible = game_compelted
+	if game_compelted:
+		EventBus.emit_signal("game_completed")
 	pass
 
 
