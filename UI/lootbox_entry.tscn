@@ -7,14 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="5_hm3fp"]
 [ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="6_gxwuc"]
 
-[node name="LootboxEntry" type="HBoxContainer" node_paths=PackedStringArray("icon", "lootbox_title", "lootbox_price", "buy_button")]
+[node name="LootboxEntry" type="HBoxContainer" node_paths=PackedStringArray("icon", "lootbox_title", "lootbox_price")]
 offset_right = 567.0
 offset_bottom = 31.0
 script = ExtResource("1_cbigy")
 icon = NodePath("TextureRect")
 lootbox_title = NodePath("MarginContainer/Label")
 lootbox_price = NodePath("MarginContainer3/Label")
-buy_button = NodePath("")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -89,7 +88,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.5461635, 0.35935703, 0.2531927, 1)
+theme_override_colors/font_color = Color(0.7294118, 0.49411765, 0.34901962, 1)
 theme_override_fonts/font = ExtResource("3_u8hrw")
 theme_override_font_sizes/font_size = 14
 text = "Buy"

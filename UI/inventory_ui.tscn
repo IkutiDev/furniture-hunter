@@ -122,6 +122,7 @@ offset_right = -1.0
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.7294118, 0.49411765, 0.34901962, 1)
 theme_override_fonts/font = ExtResource("11_a273u")
 theme_override_font_sizes/font_size = 30
 text = "Furniture"
@@ -147,6 +148,7 @@ offset_right = -1.0
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.7294118, 0.49411765, 0.34901962, 1)
 theme_override_fonts/font = ExtResource("11_a273u")
 theme_override_font_sizes/font_size = 30
 text = "Items"
@@ -261,17 +263,9 @@ size_flags_horizontal = 4
 
 [node name="ToolTipPanel" parent="." instance=ExtResource("5_6128g")]
 layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.23999786
-grow_horizontal = 1
-grow_vertical = 1
 offset = Vector2(-110, 0)
 
 [node name="TextureRect" type="TextureRect" parent="."]

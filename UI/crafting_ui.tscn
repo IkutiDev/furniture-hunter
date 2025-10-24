@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://du5pkafdjd268"]
+[gd_scene load_steps=31 format=3 uid="uid://du5pkafdjd268"]
 
 [ext_resource type="Script" uid="uid://botxorv4wnywe" path="res://UI/crafting_ui.gd" id="1_sac6m"]
 [ext_resource type="Texture2D" uid="uid://pc8tb6jhy086" path="res://UI/UI_kasia/collections_menu/slider.png" id="1_swi88"]
@@ -14,8 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="11_f23vx"]
 [ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="12_f23vx"]
 [ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="14_m71dq"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="14_vxs8f"]
 [ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="15_f6p2u"]
+[ext_resource type="Texture2D" uid="uid://hi5m0knpuhyu" path="res://UI/UI_kasia/key menu/pop_up_background.png" id="16_ltqin"]
 [ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="16_vxs8f"]
+[ext_resource type="FontFile" uid="uid://duda2230y5isf" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Bd.otf" id="17_o6837"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="18_633or"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="19_ha0gr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_njj7l"]
 texture = ExtResource("1_swi88")
@@ -85,6 +90,20 @@ _data = {
 &"RESET": SubResource("Animation_2i6t4"),
 &"fade_out": SubResource("Animation_55cq4")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70f2o"]
+texture = ExtResource("18_633or")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h85m8"]
+texture = ExtResource("19_ha0gr")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
 
 [node name="CraftingUI" type="Control" node_paths=PackedStringArray("crafting_menu", "open_menu_button", "recipes_go_here")]
 layout_mode = 3
@@ -199,7 +218,8 @@ texture = ExtResource("12_f23vx")
 
 [node name="Label" type="Label" parent="Center/ColorRect/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("14_vxs8f")
 theme_override_font_sizes/font_size = 24
 text = "Collections"
 horizontal_alignment = 1
@@ -234,38 +254,62 @@ offset_left = 244.0
 offset_top = 138.0
 offset_right = 958.0
 offset_bottom = 664.0
-color = Color(0.2, 0.05490196, 0.40784314, 0.9098039)
+color = Color(0.2, 0.05490196, 0.40784314, 0)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VictoryScreen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="NinePatchRect" type="NinePatchRect" parent="VictoryScreen"]
+layout_mode = 0
+offset_right = 708.0
+offset_bottom = 520.0
+texture = ExtResource("16_ltqin")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VictoryScreen/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VictoryScreen/NinePatchRect"]
+layout_mode = 0
+offset_right = 707.0
+offset_bottom = 515.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VictoryScreen/NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 1, 0.2784314, 1)
+theme_override_constants/line_separation = 0
+theme_override_constants/paragraph_separation = -6
+theme_override_fonts/normal_font = ExtResource("14_vxs8f")
+theme_override_fonts/bold_font = ExtResource("17_o6837")
 bbcode_enabled = true
 text = "[center]
 YOU HAVE BECOME THE
-[font_size==60]
+[font_size==54]
 [wave amp=60.0 freq=6.0 connected=1]ULTIMATE COLLECTOR[/wave]
 [font_size==30]
 
 SINCE YOU COMPLETED EVERY COLLECTIBLE SET IN THE GAME
-[font_size==20]
+[font_size==18]
 THUS EXHAUSTING ALL OF THE CONTENT WE HAVE PREPARED
-[font_size==12]
+[font_size==10]
 THANKS FOR PLAYING!"
+scroll_active = false
 
-[node name="Ok" type="Button" parent="VictoryScreen/VBoxContainer"]
+[node name="Ok" type="Button" parent="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(80, 36)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "ok"
+theme_override_styles/normal = SubResource("StyleBoxTexture_70f2o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h85m8")
+text = "OK"
 
-[node name="Control" type="Control" parent="VictoryScreen/VBoxContainer"]
+[node name="Control" type="Control" parent="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 
@@ -279,4 +323,4 @@ focus_mode = 0
 texture_normal = ExtResource("15_f6p2u")
 texture_pressed = ExtResource("16_vxs8f")
 
-[connection signal="pressed" from="VictoryScreen/VBoxContainer/Ok" to="." method="_on_ok_pressed"]
+[connection signal="pressed" from="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer/Ok" to="." method="_on_ok_pressed"]

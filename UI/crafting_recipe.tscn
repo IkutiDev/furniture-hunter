@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bypcdpjljnjfc"]
+[gd_scene load_steps=15 format=3 uid="uid://bypcdpjljnjfc"]
 
 [ext_resource type="Script" uid="uid://fwd8qv7v4nbd" path="res://UI/crafting_recipe.gd" id="1_5tfuo"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_bkk45"]
 [ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_k0fux"]
 [ext_resource type="PackedScene" uid="uid://d0aosvog7ndme" path="res://UI/collection_icon_button.tscn" id="4_gnrvk"]
 [ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="5_gnrvk"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="6_inxau"]
 [ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="6_x7frn"]
 [ext_resource type="Texture2D" uid="uid://b8acovndp8wlw" path="res://UI/UI_kasia/collections_menu/ufo_collection_icon.png" id="7_x7frn"]
 [ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="8_tjfry"]
@@ -48,7 +49,9 @@ expand_mode = 4
 [node name="CollectionName" type="Label" parent="Layout"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_constants/line_spacing = 2
+theme_override_fonts/font = ExtResource("6_inxau")
 text = "collection 
 name"
 horizontal_alignment = 3
@@ -109,11 +112,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_colors/font_color = Color(0.7294118, 0.49411765, 0.34901962, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.61960787, 0, 1)
-theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_colors/font_hover_color = Color(0.62218153, 0.35899302, 1, 1)
+theme_override_fonts/font = ExtResource("6_inxau")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tjfry")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_inxau")

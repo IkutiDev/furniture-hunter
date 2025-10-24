@@ -33,7 +33,7 @@
 [ext_resource type="Material" uid="uid://dr8yxhv1lmpko" path="res://materials/window.tres" id="18_k7ha8"]
 [ext_resource type="Material" uid="uid://i50sqoaybgb1" path="res://materials/lamp.tres" id="19_8150c"]
 [ext_resource type="Texture2D" uid="uid://d3akdai50ie5u" path="res://furniture/gamejam_lamp_Base_color.png" id="20_ns5l8"]
-[ext_resource type="PackedScene" uid="uid://dn57f0d46sxa7" path="res://cash_table.tscn" id="23_cjrgx"]
+[ext_resource type="PackedScene" path="res://cash_table.tscn" id="23_cjrgx"]
 [ext_resource type="PackedScene" uid="uid://bks7aueb70qr" path="res://collections/collection_container_instance.tscn" id="26_cjrgx"]
 [ext_resource type="PackedScene" uid="uid://23fqk2jp67kp" path="res://UI/main_menu/main_menu.tscn" id="28_md580"]
 [ext_resource type="Script" uid="uid://dbrwrlrhnc3yq" path="res://cancel_manager.gd" id="28_omknk"]
@@ -541,16 +541,21 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="SetFurniturePriceUI" parent="ContexSpecificUI" instance=ExtResource("8_o6f6g")]
+[node name="SetFurniturePriceUI" parent="ContexSpecificUI" node_paths=PackedStringArray("furniture_description_label") instance=ExtResource("8_o6f6g")]
+visible = false
 layout_mode = 1
+furniture_description_label = NodePath("../../MainUI/RenownDynamicLabel")
 
 [node name="SetCollectionUI" parent="ContexSpecificUI" instance=ExtResource("16_srxrq")]
+visible = false
 layout_mode = 1
 
 [node name="SetItemPriceUI" parent="ContexSpecificUI" instance=ExtResource("12_1t0pb")]
+visible = false
 layout_mode = 1
 
 [node name="LootboxUI" parent="." instance=ExtResource("10_1l8t1")]
+visible = false
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 transform = Transform3D(0.86427045, -0.40119925, 0.30342412, 0, 0.603206, 0.79757994, -0.50301737, -0.6893294, 0.5213348, 4.955, 7.685, 7.253605)

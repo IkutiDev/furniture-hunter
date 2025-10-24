@@ -1,7 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwa2cv6lsgki6"]
+[gd_scene load_steps=10 format=3 uid="uid://cwa2cv6lsgki6"]
 
-[ext_resource type="Script" uid="uid://bsq0s24t8b4cj" path="res://systems/settings_system/sound_setter.gd" id="1_wvucb"]
-[ext_resource type="AudioStream" uid="uid://d1j7xlb6utcoj" path="res://systems/settings_system/beep 2.wav" id="2_otl65"]
+[ext_resource type="Script" uid="uid://bsq0s24t8b4cj" path="res://UI/main_menu/settings_system/sound_setter.gd" id="1_wvucb"]
+[ext_resource type="Texture2D" uid="uid://bvmwh87g03a47" path="res://UI/UI_kasia/collections_menu/voice slider.png" id="2_18fjj"]
+[ext_resource type="AudioStream" uid="uid://d1j7xlb6utcoj" path="res://UI/main_menu/settings_system/beep 2.wav" id="2_otl65"]
+[ext_resource type="Texture2D" uid="uid://boj84nuqx021h" path="res://UI/UI_kasia/collections_menu/loading_bar.png" id="3_6brr4"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="3_6x7r2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ps52w"]
+texture = ExtResource("3_6brr4")
+texture_margin_left = 16.0
+texture_margin_right = 16.0
 
 [sub_resource type="Animation" id="Animation_fo8gr"]
 length = 0.001
@@ -52,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-color = Color(0.294118, 0.329412, 1, 1)
+color = Color(0.71026146, 0.56816876, 0.9231516, 1)
 script = ExtResource("1_wvucb")
 
 [node name="Layout" type="HBoxContainer" parent="."]
@@ -62,6 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 16
 
 [node name="MuteButton" type="CheckButton" parent="Layout"]
 unique_name_in_owner = true
@@ -72,6 +81,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("2_18fjj")
+theme_override_icons/grabber_highlight = ExtResource("2_18fjj")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_ps52w")
 max_value = 1.5
 step = 0.02
 value = 0.48
@@ -82,7 +94,7 @@ volume_db = -80.0
 
 [node name="MuteOnLoad" type="AnimationPlayer" parent="ExampleSound"]
 libraries = {
-"": SubResource("AnimationLibrary_8o6xe")
+&"": SubResource("AnimationLibrary_8o6xe")
 }
 autoplay = "auto_play"
 
@@ -93,6 +105,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_6x7r2")
 text = "Derp"
 horizontal_alignment = 1
 

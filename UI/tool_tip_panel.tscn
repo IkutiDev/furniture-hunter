@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1q3webi276mx"]
+[gd_scene load_steps=9 format=3 uid="uid://b1q3webi276mx"]
 
 [ext_resource type="Script" uid="uid://bm0ug0e0mx601" path="res://UI/tool_tip_panel.gd" id="1_56p6n"]
 [ext_resource type="Texture2D" uid="uid://b1eb0e4ormwmt" path="res://UI/UI_kasia/details_pop_up/details_pop_up_traingle.png" id="2_6hyb5"]
 [ext_resource type="Texture2D" uid="uid://q5c82l3a7ysv" path="res://UI/UI_kasia/upper_menu/coin_icon.png" id="2_q5iy0"]
 [ext_resource type="Texture2D" uid="uid://do8t5p6k0yd6b" path="res://UI/UI_kasia/details_pop_up/details_pop_up_background.png" id="3_s1i5e"]
+[ext_resource type="FontFile" uid="uid://bb6g45wjshas2" path="res://UI/UI_kasia/fonnts.com-Gitan_Latn_It.otf" id="4_ao11h"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="5_7ni0f"]
+[ext_resource type="FontFile" uid="uid://duda2230y5isf" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Bd.otf" id="7_uhq3w"]
 
 [sub_resource type="Theme" id="Theme_6hyb5"]
 Label/colors/font_color = Color(0.7058824, 0.4117647, 0.29803923, 1)
@@ -74,17 +77,19 @@ layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="ColorRect/CenterContainer/ContentLayout"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
 text = "Asset Name"
 vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect/CenterContainer/ContentLayout"]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
-color = Color(0, 0, 0, 0.75686276)
+color = Color(0.8980392, 0.54509807, 0.25882354, 1)
 
 [node name="DescriptionLabel" type="Label" parent="ColorRect/CenterContainer/ContentLayout"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.83137256, 0.6313726, 0.38039216, 1)
+theme_override_colors/font_color = Color(0.8980392, 0.54509807, 0.25882354, 1)
+theme_override_fonts/font = ExtResource("4_ao11h")
 theme_override_font_sizes/font_size = 10
 text = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
 autowrap_mode = 2
@@ -92,7 +97,7 @@ autowrap_mode = 2
 [node name="BottomLine" type="ColorRect" parent="ColorRect/CenterContainer/ContentLayout"]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
-color = Color(0, 0, 0, 0.75686276)
+color = Color(0.8980392, 0.54509807, 0.25882354, 1)
 
 [node name="VBoxContainer2" type="HBoxContainer" parent="ColorRect/CenterContainer/ContentLayout"]
 layout_mode = 2
@@ -101,7 +106,8 @@ size_flags_horizontal = 3
 [node name="Label2" type="Label" parent="ColorRect/CenterContainer/ContentLayout/VBoxContainer2"]
 custom_minimum_size = Vector2(52, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.39215687, 0.19215687, 0.07058824, 1)
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("5_7ni0f")
 text = "Recommened Price:"
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect/CenterContainer/ContentLayout/VBoxContainer2"]
@@ -111,6 +117,8 @@ expand_mode = 2
 
 [node name="PriceLabel" type="Label" parent="ColorRect/CenterContainer/ContentLayout/VBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("7_uhq3w")
 text = "999"
 horizontal_alignment = 1
 vertical_alignment = 1

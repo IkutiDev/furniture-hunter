@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://23fqk2jp67kp"]
+[gd_scene load_steps=29 format=3 uid="uid://23fqk2jp67kp"]
 
 [ext_resource type="Script" uid="uid://d2iyis2l7026u" path="res://UI/main_menu/main_menu.gd" id="1_p8ccj"]
 [ext_resource type="Texture2D" uid="uid://bof1fxoqmh7b7" path="res://UI/main_menu/main_emu_background.png" id="2_1p4x4"]
@@ -8,10 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://dbmy61r1y5l0a" path="res://UI/UI_kasia/options/options_menu_decor.png" id="4_1pdvm"]
 [ext_resource type="Texture2D" uid="uid://ce6owbpmffgp7" path="res://UI/tutorial/placing_furniture.png" id="4_2mudq"]
 [ext_resource type="Texture2D" uid="uid://b0ax0bxv3h1nr" path="res://UI/tutorial/open_shop.png" id="4_ev3b6"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="4_rtlbh"]
 [ext_resource type="Texture2D" uid="uid://cbfy5ivbkm58f" path="res://UI/UI_kasia/options/options_choosen_frame.png" id="4_vdx01"]
 [ext_resource type="Texture2D" uid="uid://bs5ahpk4i73i3" path="res://UI/tutorial/buying.png" id="5_k0a0m"]
 [ext_resource type="Texture2D" uid="uid://dwwgohbnvviiq" path="res://UI/tutorial/selling_furniture.png" id="6_cafmx"]
+[ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="7_b1gt2"]
 [ext_resource type="Texture2D" uid="uid://dg1kwwllsmb5o" path="res://UI/tutorial/selling_items.png" id="7_tcix6"]
+[ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="8_3a88e"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="9_3a88e"]
 [ext_resource type="Texture2D" uid="uid://d0f35hitchxuf" path="res://UI/tutorial/display_collection.png" id="9_mmlvu"]
 [ext_resource type="PackedScene" uid="uid://cwa2cv6lsgki6" path="res://UI/main_menu/settings_system/sound_setter.tscn" id="14_5771y"]
 
@@ -94,6 +98,12 @@ Button/styles/hover = SubResource("StyleBoxEmpty_5771y")
 Button/styles/normal = SubResource("StyleBoxEmpty_vdx01")
 Button/styles/pressed = SubResource("StyleBoxEmpty_1pdvm")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m33db"]
+texture = ExtResource("9_3a88e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3skhr"]
+texture = ExtResource("9_3a88e")
+
 [node name="MainMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_p8ccj")
@@ -160,6 +170,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/NinePatchRect/VBoxContainer3"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_rtlbh")
 theme_override_font_sizes/font_size = 30
 text = "OPTIONS"
 horizontal_alignment = 1
@@ -220,25 +231,53 @@ alignment = 1
 custom_minimum_size = Vector2(241, 80)
 layout_mode = 2
 mouse_filter = 2
+theme_override_colors/font_color = Color(0.27915534, 0.00096006406, 0.52138996, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.62352943, 0.36078432, 1, 1)
+theme_override_fonts/font = ExtResource("4_rtlbh")
 text = "CREDITS"
 
 [node name="TutorialButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
 custom_minimum_size = Vector2(241, 80)
 layout_mode = 2
 mouse_filter = 2
+theme_override_colors/font_color = Color(0.2784314, 0, 0.52156866, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.62352943, 0.36078432, 1, 1)
+theme_override_fonts/font = ExtResource("4_rtlbh")
 text = "TUTORIAL"
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
 custom_minimum_size = Vector2(241, 80)
 layout_mode = 2
 mouse_filter = 2
+theme_override_colors/font_color = Color(0.2784314, 0, 0.52156866, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.62352943, 0.36078432, 1, 1)
+theme_override_fonts/font = ExtResource("4_rtlbh")
 text = "SETTINGS"
 
 [node name="ResumeButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
 custom_minimum_size = Vector2(241, 80)
 layout_mode = 2
 mouse_filter = 2
+theme_override_colors/font_color = Color(0.2784314, 0, 0.52156866, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.62352943, 0.36078432, 1, 1)
+theme_override_fonts/font = ExtResource("4_rtlbh")
 text = "PLAY"
+
+[node name="CloseButton" type="TextureButton" parent="CenterContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 19.0
+offset_right = 501.0
+offset_bottom = 63.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+focus_mode = 0
+texture_normal = ExtResource("7_b1gt2")
+texture_pressed = ExtResource("8_3a88e")
 
 [node name="Credits" type="ColorRect" parent="."]
 visible = false
@@ -247,26 +286,70 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.4471417, 0.48003107, 0.97094625, 1)
+size_flags_vertical = 4
+color = Color(0.44705883, 0.47843137, 0.972549, 0)
 
-[node name="HideCredits" type="Button" parent="Credits"]
+[node name="ColorRect" type="ColorRect" parent="Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.296
+anchor_top = 0.172
+anchor_right = 0.296
+anchor_bottom = 0.172
+offset_left = 0.11999512
+offset_top = -6.840004
+offset_right = 519.12
+offset_bottom = 475.16
+color = Color(0.47893113, 0.3439219, 0.72589856, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Credits/ColorRect"]
+position = Vector2(256, 75)
+texture = ExtResource("4_1pdvm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Credits/ColorRect/Sprite2D"]
+position = Vector2(9, 312)
+texture = ExtResource("4_1pdvm")
+
+[node name="HideCredits" type="Button" parent="Credits/ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1125.0
-offset_top = 668.0
-offset_right = 1251.0
-offset_bottom = 699.0
+offset_left = 170.0
+offset_top = 412.0
+offset_right = 352.90323
+offset_bottom = 457.0
+theme_override_colors/font_color = Color(0.7294118, 0.49411765, 0.34901962, 1)
+theme_override_colors/font_hover_color = Color(0.62352943, 0.36078432, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.15222627, 0.014127666, 0.016561063, 1)
+theme_override_fonts/font = ExtResource("4_rtlbh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m33db")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3skhr")
 text = "CLOSE CREDITS"
 
-[node name="Label" type="Label" parent="Credits"]
+[node name="credits" type="Label" parent="Credits/ColorRect"]
 layout_mode = 0
-offset_left = 476.0
-offset_top = 182.0
-offset_right = 682.0
-offset_bottom = 257.0
-text = "Coding by Ktosox and Ikuti
+offset_left = 160.0
+offset_top = 142.0
+offset_right = 366.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("4_rtlbh")
+text = "Coding:  Ktosox and Ikuti
 
-Art by Lutra"
+Art: by Lutra
+
+UI/UX design : Kasia Worek
+
+Music: Edoardo Ardizzone"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Credits/ColorRect"]
+layout_mode = 0
+offset_right = 518.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("4_rtlbh")
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Tutorial" type="ColorRect" parent="."]
 visible = false
@@ -447,38 +530,95 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.9032794, 0.90930253, 1)
+color = Color(0, 0.9019608, 0.9098039, 0)
 
-[node name="Sound" type="VBoxContainer" parent="Settings"]
+[node name="ColorRect2" type="ColorRect" parent="Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.296
+anchor_top = 0.172
+anchor_right = 0.296
+anchor_bottom = 0.172
+offset_left = 0.11999512
+offset_top = -6.840004
+offset_right = 519.12
+offset_bottom = 475.16
+color = Color(0.47893113, 0.3439219, 0.72589856, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Settings/ColorRect2"]
+position = Vector2(265, 387)
+texture = ExtResource("4_1pdvm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Settings/ColorRect2"]
+position = Vector2(256, 75)
+texture = ExtResource("4_1pdvm")
+
+[node name="Label2" type="Label" parent="Settings/ColorRect2"]
 layout_mode = 0
-offset_left = 767.0
-offset_top = 421.0
-offset_right = 1233.0
-offset_bottom = 697.0
+offset_right = 518.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("4_rtlbh")
+theme_override_font_sizes/font_size = 32
+text = "Sound Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Settings/ColorRect2"]
+visible = false
+layout_mode = 0
+offset_left = 35.0
+offset_top = 106.0
+offset_right = 501.0
+offset_bottom = 106.0
+color = Color(0.47893113, 0.3439219, 0.72589856, 1)
+
+[node name="Label2" type="Label" parent="Settings/ColorRect2/ColorRect"]
+layout_mode = 0
+offset_right = 518.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("4_rtlbh")
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound" type="VBoxContainer" parent="Settings/ColorRect2"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 82.0
+offset_right = 501.0
+offset_bottom = 358.0
+theme_override_constants/separation = 8
 alignment = 1
 
-[node name="SoundSetter" parent="Settings/Sound" instance=ExtResource("14_5771y")]
+[node name="SoundSetter" parent="Settings/ColorRect2/Sound" instance=ExtResource("14_5771y")]
 layout_mode = 2
-color = Color(0.795964, 2.5028e-06, 0.50109, 1)
+color = Color(0.7291227, 0.5484272, 0.9825793, 1)
 title_overwrite = "Main"
 
-[node name="SoundSetter2" parent="Settings/Sound" instance=ExtResource("14_5771y")]
+[node name="SoundSetter2" parent="Settings/ColorRect2/Sound" instance=ExtResource("14_5771y")]
 layout_mode = 2
+color = Color(0.7294118, 0.54901963, 0.9843137, 1)
 bus_name = "Effects"
 
-[node name="SoundSetter3" parent="Settings/Sound" instance=ExtResource("14_5771y")]
+[node name="SoundSetter3" parent="Settings/ColorRect2/Sound" instance=ExtResource("14_5771y")]
 layout_mode = 2
-color = Color(0.249596, 0.519648, 0.243376, 1)
+color = Color(0.7294118, 0.54901963, 0.9843137, 1)
 bus_name = "Music"
 
-[node name="HideSettings" type="Button" parent="Settings"]
-unique_name_in_owner = true
+[node name="HideCredits" type="Button" parent="Settings"]
 layout_mode = 0
-offset_left = 602.0
-offset_top = 673.0
-offset_right = 652.0
-offset_bottom = 704.0
-text = "BACK"
+offset_left = 549.0
+offset_top = 532.0
+offset_right = 731.9032
+offset_bottom = 577.0
+theme_override_colors/font_color = Color(0.7294118, 0.49411765, 0.34901962, 1)
+theme_override_colors/font_hover_color = Color(0.62352943, 0.36078432, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.15222627, 0.014127666, 0.016561063, 1)
+theme_override_fonts/font = ExtResource("4_rtlbh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m33db")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3skhr")
+text = "CLOSE SETTINGS"
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -497,7 +637,7 @@ Display you collections to gain renown among collectors, and to attract more pat
 [connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="Credits/HideCredits" to="." method="_on_hide_credits_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Credits/ColorRect/HideCredits" to="." method="_on_hide_credits_pressed"]
 [connection signal="pressed" from="Tutorial/HideTutorial" to="." method="_on_hide_tutorial_pressed"]
 [connection signal="pressed" from="Tutorial/NextTutorial" to="." method="_on_next_tutorial_pressed"]
-[connection signal="pressed" from="Settings/HideSettings" to="." method="_on_hide_settings_pressed"]

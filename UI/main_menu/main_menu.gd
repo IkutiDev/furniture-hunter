@@ -71,3 +71,7 @@ func _on_settings_button_pressed() -> void:
 func _on_hide_settings_pressed() -> void:
 	$Settings.visible = false
 	pass # Replace with function body.
+
+
+func _on_close_button_pressed() -> void:
+	pass # Replace with function body.
