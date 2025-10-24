@@ -33,3 +33,8 @@ func _ready() -> void:
 #
 #
 	#EventBus.object_sold.connect(Callable(player,"play"))
+
+
+func _on_music_player_finished() -> void:
+	$MusicPlayer.play()
+	pass # Replace with function body.

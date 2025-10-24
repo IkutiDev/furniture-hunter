@@ -33,7 +33,7 @@
 [ext_resource type="Material" uid="uid://dr8yxhv1lmpko" path="res://materials/window.tres" id="18_k7ha8"]
 [ext_resource type="Material" uid="uid://i50sqoaybgb1" path="res://materials/lamp.tres" id="19_8150c"]
 [ext_resource type="Texture2D" uid="uid://d3akdai50ie5u" path="res://furniture/gamejam_lamp_Base_color.png" id="20_ns5l8"]
-[ext_resource type="PackedScene" path="res://cash_table.tscn" id="23_cjrgx"]
+[ext_resource type="PackedScene" uid="uid://dn57f0d46sxa7" path="res://cash_table.tscn" id="23_cjrgx"]
 [ext_resource type="PackedScene" uid="uid://bks7aueb70qr" path="res://collections/collection_container_instance.tscn" id="26_cjrgx"]
 [ext_resource type="PackedScene" uid="uid://23fqk2jp67kp" path="res://UI/main_menu/main_menu.tscn" id="28_md580"]
 [ext_resource type="Script" uid="uid://dbrwrlrhnc3yq" path="res://cancel_manager.gd" id="28_omknk"]
@@ -571,8 +571,8 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="CameraController" type="Node3D" parent="."]
 transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071067, 0, 0, 2.553605)
 script = ExtResource("15_pq8mr")
-limit_x = Vector2(2, -7)
-limit_z = Vector2(5, -2)
+limit_x = Vector2(3, -7)
+limit_z = Vector2(5, -3)
 speed = 10.0
 
 [node name="CashTable" parent="." instance=ExtResource("23_cjrgx")]
