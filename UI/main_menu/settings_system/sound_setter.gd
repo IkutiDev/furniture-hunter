@@ -32,6 +32,8 @@ func _on_mute_button_toggled(toggled_on: bool) -> void:
 
 func _on_volume_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value))
+	if value == 1.0:
+		return
 	if !$ExampleSound.playing:
 		$ExampleSound.play()
 	pass # Replace with function body.

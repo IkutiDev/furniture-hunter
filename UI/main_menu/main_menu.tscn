@@ -321,6 +321,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.15222627, 0.014127666, 
 theme_override_fonts/font = ExtResource("4_rtlbh")
 theme_override_styles/normal = SubResource("StyleBoxTexture_m33db")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3skhr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_m33db")
 text = "CLOSE CREDITS"
 
 [node name="credits" type="Label" parent="Credits/ColorRect"]
@@ -528,6 +529,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.15222627, 0.014127666, 
 theme_override_fonts/font = ExtResource("4_rtlbh")
 theme_override_styles/normal = SubResource("StyleBoxTexture_m33db")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3skhr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_m33db")
 text = "CLOSE SETTINGS"
 
 [node name="Label" type="Label" parent="."]
