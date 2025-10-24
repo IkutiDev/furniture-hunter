@@ -516,8 +516,7 @@ layout_mode = 2
 color = Color(0.7294118, 0.54901963, 0.9843137, 1)
 bus_name = "Music"
 
-[node name="HideCredits" type="Button" parent="Settings"]
-visible = false
+[node name="HideSettings" type="Button" parent="Settings"]
 layout_mode = 0
 offset_left = 549.0
 offset_top = 532.0
@@ -552,3 +551,4 @@ Display you collections to gain renown among collectors, and to attract more pat
 [connection signal="pressed" from="Credits/ColorRect/HideCredits" to="." method="_on_hide_credits_pressed"]
 [connection signal="pressed" from="Tutorial/HideTutorial" to="." method="_on_hide_tutorial_pressed"]
 [connection signal="pressed" from="Tutorial/NextTutorial" to="." method="_on_next_tutorial_pressed"]
+[connection signal="pressed" from="Settings/HideSettings" to="." method="_on_hide_settings_pressed"]
