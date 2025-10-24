@@ -188,11 +188,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="CreditsButton" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
+[node name="ResumeButton" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 texture_hover = ExtResource("4_vdx01")
@@ -210,7 +211,7 @@ layout_mode = 2
 texture_hover = ExtResource("4_vdx01")
 stretch_mode = 3
 
-[node name="ResumeButton" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
+[node name="CreditsButton" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 texture_hover = ExtResource("4_vdx01")
@@ -227,15 +228,15 @@ mouse_filter = 2
 theme = SubResource("Theme_vdx01")
 alignment = 1
 
-[node name="CreditsButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
 custom_minimum_size = Vector2(241, 80)
 layout_mode = 2
 mouse_filter = 2
-theme_override_colors/font_color = Color(0.27915534, 0.00096006406, 0.52138996, 1)
+theme_override_colors/font_color = Color(0.2784314, 0, 0.52156866, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.62352943, 0.36078432, 1, 1)
 theme_override_fonts/font = ExtResource("4_rtlbh")
-text = "CREDITS"
+text = "PLAY"
 
 [node name="TutorialButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
 custom_minimum_size = Vector2(241, 80)
@@ -257,15 +258,15 @@ theme_override_colors/font_hover_color = Color(0.62352943, 0.36078432, 1, 1)
 theme_override_fonts/font = ExtResource("4_rtlbh")
 text = "SETTINGS"
 
-[node name="ResumeButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer"]
 custom_minimum_size = Vector2(241, 80)
 layout_mode = 2
 mouse_filter = 2
-theme_override_colors/font_color = Color(0.2784314, 0, 0.52156866, 1)
+theme_override_colors/font_color = Color(0.27915534, 0.00096006406, 0.52138996, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.62352943, 0.36078432, 1, 1)
 theme_override_fonts/font = ExtResource("4_rtlbh")
-text = "PLAY"
+text = "CREDITS"
 
 [node name="CloseButton" type="TextureButton" parent="CenterContainer/NinePatchRect"]
 layout_mode = 0
@@ -607,6 +608,7 @@ color = Color(0.7294118, 0.54901963, 0.9843137, 1)
 bus_name = "Music"
 
 [node name="HideCredits" type="Button" parent="Settings"]
+visible = false
 layout_mode = 0
 offset_left = 549.0
 offset_top = 532.0
@@ -633,10 +635,10 @@ Your business plan - buy abandoned storage units, sell whatever you don't need, 
 
 Display you collections to gain renown among collectors, and to attract more patrons with deeper pockets."
 
-[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer3/Control/VBoxContainer2/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CenterContainer/NinePatchRect/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Credits/ColorRect/HideCredits" to="." method="_on_hide_credits_pressed"]
 [connection signal="pressed" from="Tutorial/HideTutorial" to="." method="_on_hide_tutorial_pressed"]

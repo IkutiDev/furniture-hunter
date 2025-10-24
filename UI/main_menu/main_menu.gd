@@ -74,4 +74,6 @@ func _on_hide_settings_pressed() -> void:
 
 
 func _on_close_button_pressed() -> void:
+	EventBus.menu_close.emit(self)
+	queue_free()
 	pass # Replace with function body.
