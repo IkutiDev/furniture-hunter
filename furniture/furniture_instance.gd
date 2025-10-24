@@ -48,6 +48,7 @@ func get_mesh_rotation() -> Vector3:
 	return visual_mesh.rotation_degrees
 
 func remove_this_instance(sold : bool) -> void:
+	PlayerInventory.change_renown_amount(-furniture_data.renown)
 	if not sold:
 		PlayerInventory.add_object_to_inventory(furniture_data)
 	queue_free()

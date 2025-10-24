@@ -10,31 +10,34 @@ viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dntw4"]
 resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.8)
 albedo_texture = SubResource("ViewportTexture_5ngml")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k7ha8"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_dntw4")
-size = Vector2(1.6, 2.8)
+size = Vector2(2, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uimp3"]
-size = Vector3(1, 0.05, 2)
+size = Vector3(1.9520874, 0.05, 0.97717285)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ngml"]
-size = Vector3(0.47509766, 0.375, 0.52255857)
+size = Vector3(0.92126465, 0.375, 0.6136963)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vlqrr"]
 viewport_path = NodePath("SubViewport")
 
-[node name="HaggleAnker" type="Node3D" node_paths=PackedStringArray("object_name_label", "counter_offer_label", "progess_bar", "starting_price_label", "deal_button", "no_deal_button", "object_button_goes_here")]
+[node name="HaggleAnker" type="Node3D" node_paths=PackedStringArray("object_name_label", "counter_offer_label", "progess_bar", "starting_price_label", "deal_button", "no_deal_button", "object_button_goes_here") groups=["Haggle"]]
 script = ExtResource("1_5ngml")
-object_name_label = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/Control/ObjectButtonGoesHere/ObjectName")
-counter_offer_label = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere/VBoxContainer/CounterOffer")
-progess_bar = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/ProgressBar")
-starting_price_label = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere/VBoxContainer2/StartingPrice")
-deal_button = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere/TextureButton/Deal")
-no_deal_button = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere/TextureButton2/NoDeal")
-object_button_goes_here = NodePath("SubViewport/HaggleWorld/NinePatchRect/VBoxContainer/VBoxContainer/Control/ObjectButtonGoesHere")
+object_name_label = NodePath("SubViewport/HaggleWorld/ColorRect/VBoxContainer/HBoxContainer/ObjectName")
+counter_offer_label = NodePath("SubViewport/HaggleWorld/ColorRect/VBoxContainer/PlaceHere/VBoxContainer/VBoxContainer4/CounterOfferLabel")
+progess_bar = NodePath("SubViewport/HaggleWorld/ColorRect/VBoxContainer/PlaceHere/VBoxContainer/ProgressBar")
+starting_price_label = NodePath("SubViewport/HaggleWorld/ColorRect/VBoxContainer/PlaceHere/VBoxContainer/VBoxContainer3/StartingPriceLabel")
+deal_button = NodePath("SubViewport/HaggleWorld/ColorRect/VBoxContainer/ButtonsGoHere/Deal")
+no_deal_button = NodePath("SubViewport/HaggleWorld/ColorRect/VBoxContainer/ButtonsGoHere/NoDeal")
+object_button_goes_here = NodePath("SubViewport/HaggleWorld/ColorRect/VBoxContainer/PlaceHere")
 item_button_scene = ExtResource("2_suggg")
 furniture_button_scene = ExtResource("3_dt8sc")
 
@@ -45,20 +48,24 @@ mesh = SubResource("PlaneMesh_k7ha8")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, 0.008209281, 2.3841858e-07, -0.24871826)
 shape = SubResource("BoxShape3D_uimp3")
 
 [node name="NoDeal" type="StaticBody3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, 0.22247127, -0.024048686, 0.7456516)
+transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, 0.5131033, 0.06739056, 0.4451077)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/NoDeal"]
+transform = Transform3D(1.0000005, 0, 4.4703484e-08, 1.0430813e-06, 1, -8.940697e-08, -7.301569e-07, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_5ngml")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="Deal" type="StaticBody3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, -0.047144588, -0.036525607, 0.82672)
+transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, -2.9802322e-08, 2.9802322e-08, 1, -0.4977646, 0.087987304, 0.4954393)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Deal"]
-transform = Transform3D(1.0000014, 0, 4.4703484e-08, 4.1127205e-06, 1, -8.940697e-08, -2.2649765e-06, 0, 1, -0.26245117, 0, -0.11127925)
+transform = Transform3D(1.0000023, 0, 4.4703484e-08, 5.90086e-06, 1, -8.940697e-08, -4.1127205e-06, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_5ngml")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -67,12 +74,12 @@ billboard = 1
 texture = SubResource("ViewportTexture_vlqrr")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(265, 428)
+size = Vector2i(320, 240)
 
 [node name="HaggleWorld" parent="SubViewport" instance=ExtResource("1_wsoj2")]
 
-[node name="ProgressBar" parent="SubViewport/HaggleWorld/VBoxContainer" index="3"]
-value = 0.0
+[node name="ProgressBar" parent="SubViewport/HaggleWorld/ColorRect/VBoxContainer/PlaceHere/VBoxContainer" index="2"]
+value = 8.0
 
 [connection signal="input_event" from="MeshInstance3D/NoDeal" to="." method="_on_no_deal_input_event"]
 [connection signal="mouse_exited" from="MeshInstance3D/NoDeal" to="." method="_on_no_deal_mouse_exited"]

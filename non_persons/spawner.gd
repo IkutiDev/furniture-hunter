@@ -49,7 +49,7 @@ func start_day():
 	$DayToggle/DayIndicator.mesh.material.albedo_color = Color("yellow")
 	is_day = true
 	$EmergencyEndDayKill.stop()
-	desired_customer_count = max_customer_count + roundi(PlayerInventory.renown / 15.0)
+	desired_customer_count = max_customer_count + roundi(PlayerInventory.renown / 180.0)
 	pass
 
 func end_day():
@@ -96,6 +96,7 @@ func _on_the_area_that_eats_people_area_entered(area: Area3D) -> void:
 	if area.is_in_group("Customer"):
 
 		de_spawn_customer(area)
+		print("om nom nom")
 	pass # Replace with function body.
 
 

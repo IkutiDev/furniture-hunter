@@ -19,7 +19,7 @@ stream_1/stream = ExtResource("5_0c165")
 stream_2/stream = ExtResource("2_2u58w")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ep3nv"]
-size = Vector3(2, 2, 2)
+size = Vector3(6, 6, 6)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ep3nv"]
 
@@ -31,6 +31,7 @@ material = SubResource("StandardMaterial3D_ep3nv")
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_ep3nv")
+max_customer_count = 3
 customers_data_path = "res://data/clients"
 
 [node name="SpawnPoint" type="Marker3D" parent="."]

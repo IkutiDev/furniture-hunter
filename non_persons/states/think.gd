@@ -68,11 +68,13 @@ func make_a_choice(message = "nothing"):
 		"great offer":
 			if randf() > 0.4:
 				selected_choice = "i_chose_to_buy"
-			else:
+			elif get_tree().get_nodes_in_group("Haggle").size() < 1:
 				selected_choice = "i_chose_to_haggle"
+			else:
+				selected_choice = "i_chose_to_walk"
 			pass
 		"weak offer":
-			if randf() > 0.45:
+			if randf() > 0.45 and get_tree().get_nodes_in_group("Haggle").size() < 1:
 				selected_choice = "i_chose_to_haggle"
 			else:
 				selected_choice = "i_chose_to_walk"

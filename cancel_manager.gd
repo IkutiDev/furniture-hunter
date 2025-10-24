@@ -12,6 +12,9 @@ func _ready() -> void:
 	EventBus.menu_close.connect(remove_menu_to_queue)
 	EventBus.play_lootbox_cutscene.connect(lootbox_cutscene_opened)
 	EventBus.lootbox_cutscene_ended.connect(lootbox_cutscene_closed)
+	await get_tree().current_scene.ready
+	var new_main_menu = main_menu_scene.instantiate()
+	get_tree().current_scene.add_child(new_main_menu)
 	
 func add_menu_to_queue(menu : Control) -> void:
 	control_menus_queue.append(menu)

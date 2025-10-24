@@ -124,7 +124,7 @@ func update_furniture_inventory() -> void:
 		var furniture_button_instance := furniture_button_scene.instantiate() as FurnitureButton
 		var f = furniture_dictionary.keys()[i]
 		furniture_button_instance.set_data(f, furniture_dictionary[f])
-		furniture_button_instance.pressed.connect(press_furniture_button)
+		#furniture_button_instance.pressed.connect(press_furniture_button)
 		inventory_visual_container.add_child(furniture_button_instance)
 
 

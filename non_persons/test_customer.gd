@@ -35,7 +35,7 @@ func _ready() -> void:
 	
 	$NavigationAgent3D.path_desired_distance += randf_range(-0.1,0.3) #these 2 are for making the NPC not stack
 	$NavigationAgent3D.target_desired_distance += randf_range(-0.5,1)
-	
+	add_to_group("Customer")
 	set_target_position(entrance_location)
 
 
@@ -122,19 +122,19 @@ func _on_think_i_chose_to_walk() -> void:
 		points_of_interest.push_back(thing.global_position)
 	if points_of_interest.is_empty():
 		energy = 0.0
-		print("Oh what a tragedy! There are no things to be bought!")
+		#print("Oh what a tragedy! There are no things to be bought!")
 		$StateMachine.transition_to("Think",[])
 		return
 	for point in visited_points:
 		points_of_interest.erase(point)
 	if points_of_interest.is_empty():
 		energy = 0.0
-		print("I have seen everything to be seen!")
+		#print("I have seen everything to be seen!")
 		$StateMachine.transition_to("Think",[])
 		return
 	var going_to = points_of_interest[randi()%points_of_interest.size()]
 	visited_points.push_back(going_to)
-	print("I shall walk to ",going_to," next!")
+	#print("I shall walk to ",going_to," next!")
 	set_target_position(going_to)
 	energy -= 15
 	$StateMachine.transition_to("Walk")
@@ -151,20 +151,20 @@ func _on_think_i_chose_to_leave() -> void:
 func _on_think_i_chose_to_buy() -> void:
 		
 	if !is_instance_valid(i_want_to_buy_this):
-		print("the thing i wanted to buy does not exist!")
+		#print("the thing i wanted to buy does not exist!")
 		return
 	var items_price = i_want_to_buy_this.current_price
 
 		
 	
 	if items_price < 0:
-		print("I want to buy an ",i_want_to_buy_this ,", but it's not for sale!")
+		#print("I want to buy an ",i_want_to_buy_this ,", but it's not for sale!")
 		$StateMachine.transition_to("Think",["nothing to buy"])
 		energy -= 5
 		return
 	
 	if items_price > money:
-		print("I want to buy an ",i_want_to_buy_this ,", but I cant afford it!")
+		#print("I want to buy an ",i_want_to_buy_this ,", but I cant afford it!")
 		$StateMachine.transition_to("Think",["buy failed"])
 		energy -= 10
 		return
@@ -173,7 +173,7 @@ func _on_think_i_chose_to_buy() -> void:
 		money -= items_price
 
 		
-		print("I bought a ", i_want_to_buy_this,", I now have only this much money: ", money)
+		#print("I bought a ", i_want_to_buy_this,", I now have only this much money: ", money)
 		$StateMachine.transition_to("Think",["buy sucesful"])
 	
 	pass # Replace with function body.
@@ -186,7 +186,7 @@ func _on_think_i_chose_to_browse() -> void:
 	
 	var objects_seen = what_do_i_see()
 	if objects_seen.size() == 0:
-		print("I want to buy, but I dont see anything!")
+		#print("I want to buy, but I dont see anything!")
 		$StateMachine.transition_to("Think",["nothing to buy"])
 		return
 
@@ -202,7 +202,7 @@ func _on_think_i_chose_to_browse() -> void:
 				valid_things.append(object_parent)
 
 	if valid_things.is_empty():
-		print("none of the objects witnessed are for sale")
+		#print("none of the objects witnessed are for sale")
 		$StateMachine.transition_to("Think",["nothing to buy"])
 		energy -= 5
 		return
@@ -238,6 +238,8 @@ func _on_think_i_chose_to_haggle() -> void:
 	var object_price : int # starting price
 	var offers : Array # a 1+ Array of offers
 	var object_data
+
+	
 
 	
 	if i_want_to_buy_this is FurnitureInstance:

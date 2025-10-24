@@ -16,7 +16,8 @@ func _ready() -> void:
 	EventBus.available_collections_changed.emit()
 	EventBus.renown_value_changed.emit()
 	$CashTable.connect("cash_pressed",next_wall)
-	print(wall_grid_map.get_used_cells())
+
+	
 #func change_floor(tile : int): # DO NOT USE KILLS NAV MESH
 	#for cell in floor_grid_map.get_used_cells():
 		#floor_grid_map.set_cell_item(cell,tile)

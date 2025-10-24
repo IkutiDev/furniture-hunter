@@ -520,10 +520,10 @@ where_to_plonk_customers = NodePath("../NavigationRegion3D")
 max_customer_count = 1
 
 [node name="SpawnPoint" parent="Spawner" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59515953, 0.64357775, 1.8271112)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59515953, 0.64357775, 0.024846077)
 
 [node name="TheAreaThatEatsPeople" parent="Spawner" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6029246, 0.62753797, 3.7722664)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6029246, 0.92008245, 3.6796064)
 
 [node name="ShopEntrance" parent="Spawner" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5773549, 0.78274584, -3.7229443)

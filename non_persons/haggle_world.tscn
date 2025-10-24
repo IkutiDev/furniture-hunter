@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://lv3pxnk12yvr"]
+[gd_scene load_steps=11 format=3 uid="uid://lv3pxnk12yvr"]
 
-[ext_resource type="Texture2D" uid="uid://bh5ti1hr27gnm" path="res://haggle_reference.png" id="1_xmrk1"]
 [ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="2_t8443"]
-[ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="3_24ovs"]
+[ext_resource type="Texture2D" uid="uid://q5c82l3a7ysv" path="res://UI/UI_kasia/upper_menu/coin_icon.png" id="3_c26t8"]
 [ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="3_r3dcd"]
-[ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="4_24ovs"]
-[ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="5_t8443"]
+[ext_resource type="Texture2D" uid="uid://cltdvn8s1ese8" path="res://UI/UI_kasia/collections_menu/loading_bar_under.png" id="4_c26t8"]
+[ext_resource type="FontFile" uid="uid://duda2230y5isf" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Bd.otf" id="4_s8vp8"]
+[ext_resource type="Texture2D" uid="uid://boj84nuqx021h" path="res://UI/UI_kasia/collections_menu/loading_bar.png" id="5_c26t8"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="7_tqpke"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3dcd"]
 
@@ -23,246 +24,177 @@ offset_right = 120.0
 offset_bottom = 240.0
 theme = SubResource("Theme_c26t8")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-self_modulate = Color(0.8541423, 0.7871274, 0.9890167, 1)
-layout_mode = 1
-offset_right = 265.0
-offset_bottom = 428.0
-texture = ExtResource("4_24ovs")
-region_rect = Rect2(-1, 0, 107, 107)
-patch_margin_left = 10
-patch_margin_top = 8
-patch_margin_right = 10
-patch_margin_bottom = 8
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0.5411765, 0.42745098, 0.59607846, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("5_t8443")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer"]
+[node name="TradeOffer" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
-
-[node name="TradeOffer" type="Label" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Trade Offer"
+theme_override_font_sizes/font_size = 28
+text = "Offer for: "
 horizontal_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-color = Color(0.54334474, 0.39914414, 0.94512624, 1)
-
-[node name="Control" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Control3" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Customer"
-
-[node name="ItemIconButton" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control/VBoxContainer" instance=ExtResource("3_24ovs")]
-layout_mode = 2
-
-[node name="Control4" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ObjectButtonGoesHere" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control"]
-layout_mode = 2
-
-[node name="ObjectName" type="Label" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control/ObjectButtonGoesHere"]
+[node name="ObjectName" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Item name"
 
-[node name="Control2" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/Control"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ColorRect3" type="ColorRect" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
-color = Color(0.54334474, 0.39914414, 0.94512624, 1)
+color = Color(1, 1, 1, 0.43529412)
 
-[node name="OffersGoHere" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+[node name="PlaceHere" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 
-[node name="Control2" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere"]
+[node name="Before" type="Control" parent="ColorRect/VBoxContainer/PlaceHere"]
+custom_minimum_size = Vector2(4, 0)
 layout_mode = 2
 
-[node name="CounterOffer" type="Label" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "$ 999"
-
-[node name="Control3" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/PlaceHere"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere"]
-layout_mode = 2
-
-[node name="StartingPrice" type="Label" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere/VBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "$ 999"
-
-[node name="Control4" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/OffersGoHere"]
+[node name="VBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/PlaceHere/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-modulate = Color(0.020862466, 0, 0.69188833, 1)
+[node name="RecomendPriceLabel2" type="Label" parent="ColorRect/VBoxContainer/PlaceHere/VBoxContainer/VBoxContainer4"]
 layout_mode = 2
-size_flags_vertical = 1
-value = 100.0
+theme_override_fonts/font = ExtResource("4_s8vp8")
+text = "Counter Offer:"
 
-[node name="ColorRect" type="ColorRect" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/PlaceHere/VBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_c26t8")
+expand_mode = 2
+
+[node name="CounterOfferLabel" type="Label" parent="ColorRect/VBoxContainer/PlaceHere/VBoxContainer/VBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_s8vp8")
+theme_override_font_sizes/font_size = 22
+text = "999"
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/PlaceHere/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RecomendPriceLabel3" type="Label" parent="ColorRect/VBoxContainer/PlaceHere/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_s8vp8")
+text = "Starting Price:"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/PlaceHere/VBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_c26t8")
+expand_mode = 2
+
+[node name="StartingPriceLabel" type="Label" parent="ColorRect/VBoxContainer/PlaceHere/VBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_s8vp8")
+theme_override_font_sizes/font_size = 22
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="TextureProgressBar" parent="ColorRect/VBoxContainer/PlaceHere/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 8.0
+value = 4.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 12
+texture_under = ExtResource("4_c26t8")
+texture_progress = ExtResource("5_c26t8")
+tint_under = Color(0.5211406, 0.5211406, 0.5211405, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
-color = Color(0.54334474, 0.39914414, 0.94512624, 1)
+color = Color(1, 1, 1, 0.43529412)
 
-[node name="ButtonsGoHere" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/VBoxContainer"]
+[node name="ButtonsGoHere" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Control2" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TextureButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere"]
-custom_minimum_size = Vector2(120, 90)
+[node name="Deal" type="TextureButton" parent="ColorRect/VBoxContainer/ButtonsGoHere"]
+custom_minimum_size = Vector2(120, 44.43)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+focus_mode = 0
 texture_normal = ExtResource("3_r3dcd")
 texture_pressed = ExtResource("2_t8443")
-texture_hover = ExtResource("2_t8443")
+texture_focused = ExtResource("2_t8443")
 ignore_texture_size = true
-stretch_mode = 5
+stretch_mode = 0
 
-[node name="Deal" type="Button" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere/TextureButton"]
-unique_name_in_owner = true
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/ButtonsGoHere/Deal"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Deal"
+theme_override_colors/font_color = Color(0, 0.80881083, 0.37265053, 1)
+theme_override_fonts/font = ExtResource("7_tqpke")
+theme_override_font_sizes/font_size = 20
+text = "Accept"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Control3" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere"]
+[node name="Before" type="Control" parent="ColorRect/VBoxContainer/ButtonsGoHere"]
+custom_minimum_size = Vector2(12, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="TextureButton2" type="TextureButton" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere"]
-custom_minimum_size = Vector2(120, 90)
+[node name="NoDeal" type="TextureButton" parent="ColorRect/VBoxContainer/ButtonsGoHere"]
+custom_minimum_size = Vector2(120, 44.43)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+focus_mode = 0
 texture_normal = ExtResource("3_r3dcd")
 texture_pressed = ExtResource("2_t8443")
-texture_hover = ExtResource("2_t8443")
+texture_focused = ExtResource("2_t8443")
 ignore_texture_size = true
-stretch_mode = 5
+stretch_mode = 0
 
-[node name="NoDeal" type="Button" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere/TextureButton2"]
-unique_name_in_owner = true
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/ButtonsGoHere/NoDeal"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.8627451, 0.09411765, 0.2901961, 1)
+theme_override_fonts/font = ExtResource("7_tqpke")
+theme_override_font_sizes/font_size = 20
 text = "Decline"
-
-[node name="Control" type="Control" parent="NinePatchRect/VBoxContainer/VBoxContainer/ButtonsGoHere"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_t8443")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.09154721, 0, 0.7066006, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-color = Color(1, 0.07058824, 1, 1)
-
-[node name="StartingPrice" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Starting price:
-999999"
 horizontal_alignment = 1
-
-[node name="CounterOffer" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Counter offer:
-3.14"
-horizontal_alignment = 1
-
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
-modulate = Color(1, 1, 0, 1)
-layout_mode = 2
-size_flags_vertical = 1
-value = 100.0
-
-[node name="NoDeal" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "NO DEAL"
-
-[node name="Deal" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "DEAL"
-
-[node name="HaggleReference" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(808, 103)
-texture = ExtResource("1_xmrk1")
+vertical_alignment = 1

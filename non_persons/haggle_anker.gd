@@ -16,10 +16,10 @@ var object_data
 
 @export var object_name_label : Label
 @export var counter_offer_label : Label
-@export var progess_bar : ProgressBar
+@export var progess_bar : TextureProgressBar
 @export var starting_price_label : Label
-@export var deal_button : Button
-@export var no_deal_button : Button
+@export var deal_button : TextureButton
+@export var no_deal_button : TextureButton
 
 @export var object_button_goes_here : Control
 
@@ -27,7 +27,10 @@ var object_data
 @export var furniture_button_scene : PackedScene
 
 func _ready() -> void:
+
+
 	progess_bar.max_value = haggle_time_left
+
 
 func _process(delta: float) -> void:
 	if haggle_time_left < 0.1:
@@ -64,10 +67,11 @@ func haggle_refuse():
 	pass
 
 func load_haggle_data(thing_haggled : Node3D, object_name : String, starting_price : int, offers : Array, data = null):
+
 	object_being_haggled = thing_haggled
 	object_name_label.text = object_name
 	object_data = data
-	starting_price_label.text = "Starting price:\n" + str(starting_price)
+	starting_price_label.text = str(starting_price)
 	counter_offers = offers.duplicate()
 	var new_button
 	if object_data is ItemData:
@@ -76,17 +80,18 @@ func load_haggle_data(thing_haggled : Node3D, object_name : String, starting_pri
 		new_button = furniture_button_scene.instantiate() as FurnitureButton
 	new_button.set_data(object_data)
 	object_button_goes_here.add_child(new_button)
-
+	object_button_goes_here.move_child(new_button,0)
 	load_next_counter_offer()
 
 	pass
 
 func load_next_counter_offer() -> bool:
+
 	if counter_offers.is_empty():
 		return false
 	else:
 		current_offer = counter_offers.pop_front()
-		counter_offer_label.text = "Counter offer:\n" + str(current_offer)
+		counter_offer_label.text = str(current_offer)
 		return true
 	pass
 
