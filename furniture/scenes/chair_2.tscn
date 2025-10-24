@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://d0mpp1fx5eb1y"]
+[gd_scene load_steps=11 format=4 uid="uid://d0mpp1fx5eb1y"]
 
 [ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="1_xsjr0"]
 [ext_resource type="Material" uid="uid://btbvef6o2ufoq" path="res://materials/tables.tres" id="2_yk068"]
@@ -49,13 +49,75 @@ shadow_mesh = SubResource("ArrayMesh_5kn0w")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n170s"]
 
+[sub_resource type="Animation" id="Animation_yk068"]
+resource_name = "new_animation"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chair_2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 16.866667, 17.266666, 17.733334, 18.2, 18.633333, 27.5, 27.900002, 28.366667, 28.833334, 29.366667),
+"transitions": PackedFloat32Array(1, 2, -2, 2, -2, 1, 2, 0.5, 2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0.31489232), Vector3(0, 0, 0), Vector3(0, 0, -0.44141135), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0.31489232), Vector3(0, 0, 0), Vector3(0, 0, -0.44141135), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("chair_2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 16.866667, 17.266666, 17.733334, 18.2, 18.633333, 27.5, 27.900002, 28.366667, 28.833334, 29.366667),
+"transitions": PackedFloat32Array(1, 2, -2, 2, -2, 1, 2, 0.5, 2, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0.4576828, 0), Vector3(0, 0.4576828, 0), Vector3(0, 0.5992877, 0), Vector3(0, 0.4576828, 0), Vector3(0, 0.5820156, 0), Vector3(0, 0.4576828, 0), Vector3(0, 0.4576828, 0), Vector3(0, 0.8, 0), Vector3(0, 0.4576828, 0), Vector3(0, 0.8, 0), Vector3(0, 0.4576828, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ahvu8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chair_2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("chair_2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.4576828, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vdu87"]
+_data = {
+&"RESET": SubResource("Animation_ahvu8"),
+&"new_animation": SubResource("Animation_yk068")
+}
+
 [node name="Chair2" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
 script = ExtResource("1_xsjr0")
 visual_mesh = NodePath("chair_2")
 static_body = NodePath("StaticBody3D")
 
 [node name="chair_2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.6, 0, 0, 0, 0.481, 0, 0, 0, 0.544, 0, 0.4576828, 0)
+transform = Transform3D(0.59999996, 0, 0, 0, 0.48100007, 0, 0, 0, 0.5440001, 0, 0.4576828, 0)
 material_override = ExtResource("2_yk068")
 mesh = SubResource("ArrayMesh_vdu87")
 skeleton = NodePath("")
@@ -67,3 +129,9 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_n170s")
+
+[node name="Dance" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vdu87")
+}
+autoplay = "new_animation"

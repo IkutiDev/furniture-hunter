@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ca1t1c2hxxbbm" path="res://collections/collection_instance.gd" id="1_tmqc5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tmqc5"]
-size = Vector3(0.5, 0.2, 0.2)
+size = Vector3(0.8, 0.4, 0.4)
 
 [node name="CollectionSlot" type="Marker3D"]
 script = ExtResource("1_tmqc5")

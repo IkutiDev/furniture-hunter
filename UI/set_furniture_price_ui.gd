@@ -3,6 +3,7 @@ extends Control
 
 @export var furniture_title_label : Label
 @export var furniture_description_label : Label
+@export var furnniture_icon_button : Control
 @export var recommended_price_label : Label
 @export var current_price_label : Label
 @export var price_box : SpinBox
@@ -29,10 +30,10 @@ func open_ui(instance: FurnitureInstance) -> void:
 	furniture_instance = instance
 	furniture_title_label.text = furniture_instance.furniture_data.object_name
 	furniture_description_label.text = furniture_instance.furniture_data.description
-	recommended_price_label.text = str(furniture_instance.furniture_data.base_value) +"$"
-	current_price_label.text = str(furniture_instance.current_price if furniture_instance.current_price >= 0 else 0) +"$"
+	recommended_price_label.text = str(furniture_instance.furniture_data.base_value)
+	current_price_label.text = str(furniture_instance.current_price if furniture_instance.current_price >= 0 else 0)
 	price_box.value = furniture_instance.current_price if furniture_instance.current_price >= 0 else 0
-	
+	furnniture_icon_button.set_data(furniture_instance.furniture_data)
 	EventBus.menu_open.emit(self)
 	
 	show()
@@ -47,5 +48,12 @@ func remove_furniture() -> void:
 
 func set_price() -> void:
 	@warning_ignore("narrowing_conversion")
+	print(price_box.value)
 	furniture_instance.price_set(price_box.value)
-	current_price_label.text = str(furniture_instance.current_price if furniture_instance.current_price >= 0 else 0) +"$"
+	current_price_label.text = str(furniture_instance.current_price if furniture_instance.current_price >= 0 else 0)
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		close_menu()
+	pass # Replace with function body.

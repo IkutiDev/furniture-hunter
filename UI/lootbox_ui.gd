@@ -19,6 +19,7 @@ func _ready() -> void:
 	video_player.hide()
 	video_player.finished.connect(on_cutscene_finished)
 	exit_button.pressed.connect(close_menu)
+
 	
 func _toggle_auctions_menu() -> void:
 	if lootbox_menu.visible:

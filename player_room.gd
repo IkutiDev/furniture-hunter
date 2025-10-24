@@ -16,7 +16,7 @@ func _ready() -> void:
 	EventBus.available_collections_changed.emit()
 	EventBus.renown_value_changed.emit()
 	$CashTable.connect("cash_pressed",next_wall)
-
+	print(wall_grid_map.get_used_cells())
 #func change_floor(tile : int): # DO NOT USE KILLS NAV MESH
 	#for cell in floor_grid_map.get_used_cells():
 		#floor_grid_map.set_cell_item(cell,tile)
@@ -24,7 +24,7 @@ func _ready() -> void:
 	#$NavigationRegion3D.bake_navigation_mesh()
 	#pass
 func next_wall():
-	var current_item = wall_grid_map.get_cell_item(Vector3i(-4, 0, -4))
+	var current_item = wall_grid_map.get_cell_item(Vector3i(0, 0, -2))
 	if current_item == 5:
 		current_item = 0
 	else:

@@ -31,9 +31,13 @@ var i_want_to_buy_this
 
 func _ready() -> void:
 
-	$MeshInstance3D.mesh.material.albedo_color = Color(0.5 + randf() * 0.5,0.5 + randf() * 0.5 ,0.5 + randf() * 0.5) # random color for testing
-
+	#$MeshInstance3D.mesh.material.albedo_color = Color(0.5 + randf() * 0.5,0.5 + randf() * 0.5 ,0.5 + randf() * 0.5) # random color for testing
+	
+	$NavigationAgent3D.path_desired_distance += randf_range(-0.1,0.3) #these 2 are for making the NPC not stack
+	$NavigationAgent3D.target_desired_distance += randf_range(-0.5,1)
+	
 	set_target_position(entrance_location)
+
 
 
 func load_customer(data : CustomerData):
@@ -48,9 +52,13 @@ func load_customer(data : CustomerData):
 func _physics_process(delta):
 	$EnergyBar.scale.x = energy/100.0
 	if $NavigationAgent3D.is_navigation_finished():
-		look_at(global_position + Vector3(5,0,0), Vector3.UP)
+		var offset = $NavigationAgent3D.target_position - global_position
+		
+		offset.y = 0
+		look_at(global_position + offset, Vector3.UP)
+	
 		return
-	var next_position = $NavigationAgent3D.get_next_path_position()
+	var next_position = $NavigationAgent3D.get_next_path_position() + Vector3(randf_range(-1,1),randf_range(-1,1),0) * 0.1
 	var offset = next_position - global_position
 	global_position = global_position.move_toward(next_position, delta * walk_speed)
 	
