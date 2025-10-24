@@ -1,23 +1,20 @@
-[gd_scene load_steps=29 format=3 uid="uid://23fqk2jp67kp"]
+[gd_scene load_steps=26 format=3 uid="uid://23fqk2jp67kp"]
 
 [ext_resource type="Script" uid="uid://d2iyis2l7026u" path="res://UI/main_menu/main_menu.gd" id="1_p8ccj"]
 [ext_resource type="Texture2D" uid="uid://bof1fxoqmh7b7" path="res://UI/main_menu/main_emu_background.png" id="2_1p4x4"]
-[ext_resource type="Texture2D" uid="uid://b1tkgf3qlkwcd" path="res://UI/tutorial/completing_collection.png" id="2_f40uw"]
-[ext_resource type="Texture2D" uid="uid://dtv0078xqf3h4" path="res://UI/tutorial/money_inventory.png" id="3_8ctay"]
 [ext_resource type="Texture2D" uid="uid://cqtgn5edoaqg1" path="res://UI/UI_kasia/options/options_background.png" id="3_x0650"]
 [ext_resource type="Texture2D" uid="uid://dbmy61r1y5l0a" path="res://UI/UI_kasia/options/options_menu_decor.png" id="4_1pdvm"]
-[ext_resource type="Texture2D" uid="uid://ce6owbpmffgp7" path="res://UI/tutorial/placing_furniture.png" id="4_2mudq"]
-[ext_resource type="Texture2D" uid="uid://b0ax0bxv3h1nr" path="res://UI/tutorial/open_shop.png" id="4_ev3b6"]
 [ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="4_rtlbh"]
 [ext_resource type="Texture2D" uid="uid://cbfy5ivbkm58f" path="res://UI/UI_kasia/options/options_choosen_frame.png" id="4_vdx01"]
-[ext_resource type="Texture2D" uid="uid://bs5ahpk4i73i3" path="res://UI/tutorial/buying.png" id="5_k0a0m"]
-[ext_resource type="Texture2D" uid="uid://dwwgohbnvviiq" path="res://UI/tutorial/selling_furniture.png" id="6_cafmx"]
 [ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="7_b1gt2"]
-[ext_resource type="Texture2D" uid="uid://dg1kwwllsmb5o" path="res://UI/tutorial/selling_items.png" id="7_tcix6"]
 [ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="8_3a88e"]
 [ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="9_3a88e"]
-[ext_resource type="Texture2D" uid="uid://d0f35hitchxuf" path="res://UI/tutorial/display_collection.png" id="9_mmlvu"]
+[ext_resource type="Texture2D" uid="uid://b1ngk25i77vh2" path="res://UI/tutorial/tutorial_window_1.png" id="10_rtlbh"]
+[ext_resource type="Texture2D" uid="uid://b1q1g3mqjkwh5" path="res://UI/tutorial/tutorial_window_2.png" id="11_urid5"]
+[ext_resource type="Texture2D" uid="uid://b3p2l7twjfjmr" path="res://UI/tutorial/tutorial_window_3.png" id="12_b1gt2"]
+[ext_resource type="Texture2D" uid="uid://2n1san1q8wd8" path="res://UI/tutorial/tutorial_window_4.png" id="13_3a88e"]
 [ext_resource type="PackedScene" uid="uid://cwa2cv6lsgki6" path="res://UI/main_menu/settings_system/sound_setter.tscn" id="14_5771y"]
+[ext_resource type="Texture2D" uid="uid://ov7j4fybj0ob" path="res://UI/UI_kasia/collections_menu/trangle_button_active_right.png" id="14_m33db"]
 
 [sub_resource type="Animation" id="Animation_p8ccj"]
 length = 0.001
@@ -371,30 +368,8 @@ grow_vertical = 2
 color = Color(0.898277, 0.5896256, 0.6720228, 1)
 
 [node name="MoneyInventory" type="Sprite2D" parent="Tutorial/HowToBuy"]
-position = Vector2(105, 202)
-texture = ExtResource("3_8ctay")
-
-[node name="Buying" type="Sprite2D" parent="Tutorial/HowToBuy"]
-position = Vector2(494, 304)
-texture = ExtResource("5_k0a0m")
-
-[node name="Label" type="Label" parent="Tutorial/HowToBuy"]
-layout_mode = 0
-offset_left = 179.0
-offset_top = 30.0
-offset_right = 627.0
-offset_bottom = 53.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "keys are bought with money and appear in yout inventory"
-
-[node name="Label2" type="Label" parent="Tutorial/HowToBuy"]
-layout_mode = 0
-offset_left = 232.0
-offset_top = 83.0
-offset_right = 680.0
-offset_bottom = 106.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "to buy a key open the actions menu and press buy next to the key"
+position = Vector2(640, 360)
+texture = ExtResource("10_rtlbh")
 
 [node name="HowToSell" type="ColorRect" parent="Tutorial"]
 visible = false
@@ -406,67 +381,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.65495646, 0.98321325, 0.48707873, 1)
 
-[node name="Label3" type="Label" parent="Tutorial/HowToSell"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 487.0
-offset_bottom = 82.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "to sell furniture, 
-you need to select it in you inventory 
-and place it in your shop"
-
-[node name="Label4" type="Label" parent="Tutorial/HowToSell"]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 158.0
-offset_right = 617.0
-offset_bottom = 259.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "once placed you need to click on your
-furniture, and set a non zero price
-you can also put it back in your inventory
-if you changed your mind"
-
-[node name="Label5" type="Label" parent="Tutorial/HowToSell"]
-layout_mode = 0
-offset_left = 643.0
-offset_top = 37.0
-offset_right = 964.0
-offset_bottom = 138.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "items are sold by placing them on
-special furniture
-select an item from the list
-and set it's price"
-
-[node name="Label6" type="Label" parent="Tutorial/HowToSell"]
-layout_mode = 0
-offset_left = 956.0
-offset_top = 212.0
-offset_right = 1277.0
-offset_bottom = 313.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "once you are done placing furniture
-and setting prices you can let cusomters 
-in by pressing the \"Open Shop\" button"
-
-[node name="OpenShop" type="Sprite2D" parent="Tutorial/HowToSell"]
-position = Vector2(1110, 383)
-texture = ExtResource("4_ev3b6")
-
-[node name="SellingFurniture" type="Sprite2D" parent="Tutorial/HowToSell"]
-position = Vector2(446, 361)
-texture = ExtResource("6_cafmx")
-
-[node name="SellingItems" type="Sprite2D" parent="Tutorial/HowToSell"]
-position = Vector2(777, 275)
-texture = ExtResource("7_tcix6")
-
 [node name="PlacingFurniture" type="Sprite2D" parent="Tutorial/HowToSell"]
-position = Vector2(141, 206)
-texture = ExtResource("4_2mudq")
+position = Vector2(640, 360)
+texture = ExtResource("11_urid5")
 
 [node name="HowToCraft" type="ColorRect" parent="Tutorial"]
 visible = false
@@ -479,50 +396,42 @@ grow_vertical = 2
 color = Color(0.9999998, 0.42168805, 0.9916963, 1)
 
 [node name="CompletingCollection" type="Sprite2D" parent="Tutorial/HowToCraft"]
-position = Vector2(401, 283)
-texture = ExtResource("2_f40uw")
+position = Vector2(640, 360)
+texture = ExtResource("12_b1gt2")
 
-[node name="DisplayCollection" type="Sprite2D" parent="Tutorial/HowToCraft"]
-position = Vector2(943, 325)
-texture = ExtResource("9_mmlvu")
+[node name="HowToCraft2" type="ColorRect" parent="Tutorial"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9999998, 0.42168805, 0.9916963, 1)
 
-[node name="Label2" type="Label" parent="Tutorial/HowToCraft"]
-layout_mode = 0
-offset_left = 109.0
-offset_top = 70.0
-offset_right = 718.0
-offset_bottom = 119.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "to complete a collection open the Crafting menu and select a collection to craft
-items marekd green are the ones you already have"
-
-[node name="Label3" type="Label" parent="Tutorial/HowToCraft"]
-layout_mode = 0
-offset_left = 655.0
-offset_top = 162.0
-offset_right = 1264.0
-offset_bottom = 211.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "once you complete a collection you can display it in your shop by clicking
-on a pedestal and picking a collection from the list"
+[node name="CompletingCollection" type="Sprite2D" parent="Tutorial/HowToCraft2"]
+position = Vector2(640, 360)
+texture = ExtResource("13_3a88e")
 
 [node name="HideTutorial" type="Button" parent="Tutorial"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1122.0
-offset_top = 667.0
-offset_right = 1261.0
-offset_bottom = 698.0
-text = "CLOSE TUTORIAL"
+offset_left = 1139.0
+offset_top = 641.0
+offset_right = 1268.0
+offset_bottom = 693.0
+icon = ExtResource("8_3a88e")
+flat = true
 
 [node name="NextTutorial" type="Button" parent="Tutorial"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1002.0
-offset_top = 672.0
-offset_right = 1096.0
-offset_bottom = 703.0
-text = "NEXT PAGE"
+offset_left = 1044.0
+offset_top = 639.0
+offset_right = 1138.0
+offset_bottom = 694.0
+icon = ExtResource("14_m33db")
+flat = true
 
 [node name="Settings" type="ColorRect" parent="."]
 visible = false
