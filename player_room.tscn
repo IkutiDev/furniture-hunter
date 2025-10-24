@@ -304,7 +304,7 @@ visible = false
 [node name="AuctionUI" parent="." instance=ExtResource("7_2dulj")]
 visible = false
 
-[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("change_shop_state_button", "money_label", "renown_label", "hour_label", "inventory_menu", "crafting_menu", "auctions_menu", "inventory_button", "collections_button", "keys_button", "pause_menu_button")]
+[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("change_shop_state_button", "money_label", "renown_label", "hour_label", "inventory_menu", "crafting_menu", "auctions_menu", "inventory_button", "collections_button", "keys_button", "pause_menu_button") groups=["MainUI"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -542,6 +542,7 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="SetFurniturePriceUI" parent="ContexSpecificUI" instance=ExtResource("8_o6f6g")]
+visible = false
 layout_mode = 1
 
 [node name="SetCollectionUI" parent="ContexSpecificUI" instance=ExtResource("16_srxrq")]

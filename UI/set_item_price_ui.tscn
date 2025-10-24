@@ -1,117 +1,114 @@
-[gd_scene load_steps=4 format=3 uid="uid://teevnykaumjf"]
+[gd_scene load_steps=10 format=3 uid="uid://teevnykaumjf"]
 
 [ext_resource type="Script" uid="uid://ccb2quie5n2cf" path="res://UI/set_item_price_ui.gd" id="1_ytk82"]
-[ext_resource type="PackedScene" uid="uid://cdjjeooebwrsi" path="res://UI/item_slot_ui.tscn" id="2_60sum"]
-[ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="2_uxjx1"]
+[ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="4_6k5lu"]
+[ext_resource type="Texture2D" uid="uid://c3ptrrnww55t" path="res://UI/UI_kasia/Trading/seting_price_item.png" id="4_uxjx1"]
+[ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="5_r8upo"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="6_h70wf"]
+[ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="7_gsqs4"]
+[ext_resource type="PackedScene" uid="uid://bk8cfnff5ooqv" path="res://UI/new_item_slot_ui.tscn" id="8_va4s4"]
+[ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="14_h70wf"]
+[ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="15_gsqs4"]
 
-[node name="SetItemPriceUI" type="Control" node_paths=PackedStringArray("furniture_title_label", "furniture_description_label", "close_ui_button", "item_list", "item_slots_list", "remove_furniture_button")]
-layout_mode = 3
+[node name="SetItemPriceUI" type="ColorRect" node_paths=PackedStringArray("furniture_title_label", "close_ui_button", "item_slots", "remove_furniture_button", "remove_furniture_button2")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -158.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0.53333336, 0.5372549, 0)
 script = ExtResource("1_ytk82")
-furniture_title_label = NodePath("Panel/HFlowContainer/TitleLabel")
-furniture_description_label = NodePath("Panel/HFlowContainer/DescriptionLabel")
-close_ui_button = NodePath("Panel/HFlowContainer/ExitButton")
-item_list = NodePath("ScrollContainer/VBoxContainer")
-item_button_scene = ExtResource("2_uxjx1")
-item_slots_list = NodePath("Panel/HFlowContainer/ItemSlotsList/HBoxContainer")
-item_slot_ui_scene = ExtResource("2_60sum")
-remove_furniture_button = NodePath("Panel/HFlowContainer/RemoveFurnitureButton")
+furniture_title_label = NodePath("NinePatchRect2/VBoxContainer2/TitleLabel")
+close_ui_button = NodePath("CloseButton")
+item_slots = [NodePath("NinePatchRect2/VBoxContainer2/Control/NewItemSlotUI2"), NodePath("NinePatchRect2/VBoxContainer2/Control/NewItemSlotUI3")]
+remove_furniture_button = NodePath("NinePatchRect2/VBoxContainer2/Control/NewItemSlotUI2/RemoveFurnitureButton")
+remove_furniture_button2 = NodePath("NinePatchRect2/VBoxContainer2/Control/NewItemSlotUI3/RemoveFurnitureButton")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -244.0
-offset_top = -195.0
-offset_right = 264.0
-offset_bottom = 197.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 75.0
+offset_right = 986.0
+offset_bottom = 562.0
+mouse_filter = 0
+texture = ExtResource("4_6k5lu")
+region_rect = Rect2(-1, 0, 107, 107)
+patch_margin_left = 10
+patch_margin_top = 8
+patch_margin_right = 10
+patch_margin_bottom = 8
 
-[node name="HFlowContainer" type="HFlowContainer" parent="Panel"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="NinePatchRect2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -11.0
+offset_right = 11.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TitleLabel" type="Label" parent="Panel/HFlowContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-text = "Furniture Name"
-
-[node name="ExitButton" type="Button" parent="Panel/HFlowContainer"]
-layout_mode = 2
-text = "X"
-
-[node name="Seperator" type="Control" parent="Panel/HFlowContainer"]
-custom_minimum_size = Vector2(500, 20)
-layout_mode = 2
-
-[node name="DescriptionLabel" type="Label" parent="Panel/HFlowContainer"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-text = "Furniture Long Description Furniture Long Description Furniture Long Description Furniture Long Description"
-autowrap_mode = 2
-
-[node name="Seperator2" type="Control" parent="Panel/HFlowContainer"]
-custom_minimum_size = Vector2(500, 15)
-layout_mode = 2
-
-[node name="ItemSlotsList" type="ScrollContainer" parent="Panel/HFlowContainer"]
-custom_minimum_size = Vector2(500, 190)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HFlowContainer/ItemSlotsList"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 3
+mouse_filter = 2
 alignment = 1
 
-[node name="Seperator5" type="Control" parent="Panel/HFlowContainer"]
-custom_minimum_size = Vector2(500, 0)
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect2/VBoxContainer2"]
 layout_mode = 2
+texture = ExtResource("5_r8upo")
 
-[node name="TitleLabel2" type="Label" parent="Panel/HFlowContainer"]
+[node name="TitleLabel" type="Label" parent="NinePatchRect2/VBoxContainer2"]
 layout_mode = 2
-size_flags_horizontal = 6
-text = "Other Actions"
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("6_h70wf")
+theme_override_font_sizes/font_size = 30
+text = "Set Name"
+horizontal_alignment = 1
 
-[node name="Seperator6" type="Control" parent="Panel/HFlowContainer"]
-custom_minimum_size = Vector2(500, 0)
+[node name="TextureRect3" type="TextureRect" parent="NinePatchRect2/VBoxContainer2"]
 layout_mode = 2
+texture = ExtResource("7_gsqs4")
+stretch_mode = 3
 
-[node name="RemoveFurnitureButton" type="Button" parent="Panel/HFlowContainer"]
+[node name="Control" type="HBoxContainer" parent="NinePatchRect2/VBoxContainer2"]
 layout_mode = 2
-size_flags_horizontal = 6
-text = "Move furniture to inventory"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = 254.0
-offset_top = 57.0
-offset_right = 387.0
-offset_bottom = -84.0
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
+mouse_filter = 2
 alignment = 1
+
+[node name="NewItemSlotUI2" parent="NinePatchRect2/VBoxContainer2/Control" instance=ExtResource("8_va4s4")]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect2/VBoxContainer2/Control"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.8980392, 0.54509807, 0.25882354, 1)
+
+[node name="NewItemSlotUI3" parent="NinePatchRect2/VBoxContainer2/Control" instance=ExtResource("8_va4s4")]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect2/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("5_r8upo")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 97.0
+offset_right = 972.0
+offset_bottom = 141.0
+focus_mode = 0
+texture_normal = ExtResource("14_h70wf")
+texture_pressed = ExtResource("15_gsqs4")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 1329.0
+offset_top = 119.0
+offset_right = 2063.0
+offset_bottom = 566.0
+texture = ExtResource("4_uxjx1")
+region_rect = Rect2(275, 80, 719, 438)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+
+[editable path="NinePatchRect2/VBoxContainer2/Control/NewItemSlotUI2"]
+[editable path="NinePatchRect2/VBoxContainer2/Control/NewItemSlotUI3"]

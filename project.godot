@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 Customer="default NPC group"
 Shelf="a thing for holding sellaable objects"
+MainUI=""
 
 [input]
 

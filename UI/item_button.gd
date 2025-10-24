@@ -6,6 +6,7 @@ var data : ItemData
 @export var set_icon : Control
 @export var slot_icon : Control
 @export var amount_label : Label
+@export var stored = false
 
 func _ready() -> void:
 	pressed.connect(_on_pressed_item_button)
@@ -24,10 +25,12 @@ func set_data(_data : ItemData, amount : int = 1) -> void:
 		amount_label.text = str(amount)
 
 func _on_pressed_item_button() -> void:
-	EventBus.clicked_on_item.emit(data)
+	if !stored:
+		EventBus.clicked_on_item.emit(data)
 
 func _on_hover() -> void:
-	EventBus.on_icon_hovered.emit(self, data)
+	if !stored:
+		EventBus.on_icon_hovered.emit(self, data)
 
 func _on_exit_hover() -> void:
 	EventBus.on_icon_hovered.emit(null, null)

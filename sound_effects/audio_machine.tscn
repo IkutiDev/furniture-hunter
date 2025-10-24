@@ -67,3 +67,5 @@ signal_to_stream_map = {
 stream = SubResource("AudioStreamRandomizer_6xevd")
 autoplay = true
 bus = &"Music"
+
+[connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]

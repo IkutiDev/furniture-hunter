@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://8clpnwrjrqt5"]
+
+[ext_resource type="Texture2D" uid="uid://bf7mqg2nn3b4l" path="res://UI/WIP_icons/empty.png" id="1_c3ojk"]
+[ext_resource type="Script" uid="uid://c1nrhtbb30bm" path="res://items/item_data.gd" id="3_nk1h2"]
+
+[resource]
+script = ExtResource("3_nk1h2")
+icon = ExtResource("1_c3ojk")
+can_be_sold = false

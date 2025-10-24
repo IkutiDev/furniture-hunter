@@ -1,0 +1,238 @@
+[gd_scene load_steps=13 format=3 uid="uid://bk8cfnff5ooqv"]
+
+[ext_resource type="Script" uid="uid://5tskybvtfhsg" path="res://UI/new_item_slot_ui.gd" id="1_a2v43"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="1_kb72q"]
+[ext_resource type="Resource" uid="uid://8clpnwrjrqt5" path="res://data/000_empty_slot.tres" id="2_6nrhr"]
+[ext_resource type="FontFile" uid="uid://bb6g45wjshas2" path="res://UI/UI_kasia/fonnts.com-Gitan_Latn_It.otf" id="3_6nrhr"]
+[ext_resource type="Texture2D" uid="uid://q5c82l3a7ysv" path="res://UI/UI_kasia/upper_menu/coin_icon.png" id="4_071oe"]
+[ext_resource type="PackedScene" uid="uid://co6h4573ya6fr" path="res://UI/item_icon_button.tscn" id="4_h51qe"]
+[ext_resource type="FontFile" uid="uid://duda2230y5isf" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Bd.otf" id="5_h51qe"]
+[ext_resource type="Texture2D" uid="uid://cdevj2edp2t24" path="res://UI/UI_kasia/collections_menu/wooden_button_inactive.png" id="6_qffmn"]
+[ext_resource type="Texture2D" uid="uid://cj4a30ubcl5th" path="res://UI/UI_kasia/collections_menu/wooden_button_active.png" id="7_0s8hs"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ktn7v"]
+size = Vector2(0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8spx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgefp"]
+
+[node name="NewItemSlotUI" type="VBoxContainer" node_paths=PackedStringArray("item_icon_button", "recommeneded_price_label", "current_price_label", "price_box", "set_price_button", "item_title_label", "item_description_label")]
+size_flags_horizontal = 6
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource("1_a2v43")
+item_icon_button = NodePath("HBoxContainer/ItemIconButton")
+empty_slot_data = ExtResource("2_6nrhr")
+recommeneded_price_label = NodePath("HBoxContainer2/RightBox/VBoxContainer3/RecomendPriceLabel")
+current_price_label = NodePath("HBoxContainer2/RightBox/VBoxContainer2/CurrentPriceLabel")
+price_box = NodePath("HBoxContainer2/LeftBox/PriceBox")
+set_price_button = NodePath("HBoxContainer2/RightBox/CenterContainer/SetPriceButton")
+item_title_label = NodePath("TitleLabel")
+item_description_label = NodePath("HBoxContainer/DescriptionLabel")
+
+[node name="TitleLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(240, 79)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("1_kb72q")
+theme_override_font_sizes/font_size = 26
+text = "Co pof m ispggggg"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.8980392, 0.54509807, 0.25882354, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ItemIconButton" parent="HBoxContainer" instance=ExtResource("4_h51qe")]
+layout_mode = 2
+stored = true
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8980392, 0.54509807, 0.25882354, 1)
+theme_override_fonts/font = ExtResource("3_6nrhr")
+theme_override_font_sizes/font_size = 12
+text = "m ispum ipsum ipmusm pofff  m ispum ipsum ipmusm pofff "
+vertical_alignment = 3
+autowrap_mode = 3
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.8980392, 0.54509807, 0.25882354, 1)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="LeftBox" type="VBoxContainer" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer2/LeftBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("1_kb72q")
+theme_override_font_sizes/font_size = 12
+text = "Current Price:"
+
+[node name="Label2" type="Label" parent="HBoxContainer2/LeftBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("1_kb72q")
+theme_override_font_sizes/font_size = 12
+text = "Recomended Price:"
+
+[node name="PriceBox" type="SpinBox" parent="HBoxContainer2/LeftBox"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_icons/updown = SubResource("PlaceholderTexture2D_ktn7v")
+theme_override_icons/up = SubResource("PlaceholderTexture2D_ktn7v")
+theme_override_icons/up_hover = SubResource("PlaceholderTexture2D_ktn7v")
+theme_override_icons/up_pressed = SubResource("PlaceholderTexture2D_ktn7v")
+theme_override_icons/up_disabled = SubResource("PlaceholderTexture2D_ktn7v")
+theme_override_icons/down = SubResource("PlaceholderTexture2D_ktn7v")
+theme_override_icons/down_hover = SubResource("PlaceholderTexture2D_ktn7v")
+theme_override_icons/down_pressed = SubResource("PlaceholderTexture2D_ktn7v")
+theme_override_icons/down_disabled = SubResource("PlaceholderTexture2D_ktn7v")
+theme_override_styles/up_background_hovered = SubResource("StyleBoxEmpty_p8spx")
+theme_override_styles/up_background_pressed = SubResource("StyleBoxEmpty_pgefp")
+theme_override_styles/down_background_hovered = SubResource("StyleBoxEmpty_pgefp")
+theme_override_styles/down_background_pressed = SubResource("StyleBoxEmpty_pgefp")
+max_value = 9999.0
+update_on_text_changed = true
+
+[node name="Control" type="Control" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+
+[node name="RightBox" type="VBoxContainer" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="HBoxContainer2/RightBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/RightBox/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_071oe")
+expand_mode = 2
+
+[node name="CurrentPriceLabel" type="Label" parent="HBoxContainer2/RightBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("5_h51qe")
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="HBoxContainer2/RightBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/RightBox/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_071oe")
+expand_mode = 2
+
+[node name="RecomendPriceLabel" type="Label" parent="HBoxContainer2/RightBox/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("5_h51qe")
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer2/RightBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SetPriceButton" type="TextureButton" parent="HBoxContainer2/RightBox/CenterContainer"]
+custom_minimum_size = Vector2(113.36, 34.065)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+texture_normal = ExtResource("6_qffmn")
+texture_pressed = ExtResource("7_0s8hs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HBoxContainer2/RightBox/CenterContainer/SetPriceButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7294118, 0.49411765, 0.34901962, 1)
+theme_override_fonts/font = ExtResource("1_kb72q")
+theme_override_font_sizes/font_size = 16
+text = "Set the price"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.8980392, 0.54509807, 0.25882354, 1)
+
+[node name="Control2" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="RemoveFurnitureButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(195.455, 44.43)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = ExtResource("6_qffmn")
+texture_pressed = ExtResource("7_0s8hs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="RemoveFurnitureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7294118, 0.49411765, 0.34901962, 1)
+theme_override_fonts/font = ExtResource("1_kb72q")
+theme_override_font_sizes/font_size = 20
+text = "Move to inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
