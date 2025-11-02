@@ -39,4 +39,5 @@ signal start_night()
 signal game_state_changed()
 
 signal game_completed()
+signal throw_error(message : String)
 @warning_ignore_restore("UNUSED_SIGNAL")

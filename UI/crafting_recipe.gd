@@ -1,7 +1,7 @@
 extends Control
 
 # needs to listen to inventory changes to update itslef accordingly
-signal failed_to_craft(message)
+
 
 @export var collection_data : CollectionData
 
@@ -57,11 +57,11 @@ func _on_make_set_button_pressed() -> void: # crafts set on press
 
 		if part is FurnitureData:
 			if !PlayerInventory.furniture.has(part):
-				failed_to_craft.emit("YOU ARE MISSING A PART OF THIS COLLECTION")
+				EventBus.throw_error.emit("YOU ARE MISSING A PART OF THIS COLLECTION")
 				return
 		if part is ItemData:
 			if !PlayerInventory.items.has(part):
-				failed_to_craft.emit("YOU ARE MISSING A PART OF THIS COLLECTION")
+				EventBus.throw_error.emit("YOU ARE MISSING A PART OF THIS COLLECTION")
 				return
 
 	EventBus.collection_crafted.emit(collection_data)

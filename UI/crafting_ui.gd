@@ -86,16 +86,11 @@ func create_recepies():
 	for collection in collections_to_load.keys():
 		var new_recpie = crafting_recipe_scene.instantiate()
 		new_recpie.collection_data = collection_sets[collection]
-		new_recpie.connect("failed_to_craft",throw_error)
 		new_recpie.load_recipe(collections_to_load[collection])
 		recipes_go_here.add_child(new_recpie)
 		#loaded_recepies.push_back(collection)
 	pass
 
-func throw_error(message : String):
-	%ErrorMessage.text = message
-	%ErrorMessage/Anime.play("fade_out")
-	pass
 
 
 func add_collection_to_completed(collection_data : CollectionData):
