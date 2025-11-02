@@ -12,6 +12,8 @@ var haggle_scene = preload("res://non_persons/haggle_anker.tscn")
 
 var i_want_to_buy_this
 
+var just_walked_in = true
+
 @export var objects_set_to_be_sold : Array[Node3D]
 
 @export var walk_speed = 2.0
@@ -121,10 +123,13 @@ func _on_think_i_chose_to_walk() -> void:
 			continue
 		points_of_interest.push_back(thing.global_position)
 	if points_of_interest.is_empty():
+		if just_walked_in:
+			EventBus.throw_error.emit("CUSTOMERS ARE WALKING OUT SINCE THERE IS NOTHING TO BUY")
 		energy = 0.0
 		#print("Oh what a tragedy! There are no things to be bought!")
 		$StateMachine.transition_to("Think",[])
 		return
+	just_walked_in = false
 	for point in visited_points:
 		points_of_interest.erase(point)
 	if points_of_interest.is_empty():
