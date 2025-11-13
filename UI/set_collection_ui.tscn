@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bv5qt7a4i75ki"]
+[gd_scene load_steps=11 format=3 uid="uid://bv5qt7a4i75ki"]
 
 [ext_resource type="Script" uid="uid://pu8a1ybtyq0x" path="res://UI/set_collection_ui.gd" id="1_765u6"]
 [ext_resource type="PackedScene" uid="uid://d0aosvog7ndme" path="res://UI/collection_icon_button.tscn" id="2_rgxpv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="6_nu84p"]
 [ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="7_j1220"]
 [ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="8_6xnw2"]
+[ext_resource type="PackedScene" uid="uid://b6bkey5brnxco" path="res://UI/collection_slot_ui.tscn" id="8_dssdk"]
 [ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="9_4qp31"]
 [ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="10_hgjoc"]
 
@@ -21,7 +22,8 @@ script = ExtResource("1_765u6")
 close_ui_button = NodePath("CloseButton")
 collection_list = NodePath("ColorRect/CenterContainer/GridContainer")
 collection_button_scene = ExtResource("2_rgxpv")
-collection_slots_list = NodePath("")
+collection_slots_list = NodePath("ColorRect/VBoxContainer2")
+collection_slot_ui_scene = ExtResource("8_dssdk")
 
 [node name="ColorRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(500, 420)
@@ -90,6 +92,20 @@ mouse_filter = 2
 [node name="TextureRect2" type="TextureRect" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("6_nu84p")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -120.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollectionSlotUI" parent="ColorRect/VBoxContainer2" instance=ExtResource("8_dssdk")]
+layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
 layout_mode = 0
