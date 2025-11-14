@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=65 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -33,7 +33,8 @@
 [ext_resource type="Material" uid="uid://dr8yxhv1lmpko" path="res://materials/window.tres" id="18_k7ha8"]
 [ext_resource type="Material" uid="uid://i50sqoaybgb1" path="res://materials/lamp.tres" id="19_8150c"]
 [ext_resource type="Texture2D" uid="uid://d3akdai50ie5u" path="res://furniture/gamejam_lamp_Base_color.png" id="20_ns5l8"]
-[ext_resource type="PackedScene" uid="uid://dn57f0d46sxa7" path="res://cash_table.tscn" id="23_cjrgx"]
+[ext_resource type="Texture2D" uid="uid://dvx6n5t7ijp0r" path="res://UI/UI_kasia/side_menu/shop icon.png" id="23_5uani"]
+[ext_resource type="PackedScene" path="res://cash_table.tscn" id="23_cjrgx"]
 [ext_resource type="PackedScene" uid="uid://bks7aueb70qr" path="res://collections/collection_container_instance.tscn" id="26_cjrgx"]
 [ext_resource type="PackedScene" uid="uid://23fqk2jp67kp" path="res://UI/main_menu/main_menu.tscn" id="28_md580"]
 [ext_resource type="Script" uid="uid://dbrwrlrhnc3yq" path="res://cancel_manager.gd" id="28_omknk"]
@@ -428,9 +429,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 17.0
-offset_top = -100.0
+offset_top = -171.0
 offset_right = 83.0
-offset_bottom = 198.0
+offset_bottom = 201.0
 grow_vertical = 2
 theme_override_constants/separation = 12
 
@@ -514,6 +515,26 @@ texture_filter = 1
 layout_mode = 2
 texture = ExtResource("17_mijrv")
 
+[node name="shop Button" type="TextureButton" parent="MainUI/HUDButtons"]
+texture_filter = 1
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("13_3y86n")
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/shop Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/shop Button/CenterContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("23_5uani")
+
 [node name="Spawner" parent="." node_paths=PackedStringArray("where_to_plonk_customers") instance=ExtResource("9_8qgar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33616257, 0, 10.838951)
 where_to_plonk_customers = NodePath("../NavigationRegion3D")
@@ -554,6 +575,7 @@ visible = false
 layout_mode = 1
 
 [node name="LootboxUI" parent="." instance=ExtResource("10_1l8t1")]
+visible = false
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
 transform = Transform3D(0.86427045, -0.40119925, 0.30342412, 0, 0.603206, 0.79757994, -0.50301737, -0.6893294, 0.5213348, 4.955, 7.685, 7.253605)
