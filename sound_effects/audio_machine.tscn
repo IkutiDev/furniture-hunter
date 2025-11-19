@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c5oy8g06il0ru"]
+[gd_scene load_steps=21 format=3 uid="uid://c5oy8g06il0ru"]
 
 [ext_resource type="Script" uid="uid://bt3mpcjcas1lg" path="res://sound_effects/audio_machine.gd" id="1_lutyo"]
 [ext_resource type="AudioStream" uid="uid://dnd3gipu7x5mx" path="res://sound_effects/glass placed on shelf 6.wav" id="2_cbc5r"]
@@ -14,12 +14,17 @@
 [ext_resource type="AudioStream" uid="uid://y4mwl820ykbi" path="res://sound_effects/glass placed on shelf 3.wav" id="11_kxros"]
 [ext_resource type="AudioStream" uid="uid://b4s1f1q1xi8dq" path="res://sound_effects/LudumDareBGM - Elegant Boutique (FadeOut).mp3" id="13_jkqnx"]
 [ext_resource type="AudioStream" uid="uid://bpeon35lvn182" path="res://sound_effects/about_10s_of_silence.mp3" id="14_6xevd"]
-[ext_resource type="AudioStream" uid="uid://ccwk2gcpu5lrx" path="res://sound_effects/LudumDareBGM - Elegant Boutique (Loop).mp3" id="14_15yat"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jkqnx"]
 streams_count = 2
 stream_0/stream = ExtResource("11_kxros")
 stream_1/stream = ExtResource("2_cbc5r")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_663vu"]
+random_pitch = 1.1
+streams_count = 2
+stream_0/stream = ExtResource("8_ykwdf")
+stream_1/stream = ExtResource("9_ea3gk")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iojhr"]
 playback_mode = 1
@@ -36,19 +41,11 @@ streams_count = 2
 stream_0/stream = ExtResource("5_21fmk")
 stream_1/stream = ExtResource("6_8gbsg")
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_663vu"]
-random_pitch = 1.1
-streams_count = 2
-stream_0/stream = ExtResource("8_ykwdf")
-stream_1/stream = ExtResource("9_ea3gk")
-
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6xevd"]
 playback_mode = 2
-streams_count = 4
+streams_count = 2
 stream_0/stream = ExtResource("14_6xevd")
 stream_1/stream = ExtResource("13_jkqnx")
-stream_2/stream = ExtResource("14_6xevd")
-stream_3/stream = ExtResource("14_15yat")
 
 [node name="AudioMachine" type="AudioListener3D"]
 current = true
