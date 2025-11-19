@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene load_steps=67 format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dh7xwd15ho7lk" path="res://non_persons/spawner.tscn" id="9_8qgar"]
 [ext_resource type="Theme" uid="uid://b2pfryrp1o2ds" path="res://UI/themes/default_theme.tres" id="9_p2x2x"]
 [ext_resource type="PackedScene" uid="uid://bkgqd0cei32ye" path="res://UI/lootbox_ui.tscn" id="10_1l8t1"]
+[ext_resource type="PackedScene" uid="uid://wg6q61x83ydl" path="res://UI/cash_register_ui.tscn" id="10_fkhf7"]
 [ext_resource type="Texture2D" uid="uid://q5c82l3a7ysv" path="res://UI/UI_kasia/upper_menu/coin_icon.png" id="10_i6a45"]
 [ext_resource type="PackedScene" uid="uid://du5pkafdjd268" path="res://UI/crafting_ui.tscn" id="11_4fkm8"]
 [ext_resource type="Texture2D" uid="uid://bjdsv1fnf38ib" path="res://UI/UI_kasia/upper_menu/star_icon.png" id="11_cjn4c"]
@@ -33,7 +34,9 @@
 [ext_resource type="Material" uid="uid://dr8yxhv1lmpko" path="res://materials/window.tres" id="18_k7ha8"]
 [ext_resource type="Material" uid="uid://i50sqoaybgb1" path="res://materials/lamp.tres" id="19_8150c"]
 [ext_resource type="Texture2D" uid="uid://d3akdai50ie5u" path="res://furniture/gamejam_lamp_Base_color.png" id="20_ns5l8"]
+[ext_resource type="PackedScene" uid="uid://blaqa6lngoh58" path="res://UI/shower_of_errors.tscn" id="23_5uani"]
 [ext_resource type="PackedScene" uid="uid://dn57f0d46sxa7" path="res://cash_table.tscn" id="23_cjrgx"]
+[ext_resource type="Texture2D" uid="uid://dvx6n5t7ijp0r" path="res://UI/UI_kasia/side_menu/shop icon.png" id="24_fkhf7"]
 [ext_resource type="PackedScene" uid="uid://bks7aueb70qr" path="res://collections/collection_container_instance.tscn" id="26_cjrgx"]
 [ext_resource type="PackedScene" uid="uid://23fqk2jp67kp" path="res://UI/main_menu/main_menu.tscn" id="28_md580"]
 [ext_resource type="Script" uid="uid://dbrwrlrhnc3yq" path="res://cancel_manager.gd" id="28_omknk"]
@@ -301,10 +304,13 @@ visible = false
 [node name="CraftingUI" parent="." instance=ExtResource("11_4fkm8")]
 visible = false
 
+[node name="CashRegisterUI" parent="." instance=ExtResource("10_fkhf7")]
+visible = false
+
 [node name="AuctionUI" parent="." instance=ExtResource("7_2dulj")]
 visible = false
 
-[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("change_shop_state_button", "money_label", "renown_label", "hour_label", "inventory_menu", "crafting_menu", "auctions_menu", "inventory_button", "collections_button", "keys_button", "pause_menu_button") groups=["MainUI"]]
+[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("change_shop_state_button", "money_label", "renown_label", "hour_label", "cash_register_menu", "inventory_menu", "crafting_menu", "auctions_menu", "inventory_button", "collections_button", "cash_register_button", "keys_button", "pause_menu_button") groups=["MainUI"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -316,11 +322,13 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("6_d0s76")
 change_shop_state_button = NodePath("ChangeShopStateButton")
-button_text_during_day = "Close"
-button_text_during_night = "Open"
+button_text_during_day = "Open"
+button_text_during_night = "Closed"
+button_text_during_closing = "Clopen"
 money_label = NodePath("MoneyDynamicLabel")
 renown_label = NodePath("RenownDynamicLabel")
 hour_label = NodePath("Label")
+cash_register_menu = NodePath("../CashRegisterUI")
 inventory_menu = NodePath("../InventoryUI")
 crafting_menu = NodePath("../CraftingUI")
 auctions_menu = NodePath("../AuctionUI")
@@ -329,6 +337,7 @@ active_button_texture = ExtResource("14_c5hbr")
 disactive_button_texture = ExtResource("13_3y86n")
 inventory_button = NodePath("HUDButtons/InventoryButton")
 collections_button = NodePath("HUDButtons/CollectionsButton")
+cash_register_button = NodePath("HUDButtons/CashRegisterButton")
 keys_button = NodePath("HUDButtons/KeysButton")
 pause_menu_button = NodePath("HUDButtons/PauseMenuButton")
 
@@ -351,7 +360,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_a5wro")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c5hbr")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_mijrv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5uani")
-text = "OPEN"
+disabled = true
 
 [node name="MoneyDynamicLabel" type="Label" parent="MainUI"]
 layout_mode = 0
@@ -428,9 +437,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 17.0
-offset_top = -100.0
+offset_top = -188.0
 offset_right = 83.0
-offset_bottom = 198.0
+offset_bottom = 180.0
 grow_vertical = 2
 theme_override_constants/separation = 12
 
@@ -494,6 +503,26 @@ texture_filter = 1
 layout_mode = 2
 texture = ExtResource("16_c5hbr")
 
+[node name="CashRegisterButton" type="TextureButton" parent="MainUI/HUDButtons"]
+texture_filter = 1
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("13_3y86n")
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/CashRegisterButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/CashRegisterButton/CenterContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("24_fkhf7")
+
 [node name="PauseMenuButton" type="TextureButton" parent="MainUI/HUDButtons"]
 texture_filter = 1
 layout_mode = 2
@@ -513,6 +542,10 @@ grow_vertical = 2
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("17_mijrv")
+
+[node name="ShowerOfErrors" parent="MainUI" instance=ExtResource("23_5uani")]
+layout_mode = 1
+text = "hebuebuebue hebebeubeuebubuebeubeuebuebeub"
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("where_to_plonk_customers") instance=ExtResource("9_8qgar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33616257, 0, 10.838951)
