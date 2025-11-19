@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://5eeyn2nbl4it"]
+[gd_scene load_steps=16 format=3 uid="uid://5eeyn2nbl4it"]
 
 [ext_resource type="Script" uid="uid://c1ja3t7yps2yn" path="res://UI/inventory_ui.gd" id="1_qfk0h"]
 [ext_resource type="PackedScene" uid="uid://cwb6lpaeqxch" path="res://UI/furniture_icon_button.tscn" id="2_oaa25"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dbty0f61svkru" path="res://UI/UI_kasia/collections_menu/background_down_menu.png" id="6_nygdy"]
 [ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="7_hcig3"]
 [ext_resource type="Texture2D" uid="uid://dk1yltpvj5vux" path="res://UI/UI_kasia/collections_menu/wooden_decor.png" id="8_dgd3g"]
-[ext_resource type="Texture2D" uid="uid://bn0amsq5vd1si" path="res://UI/UI_kasia/mockup_gameplay_items_menu.png" id="8_e1gr2"]
 [ext_resource type="Texture2D" uid="uid://ov7j4fybj0ob" path="res://UI/UI_kasia/collections_menu/trangle_button_active_right.png" id="9_ywkq4"]
 [ext_resource type="Texture2D" uid="uid://c6ohs2q05h222" path="res://UI/UI_kasia/collections_menu/trangle_button_inactive_right.png" id="10_dgd3g"]
 [ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="11_a273u"]
@@ -267,21 +266,6 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.23999786
 offset = Vector2(-110, 0)
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-self_modulate = Color(1, 1, 1, 0.29411766)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 514.0
-offset_top = -276.0
-offset_right = 514.0
-offset_bottom = -276.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_e1gr2")
 
 [editable path="VBoxContainer/FurnitureIconButton"]
 [editable path="VBoxContainer/FurnitureIconButton2"]

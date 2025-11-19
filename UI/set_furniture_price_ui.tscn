@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://bh0yjjoyposcl"]
+[gd_scene load_steps=16 format=3 uid="uid://bh0yjjoyposcl"]
 
 [ext_resource type="Script" uid="uid://bel8y3m2oh7xh" path="res://UI/set_furniture_price_ui.gd" id="1_yva15"]
-[ext_resource type="Texture2D" uid="uid://bp05ujmraxs3f" path="res://UI/UI_kasia/Trading/seting_price_set.png" id="2_0dkj7"]
 [ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="3_8cb6l"]
 [ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="4_t72ha"]
 [ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="5_5yk5w"]
@@ -38,16 +37,6 @@ price_box = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/
 set_price_button = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/HBoxContainer2/RightBox/CenterContainer/SetPriceButton")
 close_ui_button = NodePath("CloseButton")
 remove_furniture_button = NodePath("NinePatchRect/VBoxContainer2/VBoxContainer/RemoveFurnitureButton")
-
-[node name="Refernce" type="NinePatchRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 1475.0
-offset_top = 88.0
-offset_right = 1890.0
-offset_bottom = 629.0
-texture = ExtResource("2_0dkj7")
-region_rect = Rect2(885, 114, 336, 391)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
