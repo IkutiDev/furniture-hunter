@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://clgfkcao6rjbb"]
+[gd_scene format=4 uid="uid://clgfkcao6rjbb"]
 
 [ext_resource type="Script" uid="uid://bb5uux4xnry1f" path="res://player_room.gd" id="1_1ojmq"]
 [ext_resource type="MeshLibrary" uid="uid://byu67pqu2ls5g" path="res://mesh_libraries/floor_mesh_library.tres" id="1_8tnse"]
@@ -208,44 +208,44 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fkhf7")
 
-[node name="PlayerRoom" type="Node3D" node_paths=PackedStringArray("floor_grid_map", "occupation_grid_map", "wall_grid_map")]
+[node name="PlayerRoom" type="Node3D" unique_id=516371178 node_paths=PackedStringArray("floor_grid_map", "occupation_grid_map", "wall_grid_map")]
 script = ExtResource("1_1ojmq")
 floor_grid_map = NodePath("NavigationRegion3D/FloorMap")
 occupation_grid_map = NodePath("OccupationMap")
 wall_grid_map = NodePath("WallsMap")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1439745475]
 environment = SubResource("Environment_wo40j")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=449880877]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 shadow_bias = 9.258
 shadow_normal_bias = 0.0
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1299494176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06483185, -0.013956547, -0.038476586)
 navigation_mesh = SubResource("NavigationMesh_wo40j")
 
-[node name="FloorMap" type="GridMap" parent="NavigationRegion3D"]
+[node name="FloorMap" type="GridMap" parent="NavigationRegion3D" unique_id=1790282838]
 mesh_library = ExtResource("1_8tnse")
 cell_size = Vector3(1, 1, 1)
 data = {
 "cells": PackedInt32Array(1, 8, 1, 1, 9, 1, 1, 10, 1, 1, 12, 1, 1, 11, 1, 2, 8, 1, 65532, 65535, 1, 65532, 0, 1, 65532, 1, 1, 65532, 2, 1, 65533, 65534, 1, 65533, 65535, 1, 65533, 0, 1, 65533, 1, 1, 65533, 2, 1, 65533, 3, 1, 65533, 4, 1, 65533, 5, 1, 65533, 6, 1, 65533, 7, 1, 65533, 8, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 0, 1, 65534, 1, 1, 65534, 2, 1, 65534, 3, 1, 65534, 4, 1, 65534, 5, 1, 65534, 6, 1, 65534, 7, 1, 65534, 8, 1, 65535, 65534, 1, 65535, 65535, 1, 65535, 0, 1, 65535, 1, 1, 65535, 2, 1, 65535, 3, 1, 65535, 4, 1, 65535, 5, 1, 65535, 6, 1, 65535, 7, 1, 65535, 8, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 1, 65534, 1, 1, 65535, 1, 1, 0, 1, 1, 1, 1, 1, 2, 1, 1, 3, 1, 1, 4, 1, 1, 5, 1, 1, 6, 1, 1, 7, 1, 2, 65534, 1, 2, 65535, 1, 2, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 7, 1, 3, 65534, 1, 3, 65535, 1, 3, 0, 1, 3, 1, 1, 3, 2, 1, 3, 3, 1, 3, 4, 1, 3, 5, 1, 3, 6, 1, 3, 7, 1, 3, 8, 1, 4, 65534, 1, 4, 65535, 1, 4, 0, 1, 4, 1, 1, 4, 2, 1, 4, 3, 1, 4, 4, 1, 4, 5, 1, 4, 6, 1, 4, 7, 1, 4, 8, 1, 5, 65534, 1, 5, 65535, 1, 5, 0, 1, 5, 1, 1, 5, 2, 1, 5, 3, 1, 5, 4, 1, 5, 5, 1, 5, 6, 1, 5, 7, 1, 5, 8, 1, 65531, 1, 1, 65531, 2, 1, 65530, 2, 1, 65530, 1, 1, 65530, 0, 1, 65530, 65535, 1, 65530, 65534, 1, 65531, 65534, 1, 65531, 65535, 1, 65531, 0, 1, 65530, 3, 1, 65531, 3, 1, 65532, 3, 1, 65532, 65534, 1, 1, 13, 1, 1, 14, 1)
 }
 
-[node name="SecretSecondFloor" type="Node3D" parent="NavigationRegion3D/FloorMap"]
+[node name="SecretSecondFloor" type="Node3D" parent="NavigationRegion3D/FloorMap" unique_id=435062666]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50718594, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/FloorMap/SecretSecondFloor"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/FloorMap/SecretSecondFloor" unique_id=1568727948]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.944, 0, 5.991)
 mesh = SubResource("PlaneMesh_mijrv")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/FloorMap/SecretSecondFloor"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/FloorMap/SecretSecondFloor" unique_id=1038660907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51678276, 0, 1.523)
 mesh = SubResource("PlaneMesh_5uani")
 
-[node name="WallsMap" type="GridMap" parent="."]
+[node name="WallsMap" type="GridMap" parent="." unique_id=1911076826]
 mesh_library = ExtResource("2_plsfm")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -253,7 +253,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="WallsMap2" type="GridMap" parent="."]
+[node name="WallsMap2" type="GridMap" parent="." unique_id=1134754710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.095, 0)
 mesh_library = ExtResource("2_plsfm")
 cell_size = Vector3(1, 1, 1)
@@ -262,7 +262,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="OccupationMap" type="GridMap" parent="."]
+[node name="OccupationMap" type="GridMap" parent="." unique_id=1442017884]
 visible = false
 mesh_library = ExtResource("4_3q6a7")
 cell_size = Vector3(1, 1, 1)
@@ -271,18 +271,18 @@ data = {
 "cells": PackedInt32Array(65530, 0, 1048577, 65530, 1, 1048577, 65530, 2, 1048577, 65530, 3, 1, 65531, 3, 1048576, 65531, 2, 1048576, 65531, 1, 1048576, 65531, 0, 1048576, 65533, 0, 0, 65532, 0, 1048576, 65532, 1, 1048576, 65532, 2, 1048576, 65532, 3, 1048576, 65533, 3, 0, 65533, 2, 0, 65533, 1, 0, 4, 1, 0, 4, 0, 0, 4, 65535, 0, 65533, 65535, 0, 65533, 4, 0, 65533, 5, 0, 65533, 6, 0, 65533, 7, 0, 65534, 65535, 0, 65534, 0, 0, 65534, 1, 0, 65534, 2, 0, 65534, 3, 0, 65534, 4, 0, 65534, 5, 0, 65534, 6, 0, 65534, 7, 0, 65535, 65535, 1441793, 65535, 0, 0, 65535, 1, 0, 65535, 2, 0, 65535, 3, 0, 65535, 4, 0, 65535, 5, 0, 65535, 6, 0, 65535, 7, 0, 0, 65535, 1441793, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 1, 1, 65535, 1441793, 1, 0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 1, 2, 65535, 1441793, 2, 0, 0, 2, 1, 0, 2, 2, 0, 2, 3, 0, 2, 4, 0, 2, 5, 0, 2, 6, 0, 2, 7, 0, 3, 65535, 0, 3, 0, 0, 3, 1, 0, 3, 2, 0, 3, 3, 0, 3, 4, 0, 3, 5, 0, 3, 6, 0, 3, 7, 0, 4, 2, 0, 4, 3, 1, 4, 4, 1, 4, 5, 1, 4, 6, 0, 4, 7, 0, 65532, 65535, 0, 65531, 65535, 0, 65530, 65535, 0, 65533, 8, 0, 65534, 8, 0, 65535, 8, 0, 0, 8, 1, 1, 8, 1, 2, 8, 0, 3, 8, 0, 4, 8, 0, 1, 9, 1, 0, 10, 1, 0, 11, 1, 0, 9, 1, 1, 11, 1, 1, 12, 1, 1, 10, 1, 0, 12, 1, 0, 13, 1, 1, 13, 1, 1, 14, 1, 1, 15, 1, 0, 14, 1, 0, 15, 1)
 }
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1917111712]
 transform = Transform3D(0.86427045, -0.40119925, 0.30342412, 0, 0.603206, 0.79757994, -0.50301737, -0.6893294, 0.5213348, 4.955, 7.685, 7.253605)
 
-[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=432958646]
 process_priority = 300
 process_physics_priority = 300
 script = ExtResource("5_358ef")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="AudioMachine" parent="Camera3D" instance=ExtResource("6_srxrq")]
+[node name="AudioMachine" parent="Camera3D" unique_id=1391238553 instance=ExtResource("6_srxrq")]
 
-[node name="ObjectPlacer" type="Node" parent="." node_paths=PackedStringArray("occupation_grid_map", "visual_mesh_parent", "visual_mesh", "nav_mesh_region")]
+[node name="ObjectPlacer" type="Node" parent="." unique_id=709894860 node_paths=PackedStringArray("occupation_grid_map", "visual_mesh_parent", "visual_mesh", "nav_mesh_region")]
 script = ExtResource("5_3q6a7")
 occupation_grid_map = NodePath("../OccupationMap")
 visual_mesh_parent = NodePath("Node3D")
@@ -291,26 +291,26 @@ can_place_material = SubResource("StandardMaterial3D_2dulj")
 cant_place_material = SubResource("StandardMaterial3D_wo40j")
 nav_mesh_region = NodePath("../NavigationRegion3D")
 
-[node name="Node3D" type="Node3D" parent="ObjectPlacer"]
+[node name="Node3D" type="Node3D" parent="ObjectPlacer" unique_id=1389708348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
 
-[node name="SelectedFurnitureMesh" type="MeshInstance3D" parent="ObjectPlacer/Node3D"]
+[node name="SelectedFurnitureMesh" type="MeshInstance3D" parent="ObjectPlacer/Node3D" unique_id=1722765332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0.125)
 skeleton = NodePath("../..")
 
-[node name="InventoryUI" parent="." instance=ExtResource("2_2dulj")]
+[node name="InventoryUI" parent="." unique_id=1136532912 instance=ExtResource("2_2dulj")]
 visible = false
 
-[node name="CraftingUI" parent="." instance=ExtResource("11_4fkm8")]
+[node name="CraftingUI" parent="." unique_id=1565893375 instance=ExtResource("11_4fkm8")]
 visible = false
 
-[node name="CashRegisterUI" parent="." instance=ExtResource("10_fkhf7")]
+[node name="CashRegisterUI" parent="." unique_id=134358777 instance=ExtResource("10_fkhf7")]
 visible = false
 
-[node name="AuctionUI" parent="." instance=ExtResource("7_2dulj")]
+[node name="AuctionUI" parent="." unique_id=2021038410 instance=ExtResource("7_2dulj")]
 visible = false
 
-[node name="MainUI" type="Control" parent="." node_paths=PackedStringArray("change_shop_state_button", "money_label", "renown_label", "hour_label", "cash_register_menu", "inventory_menu", "crafting_menu", "auctions_menu", "inventory_button", "collections_button", "cash_register_button", "keys_button", "pause_menu_button") groups=["MainUI"]]
+[node name="MainUI" type="Control" parent="." unique_id=760564773 node_paths=PackedStringArray("change_shop_state_button", "money_label", "renown_label", "hour_label", "cash_register_menu", "inventory_menu", "crafting_menu", "auctions_menu", "inventory_button", "collections_button", "cash_register_button", "keys_button", "pause_menu_button") groups=["MainUI"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -341,7 +341,7 @@ cash_register_button = NodePath("HUDButtons/CashRegisterButton")
 keys_button = NodePath("HUDButtons/KeysButton")
 pause_menu_button = NodePath("HUDButtons/PauseMenuButton")
 
-[node name="ChangeShopStateButton" type="Button" parent="MainUI"]
+[node name="ChangeShopStateButton" type="Button" parent="MainUI" unique_id=1166512870]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -362,7 +362,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mijrv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5uani")
 disabled = true
 
-[node name="MoneyDynamicLabel" type="Label" parent="MainUI"]
+[node name="MoneyDynamicLabel" type="Label" parent="MainUI" unique_id=1746088896]
 layout_mode = 0
 offset_left = 1164.0
 offset_top = 20.0
@@ -371,7 +371,7 @@ offset_bottom = 72.0
 theme = ExtResource("9_p2x2x")
 text = "1020"
 
-[node name="MoneyIcon" type="TextureRect" parent="MainUI"]
+[node name="MoneyIcon" type="TextureRect" parent="MainUI" unique_id=565040746]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
@@ -388,7 +388,7 @@ grow_vertical = 2
 texture = ExtResource("10_i6a45")
 stretch_mode = 4
 
-[node name="RenownDynamicLabel" type="Label" parent="MainUI"]
+[node name="RenownDynamicLabel" type="Label" parent="MainUI" unique_id=1865688466]
 layout_mode = 0
 offset_left = 997.0
 offset_top = 20.0
@@ -397,7 +397,7 @@ offset_bottom = 72.0
 theme = ExtResource("9_p2x2x")
 text = "120"
 
-[node name="RenownIcon" type="TextureRect" parent="MainUI"]
+[node name="RenownIcon" type="TextureRect" parent="MainUI" unique_id=410617321]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
@@ -414,7 +414,7 @@ grow_vertical = 2
 texture = ExtResource("11_cjn4c")
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="MainUI"]
+[node name="Label" type="Label" parent="MainUI" unique_id=1543530027]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -431,7 +431,7 @@ theme = ExtResource("9_p2x2x")
 theme_override_font_sizes/font_size = 36
 text = "8:00"
 
-[node name="HUDButtons" type="VBoxContainer" parent="MainUI"]
+[node name="HUDButtons" type="VBoxContainer" parent="MainUI" unique_id=1704629066]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -443,14 +443,14 @@ offset_bottom = 180.0
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="InventoryButton" type="TextureButton" parent="MainUI/HUDButtons"]
+[node name="InventoryButton" type="TextureButton" parent="MainUI/HUDButtons" unique_id=1568029958]
 texture_filter = 1
 layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("13_3y86n")
 stretch_mode = 4
 
-[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/InventoryButton"]
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/InventoryButton" unique_id=329048866]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -458,19 +458,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/InventoryButton/CenterContainer"]
+[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/InventoryButton/CenterContainer" unique_id=1434479512]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("14_3y86n")
 
-[node name="CollectionsButton" type="TextureButton" parent="MainUI/HUDButtons"]
+[node name="CollectionsButton" type="TextureButton" parent="MainUI/HUDButtons" unique_id=480010705]
 texture_filter = 1
 layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("13_3y86n")
 stretch_mode = 4
 
-[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/CollectionsButton"]
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/CollectionsButton" unique_id=1434106694]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -478,19 +478,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/CollectionsButton/CenterContainer"]
+[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/CollectionsButton/CenterContainer" unique_id=535709584]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("15_a5wro")
 
-[node name="KeysButton" type="TextureButton" parent="MainUI/HUDButtons"]
+[node name="KeysButton" type="TextureButton" parent="MainUI/HUDButtons" unique_id=991610797]
 texture_filter = 1
 layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("13_3y86n")
 stretch_mode = 4
 
-[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/KeysButton"]
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/KeysButton" unique_id=295105628]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -498,19 +498,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/KeysButton/CenterContainer"]
+[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/KeysButton/CenterContainer" unique_id=1988067788]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("16_c5hbr")
 
-[node name="CashRegisterButton" type="TextureButton" parent="MainUI/HUDButtons"]
+[node name="CashRegisterButton" type="TextureButton" parent="MainUI/HUDButtons" unique_id=1241325897]
 texture_filter = 1
 layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("13_3y86n")
 stretch_mode = 4
 
-[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/CashRegisterButton"]
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/CashRegisterButton" unique_id=1618613359]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -518,19 +518,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/CashRegisterButton/CenterContainer"]
+[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/CashRegisterButton/CenterContainer" unique_id=533839148]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("24_fkhf7")
 
-[node name="PauseMenuButton" type="TextureButton" parent="MainUI/HUDButtons"]
+[node name="PauseMenuButton" type="TextureButton" parent="MainUI/HUDButtons" unique_id=160294793]
 texture_filter = 1
 layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("13_3y86n")
 stretch_mode = 4
 
-[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/PauseMenuButton"]
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/HUDButtons/PauseMenuButton" unique_id=1831960557]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -538,16 +538,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/PauseMenuButton/CenterContainer"]
+[node name="Icon" type="TextureRect" parent="MainUI/HUDButtons/PauseMenuButton/CenterContainer" unique_id=1231277603]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("17_mijrv")
 
-[node name="ShowerOfErrors" parent="MainUI" instance=ExtResource("23_5uani")]
+[node name="ShowerOfErrors" parent="MainUI" unique_id=986035425 instance=ExtResource("23_5uani")]
 layout_mode = 1
 text = "hebuebuebue hebebeubeuebubuebeubeuebuebeub"
 
-[node name="Spawner" parent="." node_paths=PackedStringArray("where_to_plonk_customers") instance=ExtResource("9_8qgar")]
+[node name="Spawner" parent="." unique_id=568646485 node_paths=PackedStringArray("where_to_plonk_customers") instance=ExtResource("9_8qgar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33616257, 0, 10.838951)
 where_to_plonk_customers = NodePath("../NavigationRegion3D")
 max_customer_count = 1
@@ -564,7 +564,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5773549, 0.78274584, -3.722
 [node name="DayToggle" parent="Spawner" index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4850283, 1.72174, 0)
 
-[node name="ContexSpecificUI" type="Control" parent="."]
+[node name="ContexSpecificUI" type="Control" parent="." unique_id=726283055]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -574,21 +574,21 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="SetFurniturePriceUI" parent="ContexSpecificUI" instance=ExtResource("8_o6f6g")]
+[node name="SetFurniturePriceUI" parent="ContexSpecificUI" unique_id=927099593 instance=ExtResource("8_o6f6g")]
 visible = false
 layout_mode = 1
 
-[node name="SetCollectionUI" parent="ContexSpecificUI" instance=ExtResource("16_srxrq")]
+[node name="SetCollectionUI" parent="ContexSpecificUI" unique_id=1944979717 instance=ExtResource("16_srxrq")]
 visible = false
 layout_mode = 1
 
-[node name="SetItemPriceUI" parent="ContexSpecificUI" instance=ExtResource("12_1t0pb")]
+[node name="SetItemPriceUI" parent="ContexSpecificUI" unique_id=167378598 instance=ExtResource("12_1t0pb")]
 visible = false
 layout_mode = 1
 
-[node name="LootboxUI" parent="." instance=ExtResource("10_1l8t1")]
+[node name="LootboxUI" parent="." unique_id=581227666 instance=ExtResource("10_1l8t1")]
 
-[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=83259713 node_paths=PackedStringArray("follow_target")]
 transform = Transform3D(0.86427045, -0.40119925, 0.30342412, 0, 0.603206, 0.79757994, -0.50301737, -0.6893294, 0.5213348, 4.955, 7.685, 7.253605)
 top_level = true
 script = ExtResource("14_4pcic")
@@ -599,36 +599,36 @@ follow_offset = Vector3(4.955, 7.685, 4.7)
 follow_damping = true
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="CameraController" type="Node3D" parent="."]
+[node name="CameraController" type="Node3D" parent="." unique_id=25208589]
 transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071067, 0, 0, 2.553605)
 script = ExtResource("15_pq8mr")
 limit_x = Vector2(3, -7)
 limit_z = Vector2(5, -3)
 speed = 10.0
 
-[node name="CashTable" parent="." instance=ExtResource("23_cjrgx")]
+[node name="CashTable" parent="." unique_id=1491506561 instance=ExtResource("23_cjrgx")]
 transform = Transform3D(-1.5298985e-08, 0, 0.317, 0, 0.281, 0, -0.35, 0, -1.385651e-08, 3.9861722, 1.0272553, 4.4686513)
 
-[node name="CollectionContainerInstance" parent="." instance=ExtResource("26_cjrgx")]
+[node name="CollectionContainerInstance" parent="." unique_id=289220887 instance=ExtResource("26_cjrgx")]
 transform = Transform3D(-4.3711385e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.3711385e-08, -5.868851, 0.6471851, 1.9941437)
 
-[node name="CollectionContainerInstance2" parent="." instance=ExtResource("26_cjrgx")]
+[node name="CollectionContainerInstance2" parent="." unique_id=1408161143 instance=ExtResource("26_cjrgx")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.9846456, 0.6471851, -0.76501894)
 
-[node name="CancelManager" type="Node" parent="." node_paths=PackedStringArray("object_placer")]
+[node name="CancelManager" type="Node" parent="." unique_id=1347599578 node_paths=PackedStringArray("object_placer")]
 script = ExtResource("28_omknk")
 object_placer = NodePath("../ObjectPlacer")
 main_menu_scene = ExtResource("28_md580")
 
-[node name="Lighting" type="Node3D" parent="."]
+[node name="Lighting" type="Node3D" parent="." unique_id=787663490]
 
-[node name="bracket_lamp_3" type="MeshInstance3D" parent="Lighting"]
+[node name="bracket_lamp_3" type="MeshInstance3D" parent="Lighting" unique_id=1558543517]
 transform = Transform3D(0.10540291, 0.05578465, 0, -0.070846505, 0.08299442, 0, 0, 0, 0.1, 2.8532743, 2.2559743, -0.8536768)
 material_override = ExtResource("19_8150c")
 mesh = SubResource("ArrayMesh_lxqrq")
 skeleton = NodePath("")
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Lighting/bracket_lamp_3"]
+[node name="SpotLight3D4" type="SpotLight3D" parent="Lighting/bracket_lamp_3" unique_id=1877336385]
 transform = Transform3D(7.480152, -0.33576456, -2.4361243, 3.1161914, 0.6344139, 9.480867, -0.20800419, -9.970742, 0.7355612, -0.022461891, -0.5474243, 0.33539963)
 light_color = Color(0.81089586, 0.6676281, 0.40894327, 1)
 light_energy = 6.023
@@ -638,13 +638,13 @@ light_specular = 1.445
 spot_range = 3.170833
 spot_angle = 35.725872
 
-[node name="bracket_lamp_5" type="MeshInstance3D" parent="Lighting"]
+[node name="bracket_lamp_5" type="MeshInstance3D" parent="Lighting" unique_id=667483281]
 transform = Transform3D(0.10147871, -0.060127128, 0, 0.076361455, 0.0799045, 0, 0, 0, 0.1, -0.8805487, 2.2559743, -0.9133673)
 material_override = ExtResource("19_8150c")
 mesh = SubResource("ArrayMesh_lxqrq")
 skeleton = NodePath("")
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Lighting/bracket_lamp_5"]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lighting/bracket_lamp_5" unique_id=1519454098]
 transform = Transform3D(7.675382, 0.36190173, 1.7197833, -2.2097666, 0.6107945, 9.733646, 0.313968, -9.970742, 0.69695055, -0.17278957, -0.8494797, 0.062994)
 light_color = Color(0.81089586, 0.6676281, 0.40894327, 1)
 light_energy = 6.023
@@ -654,13 +654,13 @@ light_specular = 1.445
 spot_range = 3.170833
 spot_angle = 35.725872
 
-[node name="bracket_lamp_6" type="MeshInstance3D" parent="Lighting"]
+[node name="bracket_lamp_6" type="MeshInstance3D" parent="Lighting" unique_id=1762616829]
 transform = Transform3D(0.0006649672, 0, 0.09999863, 0, 0.1, 0, -0.12699826, 0, 0.00052359625, -6.314496, 2.2559743, 3.1856244)
 material_override = ExtResource("19_8150c")
 mesh = SubResource("ArrayMesh_lxqrq")
 skeleton = NodePath("")
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Lighting/bracket_lamp_6"]
+[node name="SpotLight3D5" type="SpotLight3D" parent="Lighting/bracket_lamp_6" unique_id=1215628978]
 transform = Transform3D(0.041228045, 7.8508697, -0.6018859, 0, 0.76440567, 9.970742, 9.999863, -0.052206423, 0.004002399, -0.06755638, 0.51431274, 0.8588562)
 light_color = Color(0.81089586, 0.6676281, 0.40894327, 1)
 light_energy = 6.023
@@ -670,13 +670,13 @@ light_specular = 1.445
 spot_range = 3.170833
 spot_angle = 35.725872
 
-[node name="bracket_lamp_7" type="MeshInstance3D" parent="Lighting"]
+[node name="bracket_lamp_7" type="MeshInstance3D" parent="Lighting" unique_id=1884940085]
 transform = Transform3D(0.0006649672, 0, 0.09999863, 0, 0.1, 0, -0.12699826, 0, 0.00052359625, -6.314496, 2.2559743, 0.63593245)
 material_override = ExtResource("19_8150c")
 mesh = SubResource("ArrayMesh_lxqrq")
 skeleton = NodePath("")
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Lighting/bracket_lamp_7"]
+[node name="SpotLight3D5" type="SpotLight3D" parent="Lighting/bracket_lamp_7" unique_id=1871078133]
 transform = Transform3D(0.044708464, 7.156612, 4.5307927, 0.012797553, -3.3172054, 8.902191, 9.999839, -0.047589775, -0.030128697, -0.067555904, 0.51431274, 0.8588562)
 light_color = Color(0.81089586, 0.6676281, 0.40894327, 1)
 light_energy = 6.023
@@ -686,79 +686,79 @@ light_specular = 1.445
 spot_range = 3.170833
 spot_angle = 35.725872
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Lighting"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lighting" unique_id=1665716151]
 transform = Transform3D(0.017356077, -0.7180777, 0.6957465, 0.017907578, 0.69596297, 0.7178544, -0.999689, -9.316123e-10, 0.024938218, 4.5654764, 3.8734694, 4.5557218)
 light_color = Color(0.7530406, 0.7404227, 0, 1)
 
-[node name="NothingToSeeHere" type="MeshInstance3D" parent="."]
+[node name="NothingToSeeHere" type="MeshInstance3D" parent="." unique_id=546398894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.957, 2.75, 11.583)
 mesh = SubResource("PlaneMesh_a5wro")
 
-[node name="Windows" type="Node3D" parent="."]
+[node name="Windows" type="Node3D" parent="." unique_id=1303457563]
 
-[node name="Window_3" type="MeshInstance3D" parent="Windows"]
+[node name="Window_3" type="MeshInstance3D" parent="Windows" unique_id=128021459]
 transform = Transform3D(0.25, 0, 0, 0, 0.201, 0, 0, 0, 0.227, -3.4752455, 2.1537445, -1.4076434)
 material_override = ExtResource("18_k7ha8")
 mesh = SubResource("ArrayMesh_7na21")
 skeleton = NodePath("")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Windows/Window_3"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Windows/Window_3" unique_id=1072194726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7526965, -1.0956056, 0.8532038)
 light_color = Color(1, 1, 0.3254902, 1)
 light_energy = 0.2
 light_size = 2.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Windows/Window_3"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Windows/Window_3" unique_id=734014408]
 transform = Transform3D(2, 0, 0, 0, 2.4937656, 0, 0, 0, 2.2075055, 2.27911, -1.0663456, 0.53099537)
 light_color = Color(1, 1, 0.3254902, 1)
 light_energy = 0.2
 light_size = 2.0
 
-[node name="Window_4" type="MeshInstance3D" parent="Windows"]
+[node name="Window_4" type="MeshInstance3D" parent="Windows" unique_id=1674397575]
 transform = Transform3D(-1.0927847e-08, 0, 0.227, 0, 0.201, 0, -0.25, 0, -9.922485e-09, -3.3995202, 2.1537445, 7.5883446)
 material_override = ExtResource("18_k7ha8")
 mesh = SubResource("ArrayMesh_7na21")
 skeleton = NodePath("")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Windows/Window_4"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Windows/Window_4" unique_id=145021996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7526965, -1.0956056, 0.8532038)
 light_color = Color(1, 1, 0.3254902, 1)
 light_energy = 0.2
 light_size = 2.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Windows/Window_4"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Windows/Window_4" unique_id=775444785]
 transform = Transform3D(2, 0, 0, 0, 2.4937656, 0, 0, 0, 2.2075055, 2.27911, -1.0663456, 0.53099537)
 light_color = Color(1, 1, 0.3254902, 1)
 light_energy = 0.2
 light_size = 2.0
 
-[node name="Poles" type="Node3D" parent="."]
+[node name="Poles" type="Node3D" parent="." unique_id=1239004399]
 
-[node name="pole_46" parent="Poles" instance=ExtResource("17_1l8t1")]
+[node name="pole_46" parent="Poles" unique_id=742138069 instance=ExtResource("17_1l8t1")]
 transform = Transform3D(-8.742278e-08, -1, 0, 2, -4.371139e-08, 0, 0, 0, 2, 1.561, 2.7018476, 9.5)
 
-[node name="pole_35" parent="Poles" instance=ExtResource("17_1l8t1")]
+[node name="pole_35" parent="Poles" unique_id=66462240 instance=ExtResource("17_1l8t1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.4455986, 0.53816897, -1.5000963)
 
-[node name="pole_36" parent="Poles" instance=ExtResource("17_1l8t1")]
+[node name="pole_36" parent="Poles" unique_id=1886577891 instance=ExtResource("17_1l8t1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.4455986, 0.53816897, 4.4999037)
 
-[node name="pole_37" parent="Poles" instance=ExtResource("17_1l8t1")]
+[node name="pole_37" parent="Poles" unique_id=789434823 instance=ExtResource("17_1l8t1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.4455986, 0.53816897, 4.4999037)
 
-[node name="pole_38" parent="Poles" instance=ExtResource("17_1l8t1")]
+[node name="pole_38" parent="Poles" unique_id=1784085323 instance=ExtResource("17_1l8t1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.4455986, 0.53816897, 9.499904)
 
-[node name="pole_39" parent="Poles" instance=ExtResource("17_1l8t1")]
+[node name="pole_39" parent="Poles" unique_id=843532822 instance=ExtResource("17_1l8t1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.5544014, 0.53816897, 9.499904)
 
-[node name="pole_40" parent="Poles" instance=ExtResource("17_1l8t1")]
+[node name="pole_40" parent="Poles" unique_id=1214441225 instance=ExtResource("17_1l8t1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.5544014, 0.53816897, 9.499904)
 
-[node name="pole_41" parent="Poles" instance=ExtResource("17_1l8t1")]
+[node name="pole_41" parent="Poles" unique_id=582664524 instance=ExtResource("17_1l8t1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.5544014, 0.53816897, 9.499904)
 
-[node name="pole_42" parent="Poles" instance=ExtResource("17_1l8t1")]
+[node name="pole_42" parent="Poles" unique_id=1444871750 instance=ExtResource("17_1l8t1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.5544014, 0.53816897, -1.5000963)
 
 [editable path="Spawner"]

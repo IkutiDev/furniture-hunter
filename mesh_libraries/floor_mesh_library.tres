@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=14 format=4 uid="uid://byu67pqu2ls5g"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://byu67pqu2ls5g"]
 
 [ext_resource type="Texture2D" uid="uid://c6n244acm2nte" path="res://floor_and_walls/floor_floot.png" id="1_ky80v"]
 
