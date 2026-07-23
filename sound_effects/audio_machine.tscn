@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5oy8g06il0ru"]
+[gd_scene format=3 uid="uid://c5oy8g06il0ru"]
 
 [ext_resource type="Script" uid="uid://bt3mpcjcas1lg" path="res://sound_effects/audio_machine.gd" id="1_lutyo"]
 [ext_resource type="AudioStream" uid="uid://dnd3gipu7x5mx" path="res://sound_effects/glass placed on shelf 6.wav" id="2_cbc5r"]
@@ -47,7 +47,7 @@ streams_count = 2
 stream_0/stream = ExtResource("14_6xevd")
 stream_1/stream = ExtResource("13_jkqnx")
 
-[node name="AudioMachine" type="AudioListener3D"]
+[node name="AudioMachine" type="AudioListener3D" unique_id=1245797641]
 current = true
 script = ExtResource("1_lutyo")
 signal_to_stream_map = {
@@ -60,7 +60,7 @@ signal_to_stream_map = {
 &"start_night": SubResource("AudioStreamRandomizer_ykwdf")
 }
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=692686545]
 stream = SubResource("AudioStreamRandomizer_6xevd")
 autoplay = true
 bus = &"Music"
