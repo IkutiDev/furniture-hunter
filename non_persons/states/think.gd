@@ -5,20 +5,27 @@ extends State
 # all external events should transition the NPC to this state
 
 @export var customer_body : Node3D
-#
-#signal i_chose_to_browse
-#
-#signal i_chose_to_leave
-#
-#signal i_chose_to_walk
-#
-#signal i_chose_to_buy
-#
-#signal i_chose_to_haggle
+
+signal i_chose_to_browse
+
+signal i_chose_to_leave
+
+signal i_chose_to_walk
+
+signal i_chose_to_buy
+
+signal i_chose_to_haggle
 
 var brain_power = 3.0
 
-
+func _ready() -> void:
+	if false: # this exists just to hide an editor warning
+		i_chose_to_browse
+		i_chose_to_leave
+		i_chose_to_walk
+		i_chose_to_buy
+		i_chose_to_haggle
+	pass
 
 
 func enter(msg = []) -> void:
