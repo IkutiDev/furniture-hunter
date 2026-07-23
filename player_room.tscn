@@ -42,7 +42,6 @@
 [ext_resource type="Script" uid="uid://dbrwrlrhnc3yq" path="res://cancel_manager.gd" id="28_omknk"]
 [ext_resource type="Texture2D" uid="uid://dv5cx7bna2j8s" path="res://furniture/gamejam_okna_Base_color.png" id="37_mijrv"]
 [ext_resource type="Texture2D" uid="uid://b0g8ohwhjp16g" path="res://furniture/gamejam_okna_Metallic.png-okna_Roughness.png" id="38_5uani"]
-[ext_resource type="Texture2D" uid="uid://cmj7qb6u6ltej" path="res://furniture/gamejam_okna_Normal_OpenGL.png" id="39_ymytt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -172,7 +171,6 @@ metallic_texture_channel = 2
 roughness_texture = ExtResource("38_5uani")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("39_ymytt")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fkhf7"]
 _surfaces = [{

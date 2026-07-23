@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CollectionData" load_steps=8 format=3 uid="uid://fmp08p6m5wgk"]
+[gd_resource type="Resource" script_class="CollectionData" format=3 uid="uid://fmp08p6m5wgk"]
 
 [ext_resource type="PackedScene" uid="uid://ctvsk8b3hv0hr" path="res://collections/scenes/witch_collection.tscn" id="1_ap3ds"]
 [ext_resource type="Texture2D" uid="uid://dbglmbi2ci3rq" path="res://UI/3D_object_preview/scr/witch_set.png" id="2_ap3ds"]

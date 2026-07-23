@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://ctvsk8b3hv0hr"]
+[gd_scene format=4 uid="uid://ctvsk8b3hv0hr"]
 
 [ext_resource type="Texture2D" uid="uid://dpu6v0mao6t0v" path="res://witrynki/witch_Material.png" id="1_l3sr6"]
 [ext_resource type="Texture2D" uid="uid://nykfa50irkm0" path="res://witrynki/witch_Material_1.png" id="2_o2n47"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bt4dgaf72tpl1" path="res://witrynki/witch_fiolki_Base_color.png" id="4_psjqy"]
 [ext_resource type="Texture2D" uid="uid://bfqpighkmrd31" path="res://witrynki/witch_fiolki_Emissive.png" id="5_0bkff"]
 [ext_resource type="Texture2D" uid="uid://beur1dngbvqrv" path="res://furniture/gamejam_fiolki_Metallic-fiolki_Roughness.png" id="6_l3sr6"]
-[ext_resource type="Texture2D" uid="uid://d1w05lvq75bws" path="res://furniture/gamejam_fiolki_Normal_OpenGL.png" id="7_l3sr6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iv2ee"]
 resource_name = "Material.009"
@@ -37,8 +36,6 @@ roughness_texture = ExtResource("6_l3sr6")
 roughness_texture_channel = 1
 emission_enabled = true
 emission_texture = ExtResource("5_0bkff")
-normal_enabled = true
-normal_texture = ExtResource("7_l3sr6")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6aei6"]
 _surfaces = [{
@@ -140,8 +137,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6aei6")
 
-[node name="witch2" type="Node3D"]
+[node name="witch2" type="Node3D" unique_id=102244926]
 
-[node name="witch" type="MeshInstance3D" parent="."]
+[node name="witch" type="MeshInstance3D" parent="." unique_id=912387828]
 mesh = SubResource("ArrayMesh_4ohrc")
 skeleton = NodePath("")
