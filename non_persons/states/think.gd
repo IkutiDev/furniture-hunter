@@ -5,16 +5,16 @@ extends State
 # all external events should transition the NPC to this state
 
 @export var customer_body : Node3D
-
-signal i_chose_to_browse
-
-signal i_chose_to_leave
-
-signal i_chose_to_walk
-
-signal i_chose_to_buy
-
-signal i_chose_to_haggle
+#
+#signal i_chose_to_browse
+#
+#signal i_chose_to_leave
+#
+#signal i_chose_to_walk
+#
+#signal i_chose_to_buy
+#
+#signal i_chose_to_haggle
 
 var brain_power = 3.0
 

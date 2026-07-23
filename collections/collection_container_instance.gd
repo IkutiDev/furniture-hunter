@@ -7,7 +7,8 @@ extends Node3D
 func _ready():
 	#static_body.mouse_entered.connect(_on_mouse_entered)
 	#static_body.mouse_exited.connect(_on_mouse_exit)
-	static_body.input_event.connect(_on_static_body_3d_input_event)
+	if !static_body.input_event.is_connected(_on_static_body_3d_input_event):
+		static_body.input_event.connect(_on_static_body_3d_input_event)
 
 
 #func _on_mouse_entered() -> void:

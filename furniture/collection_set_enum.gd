@@ -38,4 +38,4 @@ static func get_set_name(type : Types) -> String:
 			#return "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Magical Odditites[/rainbow]"
 		_:
 			return Types.keys()[type].capitalize() #"[color=white]"+Types.keys()[type].capitalize()+"[/color]"
-	return "[color=white]None[/color]"
+	#return "[color=white]None[/color]"
