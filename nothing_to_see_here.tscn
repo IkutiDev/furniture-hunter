@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cgw86wlttm63"]
+
+[ext_resource type="Material" uid="uid://6pa4eqrmu6rv" path="res://background_material.tres" id="1_k55on"]
+[ext_resource type="Script" uid="uid://e526ioeinliw" path="res://nothing_to_see_here.gd" id="1_t2qn0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k55on"]
+size = Vector3(2.050242, 3.3008075, 6.149)
+
+[node name="NothingToSeeHere" type="MeshInstance3D" unique_id=162431150]
+mesh = SubResource("BoxMesh_k55on")
+surface_material_override/0 = ExtResource("1_k55on")
+script = ExtResource("1_t2qn0")

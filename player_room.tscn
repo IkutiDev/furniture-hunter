@@ -42,6 +42,8 @@
 [ext_resource type="Script" uid="uid://dbrwrlrhnc3yq" path="res://cancel_manager.gd" id="28_omknk"]
 [ext_resource type="Texture2D" uid="uid://dv5cx7bna2j8s" path="res://furniture/gamejam_okna_Base_color.png" id="37_mijrv"]
 [ext_resource type="Texture2D" uid="uid://b0g8ohwhjp16g" path="res://furniture/gamejam_okna_Metallic.png-okna_Roughness.png" id="38_5uani"]
+[ext_resource type="PackedScene" uid="uid://cgw86wlttm63" path="res://nothing_to_see_here.tscn" id="39_fkhf7"]
+[ext_resource type="Material" uid="uid://6pa4eqrmu6rv" path="res://background_material.tres" id="43_fkhf7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ojmq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -150,17 +152,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7ej0t")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5wro"]
-resource_local_to_scene = true
-shading_mode = 0
-albedo_color = Color(0.722634, 0.5801228, 0.85465205, 1)
-billboard_keep_scale = true
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_a5wro"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_a5wro")
-size = Vector2(9, 4)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lx2l"]
 resource_name = "okna"
 cull_mode = 2
@@ -205,6 +196,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fkhf7")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1qhx3"]
+size = Vector2(100, 100)
 
 [node name="PlayerRoom" type="Node3D" unique_id=516371178 node_paths=PackedStringArray("floor_grid_map", "occupation_grid_map", "wall_grid_map")]
 script = ExtResource("1_1ojmq")
@@ -688,10 +682,6 @@ spot_angle = 35.725872
 transform = Transform3D(0.017356077, -0.7180777, 0.6957465, 0.017907578, 0.69596297, 0.7178544, -0.999689, -9.316123e-10, 0.024938218, 4.5654764, 3.8734694, 4.5557218)
 light_color = Color(0.7530406, 0.7404227, 0, 1)
 
-[node name="NothingToSeeHere" type="MeshInstance3D" parent="." unique_id=546398894]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.957, 2.75, 11.583)
-mesh = SubResource("PlaneMesh_a5wro")
-
 [node name="Windows" type="Node3D" parent="." unique_id=1303457563]
 
 [node name="Window_3" type="MeshInstance3D" parent="Windows" unique_id=128021459]
@@ -758,5 +748,13 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.5544014, 0.53816897, 9.4999
 
 [node name="pole_42" parent="Poles" unique_id=1444871750 instance=ExtResource("17_1l8t1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.5544014, 0.53816897, -1.5000963)
+
+[node name="Background" type="MeshInstance3D" parent="." unique_id=632104253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37494612, 0)
+mesh = SubResource("PlaneMesh_1qhx3")
+surface_material_override/0 = ExtResource("43_fkhf7")
+
+[node name="NothingToSeeHere" parent="Background" unique_id=162431150 instance=ExtResource("39_fkhf7")]
+transform = Transform3D(1, 0, 0, 0, 0.8358652, 0.5489347, 0, -0.5489347, 0.8358652, 0.9495702, 1.4131068, 13.041422)
 
 [editable path="Spawner"]
