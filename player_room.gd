@@ -15,7 +15,8 @@ func _ready() -> void:
 	EventBus.available_furniture_changed.emit()
 	EventBus.available_collections_changed.emit()
 	EventBus.renown_value_changed.emit()
-	$CashTable.connect("cash_pressed",next_wall)
+	EventBus.connect("wallpaper_changed",next_wall)
+	#$CashTable.connect("cash_pressed",next_wall)
 
 	
 #func change_floor(tile : int): # DO NOT USE KILLS NAV MESH

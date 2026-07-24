@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://uhyk4syl73q"]
+
+[ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="1_yuarf"]
+[ext_resource type="Texture2D" uid="uid://dk1yltpvj5vux" path="res://UI/UI_kasia/collections_menu/wooden_decor.png" id="2_oths0"]
+[ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="3_iu2b5"]
+[ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="4_pucek"]
+[ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="5_i8isb"]
+
+[node name="ColorRect" type="NinePatchRect" unique_id=269002239]
+offset_right = 491.0
+offset_bottom = 438.0
+texture = ExtResource("1_yuarf")
+region_rect = Rect2(-1, 0, 107, 107)
+patch_margin_left = 10
+patch_margin_top = 8
+patch_margin_right = 10
+patch_margin_bottom = 8
+
+[node name="TextureRect3" type="NinePatchRect" parent="." unique_id=1494330443]
+custom_minimum_size = Vector2(266, 57)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = -57.0
+offset_right = 133.0
+grow_horizontal = 2
+texture = ExtResource("2_oths0")
+patch_margin_left = 80
+patch_margin_right = 80
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=656585508]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 80.0
+offset_right = -16.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+draw_focus_border = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=85684778]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1411884306]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1679733483]
+layout_mode = 2
+texture = ExtResource("3_iu2b5")
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=622317140]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("4_pucek")
+theme_override_font_sizes/font_size = 24
+text = "Default Name"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer" unique_id=925994117]
+layout_mode = 2
+texture = ExtResource("5_i8isb")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1488007149]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer" unique_id=285072209]
+layout_mode = 2
+texture = ExtResource("3_iu2b5")

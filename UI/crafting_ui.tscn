@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://du5pkafdjd268"]
+[gd_scene format=3 uid="uid://du5pkafdjd268"]
 
 [ext_resource type="Script" uid="uid://botxorv4wnywe" path="res://UI/crafting_ui.gd" id="1_sac6m"]
 [ext_resource type="Texture2D" uid="uid://pc8tb6jhy086" path="res://UI/UI_kasia/collections_menu/slider.png" id="1_swi88"]
@@ -10,10 +10,7 @@
 [ext_resource type="Resource" uid="uid://dhoc77wu157a2" path="res://data/303_knight_collection.tres" id="6_swi88"]
 [ext_resource type="Resource" uid="uid://c5aagagtn0wjh" path="res://data/304_greek_collection.tres" id="7_1n65o"]
 [ext_resource type="Resource" uid="uid://ve2sh2t3alfx" path="res://data/305_ufo_collection.tres" id="8_swi88"]
-[ext_resource type="Texture2D" uid="uid://dk1yltpvj5vux" path="res://UI/UI_kasia/collections_menu/wooden_decor.png" id="11_76vc0"]
-[ext_resource type="Texture2D" uid="uid://ca4mu7h6pdg53" path="res://UI/UI_kasia/items_down_menu/background_common_item.png" id="11_f23vx"]
-[ext_resource type="Texture2D" uid="uid://djvfy5lccb8sb" path="res://UI/UI_kasia/collections_menu/wooden_bar.png" id="12_f23vx"]
-[ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="14_m71dq"]
+[ext_resource type="PackedScene" uid="uid://uhyk4syl73q" path="res://UI/UI_scroll_box.tscn" id="11_gs6pt"]
 [ext_resource type="FontFile" uid="uid://cp45tf42l2kj" path="res://UI/UI_kasia/upper_menu/fonnts.com-Gitan_Latn_Rg.otf" id="14_vxs8f"]
 [ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="15_f6p2u"]
 [ext_resource type="Texture2D" uid="uid://hi5m0knpuhyu" path="res://UI/UI_kasia/key menu/pop_up_background.png" id="16_ltqin"]
@@ -68,7 +65,7 @@ texture_margin_top = 15.0
 texture_margin_right = 15.0
 texture_margin_bottom = 15.0
 
-[node name="CraftingUI" type="Control" node_paths=PackedStringArray("crafting_menu", "open_menu_button", "recipes_go_here")]
+[node name="CraftingUI" type="Control" unique_id=12536055 node_paths=PackedStringArray("crafting_menu", "open_menu_button", "recipes_go_here")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,7 +81,7 @@ recipes_go_here = NodePath("Center/ColorRect/ScrollContainer/VBoxContainer")
 crafting_recipe_scene = ExtResource("2_c5m30")
 collection_sets = Array[Resource]([null, ExtResource("3_55cq4"), ExtResource("4_2i6t4"), ExtResource("5_1n65o"), ExtResource("6_swi88"), ExtResource("7_1n65o"), ExtResource("8_swi88")])
 
-[node name="Center" type="CenterContainer" parent="."]
+[node name="Center" type="CenterContainer" parent="." unique_id=745975381]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,96 +89,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MouseBlocker" type="ColorRect" parent="Center"]
+[node name="MouseBlocker" type="ColorRect" parent="Center" unique_id=1392102078]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 2
 color = Color(0.40205058, 0.65349877, 0.8920514, 0.20392157)
 
-[node name="ColorRect" type="NinePatchRect" parent="Center"]
+[node name="ColorRect" parent="Center" unique_id=269002239 instance=ExtResource("11_gs6pt")]
 custom_minimum_size = Vector2(750, 540)
 layout_mode = 2
-texture = ExtResource("11_f23vx")
-region_rect = Rect2(-1, 0, 107, 107)
-patch_margin_left = 10
-patch_margin_top = 8
-patch_margin_right = 10
-patch_margin_bottom = 8
 
-[node name="TextureRect3" type="NinePatchRect" parent="Center/ColorRect"]
-custom_minimum_size = Vector2(266, 57)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -133.0
-offset_top = -57.0
-offset_right = 133.0
-grow_horizontal = 2
-texture = ExtResource("11_76vc0")
-patch_margin_left = 80
-patch_margin_right = 80
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Center/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = 80.0
-offset_right = -16.0
-offset_bottom = -14.0
-grow_horizontal = 2
-grow_vertical = 2
-draw_focus_border = true
-horizontal_scroll_mode = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Center/ColorRect/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Center/ColorRect"]
-custom_minimum_size = Vector2(740, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -10.0
-offset_top = -7.0
-offset_right = 10.0
-offset_bottom = 6.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Center/ColorRect/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("12_f23vx")
-
-[node name="Label" type="Label" parent="Center/ColorRect/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
-theme_override_fonts/font = ExtResource("14_vxs8f")
-theme_override_font_sizes/font_size = 24
+[node name="Label" parent="Center/ColorRect/VBoxContainer" parent_id_path=PackedInt32Array(269002239, 1411884306) index="1" unique_id=622317140]
 text = "Collections"
-horizontal_alignment = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Center/ColorRect/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("14_m71dq")
-stretch_mode = 3
-
-[node name="Control" type="Control" parent="Center/ColorRect/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Center/ColorRect/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("12_f23vx")
-
-[node name="ToggleVisibility" type="Button" parent="."]
+[node name="ToggleVisibility" type="Button" parent="." unique_id=1063258445]
 visible = false
 layout_mode = 0
 offset_left = 233.0
@@ -190,7 +110,7 @@ offset_right = 326.0
 offset_bottom = 718.0
 text = "Collections"
 
-[node name="VictoryScreen" type="ColorRect" parent="."]
+[node name="VictoryScreen" type="ColorRect" parent="." unique_id=1023781222]
 visible = false
 layout_mode = 0
 offset_left = 244.0
@@ -199,7 +119,7 @@ offset_right = 958.0
 offset_bottom = 664.0
 color = Color(0.2, 0.05490196, 0.40784314, 0)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VictoryScreen"]
+[node name="NinePatchRect" type="NinePatchRect" parent="VictoryScreen" unique_id=25914664]
 layout_mode = 0
 offset_right = 708.0
 offset_bottom = 520.0
@@ -209,7 +129,7 @@ patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
 
-[node name="MarginContainer" type="MarginContainer" parent="VictoryScreen/NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="VictoryScreen/NinePatchRect" unique_id=1715818666]
 layout_mode = 0
 offset_right = 707.0
 offset_bottom = 515.0
@@ -218,10 +138,10 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VictoryScreen/NinePatchRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VictoryScreen/NinePatchRect/MarginContainer" unique_id=1434276404]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer" unique_id=1835108623]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 1, 0.2784314, 1)
@@ -243,20 +163,20 @@ THUS EXHAUSTING ALL OF THE CONTENT WE HAVE PREPARED
 THANKS FOR PLAYING!"
 scroll_active = false
 
-[node name="Ok" type="Button" parent="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer"]
-clip_contents = true
+[node name="Ok" type="Button" parent="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer" unique_id=2107169198]
 custom_minimum_size = Vector2(80, 36)
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_70f2o")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_h85m8")
 text = "OK"
 
-[node name="Control" type="Control" parent="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer" unique_id=1293818787]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 
-[node name="CloseButton" type="TextureButton" parent="."]
+[node name="CloseButton" type="TextureButton" parent="." unique_id=984575982]
 layout_mode = 0
 offset_left = 951.0
 offset_top = 105.0
@@ -267,3 +187,5 @@ texture_normal = ExtResource("15_f6p2u")
 texture_pressed = ExtResource("16_vxs8f")
 
 [connection signal="pressed" from="VictoryScreen/NinePatchRect/MarginContainer/VBoxContainer/Ok" to="." method="_on_ok_pressed"]
+
+[editable path="Center/ColorRect"]

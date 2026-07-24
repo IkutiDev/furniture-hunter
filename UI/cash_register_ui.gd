@@ -28,3 +28,8 @@ func _on_open_shop_pressed() -> void:
 	change_current_state()
 
 	pass # Replace with function body.
+
+
+func _on_wallpaper_pressed() -> void:
+	EventBus.emit_signal("wallpaper_changed")
+	pass # Replace with function body.

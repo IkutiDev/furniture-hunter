@@ -37,6 +37,8 @@ signal start_day()
 signal end_day()
 signal start_night()
 signal game_state_changed()
+signal wallpaper_changed()
+
 
 signal game_completed()
 signal throw_error(message : String)

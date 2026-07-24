@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://wg6q61x83ydl"]
+[gd_scene format=3 uid="uid://wg6q61x83ydl"]
 
 [ext_resource type="Script" uid="uid://dav17qlbivkk4" path="res://UI/cash_register_ui.gd" id="1_par6e"]
 [ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="2_hoppb"]
 [ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="3_ggbbg"]
+[ext_resource type="PackedScene" uid="uid://uhyk4syl73q" path="res://UI/UI_scroll_box.tscn" id="4_ggbbg"]
 
-[node name="CashRegisterUI" type="Control" node_paths=PackedStringArray("close_menu_button")]
+[node name="CashRegisterUI" type="Control" unique_id=771005523 node_paths=PackedStringArray("close_menu_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,29 +15,40 @@ grow_vertical = 2
 script = ExtResource("1_par6e")
 close_menu_button = NodePath("CloseButton")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect2" parent="." unique_id=269002239 instance=ExtResource("4_ggbbg")]
 layout_mode = 0
-offset_left = 637.0
-offset_top = 140.0
-offset_right = 1150.0
-offset_bottom = 480.0
+offset_left = 614.0
+offset_top = 95.0
+offset_right = 1166.0
+offset_bottom = 551.0
 
-[node name="CloseButton" type="TextureButton" parent="."]
+[node name="OpenShop" type="Button" parent="." unique_id=20470318]
 layout_mode = 0
-offset_left = 1025.0
-offset_top = 179.0
-offset_right = 1069.0
-offset_bottom = 223.0
+offset_left = 923.0
+offset_top = 328.0
+offset_right = 1064.0
+offset_bottom = 359.0
+text = "Open/Close Shop"
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=185794396]
+layout_mode = 0
+offset_left = 1111.0
+offset_top = 117.0
+offset_right = 1155.0
+offset_bottom = 161.0
 focus_mode = 0
 texture_normal = ExtResource("2_hoppb")
 texture_pressed = ExtResource("3_ggbbg")
 
-[node name="OpenShop" type="Button" parent="."]
+[node name="Wallpaper" type="Button" parent="." unique_id=1499680334]
 layout_mode = 0
-offset_left = 888.0
-offset_top = 272.0
-offset_right = 965.0
-offset_bottom = 303.0
-text = "Open/Close Shop"
+offset_left = 922.0
+offset_top = 398.0
+offset_right = 1070.0
+offset_bottom = 429.0
+text = "Change Wallpaper"
 
 [connection signal="pressed" from="OpenShop" to="." method="_on_open_shop_pressed"]
+[connection signal="pressed" from="Wallpaper" to="." method="_on_wallpaper_pressed"]
+
+[editable path="ColorRect2"]

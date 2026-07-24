@@ -27,7 +27,7 @@ func _ready() -> void:
 	
 	for r in resources:
 		if (r as String).contains(".tres"):
-			print(r)
+			#print(r)
 			customers_data.append(ResourceLoader.load(customers_data_path + "/" + r))
 	
 	if where_to_plonk_customers == null:
@@ -94,9 +94,9 @@ func de_spawn_customer(customer : Node3D) -> void:
 
 func _on_the_area_that_eats_people_area_entered(area: Area3D) -> void:
 	if area.is_in_group("Customer"):
-
+		print("om nom noming ",area)
 		de_spawn_customer(area)
-		print("om nom nom")
+		
 	pass # Replace with function body.
 
 
