@@ -73,6 +73,7 @@ fog_density = 0.008
 vertices = PackedVector3Array(0.75, 1.02, 9.5, 0.75, 1.02, 15.25, 1.25, 1.02, 15.25, 1.25, 1.02, 9.5, -3.25, 1.02, 9.25, -6.25, 1.02, -1.25, -6.25, 1.02, 4.25, -3.25, 1.02, 4.5, 5.25, 1.02, 9.25, 5.25, 1.02, -1.25)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 2, 0), PackedInt32Array(3, 0, 4), PackedInt32Array(7, 6, 5), PackedInt32Array(3, 4, 7), PackedInt32Array(8, 3, 7), PackedInt32Array(9, 8, 7), PackedInt32Array(9, 7, 5)]
 geometry_parsed_geometry_type = 1
+geometry_collision_mask = 4294967279
 cell_height = 0.01
 agent_radius = 0.25
 region_min_size = 1.0
@@ -544,16 +545,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33616257, 0, 10.838951)
 where_to_plonk_customers = NodePath("../NavigationRegion3D")
 max_customer_count = 1
 
-[node name="SpawnPoint" parent="Spawner" index="0"]
+[node name="SpawnPoint" parent="Spawner" index="0" unique_id=1660646178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59515953, 0.64357775, 0.024846077)
 
-[node name="TheAreaThatEatsPeople" parent="Spawner" index="1"]
+[node name="TheAreaThatEatsPeople" parent="Spawner" index="1" unique_id=2139673567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6029246, 0.92008245, 3.6796064)
 
-[node name="ShopEntrance" parent="Spawner" index="3"]
+[node name="ShopEntrance" parent="Spawner" index="3" unique_id=179840182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5773549, 0.78274584, -3.7229443)
 
-[node name="DayToggle" parent="Spawner" index="4"]
+[node name="DayToggle" parent="Spawner" index="4" unique_id=1749847158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4850283, 1.72174, 0)
 
 [node name="ContexSpecificUI" type="Control" parent="." unique_id=726283055]
