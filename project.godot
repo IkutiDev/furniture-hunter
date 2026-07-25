@@ -43,6 +43,7 @@ Customer="default NPC group"
 Shelf="a thing for holding sellaable objects"
 MainUI=""
 Haggle=""
+Spawner=""
 
 [input]
 
