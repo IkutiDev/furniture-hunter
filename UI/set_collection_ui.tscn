@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bv5qt7a4i75ki"]
+[gd_scene format=3 uid="uid://bv5qt7a4i75ki"]
 
 [ext_resource type="Script" uid="uid://pu8a1ybtyq0x" path="res://UI/set_collection_ui.gd" id="1_765u6"]
 [ext_resource type="PackedScene" uid="uid://d0aosvog7ndme" path="res://UI/collection_icon_button.tscn" id="2_rgxpv"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="9_4qp31"]
 [ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="10_hgjoc"]
 
-[node name="SetCollectionUI" type="Control" node_paths=PackedStringArray("close_ui_button", "collection_list", "collection_slots_list")]
+[node name="SetCollectionUI" type="Control" unique_id=1352114561 node_paths=PackedStringArray("close_ui_button", "collection_list", "collection_slots_list")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +25,7 @@ collection_button_scene = ExtResource("2_rgxpv")
 collection_slots_list = NodePath("ColorRect/VBoxContainer2")
 collection_slot_ui_scene = ExtResource("8_dssdk")
 
-[node name="ColorRect" type="NinePatchRect" parent="."]
+[node name="ColorRect" type="NinePatchRect" parent="." unique_id=658692452]
 custom_minimum_size = Vector2(500, 420)
 layout_mode = 0
 offset_left = 225.0
@@ -39,7 +39,7 @@ patch_margin_top = 8
 patch_margin_right = 10
 patch_margin_bottom = 8
 
-[node name="TextureRect3" type="NinePatchRect" parent="ColorRect"]
+[node name="TextureRect3" type="NinePatchRect" parent="ColorRect" unique_id=2143861459]
 custom_minimum_size = Vector2(266, 57)
 layout_mode = 1
 anchors_preset = -1
@@ -53,7 +53,7 @@ texture = ExtResource("5_5drfr")
 patch_margin_left = 80
 patch_margin_right = 80
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=59569035]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,11 +67,11 @@ grow_vertical = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer" unique_id=1151102120]
 layout_mode = 2
 texture = ExtResource("6_nu84p")
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=1742232832]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.62352943, 0.28627452, 0.15686275, 1)
 theme_override_fonts/font = ExtResource("7_j1220")
@@ -79,61 +79,61 @@ theme_override_font_sizes/font_size = 24
 text = "Collection Display"
 horizontal_alignment = 1
 
-[node name="TextureRect3" type="TextureRect" parent="ColorRect/VBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="ColorRect/VBoxContainer" unique_id=1503894758]
 layout_mode = 2
 texture = ExtResource("8_6xnw2")
 stretch_mode = 3
 
-[node name="Control" type="Control" parent="ColorRect/VBoxContainer"]
+[node name="Control" type="Control" parent="ColorRect/VBoxContainer" unique_id=1026417109]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="TextureRect2" type="TextureRect" parent="ColorRect/VBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="ColorRect/VBoxContainer" unique_id=1849898364]
 layout_mode = 2
 texture = ExtResource("6_nu84p")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect" unique_id=1534777325]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -120.5
-offset_bottom = 25.5
+offset_top = -132.5
+offset_bottom = 76.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CollectionSlotUI" parent="ColorRect/VBoxContainer2" instance=ExtResource("8_dssdk")]
+[node name="CollectionSlotUI" parent="ColorRect/VBoxContainer2" unique_id=2010344730 instance=ExtResource("8_dssdk")]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=847238720]
 layout_mode = 0
 offset_left = 30.0
-offset_top = 170.5
+offset_top = 267.5
 offset_right = 475.0
 offset_bottom = 400.5
 
-[node name="GridContainer" type="GridContainer" parent="ColorRect/CenterContainer"]
+[node name="GridContainer" type="GridContainer" parent="ColorRect/CenterContainer" unique_id=418187392]
 layout_mode = 2
 columns = 5
 
-[node name="CollectionIconButton" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("2_rgxpv")]
+[node name="CollectionIconButton" parent="ColorRect/CenterContainer/GridContainer" unique_id=188437683 instance=ExtResource("2_rgxpv")]
 layout_mode = 2
 
-[node name="CollectionIconButton3" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("2_rgxpv")]
+[node name="CollectionIconButton3" parent="ColorRect/CenterContainer/GridContainer" unique_id=2079014278 instance=ExtResource("2_rgxpv")]
 layout_mode = 2
 
-[node name="CollectionIconButton4" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("2_rgxpv")]
+[node name="CollectionIconButton4" parent="ColorRect/CenterContainer/GridContainer" unique_id=167077429 instance=ExtResource("2_rgxpv")]
 layout_mode = 2
 
-[node name="CollectionIconButton5" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("2_rgxpv")]
+[node name="CollectionIconButton5" parent="ColorRect/CenterContainer/GridContainer" unique_id=743620713 instance=ExtResource("2_rgxpv")]
 layout_mode = 2
 
-[node name="CollectionIconButton12" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("2_rgxpv")]
+[node name="CollectionIconButton12" parent="ColorRect/CenterContainer/GridContainer" unique_id=771339365 instance=ExtResource("2_rgxpv")]
 layout_mode = 2
 
-[node name="CloseButton" type="TextureButton" parent="."]
+[node name="CloseButton" type="TextureButton" parent="." unique_id=987047539]
 layout_mode = 0
 offset_left = 667.0
 offset_top = 30.0
