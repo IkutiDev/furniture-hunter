@@ -18,11 +18,12 @@ func on_icon_clicked(event : InputEvent) -> void:
 func remove_collection_from_collection_slot() -> void:
 	#collection_instance.current_price = -1
 	PlayerInventory.add_object_to_inventory(collection_instance.collection_data)
+	EventBus.available_collections_changed.emit()
 	collection_instance.set_data(null)
 	update_collection_slot_ui()
 
 func set_collection_slot(current_collection_instance : CollectionInstance) -> void:
-	
+	EventBus.available_collections_changed.emit()
 	collection_instance = current_collection_instance
 	update_collection_slot_ui()
 

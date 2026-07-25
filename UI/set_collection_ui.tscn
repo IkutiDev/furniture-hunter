@@ -9,9 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://vsdq2bd5ir2g" path="res://UI/UI_kasia/collections_menu/collection_menu_decor2.png" id="8_6xnw2"]
 [ext_resource type="PackedScene" uid="uid://b6bkey5brnxco" path="res://UI/collection_slot_ui.tscn" id="8_dssdk"]
 [ext_resource type="Texture2D" uid="uid://c3gywp05ktqng" path="res://UI/UI_kasia/collections_menu/close_button_inactive.png" id="9_4qp31"]
+[ext_resource type="Theme" uid="uid://b2pfryrp1o2ds" path="res://UI/themes/default_theme.tres" id="9_5drfr"]
 [ext_resource type="Texture2D" uid="uid://bq3fb6sfmgu8b" path="res://UI/UI_kasia/collections_menu/close_button_clicked.png" id="10_hgjoc"]
 
-[node name="SetCollectionUI" type="Control" unique_id=1352114561 node_paths=PackedStringArray("close_ui_button", "collection_list", "collection_slots_list")]
+[node name="SetCollectionUI" type="Control" unique_id=1352114561 node_paths=PackedStringArray("close_ui_button", "collection_list", "collection_slots_list", "collection_inventory_empty_prompt")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,6 +25,7 @@ collection_list = NodePath("ColorRect/CenterContainer/GridContainer")
 collection_button_scene = ExtResource("2_rgxpv")
 collection_slots_list = NodePath("ColorRect/VBoxContainer2")
 collection_slot_ui_scene = ExtResource("8_dssdk")
+collection_inventory_empty_prompt = NodePath("ColorRect/CenterContainer/CollectionInventoryEmpty")
 
 [node name="ColorRect" type="NinePatchRect" parent="." unique_id=658692452]
 custom_minimum_size = Vector2(500, 420)
@@ -132,6 +134,12 @@ layout_mode = 2
 
 [node name="CollectionIconButton12" parent="ColorRect/CenterContainer/GridContainer" unique_id=771339365 instance=ExtResource("2_rgxpv")]
 layout_mode = 2
+
+[node name="CollectionInventoryEmpty" type="Label" parent="ColorRect/CenterContainer" unique_id=666843573]
+layout_mode = 2
+theme = ExtResource("9_5drfr")
+theme_override_font_sizes/font_size = 21
+text = "You have no collections in your inventory"
 
 [node name="CloseButton" type="TextureButton" parent="." unique_id=987047539]
 layout_mode = 0

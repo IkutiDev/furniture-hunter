@@ -10,16 +10,18 @@ extends Control
 @export var collection_button_scene : PackedScene
 @export var collection_slots_list : Control
 @export var collection_slot_ui_scene : PackedScene
+@export var collection_inventory_empty_prompt : Label
 
 var collection_container_instance : CollectionContainerInstance
 
 func _ready() -> void:
 	EventBus.available_collections_changed.connect(update_collections_inventory)
-
+	
 	EventBus.clicked_on_collection.connect(set_collection_inside_container)
 	EventBus.clicked_on_collection.connect(open_ui)
 	close_ui_button.pressed.connect(close_menu)
 	close_menu()
+	update_collections_inventory()
 
 
 func open_ui(instance: CollectionContainerInstance) -> void:
@@ -41,6 +43,7 @@ func close_menu() -> void:
 
 func update_collection_slots() -> void:
 	var children = collection_slots_list.get_children()
+
 	for c in children:
 		c.queue_free()
 	for s in collection_container_instance.collection_slots:
@@ -48,14 +51,19 @@ func update_collection_slots() -> void:
 		collection_slot_instance.set_collection_slot(s)
 		collection_slots_list.add_child(collection_slot_instance)
 
+
 func update_collections_inventory() -> void:
 	var children = collection_list.get_children()
+	collection_inventory_empty_prompt.visible = false
 	for c in children:
 		c.queue_free()
 	for i in PlayerInventory.collections:
 		var collection_button_instance := collection_button_scene.instantiate() as CollectionButton
 		collection_button_instance.set_data(i)
 		collection_list.add_child(collection_button_instance)
+	if PlayerInventory.collections.size() == 0:
+		collection_inventory_empty_prompt.visible = true
+
 
 func set_collection_inside_container(data : CollectionData) -> void:
 	if collection_container_instance == null:
