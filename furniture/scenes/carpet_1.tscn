@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dkrehejbu0xs3"]
+[gd_scene format=4 uid="uid://dkrehejbu0xs3"]
 
 [ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="1_3oqg1"]
 [ext_resource type="Material" uid="uid://c1upboxliaxyx" path="res://materials/new_standard_material_3d.tres" id="2_mhqf8"]
@@ -48,24 +48,24 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p5t3y")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhqf8"]
-size = Vector3(2.6, 1, 1.4)
+size = Vector3(2.1, 1, 1.2)
 
-[node name="Carpet1" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
+[node name="Carpet1" type="Node3D" unique_id=2093189792 node_paths=PackedStringArray("visual_mesh", "static_body")]
 script = ExtResource("1_3oqg1")
-extra_size = PackedVector3Array(1, 0, 0, -1, 0, 0, 0, 0, -1, 1, 0, -1, -1, 0, -1)
+extra_size = PackedVector3Array(1, 0, 0, -1, 0, 0)
 visual_mesh = NodePath("carpet_1")
 static_body = NodePath("StaticBody3D")
 
-[node name="carpet_1" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, 0, 0.15, -0.4773293)
+[node name="carpet_1" type="MeshInstance3D" parent="." unique_id=1357690432]
+transform = Transform3D(0.245, 0, 0, 0, 0.245, 0, 0, 0, 0.245, 0, 0.15, 0)
 material_override = ExtResource("2_mhqf8")
 mesh = SubResource("ArrayMesh_3oqg1")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=195143729]
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1866353452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_mhqf8")

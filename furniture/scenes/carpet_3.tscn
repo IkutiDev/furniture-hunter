@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmnvgojpnee88"]
+[gd_scene format=3 uid="uid://bmnvgojpnee88"]
 
 [ext_resource type="Script" uid="uid://dxh31ks8fs6ut" path="res://furniture/furniture_instance.gd" id="1_dnpya"]
 [ext_resource type="Material" uid="uid://c1upboxliaxyx" path="res://materials/new_standard_material_3d.tres" id="2_o5k6t"]
@@ -48,21 +48,20 @@ shadow_mesh = SubResource("ArrayMesh_giot6")
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5k6t"]
 size = Vector3(2.8, 1, 1.6)
 
-[node name="Carpet3" type="Node3D" node_paths=PackedStringArray("visual_mesh", "static_body")]
+[node name="Carpet3" type="Node3D" unique_id=445937487 node_paths=PackedStringArray("visual_mesh", "static_body")]
 script = ExtResource("1_dnpya")
 visual_mesh = NodePath("carpet_3_001")
 static_body = NodePath("StaticBody3D")
 
-[node name="carpet_3_001" type="MeshInstance3D" parent="."]
+[node name="carpet_3_001" type="MeshInstance3D" parent="." unique_id=536799916]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.15, 0)
 material_override = ExtResource("2_o5k6t")
 mesh = SubResource("ArrayMesh_y1img")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 8
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=937281682]
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=176698288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_o5k6t")

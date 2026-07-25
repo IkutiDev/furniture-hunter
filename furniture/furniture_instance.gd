@@ -7,6 +7,9 @@ var furniture_data : FurnitureData
 var first_press := true
 var current_price : int = -1
 
+var occupied_grid_slots : Array
+
+
 var perfect_price : int:
 	get:
 		if furniture_data != null:

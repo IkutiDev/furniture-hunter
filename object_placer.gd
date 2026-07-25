@@ -95,6 +95,7 @@ func place_object() -> void:
 	nav_mesh_region.add_child(furnitue_instance)
 	nav_mesh_region.bake_navigation_mesh()
 	occupation_grid_map.set_cell_item(current_mouse_position_on_grid, 1)
+	furnitue_instance.occupied_grid_slots.push_back(current_mouse_position_on_grid)
 	print(Vector3i(current_mouse_position_on_grid))
 	for p in furnitue_instance.extra_size:
 		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(current_rotation_in_degrees))
@@ -102,19 +103,22 @@ func place_object() -> void:
 		for i in 3:
 			pi[i] = round(p[i])
 		occupation_grid_map.set_cell_item(Vector3i(current_mouse_position_on_grid) + pi, 1)
+		furnitue_instance.occupied_grid_slots.push_back(Vector3i(current_mouse_position_on_grid) + pi)
 	PlayerInventory.remove_object_from_inventory(selected_furniture)
 	deselect_furniture()
 
-func remove_object(instance : FurnitureInstance, sold : bool = false) -> void:
-	var furniture_position := occupation_grid_map.local_to_map(instance.position)
-	occupation_grid_map.set_cell_item(furniture_position, 0)
-	for p in instance.extra_size:
-		p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(instance.rotation_degrees.y))
-		var pi = Vector3i()
-		for i in 3:
-			pi[i] = round(p[i])
-		occupation_grid_map.set_cell_item(Vector3i(instance.position) + pi, 0)
-	instance.remove_this_instance(sold)
+func remove_object(furnitue_instance : FurnitureInstance, sold : bool = false) -> void:
+	
+	for occupied_slot in furnitue_instance.occupied_grid_slots:
+		occupation_grid_map.set_cell_item(occupied_slot, 0)
+	#occupation_grid_map.set_cell_item(furniture_position, 0)
+	#for p in instance.extra_size:
+		#p = p.rotated(Vector3.MODEL_TOP, deg_to_rad(instance.rotation_degrees.y))
+		#var pi = Vector3i()
+		#for i in 3:
+			#pi[i] = round(p[i])
+		#occupation_grid_map.set_cell_item(Vector3i(instance.position) + pi, 0)
+	furnitue_instance.remove_this_instance(sold)
 	update_navmesh()
 
 func raycast_and_check_if_position_is_occupied() -> bool:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cj51ikkn14x5h"]
+[gd_scene format=4 uid="uid://cj51ikkn14x5h"]
 
 [ext_resource type="Script" uid="uid://c0rm10sjn8jpn" path="res://furniture/furniture_container_instance.gd" id="1_af2d6"]
 [ext_resource type="Material" uid="uid://btbvef6o2ufoq" path="res://materials/tables.tres" id="2_af2d6"]
@@ -41,29 +41,29 @@ shadow_mesh = SubResource("ArrayMesh_dcvb1")
 [sub_resource type="BoxShape3D" id="BoxShape3D_fh6qx"]
 size = Vector3(2.2, 1, 1)
 
-[node name="Table3" type="Node3D" node_paths=PackedStringArray("item_slots", "visual_mesh", "static_body")]
+[node name="Table3" type="Node3D" unique_id=1516705308 node_paths=PackedStringArray("item_slots", "visual_mesh", "static_body")]
 script = ExtResource("1_af2d6")
 item_slots = [NodePath("ItemSlot"), NodePath("ItemSlot2")]
 extra_size = PackedVector3Array(1, 0, 0)
 visual_mesh = NodePath("table_3")
 static_body = NodePath("StaticBody3D")
 
-[node name="table_3" type="MeshInstance3D" parent="."]
+[node name="table_3" type="MeshInstance3D" parent="." unique_id=1577209360]
 transform = Transform3D(0.35, 0, 0, 0, 0.281, 0, 0, 0, 0.317, 0, 0.43020964, 0)
 material_override = ExtResource("2_af2d6")
 mesh = SubResource("ArrayMesh_k6caw")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=243045157]
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1855015223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_fh6qx")
 
-[node name="ItemSlot" parent="." instance=ExtResource("3_k6caw")]
+[node name="ItemSlot" parent="." unique_id=1246651091 instance=ExtResource("3_k6caw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57683885, 0.72965956, 0)
 
-[node name="ItemSlot2" parent="." instance=ExtResource("3_k6caw")]
+[node name="ItemSlot2" parent="." unique_id=540474719 instance=ExtResource("3_k6caw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4346497, 0.72965956, 0)
