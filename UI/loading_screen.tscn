@@ -5,191 +5,27 @@
 [ext_resource type="PackedScene" uid="uid://clgfkcao6rjbb" path="res://player_room.tscn" id="3_h0dus"]
 [ext_resource type="Texture2D" uid="uid://cltdvn8s1ese8" path="res://UI/UI_kasia/collections_menu/loading_bar_under.png" id="3_p1mo3"]
 [ext_resource type="Texture2D" uid="uid://boj84nuqx021h" path="res://UI/UI_kasia/collections_menu/loading_bar.png" id="4_x74xp"]
+[ext_resource type="Texture2D" uid="uid://cfqwxy0rgt751" path="res://items/kasa/Material_Base_color.png" id="5_nuks2"]
 [ext_resource type="Texture2D" uid="uid://d2wk4opf0bah4" path="res://items/new_items/items_Material.png" id="6_p1mo3"]
 [ext_resource type="Texture2D" uid="uid://b1l4j3pfk31x2" path="res://characters/Material_Base_color.png" id="7_dhma0"]
-[ext_resource type="Material" uid="uid://btbvef6o2ufoq" path="res://materials/tables.tres" id="8_368j8"]
-[ext_resource type="Texture2D" uid="uid://dcilaepmbrg26" path="res://materials/greek_item_Material.png" id="9_h552v"]
-[ext_resource type="Material" uid="uid://ipelc8vbyqho" path="res://materials/items.tres" id="10_xr31f"]
+[ext_resource type="Texture2D" uid="uid://crl1fthyuvxta" path="res://items/ufo_item_Material.png" id="7_nfrb0"]
+[ext_resource type="Texture2D" uid="uid://cr66pb0spvgj1" path="res://witrynki/chinese_Material.png" id="8_lbdgx"]
+[ext_resource type="Texture2D" uid="uid://nswr7jcycekh" path="res://witrynki/egipt_Material_1.png" id="9_7vkjp"]
+[ext_resource type="Texture2D" uid="uid://deuaa0fjtw1i6" path="res://witrynki/greek_Material.001_Base_color.png" id="10_4nxec"]
+[ext_resource type="Texture2D" uid="uid://dn7yjs2syfh3m" path="res://witrynki/knight_Material.png" id="11_vrewf"]
+[ext_resource type="Texture2D" uid="uid://jgchrf8mq6tt" path="res://witrynki/ufo_Material_1.png" id="12_umroo"]
+[ext_resource type="Texture2D" uid="uid://nykfa50irkm0" path="res://witrynki/witch_Material_1.png" id="13_sgav2"]
+[ext_resource type="Texture2D" uid="uid://cgepx634q17gi" path="res://furniture/gamejam_stoly_Base_color.png" id="14_eqtcx"]
+[ext_resource type="Texture2D" uid="uid://dv5cx7bna2j8s" path="res://furniture/gamejam_okna_Base_color.png" id="15_ork4c"]
+[ext_resource type="Texture2D" uid="uid://d3akdai50ie5u" path="res://furniture/gamejam_lamp_Base_color.png" id="16_ywb8t"]
+[ext_resource type="Texture2D" uid="uid://dg5mp85ryc34y" path="res://furniture/gamejam_kwiaty_Base_color.png" id="17_if56v"]
+[ext_resource type="Texture2D" uid="uid://c6mo2m1j6wcxi" path="res://furniture/gamejam_komody_Base_color.png" id="18_jas18"]
+[ext_resource type="Texture2D" uid="uid://dypu1x60wdsgj" path="res://furniture/gamejam_biblioteczki_Base_color.png" id="19_qf7g5"]
 
-[sub_resource type="Animation" id="Animation_vqi5s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:value")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [50.0]
-}
-
-[sub_resource type="Animation" id="Animation_h0dus"]
-resource_name = "new_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:value")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6666667, 0.96666664),
-"transitions": PackedFloat32Array(1, 0.5, -2, 1),
-"update": 0,
-"values": [0.0, 0.4, 0.7, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_p1mo3"]
-_data = {
-&"RESET": SubResource("Animation_vqi5s"),
-&"new_animation": SubResource("Animation_h0dus")
-}
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuks2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1qhx3"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x74xp"]
-albedo_texture = ExtResource("6_p1mo3")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrjpe"]
-albedo_texture = ExtResource("7_dhma0")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2y8yy"]
-albedo_texture = ExtResource("9_h552v")
-
-[sub_resource type="Animation" id="Animation_v4uo1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D5:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MeshInstance3D2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MeshInstance3D3:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MeshInstance3D4:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_35kds"]
-resource_name = "new_animation"
-length = 0.9
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D5:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.36666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MeshInstance3D2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.53333336),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MeshInstance3D3:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.6333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MeshInstance3D4:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.76666665),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dhma0"]
-_data = {
-&"RESET": SubResource("Animation_v4uo1"),
-&"new_animation": SubResource("Animation_35kds")
-}
+material = SubResource("StandardMaterial3D_nuks2")
 
 [node name="LoadingScreen" type="CenterContainer" unique_id=1569509628]
 anchors_preset = 15
@@ -200,6 +36,7 @@ grow_vertical = 2
 theme = ExtResource("1_vqi5s")
 script = ExtResource("2_h0dus")
 start_game_scene = ExtResource("3_h0dus")
+textures_to_load = Array[Resource]([ExtResource("7_dhma0"), ExtResource("5_nuks2"), ExtResource("6_p1mo3"), ExtResource("7_nfrb0"), ExtResource("8_lbdgx"), ExtResource("9_7vkjp"), ExtResource("10_4nxec"), ExtResource("11_vrewf"), ExtResource("12_umroo"), ExtResource("13_sgav2"), ExtResource("14_eqtcx"), ExtResource("15_ork4c"), ExtResource("16_ywb8t"), ExtResource("17_if56v"), ExtResource("18_jas18"), ExtResource("19_qf7g5")])
 
 [node name="Background" type="ColorRect" parent="." unique_id=21057637]
 custom_minimum_size = Vector2(720, 500)
@@ -229,7 +66,6 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 max_value = 1.0
 step = 0.1
-value = 1.0
 nine_patch_stretch = true
 stretch_margin_left = 2
 stretch_margin_right = 2
@@ -237,47 +73,11 @@ texture_under = ExtResource("3_p1mo3")
 texture_progress = ExtResource("4_x74xp")
 tint_under = Color(0.80941564, 0.7202166, 0.9322948, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/VBoxContainer/TextureProgressBar" unique_id=1641450039]
-libraries/ = SubResource("AnimationLibrary_p1mo3")
-autoplay = &"new_animation"
-
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1474268193]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport" unique_id=415123141]
-transform = Transform3D(1, 0, 0, 0, -0.0041052424, -0.9999916, 0, 0.9999916, -0.0041052424, -1.267567, 0, -1.4830673)
-visible = false
+transform = Transform3D(1, 0, 0, 0, -0.0041052424, -0.9999916, 0, 0.9999916, -0.0041052424, -0.04520023, 0, -1.4830673)
 mesh = SubResource("PlaneMesh_1qhx3")
-surface_material_override/0 = SubResource("StandardMaterial3D_x74xp")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewport" unique_id=563286557]
-transform = Transform3D(1, 0, 0, 0, -0.0041052424, -0.9999916, 0, 0.9999916, -0.0041052424, -1.8515439, 0, -1.4830673)
-visible = false
-mesh = SubResource("PlaneMesh_1qhx3")
-surface_material_override/0 = SubResource("StandardMaterial3D_rrjpe")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport" unique_id=935893895]
-transform = Transform3D(1, 0, 0, 0, -0.0041052424, -0.9999916, 0, 0.9999916, -0.0041052424, -0.26892364, 0, -1.4830673)
-visible = false
-mesh = SubResource("PlaneMesh_1qhx3")
-surface_material_override/0 = ExtResource("8_368j8")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewport" unique_id=744076268]
-transform = Transform3D(1, 0, 0, 0, -0.0041052424, -0.9999916, 0, 0.9999916, -0.0041052424, 0.887123, 0, -1.4830673)
-visible = false
-mesh = SubResource("PlaneMesh_1qhx3")
-surface_material_override/0 = SubResource("StandardMaterial3D_2y8yy")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewport" unique_id=1634564952]
-transform = Transform3D(1, 0, 0, 0, -0.0041052424, -0.9999916, 0, 0.9999916, -0.0041052424, 1.6057017, 0, -1.4830673)
-visible = false
-mesh = SubResource("PlaneMesh_1qhx3")
-surface_material_override/0 = ExtResource("10_xr31f")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=623344815]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.038075)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport" unique_id=780976536]
-libraries/ = SubResource("AnimationLibrary_dhma0")
-autoplay = &"new_animation"
-
-[connection signal="animation_finished" from="Background/VBoxContainer/TextureProgressBar/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
